@@ -1,0 +1,20 @@
+- Organizão do projeto - github separado 
+- Local do driver - principais modificações - possível local do controle de duplicados
+- controle de duplicados acontece na MAC com o tsch 
+- Não usa escalonamento causou mta confusão  - pq usa apenas 1 link  
+- Confusão de pacotes duplicados pela fig 12 
+
+
+Tarefas próxima semana 
+-- Encontrar se de fato os Pacotes são duplicados 
+-- Intervalo de 70ms -- Poderia ser considerado um slot?  O variban era maior 
+-- Mapear dado um pacote esse pacote foi transmitido por qual radio? 
+
+
+- Razão para algumas funcões da netstack não especificarem o radio?  
+- Seria possível trabalhar usando abordagem cliente-servidor?  - 
+-- Seria possível manter dois canais com um mesmo link? _ não encontro onde ele poderia estar usando um escalonador e nos logs não informam onde usuaria dos links 
+- Dois pacotes de msm origem poderia ser considerado uso dois radios.  
+
+
+-- Print na receive from addr sqn para identificar de que radio é proveniente 

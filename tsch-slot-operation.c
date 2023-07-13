@@ -484,10 +484,37 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       /* get payload */
       packet = queuebuf_dataptr(current_packet->qb);
       packet_len = queuebuf_datalen(current_packet->qb); 
-       
+
+      
+      // needs to take the next one 
+
+       in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);
+
+          /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
+       if(in_queue == 0) {
+            dequeued_array[dequeued_index] = current_packet;
+            ringbufindex_put(&dequeued_ringbuf);
+        }
+
+          /* Log every tx attempt */
+          TSCH_LOG_ADD(tsch_log_tx,
+              log->tx.mac_tx_status = mac_tx_status;
+              log->tx.num_tx = current_packet->transmissions;
+              log->tx.datalen = queuebuf_datalen(current_packet->qb);
+              log->tx.drift = drift_correction;
+              log->tx.drift_used = is_drift_correction_used;
+              log->tx.is_data = ((((uint8_t *)(queuebuf_dataptr(current_packet->qb)))[0]) & 7) == FRAME802154_DATAFRAME;
+      #if LLSEC802154_ENABLED
+              log->tx.sec_level = queuebuf_attr(current_packet->qb, PACKETBUF_ATTR_SECURITY_LEVEL);
+      #else /* LLSEC802154_ENABLED */
+              log->tx.sec_level = 0;
+      #endif /* LLSEC802154_ENABLED */
+              linkaddr_copy(&log->tx.dest, queuebuf_addr(current_packet->qb, PACKETBUF_ADDR_RECEIVER));
+              log->tx.seqno = queuebuf_attr(current_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
+          ); 
       packet_len_dummy =  queuebuf_datalen(current_packet->qb);  
 
-      snprintf("normal len:  %i - dummy len: %i \n", packet_len, packet_len_dummy);  
+      printf("normal len:  %i - dummy len: %i \n", packet_len, packet_len_dummy);  
 
       /* is this a broadcast packet? (wait for ack?) */ 
 
@@ -664,30 +691,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     current_packet->ret = mac_tx_status;
 
     /* Post TX: Update neighbor queue state */
-    in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);
-
-    /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
-    if(in_queue == 0) {
-      dequeued_array[dequeued_index] = current_packet;
-      ringbufindex_put(&dequeued_ringbuf);
-    }
-
-    /* Log every tx attempt */
-    TSCH_LOG_ADD(tsch_log_tx,
-        log->tx.mac_tx_status = mac_tx_status;
-        log->tx.num_tx = current_packet->transmissions;
-        log->tx.datalen = queuebuf_datalen(current_packet->qb);
-        log->tx.drift = drift_correction;
-        log->tx.drift_used = is_drift_correction_used;
-        log->tx.is_data = ((((uint8_t *)(queuebuf_dataptr(current_packet->qb)))[0]) & 7) == FRAME802154_DATAFRAME;
-#if LLSEC802154_ENABLED
-        log->tx.sec_level = queuebuf_attr(current_packet->qb, PACKETBUF_ATTR_SECURITY_LEVEL);
-#else /* LLSEC802154_ENABLED */
-        log->tx.sec_level = 0;
-#endif /* LLSEC802154_ENABLED */
-        linkaddr_copy(&log->tx.dest, queuebuf_addr(current_packet->qb, PACKETBUF_ADDR_RECEIVER));
-        log->tx.seqno = queuebuf_attr(current_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
-    );
+   
 
     /* Poll process for later processing of packet sent events and logs */
     process_poll(&tsch_pending_events_process);

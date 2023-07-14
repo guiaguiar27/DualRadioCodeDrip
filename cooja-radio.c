@@ -354,6 +354,17 @@ radio_send(const void *payload, unsigned short payload_len)
 }
 /*---------------------------------------------------------------------------*/
 
+// modificações necessária aqui 
+// está para um único radio 
+// definir como separar essas funções  
+// radio 1: 
+//  - prepare 
+//  - transmit 
+//  - receiving 
+// radio 2: 
+//  - prepare 
+//  - transmit 
+//  - receiving
 static int
 prepare_packet(const void *data, unsigned short len)
 {

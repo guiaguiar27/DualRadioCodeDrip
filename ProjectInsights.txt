@@ -18,3 +18,10 @@ Tarefas próxima semana
 
 
 -- Print na receive from addr sqn para identificar de que radio é proveniente 
+
+- pacote vai ser definido para o radio :  slot-operation-tsch 
+- Descobri onde os pacotes são preparados para o envio.  
+
+- pilha de pacotes -- por link - tira dois pacotes e destino dois pacotes por canal..  
+- identificar onde estao essas duplicadas 
+- Ao invés de tirar um pacote tira dois e manda para dois radios diferentes  

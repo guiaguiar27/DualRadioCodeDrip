@@ -459,7 +459,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     } else {
       /* packet payload */
       static void *packet; 
-      //static void *packet_2;  
+      static void *packet_2;  
 
 #if LLSEC802154_ENABLED
       /* encrypted payload */
@@ -483,9 +483,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       packet_len = queuebuf_datalen(current_packet->qb);  
       next_packet = memb_alloc(&packet_memb);
       next_packet->qb = queuebuf_new_from_packetbuf();  
-      //packet_2 = queuebuf_dataptr(next_packet->qb);
-      packet_len_2 = queuebuf_datalen(next_packet->qb);  
-      printf("%lu - %lu\n",packet_len, packet_len_2);
+      packet_2 = queuebuf_dataptr(next_packet->qb);
+      printf("Packet1: %p - Packet2:  %p\n",packet, packet2);
       /* is this a broadcast packet? (wait for ack?) */
       is_broadcast = current_neighbor->is_broadcast;
       /* read seqno from payload */

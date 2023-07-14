@@ -487,11 +487,13 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
       
       // needs to take the next one 
-
-       in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);
+       
+      current_packet->transmissions++;
+      current_packet->ret = mac_tx_status;
+      in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);
 
           /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
-       if(in_queue == 0) {
+      if(in_queue == 0) {
             dequeued_array[dequeued_index] = current_packet;
             ringbufindex_put(&dequeued_ringbuf);
         }
@@ -511,7 +513,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       #endif /* LLSEC802154_ENABLED */
               linkaddr_copy(&log->tx.dest, queuebuf_addr(current_packet->qb, PACKETBUF_ADDR_RECEIVER));
               log->tx.seqno = queuebuf_attr(current_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
-          ); 
+          );   
+
       packet_len_dummy =  queuebuf_datalen(current_packet->qb);  
 
       printf("normal len:  %i - dummy len: %i \n", packet_len, packet_len_dummy);  
@@ -687,8 +690,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
     tsch_radio_off(TSCH_RADIO_CMD_OFF_END_OF_TIMESLOT);
 
-    current_packet->transmissions++;
-    current_packet->ret = mac_tx_status;
+  
 
     /* Post TX: Update neighbor queue state */
    

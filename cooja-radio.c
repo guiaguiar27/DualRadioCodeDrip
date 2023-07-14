@@ -336,8 +336,10 @@ radio_send(const void *payload, unsigned short payload_len)
   if(send_on_cca && !channel_clear()) {
     return RADIO_TX_COLLISION;
   }
-#endif /* COOJA_TRANSMIT_ON_CCA */
+#endif /* COOJA_TRANSMIT_ON_CCA */ 
 
+       // the copy of the packets are done here 
+        
         memcpy(simOutDataBuffer, payload, payload_len);
         memcpy(simOutDataBufferDummy, payload, payload_len);
         simOutSize = payload_len;
@@ -374,7 +376,8 @@ prepare_packet(const void *data, unsigned short len)
 /*---------------------------------------------------------------------------*/
 static int
 transmit_packet(unsigned short len)
-{
+{  
+  printf("[transmit_packet] Radio to transmit the packet\n");
   int ret = RADIO_TX_ERR;
   if(pending_data != NULL) {
     ret = radio_send(pending_data, len);

@@ -170,7 +170,8 @@ struct tsch_link *current_link = NULL;
  * If the current link is Tx-only and the Tx queue
  * is empty while executing the link, fallback to the backup link. */
 static struct tsch_link *backup_link = NULL;
-static struct tsch_packet *current_packet = NULL;
+static struct tsch_packet *current_packet = NULL; 
+static struct tsch_packet *next_packet = NULL;  
 static struct tsch_neighbor *current_neighbor = NULL;
 
 /* Protothread for association */
@@ -450,13 +451,16 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       mac_tx_status = MAC_TX_ERR_FATAL;
     } else {
       /* packet payload */
-      static void *packet;
+      static void *packet; 
+      static void *packet_2;  
+
 #if LLSEC802154_ENABLED
       /* encrypted payload */
       static uint8_t encrypted_packet[TSCH_PACKET_MAX_LEN];
 #endif /* LLSEC802154_ENABLED */
       /* packet payload length */
-      static uint8_t packet_len;
+      static uint8_t packet_len; 
+      static uint8_t packet_len_2;  
       /* packet seqno */
       static uint8_t seqno;
       /* is this a broadcast packet? (wait for ack?) */
@@ -469,7 +473,12 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
       /* get payload */
       packet = queuebuf_dataptr(current_packet->qb);
-      packet_len = queuebuf_datalen(current_packet->qb);
+      packet_len = queuebuf_datalen(current_packet->qb);  
+
+      next_packet->qb = queuebuf_new_from_packetbuf();  
+      packet_2 = queuebuf_dataptr(next_packet->qb);
+      packet_len_2 = queuebuf_datalen(next_packet->qb);  
+      printf("%lu - %lu\n",packet_len, packet_len_2);
       /* is this a broadcast packet? (wait for ack?) */
       is_broadcast = current_neighbor->is_broadcast;
       /* read seqno from payload */

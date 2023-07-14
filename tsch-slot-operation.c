@@ -58,7 +58,10 @@
 #include "net/mac/tsch/tsch-log.h"
 #include "net/mac/tsch/tsch-packet.h"
 #include "net/mac/tsch/tsch-security.h"
-#include "net/mac/tsch/tsch-adaptive-timesync.h"
+#include "net/mac/tsch/tsch-adaptive-timesync.h" 
+
+
+#include "lib/memb.h"
 #if CONTIKI_TARGET_COOJA
 #include "lib/simEnvChange.h"
 #include "sys/cooja_mt.h"
@@ -70,7 +73,7 @@
 
 MEMB(packet_memb, struct tsch_packet, QUEUEBUF_NUM);
  
- 
+
 #ifndef TSCH_DEBUG_INIT
 #define TSCH_DEBUG_INIT()
 #endif

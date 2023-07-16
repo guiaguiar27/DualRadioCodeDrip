@@ -479,12 +479,23 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 #endif
 
       /* get payload */
+      
       packet = queuebuf_dataptr(current_packet->qb);
-      packet_len = queuebuf_datalen(current_packet->qb);  
-      next_packet = memb_alloc(&packet_memb);
+      packet_len = queuebuf_datalen(current_packet->qb); 
+
+      // new packet for the same transmission
+      
+      next_packet = memb_alloc(&packet_memb); 
+      
+      // take off out of the buffer 
+
       next_packet->qb = queuebuf_new_from_packetbuf();  
-      packet_2 = queuebuf_dataptr(next_packet->qb);
+      packet_2 = queuebuf_dataptr(next_packet->qb);  
+      packet_len_2 = queuebuf_datalen(next_packet->qb); 
+      
       printf("Packet1: %p - Packet2:  %p\n",packet, packet2);
+      printf("Packet_len 1: %lu -  Packet_len 2: %lu", packet_len, packet_len_2); 
+      
       /* is this a broadcast packet? (wait for ack?) */
       is_broadcast = current_neighbor->is_broadcast;
       /* read seqno from payload */

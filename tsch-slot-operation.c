@@ -493,7 +493,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       packet_2 = queuebuf_dataptr(next_packet->qb);  
       packet_len_2 = queuebuf_datalen(next_packet->qb); 
       
-      printf("Packet1: %p - Packet2:  %p\n",packet, packet2);
+      printf("Packet1: %p - Packet2:  %p\n",packet, packet_2);
       printf("Packet_len 1: %lu -  Packet_len 2: %lu", packet_len, packet_len_2); 
       
       /* is this a broadcast packet? (wait for ack?) */

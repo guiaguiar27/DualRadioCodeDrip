@@ -78,7 +78,8 @@ char simPowerDummy = 100;
 int simRadioChannelDummy = 1;
 int simLQIDummy = 105;
 /*Dummy Radio*/
-static const void *pending_data;
+static const void *pending_data; 
+static const void *pending_data2;
 //static int seqnr=0;
 /* If we are in the polling mode, poll_mode is 1; otherwise 0 */
 static int poll_mode = 0; /* default 0, disabled */
@@ -368,9 +369,11 @@ radio_send(const void *payload, unsigned short payload_len)
 //  - transmit 
 //  - receiving
 static int
-prepare_packet(const void *data, unsigned short len)
-{
-  pending_data = data;
+prepare_packet(const void *data, unsigned short len, const void *data2, unsigned short len2, )
+{ 
+  printf("[prepare_packet] preparing 2 packages");
+  pending_data = data; 
+  pending_data2 = data2; 
   return 0;
 }
 /*---------------------------------------------------------------------------*/

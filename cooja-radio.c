@@ -374,6 +374,8 @@ prepare_packet(const void *data, unsigned short len, const void *data2, unsigned
   printf("[prepare_packet] preparing 2 packages");
   pending_data = data; 
   pending_data2 = data2; 
+  printf("[prepare_packet] data1:%p - data2:  %p \n",pending_data, pending_data2); 
+
   return 0;
 }
 /*---------------------------------------------------------------------------*/

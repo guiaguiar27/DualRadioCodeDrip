@@ -369,7 +369,7 @@ radio_send(const void *payload, unsigned short payload_len)
 //  - transmit 
 //  - receiving
 static int
-prepare_packet(const void *data, unsigned short len, const void *data2, unsigned short len2, )
+prepare_packet(const void *data, unsigned short len, const void *data2, unsigned short len2)
 { 
   printf("[prepare_packet] preparing 2 packages");
   pending_data = data; 

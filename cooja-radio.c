@@ -299,7 +299,7 @@ static int
 radio_send(const void *payload, unsigned short payload_len)
 {
 
-
+   printf("[Radio send] -  packet: %p\n",payload);
   int radiostate = simRadioHWOn;
   simRadioHWOnDummy = simRadioHWOn;
   /* Simulate turnaround time of 2ms for packets, 1ms for acks*/
@@ -534,7 +534,7 @@ get_object(radio_param_t param, void *dest, size_t size)
   else if(param == RADIO_PARAM_LAST_PACKET_TIMESTAMPDummy) {
     if(size != sizeof(rtimer_clock_t) || !dest) {
       return RADIO_RESULT_INVALID_VALUE;
-    }m 
+    }
     
     *(rtimer_clock_t *)dest = (rtimer_clock_t)simLastPacketTimestampDummy; 
     

@@ -494,7 +494,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       packet_len_2 = queuebuf_datalen(next_packet->qb); 
       
       printf("Packet1: %p - Packet2:  %p\n",packet, packet_2);
-      printf("Packet_len 1: %lu -  Packet_len 2: %lu", packet_len, packet_len_2); 
+      printf("Packet_len 1: %lu -  Packet_len 2: %lu\n", packet_len, packet_len_2); 
       
       /* is this a broadcast packet? (wait for ack?) */
       is_broadcast = current_neighbor->is_broadcast;
@@ -546,7 +546,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
           TSCH_DEBUG_TX_EVENT();
           
           /* send packet already in radio tx buffer */
-          mac_tx_status = NETSTACK_RADIO.transmit(packet_len);
+          mac_tx_status = NETSTACK_RADIO.transmit(packet_len, packet_len_2);
          // printf")
           tx_count++;
           /* Save tx timestamp */
@@ -869,13 +869,22 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 #endif /* LLSEC802154_ENABLED */
 
                 /* Copy to radio buffer */
-                NETSTACK_RADIO.prepare((const void *)ack_buf, ack_len);
+               
+                 ///// *****************************************
+               // NETSTACK_RADIO.prepare((const void *)ack_buf, ack_len);
 
+                 ///// *****************************************
                 /* Wait for time to ACK and transmit ACK */
                 TSCH_SCHEDULE_AND_YIELD(pt, t, rx_start_time,
                                         packet_duration + tsch_timing[tsch_ts_tx_ack_delay] - RADIO_DELAY_BEFORE_TX, "RxBeforeAck");
                 TSCH_DEBUG_RX_EVENT();
-                NETSTACK_RADIO.transmit(ack_len);
+                ///  
+                //// 
+                //// Precisa estar ativado 
+                 /////  Só está comentado para debug  
+                 ///// *****************************************
+                //NETSTACK_RADIO.transmit(ack_len); 
+                //////////////////// ******************************************8
                 tsch_radio_off(TSCH_RADIO_CMD_OFF_WITHIN_TIMESLOT);
               }
             }

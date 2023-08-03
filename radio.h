@@ -238,7 +238,7 @@ struct radio_driver {
   int (* init)(void);
 
   /** Prepare the radio with a packet to be sent. */
-  int (* prepare)(const void *payload, unsigned short payload_len);
+  int (* prepare)(const void *payload, unsigned short payload_len, const void *payload_2, unsigned short payload_len_2);
 
   /** Send the packet that has previously been prepared. */
   int (* transmit)(unsigned short transmit_len);

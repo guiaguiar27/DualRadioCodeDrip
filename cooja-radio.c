@@ -371,19 +371,20 @@ radio_send(const void *payload, unsigned short payload_len)
 static int
 prepare_packet(const void *data, unsigned short len, const void *data2, unsigned short len2)
 { 
-  printf("[prepare_packet] preparing 2 packages");
+  printf("[prepare_packet] preparing 2 packages\n");
   pending_data = data; 
   pending_data2 = data2; 
-  printf("[prepare_packet] data1:%p - data2:  %p \n",pending_data, pending_data2); 
+  printf("[prepare_packet] data1:%p - data2: %p \n",pending_data, pending_data2); 
 
   return 0;
 }
 /*---------------------------------------------------------------------------*/
 static int
-transmit_packet(unsigned short len)
+transmit_packet(unsigned short len, unsigned short len_2)
 {  
-  printf("[transmit_packet] Radio to transmit the packet\n");
-  int ret = RADIO_TX_ERR;
+  printf("[transmit_packet] Radio to transmit the packet\n"); 
+  printf("[transmit_packet] Pck1: %p - Pck2: %p \n", len, len_2);
+  int ret = RADIO_TX_ERR; 
   if(pending_data != NULL) {
     ret = radio_send(pending_data, len);
   }

@@ -297,10 +297,10 @@ channel_clear(void)
 }
 /*---------------------------------------------------------------------------*/
 static int
-radio_send(const void *payload, unsigned short payload_len)
+radio_send(const void *payload, unsigned short payload_len, const void *payload_2, unsigned short payload_len_2)
 {
 
-   printf("[Radio send] -  packet: %p\n",payload);
+  printf("[Radio send] Pckt1: %p - Pckt2: %p\n",payload, payload_2);
   int radiostate = simRadioHWOn;
   simRadioHWOnDummy = simRadioHWOn;
   /* Simulate turnaround time of 2ms for packets, 1ms for acks*/
@@ -371,7 +371,6 @@ radio_send(const void *payload, unsigned short payload_len)
 static int
 prepare_packet(const void *data, unsigned short len, const void *data2, unsigned short len2)
 { 
-  printf("[prepare_packet] preparing 2 packages\n");
   pending_data = data; 
   pending_data2 = data2; 
   printf("[prepare_packet] data1:%p - data2: %p \n",pending_data, pending_data2); 
@@ -382,11 +381,10 @@ prepare_packet(const void *data, unsigned short len, const void *data2, unsigned
 static int
 transmit_packet(unsigned short len, unsigned short len_2)
 {  
-  printf("[transmit_packet] Radio to transmit the packet\n"); 
   printf("[transmit_packet] Pck1: %p - Pck2: %p \n", len, len_2);
   int ret = RADIO_TX_ERR; 
   if(pending_data != NULL) {
-    ret = radio_send(pending_data, len);
+    ret = radio_send(pending_data, len, pending_data2, len_2);
   }
   return ret;
 }

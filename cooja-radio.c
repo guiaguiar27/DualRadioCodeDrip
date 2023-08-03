@@ -300,7 +300,7 @@ static int
 radio_send(const void *payload, unsigned short payload_len, const void *payload_2, unsigned short payload_len_2)
 {
 
-  printf("[Radio send] Pckt1: %p - Pckt2: %p\n",payload, payload_2);
+  printf("[Send_packet] Pckt1: %p - Pckt2: %p\n",payload, payload_2);
   int radiostate = simRadioHWOn;
   simRadioHWOnDummy = simRadioHWOn;
   /* Simulate turnaround time of 2ms for packets, 1ms for acks*/
@@ -322,10 +322,10 @@ radio_send(const void *payload, unsigned short payload_len, const void *payload_
     simRadioHWOnDummy = 1;
   }
 
-  if(payload_len > COOJA_RADIO_BUFSIZE) {
+  if(payload_len > COOJA_RADIO_BUFSIZE && payload_len_2 > COOJA_RADIO_BUFSIZE) {
     return RADIO_TX_ERR;
   }
-  if(payload_len == 0) {
+  if(payload_len == 0 && payload_len_2 == 0){
     return RADIO_TX_ERR;
   }
   if(simOutSize > 0 && simOutSizeDummy > 0) {
@@ -342,9 +342,9 @@ radio_send(const void *payload, unsigned short payload_len, const void *payload_
        // the copy of the packets are done here 
         
         memcpy(simOutDataBuffer, payload, payload_len);
-        memcpy(simOutDataBufferDummy, payload, payload_len);
+        memcpy(simOutDataBufferDummy, payload_2, payload_len_2);
         simOutSize = payload_len;
-        simOutSizeDummy = payload_len;
+        simOutSizeDummy = payload_len_2;
 	  while(simOutSize > 0 && simOutSizeDummy > 0)
 	  {
 	    cooja_mt_yield();

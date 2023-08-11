@@ -576,7 +576,10 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
               /* Entering promiscuous mode so that the radio accepts the enhanced ACK */
               NETSTACK_RADIO.get_value(RADIO_PARAM_RX_MODE, &radio_rx_mode);
               NETSTACK_RADIO.set_value(RADIO_PARAM_RX_MODE, radio_rx_mode & (~RADIO_RX_MODE_ADDRESS_FILTER));
-#endif /* TSCH_HW_FRAME_FILTERING */
+#endif /* TSCH_HW_FRAME_FILTERING */ 
+
+              // necessita configuração para ack de cada caso  
+
               /* Unicast: wait for ack after tx: sleep until ack time */
               TSCH_SCHEDULE_AND_YIELD(pt, t, current_slot_start,
                   tsch_timing[tsch_ts_tx_offset] + tx_duration + tsch_timing[tsch_ts_rx_ack_delay] - RADIO_DELAY_BEFORE_RX, "TxBeforeAck");
@@ -701,13 +704,30 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
         linkaddr_copy(&log->tx.dest, queuebuf_addr(current_packet->qb, PACKETBUF_ADDR_RECEIVER));
         log->tx.seqno = queuebuf_attr(current_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
     );
+    
+
+     TSCH_LOG_ADD(tsch_log_tx,
+        log->tx.mac_tx_status = mac_tx_status;
+        log->tx.num_tx = next_packet->transmissions;
+        log->tx.datalen = queuebuf_datalen(next_packet->qb);
+        log->tx.drift = drift_correction;
+        log->tx.drift_used = is_drift_correction_used;
+        log->tx.is_data = ((((uint8_t *)(queuebuf_dataptr(next_packet->qb)))[0]) & 7) == FRAME802154_DATAFRAME;
+#if LLSEC802154_ENABLED
+        log->tx.sec_level = queuebuf_attr(next_packet->qb, PACKETBUF_ATTR_SECURITY_LEVEL);
+#else /* LLSEC802154_ENABLED */
+        log->tx.sec_level = 0;
+#endif /* LLSEC802154_ENABLED */
+        linkaddr_copy(&log->tx.dest, queuebuf_addr(next_packet->qb, PACKETBUF_ADDR_RECEIVER));
+        log->tx.seqno = queuebuf_attr(next_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
+    );
 
     /* Poll process for later processing of packet sent events and logs */
     process_poll(&tsch_pending_events_process);
   }
 
   TSCH_DEBUG_TX_EVENT();
-
+ 
   PT_END(pt);
 }
 /*---------------------------------------------------------------------------*/

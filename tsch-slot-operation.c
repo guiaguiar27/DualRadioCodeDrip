@@ -578,9 +578,10 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
               NETSTACK_RADIO.set_value(RADIO_PARAM_RX_MODE, radio_rx_mode & (~RADIO_RX_MODE_ADDRESS_FILTER));
 #endif /* TSCH_HW_FRAME_FILTERING */ 
 
-              // necessita configuração para ack de cada caso  
+            //necessita configuração para ack de cada caso  
 
               /* Unicast: wait for ack after tx: sleep until ack time */
+              
               TSCH_SCHEDULE_AND_YIELD(pt, t, current_slot_start,
                   tsch_timing[tsch_ts_tx_offset] + tx_duration + tsch_timing[tsch_ts_rx_ack_delay] - RADIO_DELAY_BEFORE_RX, "TxBeforeAck");
               TSCH_DEBUG_TX_EVENT();
@@ -604,7 +605,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
               NETSTACK_RADIO.set_value(RADIO_PARAM_RX_MODE, radio_rx_mode | RADIO_RX_MODE_ADDRESS_FILTER);
 #endif /* TSCH_HW_FRAME_FILTERING */
 
-              /* Read ack frame */
+              /* Read ack frame */ 
+
               ack_len = NETSTACK_RADIO.read((void *)ackbuf, sizeof(ackbuf));
               is_time_source = 0;
               /* The radio driver should return 0 if no valid packets are in the rx buffer */
@@ -674,6 +676,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
     current_packet->transmissions++;
     current_packet->ret = mac_tx_status; 
+    
+    /* New packet count transmission */ 
 
     next_packet->transmissions++; 
     next_packet->ret = mac_tx_status;  
@@ -705,7 +709,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
         log->tx.seqno = queuebuf_attr(current_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
     );
     
-
+     // log for the second packet  
      TSCH_LOG_ADD(tsch_log_tx,
         log->tx.mac_tx_status = mac_tx_status;
         log->tx.num_tx = next_packet->transmissions;
@@ -731,7 +735,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
   PT_END(pt);
 }
 /*---------------------------------------------------------------------------*/
-static
+staticn
 PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 {
   /**
@@ -743,8 +747,12 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
    * 5. Drift calculated in the ACK callback registered with the radio driver. Use it if receiving from a time source neighbor.
    **/
 
-  struct tsch_neighbor *n;
-  static linkaddr_t source_address;
+  struct tsch_neighbor *;
+  static linkaddr_t source_address; 
+
+  // talvez seja necessario dois sources address 
+   
+  staic linkaddr_t source_address2;
   static linkaddr_t destination_address;
   static int16_t input_index;
   static int input_queue_drop = 0;
@@ -756,8 +764,12 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
   input_index = ringbufindex_peek_put(&input_ringbuf);
   if(input_index == -1) {
     input_queue_drop++;
-  } else {
-    static struct input_packet *current_input;
+  } else { 
+
+    static struct input_packet *current_input; 
+    // segundo pacote 
+    static struct input_packet *second_input;  
+    
     /* Estimated drift based on RX time */
     static int32_t estimated_drift;
     /* Rx timestamps */
@@ -770,7 +782,9 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
     /* Default start time: expected Rx time */
     rx_start_time = expected_rx_time;
 
-    current_input = &input_array[input_index];
+    current_input = &input_array[input_index];  
+    
+    printf("Current input: %p \n", current_input);  
 
     /* Wait before starting to listen */
     TSCH_SCHEDULE_AND_YIELD(pt, t, current_slot_start, tsch_timing[tsch_ts_rx_offset] - RADIO_DELAY_BEFORE_RX, "RxBeforeListen");

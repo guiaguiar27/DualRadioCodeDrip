@@ -500,7 +500,9 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       is_broadcast = current_neighbor->is_broadcast;
       /* read seqno from payload */
       seqno = ((uint8_t *)(packet))[2];
-      /* if this is an EB, then update its Sync-IE */
+      /* if this is an EB, then update its Sync-IE */ 
+      
+      // modificar para o outro pacote
       if(current_neighbor == n_eb) {
         packet_ready = tsch_packet_update_eb(packet, packet_len, current_packet->tsch_sync_ie_offset);
       } else {
@@ -547,8 +549,9 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
           
           /* send packet already in radio tx buffer */
           mac_tx_status = NETSTACK_RADIO.transmit(packet_len, packet_len_2);
-         // printf")
-          tx_count++;
+         
+          tx_count = tx+count +2; // contabiliza dois pacotes 
+         
           /* Save tx timestamp */
           tx_start_time = current_slot_start + tsch_timing[tsch_ts_tx_offset];
           /* calculate TX duration based on sent packet len */
@@ -573,7 +576,10 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
               /* Entering promiscuous mode so that the radio accepts the enhanced ACK */
               NETSTACK_RADIO.get_value(RADIO_PARAM_RX_MODE, &radio_rx_mode);
               NETSTACK_RADIO.set_value(RADIO_PARAM_RX_MODE, radio_rx_mode & (~RADIO_RX_MODE_ADDRESS_FILTER));
-#endif /* TSCH_HW_FRAME_FILTERING */
+#endif /* TSCH_HW_FRAME_FILTERING */ 
+
+              // necessita configuração para ack de cada caso  
+
               /* Unicast: wait for ack after tx: sleep until ack time */
               TSCH_SCHEDULE_AND_YIELD(pt, t, current_slot_start,
                   tsch_timing[tsch_ts_tx_offset] + tx_duration + tsch_timing[tsch_ts_rx_ack_delay] - RADIO_DELAY_BEFORE_RX, "TxBeforeAck");
@@ -667,10 +673,14 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     tsch_radio_off(TSCH_RADIO_CMD_OFF_END_OF_TIMESLOT);
 
     current_packet->transmissions++;
-    current_packet->ret = mac_tx_status;
+    current_packet->ret = mac_tx_status; 
+
+    next_packet->transmissions++; 
+    next_packet->ret = mac_tx_status;  
 
     /* Post TX: Update neighbor queue state */
-    in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);
+    in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 
+    in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 
 
     /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
     if(in_queue == 0) {
@@ -694,13 +704,30 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
         linkaddr_copy(&log->tx.dest, queuebuf_addr(current_packet->qb, PACKETBUF_ADDR_RECEIVER));
         log->tx.seqno = queuebuf_attr(current_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
     );
+    
+
+     TSCH_LOG_ADD(tsch_log_tx,
+        log->tx.mac_tx_status = mac_tx_status;
+        log->tx.num_tx = next_packet->transmissions;
+        log->tx.datalen = queuebuf_datalen(next_packet->qb);
+        log->tx.drift = drift_correction;
+        log->tx.drift_used = is_drift_correction_used;
+        log->tx.is_data = ((((uint8_t *)(queuebuf_dataptr(next_packet->qb)))[0]) & 7) == FRAME802154_DATAFRAME;
+#if LLSEC802154_ENABLED
+        log->tx.sec_level = queuebuf_attr(next_packet->qb, PACKETBUF_ATTR_SECURITY_LEVEL);
+#else /* LLSEC802154_ENABLED */
+        log->tx.sec_level = 0;
+#endif /* LLSEC802154_ENABLED */
+        linkaddr_copy(&log->tx.dest, queuebuf_addr(next_packet->qb, PACKETBUF_ADDR_RECEIVER));
+        log->tx.seqno = queuebuf_attr(next_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
+    );
 
     /* Poll process for later processing of packet sent events and logs */
     process_poll(&tsch_pending_events_process);
   }
 
   TSCH_DEBUG_TX_EVENT();
-
+ 
   PT_END(pt);
 }
 /*---------------------------------------------------------------------------*/

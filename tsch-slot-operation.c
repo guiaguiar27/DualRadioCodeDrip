@@ -735,7 +735,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
   PT_END(pt);
 }
 /*---------------------------------------------------------------------------*/
-staticn
+static
 PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 {
   /**
@@ -747,12 +747,14 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
    * 5. Drift calculated in the ACK callback registered with the radio driver. Use it if receiving from a time source neighbor.
    **/
 
-  struct tsch_neighbor *;
+  struct tsch_neighbor *n; 
+
   static linkaddr_t source_address; 
 
   // talvez seja necessario dois sources address 
    
-  staic linkaddr_t source_address2;
+  //static linkaddr_t source_address2; 
+
   static linkaddr_t destination_address;
   static int16_t input_index;
   static int input_queue_drop = 0;
@@ -768,6 +770,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 
     static struct input_packet *current_input; 
     // segundo pacote 
+    
     static struct input_packet *second_input;  
     
     /* Estimated drift based on RX time */
@@ -782,9 +785,13 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
     /* Default start time: expected Rx time */
     rx_start_time = expected_rx_time;
 
-    current_input = &input_array[input_index];  
-    
+    current_input = &input_array[input_index+1];   
+
+
     printf("Current input: %p \n", current_input);  
+
+    second_input = &input_array[input_index]; 
+    printf("Next input: %p \n", second_input); 
 
     /* Wait before starting to listen */
     TSCH_SCHEDULE_AND_YIELD(pt, t, current_slot_start, tsch_timing[tsch_ts_rx_offset] - RADIO_DELAY_BEFORE_RX, "RxBeforeListen");

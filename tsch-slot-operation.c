@@ -825,7 +825,8 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         static frame802154_t frame;
         radio_value_t radio_last_rssi;
         
-        /* Read packet */
+        /* Read packet */ 
+        printf("[tsch-slot-operation] Read packet\n");
         current_input->len = NETSTACK_RADIO.read((void *)current_input->payload, TSCH_PACKET_MAX_LEN);
            NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &radio_last_rssi);
         current_input->rx_asn = tsch_current_asn;

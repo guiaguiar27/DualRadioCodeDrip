@@ -391,9 +391,19 @@ transmit_packet(unsigned short len, unsigned short len_2)
 /*---------------------------------------------------------------------------*/
 static int
 receiving_packet(void)
-{
- if(simReceiving == 1 || simReceivingDummy == 1 ){ return 1; }
-else return 0;
+{ 
+ 
+  if(simReceiving == 1 || simReceivingDummy == 1 ){ 
+    if(simReceiving == 1 && simReceivingDummy == 1 ) 
+      printf("[Receiving_packet] Radio1: On and Radio2: On \n");
+    if(simReiciving == 1 )
+      printf("[Receiving_packet] Radio1: On\n");     
+    if(simReceivingDummy == 1) 
+      printf("[Receiving_packet] Radio2: On\n");
+      
+      return 1;  
+    }
+  else return 0;
  
 }
 /*---------------------------------------------------------------------------*/

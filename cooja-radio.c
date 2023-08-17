@@ -212,7 +212,7 @@ doInterfaceActionsAfterTick(void)
 }
 /*---------------------------------------------------------------------------*/
 static int
-radio_read(void *buf, unsigned short bufsize)
+radio_read(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2)
 {
   int tmp = simInSize;
   int tmp1 = simInSizeDummy;
@@ -220,6 +220,12 @@ radio_read(void *buf, unsigned short bufsize)
     return 0;
   }
   
+
+  //  combinação  
+  // como n sei se o pacote x vai para radio y farei combinação  
+
+  // flush dos radios  
+
   if(bufsize < simInSize && bufsize < simInSizeDummy) {
     simInSize = 0; /* rx flush */
     simInSizeDummy = 0; /* rx flush */
@@ -230,7 +236,19 @@ radio_read(void *buf, unsigned short bufsize)
   }
   else if(bufsize < simInSizeDummy) {
     simInSizeDummy = 0; /* rx flush */
-  }        
+  }          
+  if(bufsize2 < simInSize && bufsize2 < simInSizeDummy) {
+    simInSize = 0; /* rx flush */
+    simInSizeDummy = 0; /* rx flush */
+    return 0;
+  }     
+  else if(bufsize2 < simInSize) {
+    simInSize = 0; /* rx flush */
+  }
+  else if(bufsize2 < simInSizeDummy) {
+    simInSizeDummy = 0; /* rx flush */
+  } 
+
 
   if(simInDataBuffer[2]==simInDataBufferDummy[2])
   {
@@ -238,8 +256,10 @@ radio_read(void *buf, unsigned short bufsize)
 	  {
     	  	dual++;
 	  	printf("Radio1 = %i Radio2 = %i Dual = %i\n",radio1,radio2,dual);
-  	  }
-	  memcpy(buf, simInDataBuffer, simInSize);
+  	  } 
+    // nova mod  -  quando os radios captam ambos - os pacotes são redirecionados  
+	  memcpy(buf, simInDataBuffer, simInSize);  
+    memcpy(buf2,simInDataBufferDummy, simInSizeDummy); 
 	  simInSize = 0;
           simInSizeDummy = 0;
 	  if(!poll_mode) {
@@ -274,7 +294,7 @@ radio_read(void *buf, unsigned short bufsize)
           	printf("Radio1 = %i Radio2 = %i Dual = %i\n",radio1,radio2,dual);
           }
 	  simLastPacketTimestamp = simLastPacketTimestampDummy;
-	  memcpy(buf, simInDataBufferDummy, simInSizeDummy);
+	  memcpy(buf2, simInDataBufferDummy, simInSizeDummy);
 	  simInSize = 0;
           simInSizeDummy = 0;
 	  if(!poll_mode) {
@@ -392,13 +412,13 @@ transmit_packet(unsigned short len, unsigned short len_2)
 static int
 receiving_packet(void)
 { 
- 
+  // verificacao dos radios 
   if(simReceiving == 1 || simReceivingDummy == 1 ){ 
     if(simReceiving == 1 && simReceivingDummy == 1 ) 
       printf("[Receiving_packet] Radio1: On and Radio2: On \n");
-    if(simReiciving == 1 )
+    else if(simReceiving == 1 )
       printf("[Receiving_packet] Radio1: On\n");     
-    if(simReceivingDummy == 1) 
+    else if(simReceivingDummy == 1) 
       printf("[Receiving_packet] Radio2: On\n");
       
       return 1;  

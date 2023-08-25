@@ -756,13 +756,15 @@ PT_THREAD(tsch_scan(struct pt *pt))
     
     if(is_packet_pending) {
       /* Read packet */
-      printf("Right channel match %i or %i\n", current_channel,scan_channeldummy);
-      input_eb.len = NETSTACK_RADIO.read(input_eb.payload, TSCH_PACKET_MAX_LEN);
+      printf("Right channel match %i or %i\n", current_channel,scan_channeldummy); 
+      
+      //input_eb.len = NETSTACK_RADIO.read(input_eb.payload, TSCH_PACKET_MAX_LEN);
          /* Save packet timestamp */
       NETSTACK_RADIO.get_object(RADIO_PARAM_LAST_PACKET_TIMESTAMPContikiRadio, &t0, sizeof(rtimer_clock_t));
 
       /* Parse EB and attempt to associate */
-      LOG_INFO("scan: received packet (%u bytes) on channel %u\n", input_eb.len, current_channel);
+      #LOG_INFO("scan: received packet (%u bytes) on channel %u\n", input_eb.len, current_channel);
+      LOG_INFO("scan: received packet on channel %u\n", input_eb.len, current_channel);
 
       tsch_associate(&input_eb, t0);
       }

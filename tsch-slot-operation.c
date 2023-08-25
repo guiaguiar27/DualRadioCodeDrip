@@ -788,12 +788,12 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
     current_input = &input_array[input_index+1];   
 
 
-    printf("Current input: %p \n", current_input);  
-
-    second_input = &input_array[input_index]; 
-    printf("Next input: %p \n", second_input); 
-
-    /* Wait before starting to listen */
+    second_input = &input_array[input_index];  
+    // debug  
+    //printf("Next input: %p \n", second_input); 
+    //printf("Current input: %p \n", current_input);  
+     
+     /* Wait before starting to listen */
     TSCH_SCHEDULE_AND_YIELD(pt, t, current_slot_start, tsch_timing[tsch_ts_rx_offset] - RADIO_DELAY_BEFORE_RX, "RxBeforeListen");
     TSCH_DEBUG_RX_EVENT();
 
@@ -828,7 +828,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         /* Read packet */ 
         printf("[tsch-slot-operation] Read packet\n");
         current_input->len = NETSTACK_RADIO.read((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN);
-           NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &radio_last_rssi);
+        NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &radio_last_rssi);
         current_input->rx_asn = tsch_current_asn;
         current_input->rssi = (signed)radio_last_rssi;
         current_input->channel = current_channel;
@@ -836,6 +836,12 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         frame_valid = header_len > 0 &&
           frame802154_check_dest_panid(&frame) &&
           frame802154_extract_linkaddr(&frame, &source_address, &destination_address);
+        // adaptation for the second packt  
+
+        /*  
+        
+        
+        */ 
 
 #if TSCH_RESYNC_WITH_SFD_TIMESTAMPS
         /* At the end of the reception, get an more accurate estimate of SFD arrival time */
@@ -930,11 +936,12 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
                 ///  
                 //// 
                 //// Precisa estar ativado 
-                 /////  Só está comentado para debug  
-                 ///// *****************************************
+                /////  Só está comentado para debug  
+                ///// *****************************************
                 //NETSTACK_RADIO.transmit(ack_len); 
                 //////////////////// ******************************************8
-                tsch_radio_off(TSCH_RADIO_CMD_OFF_WITHIN_TIMESLOT);
+                tsch_radio_off(TSCH_RADIO_CMD_OFF_WITHIN_TIMESLOT); 
+
               }
             }
 

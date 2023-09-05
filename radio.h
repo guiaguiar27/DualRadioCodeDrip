@@ -238,16 +238,16 @@ struct radio_driver {
   int (* init)(void);
 
   /** Prepare the radio with a packet to be sent. */
-  int (* prepare)(const void *payload, unsigned short payload_len, const void *payload_2, unsigned short payload_len_2);
+  int (* prepare)(const void *payload, unsigned short payload_len, const void *payload2, unsigned short payload_len2);
 
   /** Send the packet that has previously been prepared. */
-  int (* transmit)(unsigned short transmit_len, unsigned short transmit_len_2);
+  int (* transmit)(unsigned short transmit_len, unsigned short transmit_len2);
 
   /** Prepare & transmit a packet. */
-  int (* send)(const void *payload, unsigned short payload_len, const void *payload_2, unsigned short payload_len_2);
+  int (* send)(const void *payload, unsigned short payload_len, const void *payload2, unsigned short payload_len2);
 
   /** Read a received packet into a buffer. */
-  int (* read)(void *buf, unsigned short buf_len);
+  int (* read)(void *buf, unsigned short buf_len, void *buf2, unsigned short buf_len2);
 
   /** Perform a Clear-Channel Assessment (CCA) to find out if there is
       a packet in the air or not. */

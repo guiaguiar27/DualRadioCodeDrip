@@ -187,7 +187,7 @@ doInterfaceActionsBeforeTick(void)
   if(simReceiving && simReceivingDummy)
   {
      simLastSignalStrength = simSignalStrength;
-     simLastSignalStrengthDummy = simSignalStrengthDummy;
+     simLastSignalStrengthDaummy = simSignalStrengthDummy;
      return;
   }
   else if(simReceiving && !simReceivingDummy)
@@ -196,7 +196,7 @@ doInterfaceActionsBeforeTick(void)
    }
   else
    {
-     simLastSignalStrengthDummy = simSignalStrengthDummy;  
+     simLastSignalStrengthDummy = simSignlStrengthDummy;  
    }
   if(simInSize > 0 || simInSizeDummy > 0) 
   {  

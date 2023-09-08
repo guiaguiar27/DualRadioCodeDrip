@@ -211,41 +211,47 @@ doInterfaceActionsAfterTick(void)
 
 }
 /*---------------------------------------------------------------------------*/
+static int radio_read_aux(){ 
+
+}
+
 static int
 radio_read(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2)
 {
   int tmp = simInSize;
   int tmp1 = simInSizeDummy;
-  if(simInSize <0 && simInSizeDummy <0) {
+  if(simInSize <0 && simInSizeDummy <0) { 
+
+    printf("Flush\n");
     return 0;
   }
   
-
-  //  combinação  
-  // como n sei se o pacote x vai para radio y farei combinação  
-
-  // flush dos radios  
-
   if(bufsize < simInSize && bufsize < simInSizeDummy) {
     simInSize = 0; /* rx flush */
-    simInSizeDummy = 0; /* rx flush */
+    simInSizeDummy = 0; /* rx flush */ 
+    printf("Flush\n");
     return 0;
   }     
-  else if(bufsize < simInSize) {
-    simInSize = 0; /* rx flush */
+  else if(bufsize < simInSize) { 
+    printf("No flush\n");
+    simInSize = 0; /* rx flush */ 
   }
   else if(bufsize < simInSizeDummy) {
+    printf("No flush\n");
     simInSizeDummy = 0; /* rx flush */
   }          
   if(bufsize2 < simInSize && bufsize2 < simInSizeDummy) {
     simInSize = 0; /* rx flush */
-    simInSizeDummy = 0; /* rx flush */
+    simInSizeDummy = 0; /* rx flush */ 
+    printf("Flush\n");
     return 0;
   }     
-  else if(bufsize2 < simInSize) {
+  else if(bufsize2 < simInSize){ 
+    printf("No flush\n");
     simInSize = 0; /* rx flush */
   }
-  else if(bufsize2 < simInSizeDummy) {
+  else if(bufsize2 < simInSizeDummy){ 
+    printf("No flush\n");
     simInSizeDummy = 0; /* rx flush */
   } 
 

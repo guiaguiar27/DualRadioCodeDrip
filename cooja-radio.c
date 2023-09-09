@@ -211,9 +211,6 @@ doInterfaceActionsAfterTick(void)
 
 }
 /*---------------------------------------------------------------------------*/
-static int radio_read_aux(){ 
-
-}
 
 static int
 radio_read(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2)
@@ -569,7 +566,7 @@ get_object(radio_param_t param, void *dest, size_t size)
     
     *(rtimer_clock_t *)dest = (rtimer_clock_t)simLastPacketTimestamp; 
     //GuilhermeA 
-    printf("Radio_1: Ok - Timestamp: %lu", (rtimer_clock_t)simLastPacketTimestamp);
+    printf("Radio_1: Ok - Timestamp: %lu \n", (rtimer_clock_t)simLastPacketTimestamp);
     //GuilhermeA 
     
     return RADIO_RESULT_OK;
@@ -582,7 +579,7 @@ get_object(radio_param_t param, void *dest, size_t size)
     *(rtimer_clock_t *)dest = (rtimer_clock_t)simLastPacketTimestampDummy; 
     
     //GuilhermeA 
-    printf("Radio_2: Ok - Timestamp: %lu", (rtimer_clock_t)simLastPacketTimestamp);
+    printf("Radio_2: Ok - Timestamp: %lu \n", (rtimer_clock_t)simLastPacketTimestamp);
     //GuilhermeA 
     return RADIO_RESULT_OK;
   }

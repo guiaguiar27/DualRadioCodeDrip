@@ -519,7 +519,7 @@ PROCESS_THREAD(cooja_radio_process1, ev, data)
 
     packetbuf_clear(); 
     // talvez venha com erro 
-    len = radio_read(packetbuf_dataptr(), PACKETBUF_SIZE, packetbuf_dataptr(), PACKETBUF_SIZE);
+    len = radio_read(packetbuf_dataptr(), PACKETBUF_SIZE);
     if(len > 0) {
     packetbuf_set_datalen(len);
     NETSTACK_MAC.input();  }

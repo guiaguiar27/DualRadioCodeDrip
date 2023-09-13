@@ -211,9 +211,67 @@ doInterfaceActionsAfterTick(void)
 
 }
 /*---------------------------------------------------------------------------*/
-
 static int
-radio_read(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2)
+radio_read(void *buf, unsigned short bufsize)
+{
+  int tmp = simInSize;
+  int tmp1 = simInSizeDummy;
+  if(simInSize <0 && simInSizeDummy <0) {
+    return 0;
+  }
+  
+  if(bufsize < simInSize && bufsize < simInSizeDummy) {
+    simInSize = 0; /* rx flush */
+    simInSizeDummy = 0; /* rx flush */
+    return 0;
+  }     
+  else if(bufsize < simInSize) {
+    simInSize = 0; /* rx flush */
+  }
+  else if(bufsize < simInSizeDummy) {
+    simInSizeDummy = 0; /* rx flush */
+  }        
+
+  if(simInDataBuffer[2]==simInDataBufferDummy[2])
+  {
+	  memcpy(buf, simInDataBuffer, simInSize);
+	  simInSize = 0;
+          simInSizeDummy = 0;
+	  if(!poll_mode) {
+	    packetbuf_set_attr(PACKETBUF_ATTR_RSSI, simSignalStrength);
+	    packetbuf_set_attr(PACKETBUF_ATTR_LINK_QUALITY, simLQI);
+	  }
+
+		  return tmp;
+} 
+  else if(simInSize>0)
+ {	
+    memcpy(buf, simInDataBuffer, simInSize);
+	  simInSize = 0;
+          simInSizeDummy = 0;
+	  if(!poll_mode) {
+	    packetbuf_set_attr(PACKETBUF_ATTR_RSSI, simSignalStrength);
+	    packetbuf_set_attr(PACKETBUF_ATTR_LINK_QUALITY, simLQI);
+	  }
+
+		  return tmp;
+} 
+ else
+ {
+	  
+	  simLastPacketTimestamp = simLastPacketTimestampDummy;
+	  memcpy(buf, simInDataBufferDummy, simInSizeDummy);
+	  simInSize = 0;
+          simInSizeDummy = 0;
+	  if(!poll_mode) {
+	    packetbuf_set_attr(PACKETBUF_ATTR_RSSI, simSignalStrengthDummy);
+	    packetbuf_set_attr(PACKETBUF_ATTR_LINK_QUALITY, simLQIDummy);
+	  }
+
+		  return tmp1;
+} 
+static int
+radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2)
 {
   int tmp = simInSize;
   int tmp1 = simInSizeDummy;
@@ -433,10 +491,13 @@ receiving_packet(void)
 static int
 pending_packet(void)
 { 
+  // só vai retornar falso quando ambos não estiverem disponíveis  
+  // o ideal seria que só funcionasse operação quando os dois radios pudessem enviar ou apenas 1? 
+
  if ((!simReceiving && simInSize > 0) || (!simReceivingDummy && simInSizeDummy > 0))
   { return 1;}
-  else return 0;
- // return !simReceiving && simInSize > 0;
+  else return 0; 
+  
 }
 /*---------------------------------------------------------------------------*/
 PROCESS_THREAD(cooja_radio_process1, ev, data)
@@ -456,7 +517,8 @@ PROCESS_THREAD(cooja_radio_process1, ev, data)
 
    // modificacao para alocacao de pacote duplo  
 
-    packetbuf_clear();
+    packetbuf_clear(); 
+    // talvez venha com erro 
     len = radio_read(packetbuf_dataptr(), PACKETBUF_SIZE, packetbuf_dataptr(), PACKETBUF_SIZE);
     if(len > 0) {
     packetbuf_set_datalen(len);

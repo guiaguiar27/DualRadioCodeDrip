@@ -28,10 +28,17 @@ send(const void *payload, unsigned short payload_len, const void *payload2, unsi
 }
 /*---------------------------------------------------------------------------*/
 static int
-radio_read(void *buf, unsigned short buf_len, void *buf2, unsigned short buf_len2)
+radio_read(void *buf, unsigned short buf_len)
 {
   return 0;
-}
+}  
+
+static int  
+radio_read_dual(void *buf, unsigned short buf_len, void *buf2, unsigned short buf_len2)
+{
+  return 0;
+} 
+
 /*---------------------------------------------------------------------------*/
 static int
 channel_clear(void)

@@ -248,6 +248,7 @@ struct radio_driver {
 
   /** Read a received packet into a buffer. */
   int (* read)(void *buf, unsigned short buf_len);
+  
   /** Read a received packet into a buffer. */
   int (* read_dual)(void *buf, unsigned short buf_len, void *buf2, unsigned short buf_len2);
 

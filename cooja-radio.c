@@ -269,6 +269,7 @@ radio_read(void *buf, unsigned short bufsize)
 	  }
 
 		  return tmp1;
+}  
 } 
 static int
 radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2)

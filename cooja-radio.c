@@ -214,7 +214,7 @@ doInterfaceActionsAfterTick(void)
 static int
 radio_read(void *buf, unsigned short bufsize)
 {
-  int tmp = simInSize;
+ int tmp = simInSize;
   int tmp1 = simInSizeDummy;
   if(simInSize <0 && simInSizeDummy <0) {
     return 0;
@@ -234,6 +234,11 @@ radio_read(void *buf, unsigned short bufsize)
 
   if(simInDataBuffer[2]==simInDataBufferDummy[2])
   {
+	  if(simInSize==103)
+	  {
+    	  	dual++;
+	  	printf("Radio1 = %i Radio2 = %i Dual = %i\n",radio1,radio2,dual);
+  	  }
 	  memcpy(buf, simInDataBuffer, simInSize);
 	  simInSize = 0;
           simInSizeDummy = 0;
@@ -246,7 +251,12 @@ radio_read(void *buf, unsigned short bufsize)
 } 
   else if(simInSize>0)
  {	
-    memcpy(buf, simInDataBuffer, simInSize);
+          if(simInSize==103)
+	  {
+         	 radio1++;
+         	 printf("Radio1 = %i Radio2 = %i Dual = %i\n",radio1,radio2,dual);
+	  }
+          memcpy(buf, simInDataBuffer, simInSize);
 	  simInSize = 0;
           simInSizeDummy = 0;
 	  if(!poll_mode) {
@@ -258,7 +268,11 @@ radio_read(void *buf, unsigned short bufsize)
 } 
  else
  {
-	  
+	  if(simInSizeDummy==103)
+	  {
+	  	radio2++;
+          	printf("Radio1 = %i Radio2 = %i Dual = %i\n",radio1,radio2,dual);
+          }
 	  simLastPacketTimestamp = simLastPacketTimestampDummy;
 	  memcpy(buf, simInDataBufferDummy, simInSizeDummy);
 	  simInSize = 0;
@@ -269,7 +283,8 @@ radio_read(void *buf, unsigned short bufsize)
 	  }
 
 		  return tmp1;
-}  
+} 
+   
 } 
 static int
 radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2)
@@ -520,7 +535,8 @@ PROCESS_THREAD(cooja_radio_process1, ev, data)
 
     packetbuf_clear(); 
     // talvez venha com erro 
-    len = radio_read(packetbuf_dataptr(), PACKETBUF_SIZE);
+    len = radio_read(packetbuf_dataptr(), PACKETBUF_SIZE); 
+
     if(len > 0) {
     packetbuf_set_datalen(len);
     NETSTACK_MAC.input();  }

@@ -283,8 +283,7 @@ radio_read(void *buf, unsigned short bufsize)
 	  }
 
 		  return tmp1;
-} 
-   
+}  
 } 
 static int
 radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2)
@@ -329,13 +328,8 @@ radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bu
 
   if(simInDataBuffer[2]==simInDataBufferDummy[2])
   {
-	  if(simInSize==103)
-	  {
-    	  	dual++;
-	  	printf("Radio1 = %i Radio2 = %i Dual = %i\n",radio1,radio2,dual);
-  	  } 
-    // nova mod  -  quando os radios captam ambos - os pacotes são redirecionados  
-	  memcpy(buf, simInDataBuffer, simInSize);  
+	  
+    memcpy(buf, simInDataBuffer, simInSize);  
     memcpy(buf2,simInDataBufferDummy, simInSizeDummy); 
 	  simInSize = 0;
           simInSizeDummy = 0;
@@ -348,14 +342,9 @@ radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bu
 } 
   else if(simInSize>0)
  {	
-          if(simInSize==103)
-	  {
-         	 radio1++;
-         	 printf("Radio1 = %i Radio2 = %i Dual = %i\n",radio1,radio2,dual);
-	  }
-          memcpy(buf, simInDataBuffer, simInSize);
+    memcpy(buf, simInDataBuffer, simInSize);
 	  simInSize = 0;
-          simInSizeDummy = 0;
+    simInSizeDummy = 0;
 	  if(!poll_mode) {
 	    packetbuf_set_attr(PACKETBUF_ATTR_RSSI, simSignalStrength);
 	    packetbuf_set_attr(PACKETBUF_ATTR_LINK_QUALITY, simLQI);
@@ -365,11 +354,6 @@ radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bu
 } 
  else
  {
-	  if(simInSizeDummy==103)
-	  {
-	  	radio2++;
-          	printf("Radio1 = %i Radio2 = %i Dual = %i\n",radio1,radio2,dual);
-          }
 	  simLastPacketTimestamp = simLastPacketTimestampDummy;
 	  memcpy(buf2, simInDataBufferDummy, simInSizeDummy);
 	  simInSize = 0;

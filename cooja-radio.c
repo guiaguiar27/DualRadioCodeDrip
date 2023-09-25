@@ -215,8 +215,8 @@ static int
 radio_read(void *buf, unsigned short bufsize)
 {
  int tmp = simInSize;
-  int tmp1 = simInSizeDummy;
-  if(simInSize <0 && simInSizeDummy <0) {
+ int tmp1 = simInSizeDummy;
+ if(simInSize <0 && simInSizeDummy <0) {
     return 0;
   }
   
@@ -661,7 +661,8 @@ const struct radio_driver cooja_radio_driver =
     prepare_packet,
     transmit_packet,
     radio_send,
-    radio_read,
+    radio_read, 
+    radio_read_dual,
     channel_clear,
     receiving_packet,
     pending_packet,

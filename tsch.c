@@ -756,14 +756,14 @@ PT_THREAD(tsch_scan(struct pt *pt))
     
     if(is_packet_pending) {
       /* Read packet */
-      printf("Right channel match %i or %i\n", current_channel,scan_channeldummy); 
+      printf("Right channel match %i or %i\n", current_channel,scan_channeldummy);
       input_eb.len = NETSTACK_RADIO.read(input_eb.payload, TSCH_PACKET_MAX_LEN);
          /* Save packet timestamp */
       NETSTACK_RADIO.get_object(RADIO_PARAM_LAST_PACKET_TIMESTAMPContikiRadio, &t0, sizeof(rtimer_clock_t));
 
       /* Parse EB and attempt to associate */
       LOG_INFO("scan: received packet (%u bytes) on channel %u\n", input_eb.len, current_channel);
-      
+
       tsch_associate(&input_eb, t0);
       }
       
@@ -785,8 +785,7 @@ PT_THREAD(tsch_scan(struct pt *pt))
 /*---------------------------------------------------------------------------*/
 /* The main TSCH process */
 PROCESS_THREAD(tsch_process, ev, data)
-{, sync %lu\n",
-      tx_count, rx_count, sync_count);
+{
   static struct pt scan_pt;
 
   PROCESS_BEGIN();
@@ -810,7 +809,8 @@ PROCESS_THREAD(tsch_process, ev, data)
      * as long as we are associated */
     PROCESS_YIELD_UNTIL(!tsch_is_associated);
 
-    LOG_WARN("leaving the network, stats: tx %lu, rx %lu
+    LOG_WARN("leaving the network, stats: tx %lu, rx %lu, sync %lu\n",
+      tx_count, rx_count, sync_count);
 
     /* Will need to re-synchronize */
     tsch_reset();

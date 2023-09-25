@@ -32,6 +32,7 @@ radio_read(void *buf, unsigned short buf_len)
 {
   return 0;
 }  
+/*---------------------------------------------------------------------------*/
 
 static int  
 radio_read_dual(void *buf, unsigned short buf_len, void *buf2, unsigned short buf_len2)
@@ -100,7 +101,8 @@ const struct radio_driver nullradio_driver =
     prepare,
     transmit,
     send,
-    radio_read,
+    radio_read, 
+    radio_read_dual, 
     channel_clear,
     receiving_packet,
     pending_packet,

@@ -213,7 +213,9 @@ doInterfaceActionsAfterTick(void)
 /*---------------------------------------------------------------------------*/
 static int
 radio_read(void *buf, unsigned short bufsize)
-{
+{ 
+ 
+printf("[Read] Start\n");
  int tmp = simInSize;
  int tmp1 = simInSizeDummy;
  if(simInSize <0 && simInSizeDummy <0) {
@@ -287,7 +289,8 @@ radio_read(void *buf, unsigned short bufsize)
 } 
 static int
 radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2)
-{
+{  
+  printf("[Read dual] Start\n"); 
   int tmp = simInSize;
   int tmp1 = simInSizeDummy;
   if(simInSize <0 && simInSizeDummy <0) { 

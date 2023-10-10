@@ -631,9 +631,7 @@ get_object(radio_param_t param, void *dest, size_t size)
     }
     
     *(rtimer_clock_t *)dest = (rtimer_clock_t)simLastPacketTimestamp; 
-    //GuilhermeA 
     printf("Radio_1: Ok - Timestamp: %lu \n", (rtimer_clock_t)simLastPacketTimestamp);
-    //GuilhermeA 
     
     return RADIO_RESULT_OK;
   }

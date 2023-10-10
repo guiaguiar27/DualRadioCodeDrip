@@ -924,13 +924,26 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 
             if(frame.fcf.ack_required) {
               static uint8_t ack_buf[TSCH_PACKET_MAX_LEN];
-              static int ack_len;
+              static int ack_len; 
+
+              static uint8_t ack_buf2[TSCH_PACKET_MAX_LEN]; 
+              static int ack_len2;  
 
               /* Build ACK frame */
               ack_len = tsch_packet_create_eack(ack_buf, sizeof(ack_buf),
-                  &source_address, frame.seq, (int16_t)RTIMERTICKS_TO_US(estimated_drift), do_nack);
+                  &source_address, frame.seq, (int16_t)RTIMERTICKS_TO_US(estimated_drift), do_nack); 
 
-              if(ack_len > 0) {
+              // from the same node sender - same source_address 
+
+              ack_len2 = tsch_packet_create_eack(ack_buf2, sizeof(ack_buf2),
+                  &source_address, frame.seq, (int16_t)RTIMERTICKS_TO_US(estimated_drift), do_nack);
+              
+
+              printf("Acklen1 =  %d - Acklen2 = %d\n",ack_len, ack_len2); 
+              
+              if(ack_len > 0  && ack_len2 > 0) {  
+
+                printf("[DEBUG] Entrou \n");
 #if LLSEC802154_ENABLED
                 if(tsch_is_pan_secured) {
                   /* Secure ACK frame. There is only header and header IEs, therefore data len == 0. */
@@ -1073,7 +1086,9 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
         /* Turn the radio on already here if configured so; necessary for radios with slow startup */
         tsch_radio_on(TSCH_RADIO_CMD_ON_START_OF_TIMESLOT);
         /* Decide whether it is a TX/RX/IDLE or OFF slot */
-        /* Actual slot operation */
+        /* Actual slot operation */ 
+
+        // start a tx slot
         if(current_packet != NULL) {
         printf("current_channel = %i and %i\n",current_channel,channelDummy);
           /* We have something to transmit, do the following:
@@ -1083,7 +1098,8 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
            **/
           static struct pt slot_tx_pt;
           PT_SPAWN(&slot_operation_pt, &slot_tx_pt, tsch_tx_slot(&slot_tx_pt, t));
-        } else {
+        } else { 
+           // start a rx slot
           /* Listen */
           static struct pt slot_rx_pt;
           PT_SPAWN(&slot_operation_pt, &slot_rx_pt, tsch_rx_slot(&slot_rx_pt, t));

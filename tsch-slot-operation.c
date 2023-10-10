@@ -940,7 +940,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
               
 
               printf("Acklen1 =  %d - Acklen2 = %d\n",ack_len, ack_len2); 
-              
+
               if(ack_len > 0  && ack_len2 > 0) {  
 
                 printf("[DEBUG] Entrou \n");
@@ -953,9 +953,11 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 
                 /* Copy to radio buffer */
                
-                 ///// *****************************************
-               // NETSTACK_RADIO.prepare((const void *)ack_buf, ack_len);
-
+                 ///// ***************************************** 
+                 // 2 acks same route, but for different packets
+                printf("[DEBUG] Preparação ack\n");
+                NETSTACK_RADIO.prepare((const void *)ack_buf, ack_len, (const void *)ack_buf2, ack_len2);
+                
                  ///// *****************************************
                 /* Wait for time to ACK and transmit ACK */
                 TSCH_SCHEDULE_AND_YIELD(pt, t, rx_start_time,
@@ -965,9 +967,10 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
                 //// 
                 //// Precisa estar ativado 
                 /////  Só está comentado para debug  
-                ///// *****************************************
-                //NETSTACK_RADIO.transmit(ack_len); 
-                //////////////////// ******************************************8
+                ///// *****************************************  
+                
+                printf("[DEBUG] Transmit ack\n");
+                NETSTACK_RADIO.transmit(ack_len, ack_len2); 
                 tsch_radio_off(TSCH_RADIO_CMD_OFF_WITHIN_TIMESLOT); 
 
               }

@@ -490,7 +490,10 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       
       // take off out of the buffer 
 
-      next_packet->qb = queuebuf_new_from_packetbuf();  
+      next_packet->qb = queuebuf_new_from_packetbuf(); 
+      // teste para averiguar o desempactamento 
+      
+      next_packet->qb = queuebuf_new_from_packetbuf();   
       packet_2 = queuebuf_dataptr(next_packet->qb);  
       packet_len_2 = queuebuf_datalen(next_packet->qb); 
       
@@ -636,6 +639,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 #endif /* LLSEC802154_ENABLED */
               }
 
+
+              
               if(ack_len != 0) {
                 if(is_time_source) {
                   int32_t eack_time_correction = US_TO_RTIMERTICKS(ack_ies.ie_time_correction);
@@ -714,7 +719,9 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
         log->tx.seqno = queuebuf_attr(current_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
     );
     
-     // log for the second packet  
+     // log for the second packet   
+     // usando mesmo drift correction   
+     //  
      TSCH_LOG_ADD(tsch_log_tx,
         log->tx.mac_tx_status = mac_tx_status;
         log->tx.num_tx = next_packet->transmissions;

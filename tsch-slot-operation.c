@@ -684,7 +684,9 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     next_packet->ret = mac_tx_status;  
 
     /* Post TX: Update neighbor queue state */
-    in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 
+    in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
+
+    // revision  
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 
 
     /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
@@ -794,8 +796,8 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 
     second_input = &input_array[input_index+1];  
     // debug  
-    //printf("Next input: %p \n", second_input); 
-    //printf("Current input: %p \n", current_input);  
+    printf("Next input: %p \n", second_input); 
+    printf("Current input: %p \n", current_input);  
      
      /* Wait before starting to listen */
     TSCH_SCHEDULE_AND_YIELD(pt, t, current_slot_start, tsch_timing[tsch_ts_rx_offset] - RADIO_DELAY_BEFORE_RX, "RxBeforeListen");
@@ -849,10 +851,10 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         printf("[tsch-slot-operation] Read second packet\n");
         second_input->len = NETSTACK_RADIO.read_dual((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN);
         NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &radio_last_rssi);
-        current_input->rx_asn = tsch_current_asn;
-        current_input->rssi = (signed)radio_last_rssi;
-        current_input->channel = current_channel;
-        header_len = frame802154_parse((uint8_t *)current_input->payload, current_input->len, &frame);
+        second_input->rx_asn = tsch_current_asn;
+        second_input->rssi = (signed)radio_last_rssi;
+        second_input->channel = current_channel;
+        header_len = frame802154_parse((uint8_t *)second_input->payload, second_input->len, &frame);
         frame_valid = header_len > 0 &&
           frame802154_check_dest_panid(&frame) &&
           frame802154_extract_linkaddr(&frame, &source_address, &destination_address);
@@ -943,7 +945,8 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 
               if(ack_len > 0  && ack_len2 > 0) {  
 
-                printf("[DEBUG] Entrou \n");
+                printf("[DEBUG] Entrou \n"); 
+
 #if LLSEC802154_ENABLED
                 if(tsch_is_pan_secured) {
                   /* Secure ACK frame. There is only header and header IEs, therefore data len == 0. */
@@ -955,8 +958,11 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
                
                  ///// ***************************************** 
                  // 2 acks same route, but for different packets
+                
                 printf("[DEBUG] Preparação ack\n");
-                NETSTACK_RADIO.prepare((const void *)ack_buf, ack_len, (const void *)ack_buf2, ack_len2);
+                // causando segmentation fault 
+
+                //NETSTACK_RADIO.prepare((const void *)ack_buf, ack_len, (const void *)ack_buf2, ack_len2);
                 
                  ///// *****************************************
                 /* Wait for time to ACK and transmit ACK */
@@ -968,9 +974,11 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
                 //// Precisa estar ativado 
                 /////  Só está comentado para debug  
                 ///// *****************************************  
-                
+
                 printf("[DEBUG] Transmit ack\n");
-                NETSTACK_RADIO.transmit(ack_len, ack_len2); 
+                //NETSTACK_RADIO.transmit(ack_len, ack_len2); 
+                // esta causando segmentation fault 
+
                 tsch_radio_off(TSCH_RADIO_CMD_OFF_WITHIN_TIMESLOT); 
 
               }
@@ -999,6 +1007,20 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
               linkaddr_copy(&log->rx.src, (linkaddr_t *)&frame.src_addr);
               log->rx.is_unicast = frame.fcf.ack_required;
               log->rx.datalen = current_input->len;
+              log->rx.drift = drift_correction;
+              log->rx.drift_used = is_drift_correction_used;
+              log->rx.is_data = frame.fcf.frame_type == FRAME802154_DATAFRAME;
+              log->rx.sec_level = frame.aux_hdr.security_control.security_level;
+              log->rx.estimated_drift = estimated_drift;
+              log->rx.seqno = frame.seq;
+            ); 
+            // log second reception  
+            // create a condition that only if the second packet arrive will log 
+            
+            TSCH_LOG_ADD(tsch_log_rx,
+              linkaddr_copy(&log->rx.src, (linkaddr_t *)&frame.src_addr);
+              log->rx.is_unicast = frame.fcf.ack_required;
+              log->rx.datalen = second_input->len;
               log->rx.drift = drift_correction;
               log->rx.drift_used = is_drift_correction_used;
               log->rx.is_data = frame.fcf.frame_type == FRAME802154_DATAFRAME;

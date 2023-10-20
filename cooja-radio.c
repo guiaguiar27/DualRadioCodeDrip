@@ -215,7 +215,7 @@ static int
 radio_read(void *buf, unsigned short bufsize)
 { 
  
-printf("[Read] Start\n");
+printf("[Read single] Start\n");
  int tmp = simInSize;
  int tmp1 = simInSizeDummy;
  if(simInSize <0 && simInSizeDummy <0) {
@@ -330,8 +330,10 @@ radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bu
 
 
   if(simInDataBuffer[2]==simInDataBufferDummy[2])
-  {
-	  
+  { 
+    printf("Radio 1 - Radio 2\n"); 
+    // copy from simDataBuffer to buf  
+    // copy from simInDataBuffer to buf2
     memcpy(buf, simInDataBuffer, simInSize);  
     memcpy(buf2,simInDataBufferDummy, simInSizeDummy); 
 	  simInSize = 0;
@@ -345,6 +347,9 @@ radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bu
 } 
   else if(simInSize>0)
  {	
+
+    // copy from simDataBuffer to buf  
+    printf("Radio 1\n");
     memcpy(buf, simInDataBuffer, simInSize);
 	  simInSize = 0;
     simInSizeDummy = 0;
@@ -356,7 +361,10 @@ radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bu
 		  return tmp;
 } 
  else
- {
+ {  
+    
+    // copy from simInDataBuffer to buf2
+    printf("Radio 2\n");
 	  simLastPacketTimestamp = simLastPacketTimestampDummy;
 	  memcpy(buf2, simInDataBufferDummy, simInSizeDummy);
 	  simInSize = 0;

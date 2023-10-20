@@ -853,7 +853,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &radio_last_rssi);
         second_input->rx_asn = tsch_current_asn;
         second_input->rssi = (signed)radio_last_rssi;
-        second_input->channel = current_channel;
+        second_input->channel = channeldummy;
         header_len = frame802154_parse((uint8_t *)second_input->payload, second_input->len, &frame);
         frame_valid = header_len > 0 &&
           frame802154_check_dest_panid(&frame) &&

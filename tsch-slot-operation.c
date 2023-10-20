@@ -863,7 +863,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         second_input->rx_asn = tsch_current_asn;
         second_input->rssi = (signed)radio_last_rssi;
         second_input->channel = channelDummy;
-        header_len = frame802154_parse((uint8_t *)second_input->payload, second_input->len, &second_frame);
+        second_header_len = frame802154_parse((uint8_t *)second_input->payload, second_input->len, &second_frame);
         frame_valid = second_header_len > 0 &&
           frame802154_check_dest_panid(&second_frame) &&
           frame802154_extract_linkaddr(&second_frame, &source_address, &destination_address);
@@ -877,10 +877,13 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         packet_duration = TSCH_PACKET_DURATION(current_input->len); 
         
 
-        if(!frame_valid) {
+        if(!frame_valid && !second_frame_valid) {
           TSCH_LOG_ADD(tsch_log_message,
               snprintf(log->message, sizeof(log->message),
-              "!failed to parse frame %u %u", header_len, current_input->len));
+              "!failed to parse frame %u %u", header_len, current_input->len)); 
+          TSCH_LOG_ADD(tsch_log_message,
+              snprintf(log->message, sizeof(log->message),
+              "!failed to parse second frame %u %u", second_header_len, second_input->len));
         }
 
         if(frame_valid) { 

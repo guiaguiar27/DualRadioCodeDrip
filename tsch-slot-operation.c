@@ -491,9 +491,6 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       // take off out of the buffer 
 
       next_packet->qb = queuebuf_new_from_packetbuf(); 
-      // teste para averiguar o desempactamento 
-      
-      next_packet->qb = queuebuf_new_from_packetbuf();   
       packet_2 = queuebuf_dataptr(next_packet->qb);  
       packet_len_2 = queuebuf_datalen(next_packet->qb); 
       

@@ -169,7 +169,8 @@ static rtimer_clock_t volatile current_slot_start;
 static volatile int tsch_in_slot_operation = 0;
 
 /* If we are inside a slot, this tells the current channel */
-static uint8_t current_channel;
+static uint8_t current_channel; 
+static int channelDummy=0;
 /* Info about the link, packet and neighbor of
  * the current (or next) slot */
 struct tsch_link *current_link = NULL;
@@ -1059,7 +1060,6 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
 {
   TSCH_DEBUG_INTERRUPT();
   PT_BEGIN(&slot_operation_pt);
-  static int channelDummy=0;
 
   /* Loop over all active slots */
   while(tsch_is_associated) {

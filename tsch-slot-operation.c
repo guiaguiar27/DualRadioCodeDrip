@@ -879,13 +879,15 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 #endif
 
         packet_duration = TSCH_PACKET_DURATION(current_input->len); 
-        
 
-        if(!frame_valid && !second_frame_valid) {
+        if(!frame_valid) {
           TSCH_LOG_ADD(tsch_log_message,
               snprintf(log->message, sizeof(log->message),
               "!failed to parse frame %u %u", header_len, current_input->len)); 
-          TSCH_LOG_ADD(tsch_log_message,
+        }  
+
+        if(!second_frame_valid){  
+            TSCH_LOG_ADD(tsch_log_message,
               snprintf(log->message, sizeof(log->message),
               "!failed to parse second frame %u %u", second_header_len, second_input->len));
         }
@@ -909,7 +911,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
             && second_frame.fcf.frame_type != FRAME802154_BEACONFRAME)  {
               TSCH_LOG_ADD(tsch_log_message,
                   snprintf(log->message, sizeof(log->message),
-                  "!discarding second frame with type %u, len %u", second_frame.fcf.frame_type, next_input->len));
+                  "!discarding second frame with type %u, len %u", second_frame.fcf.frame_type, second_input->len));
               frame_valid = 0;
           }
         }
@@ -1057,7 +1059,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
               log->rx.datalen = second_input->len;
               log->rx.drift = drift_correction;
               log->rx.drift_used = is_drift_correction_used;
-              log->rx.is_data = secon_frame.fcf.frame_type == FRAME802154_DATAFRAME;
+              log->rx.is_data = second_frame.fcf.frame_type == FRAME802154_DATAFRAME;
               log->rx.sec_level = second_frame.aux_hdr.security_control.security_level;
               log->rx.estimated_drift = estimated_drift;
               log->rx.seqno = second_frame.seq;

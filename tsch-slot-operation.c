@@ -864,7 +864,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         printf("[tsch-slot-operation] Read second packet\n");
         second_input->len = NETSTACK_RADIO.read_dual((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN);
         NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &second_radio_last_rssi);
-        second_input->rx_asn = tsch_current_asn;
+        second_input->rx_asn = tsch_current_asn; // change the asn for the second  
         second_input->rssi = (signed)radio_last_rssi;
         second_input->channel = channelDummy;
         second_header_len = frame802154_parse((uint8_t *)second_input->payload, second_input->len, &second_frame);
@@ -890,16 +890,29 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
               "!failed to parse second frame %u %u", second_header_len, second_input->len));
         }
 
-        if(frame_valid) { 
+        if(frame_valid) {   
+          // debug
+          printf("First frame verification\n");
           if(frame.fcf.frame_type != FRAME802154_DATAFRAME
-            && frame.fcf.frame_type != FRAME802154_BEACONFRAME) {
+            && frame.fcf.frame_type != FRAME802154_BEACONFRAME)  {
               TSCH_LOG_ADD(tsch_log_message,
                   snprintf(log->message, sizeof(log->message),
                   "!discarding frame with type %u, len %u", frame.fcf.frame_type, current_input->len));
               frame_valid = 0;
           }
         }
+        if(second_frame_valid) {  
 
+          // debug
+          printf("Second frame verification\n");
+          if(second_frame.fcf.frame_type != FRAME802154_DATAFRAME
+            && second_frame.fcf.frame_type != FRAME802154_BEACONFRAME)  {
+              TSCH_LOG_ADD(tsch_log_message,
+                  snprintf(log->message, sizeof(log->message),
+                  "!discarding second frame with type %u, len %u", second_frame.fcf.frame_type, next_input->len));
+              frame_valid = 0;
+          }
+        }
 #if LLSEC802154_ENABLED
         /* Decrypt and verify incoming frame */
         if(frame_valid) {
@@ -915,14 +928,18 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
           }
         }
 #endif /* LLSEC802154_ENABLED */
+ 
+        // duvida && ou ||  
+        // se um dos frames n for valido n confirma a recepcao  
 
-        if(frame_valid) {
+        if(frame_valid && second_frame_valid) {
           if(linkaddr_cmp(&destination_address, &linkaddr_node_addr)
              || linkaddr_cmp(&destination_address, &linkaddr_null)) {
             int do_nack = 0;
-            rx_count++;
+            rx_count++; 
+            printf("rx_count:  %lu\n", rx_count);
             estimated_drift = RTIMER_CLOCK_DIFF(expected_rx_time, rx_start_time);
-
+        
 #if TSCH_TIMESYNC_REMOVE_JITTER
             /* remove jitter due to measurement errors */
             if(ABS(estimated_drift) <= TSCH_TIMESYNC_MEASUREMENT_ERROR) {
@@ -979,7 +996,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
                 printf("[DEBUG] Preparação ack\n");
                 // causando segmentation fault 
 
-                //NETSTACK_RADIO.prepare((const void *)ack_buf, ack_len, (const void *)ack_buf2, ack_len2);
+                NETSTACK_RADIO.prepare((const void *)ack_buf, ack_len, (const void *)ack_buf2, ack_len2);
                 
                  ///// *****************************************
                 /* Wait for time to ACK and transmit ACK */
@@ -993,7 +1010,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
                 ///// *****************************************  
 
                 printf("[DEBUG] Transmit ack\n");
-                //NETSTACK_RADIO.transmit(ack_len, ack_len2); 
+                NETSTACK_RADIO.transmit(ack_len, ack_len2); 
                 // esta causando segmentation fault 
 
                 tsch_radio_off(TSCH_RADIO_CMD_OFF_WITHIN_TIMESLOT); 
@@ -1036,14 +1053,14 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
             
             TSCH_LOG_ADD(tsch_log_rx,
               linkaddr_copy(&log->rx.src, (linkaddr_t *)&frame.src_addr);
-              log->rx.is_unicast = frame.fcf.ack_required;
+              log->rx.is_unicast = second_frame.fcf.ack_required;
               log->rx.datalen = second_input->len;
               log->rx.drift = drift_correction;
               log->rx.drift_used = is_drift_correction_used;
-              log->rx.is_data = frame.fcf.frame_type == FRAME802154_DATAFRAME;
-              log->rx.sec_level = frame.aux_hdr.security_control.security_level;
+              log->rx.is_data = secon_frame.fcf.frame_type == FRAME802154_DATAFRAME;
+              log->rx.sec_level = second_frame.aux_hdr.security_control.security_level;
               log->rx.estimated_drift = estimated_drift;
-              log->rx.seqno = frame.seq;
+              log->rx.seqno = second_frame.seq;
             );
           }
 

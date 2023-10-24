@@ -848,6 +848,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         current_input->rssi = (signed)radio_last_rssi;
         current_input->channel = current_channel;
         header_len = frame802154_parse((uint8_t *)current_input->payload, current_input->len, &frame);
+        printf("current header len:  %d\n",header_len);
         frame_valid = header_len > 0 &&
           frame802154_check_dest_panid(&frame) &&
           frame802154_extract_linkaddr(&frame, &source_address, &destination_address);
@@ -868,7 +869,8 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         second_input->rssi = (signed)radio_last_rssi;
         second_input->channel = channelDummy;
         second_header_len = frame802154_parse((uint8_t *)second_input->payload, second_input->len, &second_frame);
-        frame_valid = second_header_len > 0 &&
+        printf("second header len:  %d\n", second_header_len); 
+        frame_valid = second_header_len > 0 && 
           frame802154_check_dest_panid(&second_frame) &&
           frame802154_extract_linkaddr(&second_frame, &source_address, &destination_address);
        

@@ -916,7 +916,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
               TSCH_LOG_ADD(tsch_log_message,
                   snprintf(log->message, sizeof(log->message),
                   "!discarding second frame with type %u, len %u", second_frame.fcf.frame_type, second_input->len));
-              frame_valid = 0;
+              second_frame_valid = 0;
           }
         }
 #if LLSEC802154_ENABLED

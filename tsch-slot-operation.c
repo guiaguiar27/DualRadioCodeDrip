@@ -935,14 +935,16 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         }
 #endif /* LLSEC802154_ENABLED */
  
-        // duvida && ou ||  
-        // se um dos frames n for valido n confirma a recepcao  
-
-        if(frame_valid && second_frame_valid) {
+        if(frame_valid || second_frame_valid) {
           if(linkaddr_cmp(&destination_address, &linkaddr_node_addr)
              || linkaddr_cmp(&destination_address, &linkaddr_null)) {
             int do_nack = 0;
-            rx_count++; 
+            
+            if(frame_valid && second_frame_valid)
+              rx_count = rx_count +2; 
+            else 
+              rx_count++;  
+            
             printf("rx_count:  %lu\n", rx_count);
             estimated_drift = RTIMER_CLOCK_DIFF(expected_rx_time, rx_start_time);
         

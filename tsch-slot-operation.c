@@ -834,43 +834,45 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
       tsch_radio_off(TSCH_RADIO_CMD_OFF_WITHIN_TIMESLOT);
 
       if(NETSTACK_RADIO.pending_packet()) {
+        // current packet
         static int frame_valid; 
         static int header_len;
         static frame802154_t frame;
-        radio_value_t radio_last_rssi;
-        
-        
-        /* Read packet */ 
-        printf("[tsch-slot-operation] Read packet\n");
-        current_input->len = NETSTACK_RADIO.read_dual((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN);
-        NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &radio_last_rssi);
-        current_input->rx_asn = tsch_current_asn;
-        current_input->rssi = (signed)radio_last_rssi;
-        current_input->channel = current_channel;
-        header_len = frame802154_parse((uint8_t *)current_input->payload, current_input->len, &frame);
-        printf("current header len:  %d\n",header_len);
-        frame_valid = header_len > 0 &&
-          frame802154_check_dest_panid(&frame) &&
-          frame802154_extract_linkaddr(&frame, &source_address, &destination_address);
-        // adaptation for the second packt   
+        radio_value_t radio_last_rssi; 
 
-
-
+        // adaptation for the second packet
         static int second_frame_valid; 
         static int second_header_len;
         static frame802154_t second_frame;
         radio_value_t second_radio_last_rssi;
 
         
+        
+        /* Read packet first packet*/ 
+        printf("[tsch-slot-operation] Read packet\n");
+        current_input->len = NETSTACK_RADIO.read_dual((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN);
+        NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &radio_last_rssi);
+        current_input->rx_asn = tsch_current_asn;
+        current_input->rssi = (signed)radio_last_rssi;
+        current_input->channel = current_channel; 
+
         printf("[tsch-slot-operation] Read second packet\n");
         second_input->len = NETSTACK_RADIO.read_dual((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN);
         NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &second_radio_last_rssi);
         second_input->rx_asn = tsch_current_asn; // change the asn for the second  
         second_input->rssi = (signed)radio_last_rssi;
         second_input->channel = channelDummy;
+
+        header_len = frame802154_parse((uint8_t *)current_input->payload, current_input->len, &frame);
+        printf("current header len:  %d\n",header_len); 
         second_header_len = frame802154_parse((uint8_t *)second_input->payload, second_input->len, &second_frame);
         printf("second header len:  %d\n", second_header_len); 
-        frame_valid = second_header_len > 0 && 
+        
+        frame_valid = header_len > 0 &&
+          frame802154_check_dest_panid(&frame) &&
+          frame802154_extract_linkaddr(&frame, &source_address, &destination_address);
+
+        second_frame_valid = second_header_len > 0 && 
           frame802154_check_dest_panid(&second_frame) &&
           frame802154_extract_linkaddr(&second_frame, &source_address, &destination_address);
        

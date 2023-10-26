@@ -31,5 +31,12 @@ Tarefas próxima semana
 -- Tradução dos pacotes em uma camada para outra camada 
 -- Copia dos pacotes identificada  - cooja-radio linha 343  
 -- Entendimento das funções genéricas - prepare, transmit, e others... terei que entender como posso enviar dois pacotes para a copia dos radios  
--- no projeto (original) os radios enviam o mesmo dado mas recebem dados diferentes  
+-- no projeto (original) os radios enviam o mesmo dado mas recebem dados diferentes   
+
+
+-- Está dando segmentation fault (LAST)
+-- for some reason the frames are not getting accepted  - not valid frame  (primary)
+--  The second packets are always getting the len 0  (secundary)
+
+
  

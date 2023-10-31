@@ -691,7 +691,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
 
     // revision  
-    in_queue = tsch_queue_packet_sent(current_neighbor, next_packet, current_link, mac_tx_status); 
+    in_queue = tsch_queue_packet_sent(current_neighbor, next_packet, next_link, mac_tx_status); 
 
     /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
     if(in_queue == 0) {
@@ -1137,18 +1137,17 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
       if(is_active_slot) {
         /* Hop channel */
         current_channel = tsch_calculate_channel(&tsch_current_asn, current_link->channel_offset);
-        if(current_channel+5>26)
-	{
-	 channelDummy=current_channel-5;
-	 NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);
-         
-	}
-        else
-	{
-	 channelDummy=current_channel+5;
-         NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);
-        
-	}
+        // if(current_channel+5>26){
+        //   channelDummy=current_channel-5;
+        //   NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
+        // }
+        // else{
+        //   channelDummy=current_channel+5;
+        //   NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
+        // } 
+        channelDummy= tsch_calculate_channel(&tsch_current_asn, next_link->channel_offset);
+        NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);  
+
         NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNEL, current_channel);
        
         /* Turn the radio on already here if configured so; necessary for radios with slow startup */

@@ -1156,7 +1156,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
         /* Actual slot operation */ 
 
         // start a tx slot
-        if(current_packet != NULL) {
+        if(current_packet != NULL && next_packet != NULL) {
         printf("current_channel = %i and %i\n",current_channel,channelDummy);
           /* We have something to transmit, do the following:
            * 1. send

@@ -71,7 +71,7 @@
 /* TSCH debug macros, i.e. to set LEDs or GPIOs on various TSCH
  * timeslot events */ 
 
-MEMB(packet_memb, struct tsch_packet, QUEUEBUF_NUM);
+//MEMB(packet_memb, struct tsch_packet, QUEUEBUF_NUM);
  
 
 #ifndef TSCH_DEBUG_INIT
@@ -174,6 +174,7 @@ static int channelDummy=0;
 /* Info about the link, packet and neighbor of
  * the current (or next) slot */
 struct tsch_link *current_link = NULL;
+struct tsch_link *next_link = NULL;
 /* A backup link with Rx flag, overlapping with current_link.
  * If the current link is Tx-only and the Tx queue
  * is empty while executing the link, fallback to the backup link. */
@@ -455,7 +456,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
    * successful Tx or Drop) */
   dequeued_index = ringbufindex_peek_put(&dequeued_ringbuf);
   if(dequeued_index != -1) {
-    if(current_packet == NULL || current_packet->qb == NULL) {
+    if(current_packet == NULL || current_packet->qb == NULL || next_packet == NULL || next_packet->qb == NULL) {
       mac_tx_status = MAC_TX_ERR_FATAL;
     } else {
       /* packet payload */
@@ -486,11 +487,11 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
       // new packet for the same transmission
       
-      next_packet = memb_alloc(&packet_memb); 
+     //  next_packet = memb_alloc(&packet_memb); -- old
       
       // take off out of the buffer 
 
-      next_packet->qb = queuebuf_new_from_packetbuf(); 
+      //next_packet->qb = queuebuf_new_from_packetbuf();  -- old implementation 
       packet_2 = queuebuf_dataptr(next_packet->qb);  
       packet_len_2 = queuebuf_datalen(next_packet->qb); 
       
@@ -690,7 +691,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
 
     // revision  
-    in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 
+    in_queue = tsch_queue_packet_sent(current_neighbor, next_packet, current_link, mac_tx_status); 
 
     /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
     if(in_queue == 0) {
@@ -1105,7 +1106,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
   /* Loop over all active slots */
   while(tsch_is_associated) {
 
-    if(current_link == NULL || tsch_lock_requested) { /* Skip slot operation if there is no link
+    if(current_link == NULL || tsch_lock_requested || next_link == NULL) { /* Skip slot operation if there is no link
                                                           or if there is a pending request for getting the lock */
       /* Issue a log whenever skipping a slot */
       TSCH_LOG_ADD(tsch_log_message,
@@ -1125,6 +1126,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
       is_drift_correction_used = 0;
       /* Get a packet ready to be sent */
       current_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor);
+      next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor);
       /* There is no packet to send, and this link does not have Rx flag. Instead of doing
        * nothing, switch to the backup link (has Rx flag) if any. */
       if(current_packet == NULL && !(current_link->link_options & LINK_OPTION_RX) && backup_link != NULL) {
@@ -1176,7 +1178,9 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
 
     /* End of slot operation, schedule next slot or resynchronize */
 
-    /* Do we need to resynchronize? i.e., wait for EB again */
+    /* Do we need to resynchronize? i.e., wait for EB again */ 
+
+    //////////// CASE OF DESYNC 
     if(!tsch_is_coordinator && (TSCH_ASN_DIFF(tsch_current_asn, last_sync_asn) >
         (100 * TSCH_CLOCK_TO_SLOTS(TSCH_DESYNC_THRESHOLD / 100, tsch_timing[tsch_ts_timeslot_length])))) {
       TSCH_LOG_ADD(tsch_log_message,
@@ -1210,6 +1214,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
            * behavior: wake up at the next slot. */
           timeslot_diff = 1;
         }
+        
         /* Update ASN */
         TSCH_ASN_INC(tsch_current_asn, timeslot_diff);
         /* Time to next wake up */
@@ -1241,13 +1246,21 @@ tsch_slot_operation_start(void)
   TSCH_DEBUG_INIT();
   do {
     uint16_t timeslot_diff;
-    /* Get next active link */
+    /* Get next active link */ 
+    // pega o segundo link do minimal
     current_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);
+    
     if(current_link == NULL) {
       /* There is no next link. Fall back to default
        * behavior: wake up at the next slot. */
       timeslot_diff = 1;
-    }
+    }  
+    TSCH_ASN_INC(tsch_current_asn, timeslot_diff);
+    next_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);  
+    // pega o primeiro link do minimal
+
+     
+
     /* Update ASN */
     TSCH_ASN_INC(tsch_current_asn, timeslot_diff);
     /* Time to next wake up */
@@ -1267,7 +1280,7 @@ tsch_slot_operation_sync(rtimer_clock_t next_slot_start,
   tsch_current_asn = *next_slot_asn;
   last_sync_asn = tsch_current_asn;
   last_sync_time = clock_time();
-  current_link = NULL;
+  current_link = NULL; 
 }
 /*---------------------------------------------------------------------------*/
 /** @} */

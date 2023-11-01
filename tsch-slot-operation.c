@@ -174,7 +174,6 @@ static int channelDummy=0;
 /* Info about the link, packet and neighbor of
  * the current (or next) slot */
 struct tsch_link *current_link = NULL;
-
 /* A backup link with Rx flag, overlapping with current_link.
  * If the current link is Tx-only and the Tx queue
  * is empty while executing the link, fallback to the backup link. */
@@ -487,7 +486,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
       // new packet for the same transmission
       
-     next_packet = memb_alloc(&packet_memb); 
+      next_packet = memb_alloc(&packet_memb); 
       
       // take off out of the buffer 
 
@@ -689,8 +688,9 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
     /* Post TX: Update neighbor queue state */
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
-    in_queue = tsch_queue_packet_sent(current_neighbor, next_packet, current_link, mac_tx_status);  
 
+    // revision  
+    in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 
 
     /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
     if(in_queue == 0) {
@@ -834,45 +834,43 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
       tsch_radio_off(TSCH_RADIO_CMD_OFF_WITHIN_TIMESLOT);
 
       if(NETSTACK_RADIO.pending_packet()) {
-        // current packet
         static int frame_valid; 
         static int header_len;
         static frame802154_t frame;
-        radio_value_t radio_last_rssi; 
+        radio_value_t radio_last_rssi;
+        
+        
+        /* Read packet */ 
+        printf("[tsch-slot-operation] Read packet\n");
+        current_input->len = NETSTACK_RADIO.read_dual((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN);
+        NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &radio_last_rssi);
+        current_input->rx_asn = tsch_current_asn;
+        current_input->rssi = (signed)radio_last_rssi;
+        current_input->channel = current_channel;
+        header_len = frame802154_parse((uint8_t *)current_input->payload, current_input->len, &frame);
+        printf("current header len:  %d\n",header_len);
+        frame_valid = header_len > 0 &&
+          frame802154_check_dest_panid(&frame) &&
+          frame802154_extract_linkaddr(&frame, &source_address, &destination_address);
+        // adaptation for the second packt   
 
-        // adaptation for the second packet
+
+
         static int second_frame_valid; 
         static int second_header_len;
         static frame802154_t second_frame;
         radio_value_t second_radio_last_rssi;
 
         
-        
-        /* Read packet first packet*/ 
-        printf("[tsch-slot-operation] Read packet\n");
-        current_input->len = NETSTACK_RADIO.read_dual((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN);
-        NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &radio_last_rssi);
-        current_input->rx_asn = tsch_current_asn;
-        current_input->rssi = (signed)radio_last_rssi;
-        current_input->channel = current_channel; 
-
         printf("[tsch-slot-operation] Read second packet\n");
         second_input->len = NETSTACK_RADIO.read_dual((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN);
         NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &second_radio_last_rssi);
         second_input->rx_asn = tsch_current_asn; // change the asn for the second  
         second_input->rssi = (signed)radio_last_rssi;
         second_input->channel = channelDummy;
-
-        header_len = frame802154_parse((uint8_t *)current_input->payload, current_input->len, &frame);
-        printf("current header len:  %d\n",header_len); 
         second_header_len = frame802154_parse((uint8_t *)second_input->payload, second_input->len, &second_frame);
         printf("second header len:  %d\n", second_header_len); 
-        
-        frame_valid = header_len > 0 &&
-          frame802154_check_dest_panid(&frame) &&
-          frame802154_extract_linkaddr(&frame, &source_address, &destination_address);
-
-        second_frame_valid = second_header_len > 0 && 
+        frame_valid = second_header_len > 0 && 
           frame802154_check_dest_panid(&second_frame) &&
           frame802154_extract_linkaddr(&second_frame, &source_address, &destination_address);
        
@@ -916,7 +914,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
               TSCH_LOG_ADD(tsch_log_message,
                   snprintf(log->message, sizeof(log->message),
                   "!discarding second frame with type %u, len %u", second_frame.fcf.frame_type, second_input->len));
-              second_frame_valid = 0;
+              frame_valid = 0;
           }
         }
 #if LLSEC802154_ENABLED
@@ -935,16 +933,14 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         }
 #endif /* LLSEC802154_ENABLED */
  
-        if(frame_valid || second_frame_valid) {
+        // duvida && ou ||  
+        // se um dos frames n for valido n confirma a recepcao  
+
+        if(frame_valid && second_frame_valid) {
           if(linkaddr_cmp(&destination_address, &linkaddr_node_addr)
              || linkaddr_cmp(&destination_address, &linkaddr_null)) {
             int do_nack = 0;
-            
-            if(frame_valid && second_frame_valid)
-              rx_count = rx_count +2; 
-            else 
-              rx_count++;  
-            
+            rx_count++; 
             printf("rx_count:  %lu\n", rx_count);
             estimated_drift = RTIMER_CLOCK_DIFF(expected_rx_time, rx_start_time);
         
@@ -1105,7 +1101,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
   /* Loop over all active slots */
   while(tsch_is_associated) {
 
-    if(current_link == NULL || tsch_lock_requested ) { /* Skip slot operation if there is no link
+    if(current_link == NULL || tsch_lock_requested) { /* Skip slot operation if there is no link
                                                           or if there is a pending request for getting the lock */
       /* Issue a log whenever skipping a slot */
       TSCH_LOG_ADD(tsch_log_message,
@@ -1114,10 +1110,9 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
                             tsch_locked,
                             tsch_lock_requested,
                             current_link == NULL);
-      )
+      );
 
-    }  
-    else {
+    } else {
       int is_active_slot;
       TSCH_DEBUG_SLOT_START();
       tsch_in_slot_operation = 1;
@@ -1126,12 +1121,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
       is_drift_correction_used = 0;
       /* Get a packet ready to be sent */
       current_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor);
-      // 
-      // Apenas para teste
-      //printf("Test:  Packets in queue1: %i\n", tsch_queue_packet_count(&current_link->addr));
-
-
-      /* There is no packet to send, and this link does not have Rx flag. Instead f doing
+      /* There is no packet to send, and this link does not have Rx flag. Instead of doing
        * nothing, switch to the backup link (has Rx flag) if any. */
       if(current_packet == NULL && !(current_link->link_options & LINK_OPTION_RX) && backup_link != NULL) {
         current_link = backup_link;
@@ -1141,17 +1131,18 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
       if(is_active_slot) {
         /* Hop channel */
         current_channel = tsch_calculate_channel(&tsch_current_asn, current_link->channel_offset);
-        if(current_channel+5>26){
-          channelDummy=current_channel-5;
-          NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
-        }
-        else{
-          channelDummy=current_channel+5;
-          NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
-        }  
-
-        NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);  
-
+        if(current_channel+5>26)
+	{
+	 channelDummy=current_channel-5;
+	 NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);
+         
+	}
+        else
+	{
+	 channelDummy=current_channel+5;
+         NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);
+        
+	}
         NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNEL, current_channel);
        
         /* Turn the radio on already here if configured so; necessary for radios with slow startup */
@@ -1160,7 +1151,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
         /* Actual slot operation */ 
 
         // start a tx slot
-        if(current_packet != NULL && next_packet != NULL) {
+        if(current_packet != NULL) {
         printf("current_channel = %i and %i\n",current_channel,channelDummy);
           /* We have something to transmit, do the following:
            * 1. send
@@ -1181,9 +1172,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
 
     /* End of slot operation, schedule next slot or resynchronize */
 
-    /* Do we need to resynchronize? i.e., wait for EB again */ 
-
-    //////////// CASE OF DESYNC 
+    /* Do we need to resynchronize? i.e., wait for EB again */
     if(!tsch_is_coordinator && (TSCH_ASN_DIFF(tsch_current_asn, last_sync_asn) >
         (100 * TSCH_CLOCK_TO_SLOTS(TSCH_DESYNC_THRESHOLD / 100, tsch_timing[tsch_ts_timeslot_length])))) {
       TSCH_LOG_ADD(tsch_log_message,
@@ -1217,7 +1206,6 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
            * behavior: wake up at the next slot. */
           timeslot_diff = 1;
         }
-        
         /* Update ASN */
         TSCH_ASN_INC(tsch_current_asn, timeslot_diff);
         /* Time to next wake up */
@@ -1249,18 +1237,13 @@ tsch_slot_operation_start(void)
   TSCH_DEBUG_INIT();
   do {
     uint16_t timeslot_diff;
-    /* Get next active link */ 
-    // pega o segundo link do minimal
+    /* Get next active link */
     current_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);
-    
     if(current_link == NULL) {
       /* There is no next link. Fall back to default
        * behavior: wake up at the next slot. */
       timeslot_diff = 1;
-    }    
-
-     
-
+    }
     /* Update ASN */
     TSCH_ASN_INC(tsch_current_asn, timeslot_diff);
     /* Time to next wake up */
@@ -1280,7 +1263,7 @@ tsch_slot_operation_sync(rtimer_clock_t next_slot_start,
   tsch_current_asn = *next_slot_asn;
   last_sync_asn = tsch_current_asn;
   last_sync_time = clock_time();
-  current_link = NULL; 
+  current_link = NULL;
 }
 /*---------------------------------------------------------------------------*/
 /** @} */

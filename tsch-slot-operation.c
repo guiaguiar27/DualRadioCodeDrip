@@ -1126,7 +1126,10 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
       is_drift_correction_used = 0;
       /* Get a packet ready to be sent */
       current_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor);
-      next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor);
+      next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor); 
+      printf("Test:  Packets in queue1: %i\n", tsch_queue_packet_count(current_link->addr));
+      printf("Test:  Packets in queue2: %i\n", tsch_queue_packet_count(next_link->addr));
+
       /* There is no packet to send, and this link does not have Rx flag. Instead of doing
        * nothing, switch to the backup link (has Rx flag) if any. */
       if(current_packet == NULL && !(current_link->link_options & LINK_OPTION_RX) && backup_link != NULL) {
@@ -1144,7 +1147,9 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
         // else{
         //   channelDummy=current_channel+5;
         //   NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
-        // } 
+        // }  
+
+        TSCH_ASN_INC(tsch_current_asn, timeslot_diff);
         channelDummy= tsch_calculate_channel(&tsch_current_asn, next_link->channel_offset);
         NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);  
 
@@ -1253,8 +1258,10 @@ tsch_slot_operation_start(void)
       /* There is no next link. Fall back to default
        * behavior: wake up at the next slot. */
       timeslot_diff = 1;
-    }  
-    TSCH_ASN_INC(tsch_current_asn, timeslot_diff);
+    }    
+    // update to take the next link 
+
+    TSCH_ASN_INC(tsch_current_asn, 1);
     next_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);  
     // pega o primeiro link do minimal
 

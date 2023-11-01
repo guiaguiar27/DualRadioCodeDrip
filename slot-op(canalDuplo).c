@@ -71,7 +71,7 @@
 /* TSCH debug macros, i.e. to set LEDs or GPIOs on various TSCH
  * timeslot events */ 
 
-MEMB(packet_memb, struct tsch_packet, QUEUEBUF_NUM);
+//MEMB(packet_memb, struct tsch_packet, QUEUEBUF_NUM);
  
 
 #ifndef TSCH_DEBUG_INIT
@@ -174,7 +174,7 @@ static int channelDummy=0;
 /* Info about the link, packet and neighbor of
  * the current (or next) slot */
 struct tsch_link *current_link = NULL;
-
+struct tsch_link *next_link = NULL;
 /* A backup link with Rx flag, overlapping with current_link.
  * If the current link is Tx-only and the Tx queue
  * is empty while executing the link, fallback to the backup link. */
@@ -456,7 +456,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
    * successful Tx or Drop) */
   dequeued_index = ringbufindex_peek_put(&dequeued_ringbuf);
   if(dequeued_index != -1) {
-    if(current_packet == NULL || current_packet->qb == NULL) {
+    if(current_packet == NULL || current_packet->qb == NULL || next_packet == NULL || next_packet->qb == NULL) {
       mac_tx_status = MAC_TX_ERR_FATAL;
     } else {
       /* packet payload */
@@ -487,11 +487,11 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
       // new packet for the same transmission
       
-     next_packet = memb_alloc(&packet_memb); -- old
+     //  next_packet = memb_alloc(&packet_memb); -- old
       
       // take off out of the buffer 
 
-      next_packet->qb = queuebuf_new_from_packetbuf();  -- old implementation 
+      //next_packet->qb = queuebuf_new_from_packetbuf();  -- old implementation 
       packet_2 = queuebuf_dataptr(next_packet->qb);  
       packet_len_2 = queuebuf_datalen(next_packet->qb); 
       
@@ -689,8 +689,9 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
     /* Post TX: Update neighbor queue state */
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
-    in_queue = tsch_queue_packet_sent(current_neighbor, next_packet, current_link, mac_tx_status);  
 
+    // revision  
+    in_queue = tsch_queue_packet_sent(current_neighbor, next_packet, next_link, mac_tx_status); 
 
     /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
     if(in_queue == 0) {
@@ -1093,7 +1094,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 
   PT_END(pt);
 }
-/*---------------------------------------------------------------------------*/
+/*---------------------------a pending request------------------------------------------------*/
 /* Protothread for slot operation, called from rtimer interrupt
  * and scheduled from tsch_schedule_slot_operation */
 static
@@ -1105,8 +1106,8 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
   /* Loop over all active slots */
   while(tsch_is_associated) {
 
-    if(current_link == NULL || tsch_lock_requested ) { /* Skip slot operation if there is no link
-                                                          or if there is a pending request for getting the lock */
+    if(current_link == NULL || tsch_lock_requested || next_link == NULL) { /* Skip slot operation if there is no link
+                                                          or if there is  for getting the lock */
       /* Issue a log whenever skipping a slot */
       TSCH_LOG_ADD(tsch_log_message,
                       snprintf(log->message, sizeof(log->message),
@@ -1125,10 +1126,11 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
       is_drift_correction_used = 0;
       /* Get a packet ready to be sent */
       current_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor);
+      next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor);  
       // 
       // Apenas para teste
       //printf("Test:  Packets in queue1: %i\n", tsch_queue_packet_count(&current_link->addr));
-
+      //printf("Test:  Packets in queue2: %i\n", tsch_queue_packet_count(&next_link->addr));
 
       /* There is no packet to send, and this link does not have Rx flag. Instead f doing
        * nothing, switch to the backup link (has Rx flag) if any. */
@@ -1140,15 +1142,17 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
       if(is_active_slot) {
         /* Hop channel */
         current_channel = tsch_calculate_channel(&tsch_current_asn, current_link->channel_offset);
-        if(current_channel+5>26){
-          channelDummy=current_channel-5;
-          NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
-        }
-        else{
-          channelDummy=current_channel+5;
-          NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
-        }  
+        // if(current_channel+5>26){
+        //   channelDummy=current_channel-5;
+        //   NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
+        // }
+        // else{
+        //   channelDummy=current_channel+5;
+        //   NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
+        // }  
 
+        TSCH_ASN_INC(tsch_current_asn, 1);
+        channelDummy= tsch_calculate_channel(&tsch_current_asn, next_link->channel_offset);
         NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);  
 
         NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNEL, current_channel);
@@ -1257,6 +1261,11 @@ tsch_slot_operation_start(void)
        * behavior: wake up at the next slot. */
       timeslot_diff = 1;
     }    
+    // update to take the next link 
+
+    TSCH_ASN_INC(tsch_current_asn, 1);
+    next_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);  
+    // pega o primeiro link do minimal
 
      
 

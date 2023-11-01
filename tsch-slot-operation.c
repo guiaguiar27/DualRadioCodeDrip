@@ -487,11 +487,11 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
       // new packet for the same transmission
       
-     next_packet = memb_alloc(&packet_memb); -- old
+     next_packet = memb_alloc(&packet_memb); 
       
       // take off out of the buffer 
 
-      next_packet->qb = queuebuf_new_from_packetbuf();  -- old implementation 
+      next_packet->qb = queuebuf_new_from_packetbuf(); 
       packet_2 = queuebuf_dataptr(next_packet->qb);  
       packet_len_2 = queuebuf_datalen(next_packet->qb); 
       
@@ -1114,9 +1114,10 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
                             tsch_locked,
                             tsch_lock_requested,
                             current_link == NULL);
-      );
+      )
 
-    } else {o
+    }  
+    else {
       int is_active_slot;
       TSCH_DEBUG_SLOT_START();
       tsch_in_slot_operation = 1;

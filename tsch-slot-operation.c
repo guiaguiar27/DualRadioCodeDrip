@@ -696,7 +696,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
     if(in_queue == 0) {
       dequeued_array[dequeued_index] = current_packet;
-      ringbufindex_put(&dequeued_ringbuf);
+      ringbufindex_put(&dequeued_ringbuf); 
+      
     }
 
     /* Log every tx attempt */
@@ -873,7 +874,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         second_input->channel = channelDummy;
         second_header_len = frame802154_parse((uint8_t *)second_input->payload, second_input->len, &second_frame);
         printf("second header len:  %d\n", second_header_len); 
-        frame_valid = second_header_len > 0 && 
+        second_frame_valid = second_header_len > 0 && 
           frame802154_check_dest_panid(&second_frame) &&
           frame802154_extract_linkaddr(&second_frame, &source_address, &destination_address);
        

@@ -179,7 +179,8 @@ struct tsch_link *current_link = NULL;
  * is empty while executing the link, fallback to the backup link. */
 static struct tsch_link *backup_link = NULL;
 static struct tsch_packet *current_packet = NULL; 
-static struct tsch_packet *next_packet = NULL;  
+static struct tsch_packet *next_packet = NULL;   
+void *free_packet = NULL;
 static struct tsch_neighbor *current_neighbor = NULL;
 
 /* Protothread for association */
@@ -690,7 +691,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
 
     // revision  
-    in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 
+    //in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 
 
     /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
     if(in_queue == 0) {
@@ -735,7 +736,9 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
         printf("Second log: %p\n",log->tx.dest); 
         linkaddr_copy(&log->tx.dest, queuebuf_addr(next_packet->qb, PACKETBUF_ADDR_RECEIVER));
         log->tx.seqno = queuebuf_attr(next_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
-    );
+    ); 
+
+    tsch_queue_free_packet(next_packet);
 
     /* Poll process for later processing of packet sent events and logs */
     process_poll(&tsch_pending_events_process);

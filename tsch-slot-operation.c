@@ -446,6 +446,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
   uint8_t in_queue;
   static int dequeued_index;
   static int packet_ready = 1;    
+  static struct tsch_packet *next_packet = NULL; 
 
   PT_BEGIN(pt);
 
@@ -468,7 +469,6 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 #endif /* LLSEC802154_ENABLED */
       /* packet payload length */ 
 
-      static struct tsch_packet *next_packet = NULL;
       static uint8_t packet_len; 
       static uint8_t packet_len_2;  
       /* packet seqno */

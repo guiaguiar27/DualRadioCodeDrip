@@ -71,7 +71,7 @@
 /* TSCH debug macros, i.e. to set LEDs or GPIOs on various TSCH
  * timeslot events */ 
 
-//MEMB(packet_memb, struct tsch_packet, QUEUEBUF_NUM);
+MEMB(packet_memb, struct tsch_packet, QUEUEBUF_NUM);
  
 
 #ifndef TSCH_DEBUG_INIT
@@ -488,12 +488,15 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
       // new packet for the same transmission
       
-      //next_packet = memb_alloc(&packet_memb); 
-      next_packet = packetbuf_dataptr(); 
-      uint8_t data[] = {0x01, 0x02, 0x03, 0x04};
-      memcpy(next_packet, data, sizeof(data));  // Copy data into the packet buffer
-      packetbuf_set_datalen(sizeof(data)); 
-      // take off out of the buffer 
+      memb_init(&packet_memb);
+      next_packet = memb_alloc(&packet_memb); 
+     
+      //next_packet = packetbuf_dataptr(); 
+      //uint8_t data[] = {0x01, 0x02, 0x03, 0x04};
+      //memcpy(next_packet, data, sizeof(data));  // Copy data into the packet buffer
+      //packetbuf_set_datalen(sizeof(data)); 
+      // take off out of the buffer  
+
 
       next_packet->qb = queuebuf_new_from_packetbuf(); 
       packet_2 = queuebuf_dataptr(next_packet->qb);  
@@ -501,7 +504,9 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       
       printf("Packet1: %p - Packet2:  %p\n",packet, packet_2);
       printf("Packet_len 1: %lu -  Packet_len 2: %lu\n", packet_len, packet_len_2); 
-      if (memcmp(packet, packet_2, packet_len) == 0) {
+      if (memcmp(packet, packet_2, packet_len) == 1) { 
+        printf("Ok\n");
+      }
       /* is this a broadcast packet? (wait for ack?) */
       is_broadcast = current_neighbor->is_broadcast;
       /* read seqno from payload */
@@ -742,8 +747,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
         linkaddr_copy(&log->tx.dest, queuebuf_addr(next_packet->qb, PACKETBUF_ADDR_RECEIVER));
         log->tx.seqno = queuebuf_attr(next_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
     ); 
-    //if(memb_free(&packet_memb, next_packet) == 0) printf("Memory free\n"); 
-    //else printf("Memory still allocated\n");
+    if(memb_free(&packet_memb, next_packet) == 0) printf("Memory free\n"); 
+    else printf("Memory still allocated\n");
 
     
 

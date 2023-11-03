@@ -739,9 +739,10 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
         linkaddr_copy(&log->tx.dest, queuebuf_addr(next_packet->qb, PACKETBUF_ADDR_RECEIVER));
         log->tx.seqno = queuebuf_attr(next_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
     ); 
-
     if(memb_free(&packet_memb, next_packet) == 0) printf("Memory free\n"); 
     else printf("Memory still allocated\n");
+
+    
 
     /* Poll process for later processing of packet sent events and logs */
     process_poll(&tsch_pending_events_process);

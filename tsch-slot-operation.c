@@ -178,8 +178,7 @@ struct tsch_link *current_link = NULL;
  * If the current link is Tx-only and the Tx queue
  * is empty while executing the link, fallback to the backup link. */
 static struct tsch_link *backup_link = NULL;
-static struct tsch_packet *current_packet = NULL; 
-static struct tsch_packet *next_packet = NULL;   
+static struct tsch_packet *current_packet = NULL;
 void *free_packet = NULL;
 static struct tsch_neighbor *current_neighbor = NULL;
 
@@ -446,7 +445,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
   /* is the packet in its neighbor's queue? */
   uint8_t in_queue;
   static int dequeued_index;
-  static int packet_ready = 1;
+  static int packet_ready = 1;    
 
   PT_BEGIN(pt);
 
@@ -467,7 +466,9 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       /* encrypted payload */
       static uint8_t encrypted_packet[TSCH_PACKET_MAX_LEN];
 #endif /* LLSEC802154_ENABLED */
-      /* packet payload length */
+      /* packet payload length */ 
+
+      static struct tsch_packet *next_packet = NULL;
       static uint8_t packet_len; 
       static uint8_t packet_len_2;  
       /* packet seqno */
@@ -739,7 +740,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
         log->tx.seqno = queuebuf_attr(next_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
     ); 
 
-    if(memb_free(&packet_memb, next_packet) == 1) printf("Memory free\n"); 
+    if(memb_free(&packet_memb, next_packet) == 0) printf("Memory free\n"); 
     else printf("Memory still allocated\n");
 
     /* Poll process for later processing of packet sent events and logs */

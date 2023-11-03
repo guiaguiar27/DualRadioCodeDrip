@@ -501,7 +501,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       
       printf("Packet1: %p - Packet2:  %p\n",packet, packet_2);
       printf("Packet_len 1: %lu -  Packet_len 2: %lu\n", packet_len, packet_len_2); 
-      if (memcmp(packet1, packet2, packet_length) == 0) {
+      if (memcmp(packet, packet_2, packet_len) == 0) {
       /* is this a broadcast packet? (wait for ack?) */
       is_broadcast = current_neighbor->is_broadcast;
       /* read seqno from payload */

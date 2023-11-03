@@ -697,7 +697,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     if(in_queue == 0) {
       dequeued_array[dequeued_index] = current_packet;
       ringbufindex_put(&dequeued_ringbuf); 
-      
+
     }
 
     /* Log every tx attempt */
@@ -739,7 +739,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
         log->tx.seqno = queuebuf_attr(next_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
     ); 
 
-    tsch_queue_free_packet(next_packet);
+    if(memb_free(&packet_memb, next_packet) == 1) printf("Memory free\n"); 
+    else printf("Memory still allocated\n");
 
     /* Poll process for later processing of packet sent events and logs */
     process_poll(&tsch_pending_events_process);

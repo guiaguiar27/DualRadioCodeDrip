@@ -1038,7 +1038,8 @@ send_packet(mac_callback_t sent, void *ptr)
   } else {
     struct tsch_packet *p;
     /* Enqueue packet */
-    p = tsch_queue_add_packet(addr, max_transmissions, sent, ptr);
+    p = tsch_queue_add_packet(addr, max_transmissions, sent, ptr); 
+    
     if(p == NULL) {
       LOG_ERR("! can't send packet to ");
       LOG_ERR_LLADDR(addr);
@@ -1125,7 +1126,7 @@ turn_off(void)
 const struct mac_driver tschmac_driver = {
   "TSCH",
   tsch_init,
-  send_packet,
+  send_packet, 
   packet_input,
   turn_on,
   turn_off

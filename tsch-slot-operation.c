@@ -443,11 +443,13 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
   /* tx status */
   static uint8_t mac_tx_status;
   /* is the packet in its neighbor's queue? */
-  uint8_t in_queue;
+  uint8_t in_queue; 
+  uint8_t in_queue2;
   static int dequeued_index;
   static int packet_ready = 1;    
   static struct tsch_packet *next_packet = NULL; 
-
+  
+  //struct queuebuf *qb;
   PT_BEGIN(pt);
 
   TSCH_DEBUG_TX_EVENT();
@@ -698,6 +700,18 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
     /* Post TX: Update neighbor queue state */
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
+
+    // revision  
+    //in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 
+
+    /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
+    if(in_queue == 0) {
+      dequeued_array[dequeued_index] = current_packet;
+      ringbufindex_put(&dequeued_ringbuf); 
+
+    } 
+
+    in_queue2 = tsch_queue_packet_sent(current_neighbor, next_packet, current_link, mac_tx_status);  
 
     // revision  
     //in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 

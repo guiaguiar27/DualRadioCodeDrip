@@ -815,12 +815,10 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 
 
     second_input = &input_array[input_index+1];  
-    // debug   
-    /*  For dubg 
+    
     printf("Next input: %p \n", second_input); 
     printf("Current input: %p \n", current_input);  
-    */ 
-
+    
      /* Wait before starting to listen */
     TSCH_SCHEDULE_AND_YIELD(pt, t, current_slot_start, tsch_timing[tsch_ts_rx_offset] - RADIO_DELAY_BEFORE_RX, "RxBeforeListen");
     TSCH_DEBUG_RX_EVENT();

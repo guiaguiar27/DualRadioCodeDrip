@@ -444,7 +444,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
   static uint8_t mac_tx_status;
   /* is the packet in its neighbor's queue? */
   uint8_t in_queue; 
-  uint8_t in_queue2;
+  //uint8_t in_queue2;
   static int dequeued_index;
   static int packet_ready = 1;    
   static struct tsch_packet *next_packet = NULL; 
@@ -763,8 +763,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
         linkaddr_copy(&log->tx.dest, queuebuf_addr(next_packet->qb, PACKETBUF_ADDR_RECEIVER));
         log->tx.seqno = queuebuf_attr(next_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
     ); 
-    if(memb_free(&packet_memb, next_packet) == 0) printf("Memory free\n"); 
-    else printf("Memory still allocated\n");
+    //if(memb_free(&packet_memb, next_packet) == 0) printf("Memory free\n"); 
+    //else printf("Memory still allocated\n");
 
     
 

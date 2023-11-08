@@ -71,7 +71,7 @@
 /* TSCH debug macros, i.e. to set LEDs or GPIOs on various TSCH
  * timeslot events */ 
 
-MEMB(packet_memb, struct tsch_packet, QUEUEBUF_NUM);
+//MEMB(packet_memb, struct tsch_packet, QUEUEBUF_NUM);
  
 
 #ifndef TSCH_DEBUG_INIT
@@ -490,8 +490,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
       // new packet for the same transmission
       
-      memb_init(&packet_memb);
-      next_packet = memb_alloc(&packet_memb); 
+      //memb_init(&packet_memb);
+      //next_packet = memb_alloc(&packet_memb); 
      
       //next_packet = packetbuf_dataptr(); 
       //uint8_t data[] = {0x01, 0x02, 0x03, 0x04};
@@ -499,8 +499,11 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       //packetbuf_set_datalen(sizeof(data)); 
       // take off out of the buffer  
 
-
-      next_packet->qb = queuebuf_new_from_packetbuf(); 
+      
+      in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
+      next_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor);
+      
+      //next_packet->qb = queuebuf_new_from_packetbuf(); 
       packet_2 = queuebuf_dataptr(next_packet->qb);  
       packet_len_2 = queuebuf_datalen(next_packet->qb); 
       
@@ -698,8 +701,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     next_packet->transmissions++; 
     next_packet->ret = mac_tx_status;  
 
-    /* Post TX: Update neighbor queue state */
-    in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
+    /* Post TX: Update neighbor queue state */  
 
     // revision  
     //in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 

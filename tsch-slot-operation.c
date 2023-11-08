@@ -713,10 +713,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
     } 
 
-    in_queue2 = tsch_queue_packet_sent(current_neighbor, next_packet, current_link, mac_tx_status);  
-
-    // revision  
-    //in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 
+    //in_queue2 = tsch_queue_packet_sent(current_neighbor, next_packet, current_link, mac_tx_status);  
+   //in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status); 
 
     /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
     if(in_queue == 0) {

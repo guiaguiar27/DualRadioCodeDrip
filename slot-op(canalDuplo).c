@@ -1255,7 +1255,13 @@ tsch_slot_operation_start(void)
     /* Get next active link */ 
     // pega o segundo link do minimal
     current_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);
-    
+    LOG_PRINT("1* Link Options %s, type %s, timeslot %u, " \
+                  "channel offset %u, address ",
+                  print_link_options(l->link_options),
+                  print_link_type(l->link_type),
+                  l->timeslot, l->channel_offset);
+        LOG_PRINT_LLADDR(&l->addr);
+        LOG_PRINT_("\n");
     if(current_link == NULL) {
       /* There is no next link. Fall back to default
        * behavior: wake up at the next slot. */
@@ -1265,7 +1271,14 @@ tsch_slot_operation_start(void)
 
     TSCH_ASN_INC(tsch_current_asn, 1);
     next_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);  
-    // pega o primeiro link do minimal
+    // pega o primeiro link do minimal 
+    LOG_PRINT("2* Link Options %s, type %s, timeslot %u, " \
+                  "channel offset %u, address ",
+                  print_link_options(l->link_options),
+                  print_link_type(l->link_type),
+                  l->timeslot, l->channel_offset);
+        LOG_PRINT_LLADDR(&l->addr);
+        LOG_PRINT_("\n");
 
      
 

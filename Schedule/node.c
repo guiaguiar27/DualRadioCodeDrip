@@ -39,7 +39,8 @@
 #include "net/mac/tsch/tsch.h"
 #include "lib/random.h"
 #include "sys/node-id.h" 
-#include "net/mac/tsch/tsch-schedule.h"
+#include "net/mac/tsch/tsch-schedule.h" 
+#include "net/routing/routing/h"
 
 #include "sys/log.h"
 #define LOG_MODULE "App"
@@ -79,7 +80,7 @@ initialize_tsch_schedule(void)
   tsch_schedule_add_link(sf_common,
       LINK_OPTION_RX | LINK_OPTION_TX | LINK_OPTION_SHARED,
       LINK_TYPE_ADVERTISING, &tsch_broadcast_address,
-      slot_offset, channel_offset, 1);
+      slot_offset, channel_offset);
 
   //for (i = 0; i < TSCH_SCHEDULE_MAX_LINKS - 1; ++i) { 
   for (i = 0 ; i < 2 ; i++){

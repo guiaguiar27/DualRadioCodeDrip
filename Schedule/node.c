@@ -38,7 +38,8 @@
 #include "net/ipv6/simple-udp.h"
 #include "net/mac/tsch/tsch.h"
 #include "lib/random.h"
-#include "sys/node-id.h"
+#include "sys/node-id.h" 
+#include "net/mac/tsch/tsch-schedule.h"
 
 #include "sys/log.h"
 #define LOG_MODULE "App"
@@ -100,8 +101,8 @@ initialize_tsch_schedule(void)
 
     tsch_schedule_add_link(sf_common,
         link_options,
-        LINK_TYPE_NORMAL, &ddr,
-        slot_offset, channel_offset, 1);
+        LINK_TYPE_NORMAL, &addr,
+        slot_offset, channel_offset);
   }
 }
 

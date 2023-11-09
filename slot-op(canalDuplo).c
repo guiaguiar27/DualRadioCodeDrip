@@ -1117,7 +1117,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
                             current_link == NULL);
       );
 
-    } else {o
+    } else {
       int is_active_slot;
       TSCH_DEBUG_SLOT_START();
       tsch_in_slot_operation = 1;

@@ -1252,10 +1252,8 @@ tsch_slot_operation_start(void)
   TSCH_DEBUG_INIT();
   do {
     uint16_t timeslot_diff;
-    /* Get next active link */ 
-    // pega o segundo link do minimal
     // current_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);
-    // printf("2* Link Options %s, timeslot %u, " \
+    // printf("2* Link Options %s, timeslot %u, " 
     //               "channel offset %u \n",
     //               current_link->link_options,
     //               current_link->timeslot, current_link->channel_offset);
@@ -1265,23 +1263,28 @@ tsch_slot_operation_start(void)
     //    * behavior: wake up at the next slot. */
     //   timeslot_diff = 1;
     // }    
-    // // update to take the next link 
+    
 
     // TSCH_ASN_INC(tsch_current_asn, 1);
-    // next_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);  
+    //  
     // // pega o primeiro link do minimal 
-    // printf("2* Link Options %u, timeslot %u, " \
+    // printf("2* Link Options %u, timeslot %u, " 
     //               "channel offset %u \n",
     //               next_link->link_options,
     //               next_link->timeslot, next_link->channel_offset);
-      
+   current_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);    
+    if(current_link == NULL) {
+      /* There is no next link. Fall back to default
+       * behavior: wake up at the next slot. */
+      timeslot_diff = 1;
+    }    
    current_link = tsch_schedule_get_link_by_handle(0);
-    printf("2* Link Options %s, timeslot %u, " \
+    printf("1 Link Options %s, timeslot %u, " \
                   "channel offset %u \n",
                   current_link->link_options,
                   current_link->timeslot, current_link->channel_offset);
     next_link = tsch_schedule_get_link_by_handle(0);  
-    printf("2* Link Options %u, timeslot %u, " \
+    printf("2 Link Options %u, timeslot %u, " \
                   "channel offset %u \n",
                   next_link->link_options,
                   next_link->timeslot, next_link->channel_offset);

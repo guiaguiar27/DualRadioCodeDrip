@@ -1255,11 +1255,10 @@ tsch_slot_operation_start(void)
     /* Get next active link */ 
     // pega o segundo link do minimal
     current_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);
-    printf("2* Link Options %s, type %s, timeslot %u, " \
+    printf("2* Link Options %s, timeslot %u, " \
                   "channel offset %u \n",
-                  print_link_options(current_link->link_options),
-                  print_link_type(curent_link->link_type),
-                  next_link->timeslot, next_link->channel_offset);
+                  current_link->link_options,
+                  current_link->timeslot, current_link->channel_offset);
 
     if(current_link == NULL) {
       /* There is no next link. Fall back to default
@@ -1271,10 +1270,9 @@ tsch_slot_operation_start(void)
     TSCH_ASN_INC(tsch_current_asn, 1);
     next_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);  
     // pega o primeiro link do minimal 
-    printf("2* Link Options %s, type %s, timeslot %u, " \
+    printf("2* Link Options %u, timeslot %u, " \
                   "channel offset %u \n",
-                  print_link_options(next_link->link_options),
-                  print_link_type(next_link->link_type),
+                  next_link->link_options,
                   next_link->timeslot, next_link->channel_offset);
         
      

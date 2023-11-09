@@ -81,7 +81,8 @@ initialize_tsch_schedule(void)
       LINK_TYPE_ADVERTISING, &tsch_broadcast_address,
       slot_offset, channel_offset, 1);
 
-  for (i = 0; i < TSCH_SCHEDULE_MAX_LINKS - 1; ++i) {
+  //for (i = 0; i < TSCH_SCHEDULE_MAX_LINKS - 1; ++i) { 
+  for (i = 0 ; i < 2 ; i++){
     uint8_t link_options;
     linkaddr_t addr;
     uint16_t remote_id = i + 1;
@@ -96,13 +97,21 @@ initialize_tsch_schedule(void)
     slot_offset = APP_UNICAST_TIMESLOT;
     channel_offset = i;
     /* Warning: LINK_OPTION_SHARED cannot be configured, as with this schedule
-     * backoff windows will not be reset correctly! */
-    link_options = remote_id == node_id ? LINK_OPTION_RX : LINK_OPTION_TX;
+     * backoff windows will not be reset correctly! */ 
+    link_options = LINK_OPTION_RX;
 
     tsch_schedule_add_link(sf_common,
         link_options,
         LINK_TYPE_NORMAL, &addr,
         slot_offset, channel_offset);
+
+    link_options =LINK_OPTION_TX;
+
+    tsch_schedule_add_link(sf_common,
+        link_options,
+        LINK_TYPE_NORMAL, &addr,
+        slot_offset, channel_offset); 
+    tsch_schedule_print();
   }
 }
 

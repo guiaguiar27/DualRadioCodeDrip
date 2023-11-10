@@ -484,7 +484,8 @@ transmit_packet(unsigned short len, unsigned short len_2)
 static int
 receiving_packet(void)
 { 
-  // verificacao dos radios 
+  // verificacao dos radios  
+  printf("[Receiving packet check module]\n");
   if(simReceiving == 1 || simReceivingDummy == 1 ){ 
     if(simReceiving == 1 && simReceivingDummy == 1 ) 
       printf("[Receiving_packet] Radio1: On and Radio2: On \n");

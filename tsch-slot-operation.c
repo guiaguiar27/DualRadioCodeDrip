@@ -445,7 +445,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
   static uint8_t mac_tx_status;
   /* is the packet in its neighbor's queue? */
   uint8_t in_queue; 
-  uint8_t in_queue2;
+  //uint8_t in_queue2;
   static int dequeued_index;
   static int packet_ready = 1;
 
@@ -692,18 +692,18 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
 
     // revision  
-    in_queue2 = tsch_queue_packet_sent(current_neighbor, next_packet, next_link, mac_tx_status); 
+    //in_queue2 = tsch_queue_packet_sent(current_neighbor, next_packet, next_link, mac_tx_status); 
 
     /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
     if(in_queue == 0) {
       dequeued_array[dequeued_index] = current_packet;
       ringbufindex_put(&dequeued_ringbuf);
     }  
-    if(in_queue2 == 0) {
-      printf("Maybe need adaptation\n");
-      dequeued_array[dequeued_index] = next_packet;
-      ringbufindex_put(&dequeued_ringbuf);
-    } 
+    // if(in_queue2 == 0) {
+    //   printf("Maybe need adaptation\n");
+    //   dequeued_array[dequeued_index] = next_packet;
+    //   ringbufindex_put(&dequeued_ringbuf);
+    // } 
     
     /* Log every tx attempt */
     TSCH_LOG_ADD(tsch_log_tx,
@@ -1145,7 +1145,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
         current_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor);
       }
       is_active_slot = current_packet != NULL || (current_link->link_options & LINK_OPTION_RX);
-      if(is_active_slot) {
+      if(is_active_slot) {R
         /* Hop channel */
         current_channel = tsch_calculate_channel(&tsch_current_asn, current_link->channel_offset);
         // if(current_channel+5>26){
@@ -1154,7 +1154,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
         // }
         // else{
         //   channelDummy=current_channel+5;
-        //   NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
+        //   NETSTACK_RADIO.set_value(RADIO_PAAM_CHANNELDummy, channelDummy);    
         // }  
 
         TSCH_ASN_INC(tsch_current_asn, 1);

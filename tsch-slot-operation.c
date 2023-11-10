@@ -444,7 +444,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
   /* tx status */
   static uint8_t mac_tx_status;
   /* is the packet in its neighbor's queue? */
-  uint8_t in_queue;
+  uint8_t in_queue; 
+  uint8_t in_queue2;
   static int dequeued_index;
   static int packet_ready = 1;
 
@@ -691,14 +692,19 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
 
     // revision  
-    in_queue = tsch_queue_packet_sent(current_neighbor, next_packet, next_link, mac_tx_status); 
+    in_queue2 = tsch_queue_packet_sent(current_neighbor, next_packet, next_link, mac_tx_status); 
 
     /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
     if(in_queue == 0) {
       dequeued_array[dequeued_index] = current_packet;
       ringbufindex_put(&dequeued_ringbuf);
-    }
-
+    }  
+    if(in_queue2 == 0) {
+      printf("Maybe need adaptation\n");
+      dequeued_array[dequeued_index] = next_packet;
+      ringbufindex_put(&dequeued_ringbuf);
+    } 
+    
     /* Log every tx attempt */
     TSCH_LOG_ADD(tsch_log_tx,
         log->tx.mac_tx_status = mac_tx_status;
@@ -758,7 +764,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
    * 4. Prepare and send ACK if needed
    * 5. Drift calculated in the ACK callback registered with the radio driver. Use it if receiving from a time source neighbor.
    **/
-
+  printf("[DEBUG] Rx thread \n");
   struct tsch_neighbor *n; 
 
   static linkaddr_t source_address; 
@@ -1255,7 +1261,7 @@ tsch_slot_operation_start(void)
     /* Get next active link */ 
     // pega o segundo link do minimal
     current_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);
-    printf("2* Link Options %s, timeslot %u, " \
+    printf("2* Link Options %u, timeslot %u, " 
                   "channel offset %u \n",
                   current_link->link_options,
                   current_link->timeslot, current_link->channel_offset);
@@ -1267,10 +1273,10 @@ tsch_slot_operation_start(void)
     }    
     // update to take the next link 
 
-    TSCH_ASN_INC(tsch_current_asn, 1);
+    TSCH_ASN_INC(tsch_current_asn, 2);
     next_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);  
     // pega o primeiro link do minimal 
-    printf("2* Link Options %u, timeslot %u, " \
+    printf("2* Link Options %u, timeslot %u, " 
                   "channel offset %u \n",
                   next_link->link_options,
                   next_link->timeslot, next_link->channel_offset);
@@ -1296,7 +1302,8 @@ tsch_slot_operation_sync(rtimer_clock_t next_slot_start,
   tsch_current_asn = *next_slot_asn;
   last_sync_asn = tsch_current_asn;
   last_sync_time = clock_time();
-  current_link = NULL; 
+  current_link = NULL;  
+  next_link = NULL;
 }
 /*---------------------------------------------------------------------------*/
 /** @} */

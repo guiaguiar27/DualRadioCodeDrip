@@ -877,7 +877,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         frame_valid = header_len > 0 &&
           frame802154_check_dest_panid(&frame) &&
           frame802154_extract_linkaddr(&frame, &source_address, &destination_address);
-
+       
         second_frame_valid = second_header_len > 0 && 
           frame802154_check_dest_panid(&second_frame) &&
           frame802154_extract_linkaddr(&second_frame, &source_address, &destination_address);
@@ -1133,8 +1133,11 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
       current_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor); 
 
       next_link =  tsch_schedule_get_link_by_handle(1); 
-      if(current_link != NULL && next_link != NULL){ 
-        printf("Current link: %d - Next link: %d\n", current_link->handle, next_link->handle);
+      if(current_link != NULL && next_link != NULL){  
+        if(current_link->handle == next_link->handle) { 
+            next_link = tsch_schedule_get_link_by_handle(0);
+        }
+        
       }
       next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor);  
       

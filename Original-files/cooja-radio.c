@@ -231,7 +231,7 @@ radio_read(void *buf, unsigned short bufsize)
     simInSizeDummy = 0; /* rx flush */
   }        
 
-  if(simInDataBuffer[2]==simInDataBufferDummy[2])
+  if(simInSize>0 && simInSizeDummy>0)
   {
 	  if(simInSize==103)
 	  {

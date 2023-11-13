@@ -503,8 +503,6 @@ receiving_packet(void)
 static int
 pending_packet(void)
 { 
-  // só vai retornar falso quando ambos não estiverem disponíveis  
-  // o ideal seria que só funcionasse operação quando os dois radios pudessem enviar ou apenas 1? 
 
  if ((!simReceiving && simInSize > 0) || (!simReceivingDummy && simInSizeDummy > 0))
   { return 1;}

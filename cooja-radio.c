@@ -485,7 +485,7 @@ static int
 receiving_packet(void)
 { 
   // verificacao dos radios  
-  printf("[Receiving packet check module]\n");
+  //printf("[Receiving packet check module]\n");
   if(simReceiving == 1 || simReceivingDummy == 1 ){ 
     if(simReceiving == 1 && simReceivingDummy == 1 ) 
       printf("[Receiving_packet] Radio1: On and Radio2: On \n");
@@ -640,7 +640,6 @@ get_object(radio_param_t param, void *dest, size_t size)
     }
     
     *(rtimer_clock_t *)dest = (rtimer_clock_t)simLastPacketTimestamp; 
-    printf("Radio_1: Ok - Timestamp: %lu \n", (rtimer_clock_t)simLastPacketTimestamp);
     
     return RADIO_RESULT_OK;
   }
@@ -651,9 +650,6 @@ get_object(radio_param_t param, void *dest, size_t size)
     
     *(rtimer_clock_t *)dest = (rtimer_clock_t)simLastPacketTimestampDummy; 
     
-    //GuilhermeA 
-    printf("Radio_2: Ok - Timestamp: %lu \n", (rtimer_clock_t)simLastPacketTimestamp);
-    //GuilhermeA 
     return RADIO_RESULT_OK;
   }
   return RADIO_RESULT_NOT_SUPPORTED;

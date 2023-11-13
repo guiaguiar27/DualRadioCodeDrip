@@ -764,7 +764,6 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
    * 4. Prepare and send ACK if needed
    * 5. Drift calculated in the ACK callback registered with the radio driver. Use it if receiving from a time source neighbor.
    **/
-  printf("[DEBUG] Rx thread \n");
   struct tsch_neighbor *n; 
 
   static linkaddr_t source_address; 
@@ -1112,7 +1111,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
   /* Loop over all active slots */
   while(tsch_is_associated) {
 
-    if(current_link == NULL || tsch_lock_requested || next_link == NULL) { /* Skip slot operation if there is no link
+    if(current_link == NULL || tsch_lock_requested) { /* Skip slot operation if there is no link
                                                           or if there is  for getting the lock */
       /* Issue a log whenever skipping a slot */
       TSCH_LOG_ADD(tsch_log_message,
@@ -1131,13 +1130,11 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
       drift_correction = 0;
       is_drift_correction_used = 0;
       /* Get a packet ready to be sent */
-      current_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor);
-      next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor);  
-      // 
-      // Apenas para teste
-      //printf("Test:  Packets in queue1: %i\n", tsch_queue_packet_count(&current_link->addr));
-      //printf("Test:  Packets in queue2: %i\n", tsch_queue_packet_count(&next_link->addr));
+      current_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor); 
 
+      
+      next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor);  
+      
       /* There is no packet to send, and this link does not have Rx flag. Instead f doing
        * nothing, switch to the backup link (has Rx flag) if any. */
       if(current_packet == NULL && !(current_link->link_options & LINK_OPTION_RX) && backup_link != NULL) {
@@ -1145,7 +1142,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
         current_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor);
       }
       is_active_slot = current_packet != NULL || (current_link->link_options & LINK_OPTION_RX);
-      if(is_active_slot) {R
+      if(is_active_slot) {
         /* Hop channel */
         current_channel = tsch_calculate_channel(&tsch_current_asn, current_link->channel_offset);
         // if(current_channel+5>26){
@@ -1157,7 +1154,6 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
         //   NETSTACK_RADIO.set_value(RADIO_PAAM_CHANNELDummy, channelDummy);    
         // }  
 
-        TSCH_ASN_INC(tsch_current_asn, 1);
         channelDummy= tsch_calculate_channel(&tsch_current_asn, next_link->channel_offset);
         NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);  
 
@@ -1261,7 +1257,7 @@ tsch_slot_operation_start(void)
     /* Get next active link */ 
     // pega o segundo link do minimal
     current_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);
-    printf("2* Link Options %u, timeslot %u, " 
+    printf("[Slot operation] Current link - Options %u, timeslot %u, " 
                   "channel offset %u \n",
                   current_link->link_options,
                   current_link->timeslot, current_link->channel_offset);
@@ -1271,19 +1267,8 @@ tsch_slot_operation_start(void)
        * behavior: wake up at the next slot. */
       timeslot_diff = 1;
     }    
-    // update to take the next link 
 
-    TSCH_ASN_INC(tsch_current_asn, 2);
-    next_link = tsch_schedule_get_next_active_link(&tsch_current_asn, &timeslot_diff, &backup_link);  
-    // pega o primeiro link do minimal 
-    printf("2* Link Options %u, timeslot %u, " 
-                  "channel offset %u \n",
-                  next_link->link_options,
-                  next_link->timeslot, next_link->channel_offset);
-        
-     
 
-    /* Update ASN */
     TSCH_ASN_INC(tsch_current_asn, timeslot_diff);
     /* Time to next wake up */
     time_to_next_active_slot = timeslot_diff * tsch_timing[tsch_ts_timeslot_length];

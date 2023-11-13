@@ -39,7 +39,9 @@ Tarefas próxima semana
 --  The second packets are always getting the len 0  (secundary)
 
 
- b3e24b8374baefb5b5575f7234dbb827087ff9ae 
 
  -- segundo in_queue está com problema 
- -- entra na rx mas n continua (priority)
+ -- entra na rx mas n continua (priority) 
+ -- não está detectando pacotes 
+ -- atualização dos asn está causando problemas de associacao  
+    -- retirar todas as atualizações 

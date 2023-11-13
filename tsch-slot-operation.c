@@ -1132,7 +1132,10 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
       /* Get a packet ready to be sent */
       current_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor); 
 
-      
+      next_link =  tsch_schedule_get_link_by_handle(1); 
+      if(current_link != NULL && next_link != NULL){ 
+        printf("Current link: %d - Next link: %d\n", current_link->handle, next_link->handle);
+      }
       next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor);  
       
       /* There is no packet to send, and this link does not have Rx flag. Instead f doing

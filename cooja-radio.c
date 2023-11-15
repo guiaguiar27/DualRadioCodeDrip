@@ -288,7 +288,7 @@ printf("[Read single] Start\n");
 }  
 } 
 static int
-radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2)
+radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2, int flag)
 {  
   printf("[Read dual] Start\n"); 
   int tmp = simInSize;
@@ -342,8 +342,10 @@ radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bu
 	    packetbuf_set_attr(PACKETBUF_ATTR_RSSI, simSignalStrength);
 	    packetbuf_set_attr(PACKETBUF_ATTR_LINK_QUALITY, simLQI);
 	  }
-
-		  return tmp;
+      if(flag == 1)
+		    return tmp; 
+      else if (flag == 2) 
+        return tmp2;
 } 
   else if(simInSize>0)
  {	

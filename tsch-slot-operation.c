@@ -691,6 +691,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
     /* Post TX: Update neighbor queue state */
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
+    // in queue for the second packet   
 
     if(in_queue == 0) 
     	in_queue = tsch_queue_packet_sent(current_neighbor, next_packet, next_link, mac_tx_status); 
@@ -1149,22 +1150,26 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
         current_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor);
       }
       is_active_slot = current_packet != NULL || (current_link->link_options & LINK_OPTION_RX);
-      if(is_active_slot) {
-        /* Hop channel */
+      if(is_active_slot) { 
+
+
         current_channel = tsch_calculate_channel(&tsch_current_asn, current_link->channel_offset);
-        if(current_channel+5>26){
-           channelDummy=current_channel-5;
-           NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
-         }
-         else{
-           channelDummy=current_channel+5;
-           NETSTACK_RADIO.set_value(RADIO_PAAM_CHANNELDummy, channelDummy);    
-         }  
-
-        NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);  
-
+        if(current_channel+5>26)
+        {
+          channelDummy=current_channel-5;
+          NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);
+                
+        }
+        else
+        {
+          channelDummy=current_channel+5;
+          NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);
+                
+        }
         NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNEL, current_channel);
-       
+              
+        /* Hop channel */
+        
         /* Turn the radio on already here if configured so; necessary for radios with slow startup */
         tsch_radio_on(TSCH_RADIO_CMD_ON_START_OF_TIMESLOT);
         /* Decide whether it is a TX/RX/IDLE or OFF slot */

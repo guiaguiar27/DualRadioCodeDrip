@@ -494,7 +494,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       
       // old implementation 
       next_packet = queuebuf_new_from_packetbuf(); 
-      
+
       packet_2 = queuebuf_dataptr(next_packet->qb);  
       packet_len_2 = queuebuf_datalen(next_packet->qb); 
       
@@ -1152,16 +1152,15 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
       if(is_active_slot) {
         /* Hop channel */
         current_channel = tsch_calculate_channel(&tsch_current_asn, current_link->channel_offset);
-        // if(current_channel+5>26){
-        //   channelDummy=current_channel-5;
-        //   NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
-        // }
-        // else{
-        //   channelDummy=current_channel+5;
-        //   NETSTACK_RADIO.set_value(RADIO_PAAM_CHANNELDummy, channelDummy);    
-        // }  
+        if(current_channel+5>26){
+           channelDummy=current_channel-5;
+           NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);    
+         }
+         else{
+           channelDummy=current_channel+5;
+           NETSTACK_RADIO.set_value(RADIO_PAAM_CHANNELDummy, channelDummy);    
+         }  
 
-        channelDummy= tsch_calculate_channel(&tsch_current_asn, next_link->channel_offset);
         NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);  
 
         NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNEL, current_channel);

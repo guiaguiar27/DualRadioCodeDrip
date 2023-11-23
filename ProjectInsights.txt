@@ -44,4 +44,7 @@ Tarefas próxima semana
  -- entra na rx mas n continua (priority) 
  -- não está detectando pacotes 
  -- atualização dos asn está causando problemas de associacao  
-    -- retirar todas as atualizações de asn
+    -- retirar todas as atualizações de asn 
+
+-- tsch_channel_calculate are returning me some error - in big networks  
+-- instead of calculate new channel using asn just use the same technique of the old approach  

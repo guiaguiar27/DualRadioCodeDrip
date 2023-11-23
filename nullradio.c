@@ -32,10 +32,9 @@ radio_read(void *buf, unsigned short buf_len)
 {
   return 0;
 }  
-/*---------------------------------------------------------------------------*/
 
 static int  
-radio_read_dual(void *buf, unsigned short buf_len, void *buf2, unsigned short buf_len2, int flag)
+radio_read_dual(void *buf, unsigned short buf_len, void *buf2, unsigned short buf_len2, int *len1, int *len2)
 {
   return 0;
 } 

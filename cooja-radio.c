@@ -213,12 +213,12 @@ doInterfaceActionsAfterTick(void)
 /*---------------------------------------------------------------------------*/
 static int
 radio_read(void *buf, unsigned short bufsize)
-{ 
- 
+{  
 printf("[Read single] Start\n");
+
  int tmp = simInSize;
- int tmp1 = simInSizeDummy;
- if(simInSize <0 && simInSizeDummy <0) {
+  int tmp1 = simInSizeDummy;
+  if(simInSize <0 && simInSizeDummy <0) {
     return 0;
   }
   
@@ -286,11 +286,12 @@ printf("[Read single] Start\n");
 
 		  return tmp1;
 }  
-} 
+}  
+
 static int
-radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2, int flag)
+radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bufsize2, int *len1, int *len2)
 {  
-  printf("[Read dual] Start\n"); 
+ printf("[radio_read_dual] starting\n");
   int tmp = simInSize;
   int tmp1 = simInSizeDummy;
   if(simInSize <0 && simInSizeDummy <0) { 
@@ -332,20 +333,20 @@ radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bu
   if(simInDataBuffer[2]==simInDataBufferDummy[2])
   { 
     printf("Radio 1 - Radio 2\n"); 
-    // copy from simDataBuffer to buf  
-    // copy from simInDataBuffer to buf2
     memcpy(buf, simInDataBuffer, simInSize);  
     memcpy(buf2,simInDataBufferDummy, simInSizeDummy); 
+     
 	  simInSize = 0;
           simInSizeDummy = 0;
 	  if(!poll_mode) {
 	    packetbuf_set_attr(PACKETBUF_ATTR_RSSI, simSignalStrength);
 	    packetbuf_set_attr(PACKETBUF_ATTR_LINK_QUALITY, simLQI);
-	  }
-      if(flag == 1)
-		    return tmp; 
-      else if (flag == 2) 
-        return tmp2;
+	  } 
+	  
+	  printf("[read_dual] tmp: %d - tmp1:%d\n",tmp, tmp1); 
+	  *len1 = tmp; 
+	  *len2 = tmp1;  
+      return tmp;
 } 
   else if(simInSize>0)
  {	
@@ -380,6 +381,7 @@ radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bu
 } 
    
 }
+
 /*---------------------------------------------------------------------------*/
 static int
 channel_clear(void)

@@ -482,22 +482,22 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 #endif
 
       /* get payload */
-      
+      //current_packet->qb = queuebuf_new_from_packetbuf(); 
       packet = queuebuf_dataptr(current_packet->qb);
       packet_len = queuebuf_datalen(current_packet->qb); 
-
-      // new packet for the same transmission
-      
+ 
      //  next_packet = memb_alloc(&packet_memb); -- old
       
       // take off out of the buffer 
 
-      //next_packet->qb = queuebuf_new_from_packetbuf();  -- old implementation 
+      //
+      
+      // old implementation 
+      
       packet_2 = queuebuf_dataptr(next_packet->qb);  
       packet_len_2 = queuebuf_datalen(next_packet->qb); 
       
-      printf("Packet1: %p - Packet2:  %p\n",packet, packet_2);
-      printf("Packet_header_len 1: %lu -  Packet_header_len 2: %lu\n", current_packet->header_len, next_packet->header_len); 
+      printf("Packet1: %p  len:  %d\n Packet2:  %p len:  %d\n", packet, packet_len, packet_2, packet_len_2);
       
       /* is this a broadcast packet? (wait for ack?) */
       is_broadcast = current_neighbor->is_broadcast;
@@ -507,10 +507,11 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       
       // modificar para o outro pacote
       if(current_neighbor == n_eb) {
-        packet_ready = tsch_packet_update_eb(packet, packet_len, current_packet->tsch_sync_ie_offset);
+        packet_ready = tsch_packet_update_eb(packet, packet_len, current_packet->tsch_sync_ie_offset); 
+        
       } else {
         packet_ready = 1;
-      }
+      } 
 
 #if LLSEC802154_ENABLED
       if(tsch_is_pan_secured) {
@@ -554,7 +555,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
           mac_tx_status = NETSTACK_RADIO.transmit(packet_len, packet_len_2);
          
           tx_count = tx_count +2; // contabiliza dois pacotes 
-         
+           
           /* Save tx timestamp */
           tx_start_time = current_slot_start + tsch_timing[tsch_ts_tx_offset];
           /* calculate TX duration based on sent packet len */
@@ -610,8 +611,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
               /* Read ack frame */ 
 
-              ack_len = 1;  
-              NETSTACK_RADIO.read((void *)ackbuf, sizeof(ackbuf));
+              ack_len = NETSTACK_RADIO.read((void *)ackbuf, sizeof(ackbuf));
               is_time_source = 0;
               /* The radio driver should return 0 if no valid packets are in the rx buffer */
               if(ack_len > 0) {
@@ -691,19 +691,18 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     /* Post TX: Update neighbor queue state */
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
 
-    // revision  
-    //in_queue2 = tsch_queue_packet_sent(current_neighbor, next_packet, next_link, mac_tx_status); 
-
-    /* The packet was dequeued, add it to dequeued_ringbuf for later processing */
+    if(in_queue == 0) 
+    	in_queue = tsch_queue_packet_sent(current_neighbor, next_packet, next_link, mac_tx_status); 
     if(in_queue == 0) {
       dequeued_array[dequeued_index] = current_packet;
-      ringbufindex_put(&dequeued_ringbuf);
+      ringbufindex_put(&dequeued_ringbuf); 
+      
+      dequeued_index = ringbufindex_peek_put(&dequeued_ringbuf); 
+      
+      dequeued_array[dequeued_index] = next_packet;
+      ringbufindex_put(&dequeued_ringbuf); 
+      
     }  
-    // if(in_queue2 == 0) {
-    //   printf("Maybe need adaptation\n");
-    //   dequeued_array[dequeued_index] = next_packet;
-    //   ringbufindex_put(&dequeued_ringbuf);
-    // } 
     
     /* Log every tx attempt */
     TSCH_LOG_ADD(tsch_log_tx,
@@ -717,8 +716,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
         log->tx.sec_level = queuebuf_attr(current_packet->qb, PACKETBUF_ATTR_SECURITY_LEVEL);
 #else /* LLSEC802154_ENABLED */
         log->tx.sec_level = 0;
-#endif /* LLSEC802154_ENABLED */ 
-        printf("First log: %p\n",log->tx.dest); 
+#endif /* LLSEC802154_ENABLED */  
         linkaddr_copy(&log->tx.dest, queuebuf_addr(current_packet->qb, PACKETBUF_ADDR_RECEIVER));
         log->tx.seqno = queuebuf_attr(current_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
     );
@@ -739,7 +737,6 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
         log->tx.sec_level = 0;
 #endif /* LLSEC802154_ENABLED */ 
 
-        printf("Second log: %p\n",log->tx.dest); 
         linkaddr_copy(&log->tx.dest, queuebuf_addr(next_packet->qb, PACKETBUF_ADDR_RECEIVER));
         log->tx.seqno = queuebuf_attr(next_packet->qb, PACKETBUF_ATTR_MAC_SEQNO);
     );
@@ -780,7 +777,9 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 
   TSCH_DEBUG_RX_EVENT();
 
-  input_index = ringbufindex_peek_put(&input_ringbuf);
+  input_index = ringbufindex_peek_put(&input_ringbuf);  
+  
+  //printf("Input index: %d\n", input_index);
   if(input_index == -1) {
     input_queue_drop++;
   } else { 
@@ -806,11 +805,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
 
 
     second_input = &input_array[input_index+1];  
-    // debug   
-    /*  For dubg 
-    printf("Next input: %p \n", second_input); 
-    printf("Current input: %p \n", current_input);  
-    */ 
+   
 
      /* Wait before starting to listen */
     TSCH_SCHEDULE_AND_YIELD(pt, t, current_slot_start, tsch_timing[tsch_ts_rx_offset] - RADIO_DELAY_BEFORE_RX, "RxBeforeListen");
@@ -838,7 +833,7 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
           current_slot_start, tsch_timing[tsch_ts_rx_offset] + tsch_timing[tsch_ts_rx_wait] + tsch_timing[tsch_ts_max_tx]);
       TSCH_DEBUG_RX_EVENT();
       tsch_radio_off(TSCH_RADIO_CMD_OFF_WITHIN_TIMESLOT);
-
+      
       if(NETSTACK_RADIO.pending_packet()) {
         // current packet
         static int frame_valid; 
@@ -855,20 +850,23 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
         
         
         /* Read packet first packet*/ 
-        printf("[tsch-slot-operation] Read packet\n");
-        current_input->len = NETSTACK_RADIO.read_dual((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN,1);
+        current_input->len = NETSTACK_RADIO.read_dual((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN,&current_input->len, &second_input->len);
         NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &radio_last_rssi);
         current_input->rx_asn = tsch_current_asn;
         current_input->rssi = (signed)radio_last_rssi;
-        current_input->channel = current_channel; 
+        current_input->channel = current_channel;  
+        printf("[tsch-slot-operation] Read packet - %d\n",current_input->len);
+        
 
-        printf("[tsch-slot-operation] Read second packet\n");
-        second_input->len = NETSTACK_RADIO.read_dual((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN,2);
+        //second_input->len = NETSTACK_RADIO.read_dual((void *)current_input->payload, TSCH_PACKET_MAX_LEN, (void *)second_input->payload, TSCH_PACKET_MAX_LEN,2); 
+        
+        
         NETSTACK_RADIO.get_value(RADIO_PARAM_LAST_RSSI, &second_radio_last_rssi);
         second_input->rx_asn = tsch_current_asn; // change the asn for the second  
         second_input->rssi = (signed)radio_last_rssi;
         second_input->channel = channelDummy;
-
+        
+        printf("[tsch-slot-operation] Read second packet - %d\n",second_input->len);
         header_len = frame802154_parse((uint8_t *)current_input->payload, current_input->len, &frame);
         printf("current header len:  %d\n",header_len); 
         second_header_len = frame802154_parse((uint8_t *)second_input->payload, second_input->len, &second_frame);
@@ -1138,7 +1136,9 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
             next_link = tsch_schedule_get_link_by_handle(0);
         }
         
-      }
+      } 
+      //next_packet = tsch_queue_get_packet_for_dest_addr(&next_link->addr,next_link); 
+      //tsch_queue_remove_packet_from_queue(current_neighbor);
       next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor);  
       
       /* There is no packet to send, and this link does not have Rx flag. Instead f doing

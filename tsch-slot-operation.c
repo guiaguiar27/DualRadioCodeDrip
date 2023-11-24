@@ -506,7 +506,7 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       seqno = ((uint8_t *)(packet))[2];
       /* if this is an EB, then update its Sync-IE */ 
       
-      // modificar para o outro pacote
+
       if(current_neighbor == n_eb) {
         packet_ready = tsch_packet_update_eb(packet, packet_len, current_packet->tsch_sync_ie_offset); 
         
@@ -692,7 +692,8 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
     /* Post TX: Update neighbor queue state */
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
     // in queue for the second packet   
-
+   // in this section, the current and the next packet are processed 
+   
     if(in_queue == 0) 
     	in_queue = tsch_queue_packet_sent(current_neighbor, next_packet, next_link, mac_tx_status); 
     if(in_queue == 0) {
@@ -1154,9 +1155,9 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
 
 
         current_channel = tsch_calculate_channel(&tsch_current_asn, current_link->channel_offset);
-        if(current_channel+5>26)
+        if(current_channel+6>26)
         {
-          channelDummy=current_channel-5;
+          channelDummy=current_channel-6;
           NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);
                 
         }

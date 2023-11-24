@@ -48,3 +48,5 @@ Tarefas próxima semana
 
 -- tsch_channel_calculate are returning me some error - in big networks  
 -- instead of calculate new channel using asn just use the same technique of the old approach  
+-- tsch_channel_calculate - gera erros para redes grandes 
+-- reparar rx_count - tamanho de variavel pequeno para os valores relacionados 

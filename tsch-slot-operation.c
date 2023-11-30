@@ -1131,10 +1131,10 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
         }
         
       } 
+       
+      next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor);    
       
-      next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor);   
-      //printf("Size buff neighbor : %d\n", current_neighbor->size_buff);  
-      
+      // since the buff has more than one two packets we can start to do the operations with double packets
       	if(current_neighbor->size_buff>2){ 
        		next_packet = current_neighbor->tx_array[current_neighbor->size_buff-1];
        		//current_packet = current_neighbor->tx_array[current_neighbor->size_buff-2];

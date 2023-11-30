@@ -330,7 +330,8 @@ radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bu
   } 
 
 
-  if(simInDataBuffer[2]==simInDataBufferDummy[2])
+  //if(simInDataBuffer[2]==simInDataBufferDummy[2]) 
+  if(bufsize > 0 && bufsize2>0)
   { 
     printf("Radio 1 - Radio 2\n"); 
     memcpy(buf, simInDataBuffer, simInSize);  
@@ -339,8 +340,12 @@ radio_read_dual(void *buf, unsigned short bufsize, void *buf2, unsigned short bu
 	  simInSize = 0;
           simInSizeDummy = 0;
 	  if(!poll_mode) {
+	    printf("no poll mode\n");
 	    packetbuf_set_attr(PACKETBUF_ATTR_RSSI, simSignalStrength);
-	    packetbuf_set_attr(PACKETBUF_ATTR_LINK_QUALITY, simLQI);
+	    packetbuf_set_attr(PACKETBUF_ATTR_LINK_QUALITY, simLQI);  
+	    
+	    //packetbuf_set_attr(PACKETBUF_ATTR_RSSI, simSignalStrengthDummy);
+	    //packetbuf_set_attr(PACKETBUF_ATTR_LINK_QUALITY, simLQIDummy);
 	  } 
 	  
 	  printf("[read_dual] tmp: %d - tmp1:%d\n",tmp, tmp1); 

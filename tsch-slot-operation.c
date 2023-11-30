@@ -486,17 +486,10 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       packet = queuebuf_dataptr(current_packet->qb);
       packet_len = queuebuf_datalen(current_packet->qb); 
  
-     //  next_packet = memb_alloc(&packet_memb); -- old
       
-      // take off out of the buffer 
-
-      //
       
-      // old implementation 
-      // next_packet->qb = queuebuf_new_from_packetbuf(); 
-
-      packet_2 = queuebuf_dataptr(next_packet->qb);  
-      packet_len_2 = queuebuf_datalen(next_packet->qb); 
+      packet_2 = queuebuf_dataptr(next_packet->qb);   
+      packet_len_2 = queuebuf_datalen(next_packet->qb);  
       
       printf("Packet1: %p  len:  %d\n Packet2:  %p len:  %d\n", packet, packet_len, packet_2, packet_len_2);
       
@@ -506,7 +499,6 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
       seqno = ((uint8_t *)(packet))[2];
       /* if this is an EB, then update its Sync-IE */ 
       
-
       if(current_neighbor == n_eb) {
         packet_ready = tsch_packet_update_eb(packet, packet_len, current_packet->tsch_sync_ie_offset); 
         
@@ -582,8 +574,6 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
               NETSTACK_RADIO.get_value(RADIO_PARAM_RX_MODE, &radio_rx_mode);
               NETSTACK_RADIO.set_value(RADIO_PARAM_RX_MODE, radio_rx_mode & (~RADIO_RX_MODE_ADDRESS_FILTER));
 #endif /* TSCH_HW_FRAME_FILTERING */ 
-
-            //necessita configuração para ack de cada caso  
 
               /* Unicast: wait for ack after tx: sleep until ack time */
               
@@ -688,12 +678,12 @@ PT_THREAD(tsch_tx_slot(struct pt *pt, struct rtimer *t))
 
     next_packet->transmissions++; 
     next_packet->ret = mac_tx_status;  
+    printf("tx: %lu - %lu\n",current_packet->transmissions,next_packet->transmissions); 
 
     /* Post TX: Update neighbor queue state */
     in_queue = tsch_queue_packet_sent(current_neighbor, current_packet, current_link, mac_tx_status);  
     // in queue for the second packet   
-   // in this section, the current and the next packet are processed 
-   
+
     if(in_queue == 0) 
     	in_queue = tsch_queue_packet_sent(current_neighbor, next_packet, next_link, mac_tx_status); 
     if(in_queue == 0) {
@@ -940,19 +930,20 @@ PT_THREAD(tsch_rx_slot(struct pt *pt, struct rtimer *t))
             frame_valid = 0;
           }
         }
-#endif /* LLSEC802154_ENABLED */
+#endif /* LLSEC802154_ENABLED */ 
+        if(frame_valid && second_frame_valid)
+             rx_count = rx_count +2; 
+        else 
+             rx_count++;  
+            
+         printf("rx_count:  %d %d %d\n", rx_count,current_input->len,second_input->len);
  
         if(frame_valid || second_frame_valid) {
           if(linkaddr_cmp(&destination_address, &linkaddr_node_addr)
              || linkaddr_cmp(&destination_address, &linkaddr_null)) {
             int do_nack = 0;
             
-            if(frame_valid && second_frame_valid)
-              rx_count = rx_count +2; 
-            else 
-              rx_count++;  
             
-            printf("rx_count:  %lu\n", rx_count);
             estimated_drift = RTIMER_CLOCK_DIFF(expected_rx_time, rx_start_time);
         
 #if TSCH_TIMESYNC_REMOVE_JITTER
@@ -1140,24 +1131,34 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
         }
         
       } 
-      //next_packet = tsch_queue_get_packet_for_dest_addr(&next_link->addr,next_link); 
-      //tsch_queue_remove_packet_from_queue(current_neighbor);
-      next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor);  
       
+      next_packet =  get_packet_and_neighbor_for_link(next_link, &current_neighbor);   
+      //printf("Size buff neighbor : %d\n", current_neighbor->size_buff);  
+      
+      	if(current_neighbor->size_buff>2){ 
+       		next_packet = current_neighbor->tx_array[current_neighbor->size_buff-1];
+       		//current_packet = current_neighbor->tx_array[current_neighbor->size_buff-2];
+      } 
+      // it'll get it out when the packet is not null and its different from the other packet
+      //printf("current: %p - next: %p\n", current_packet, next_packet);
+      
+      //printf("size = %zu\n",sizeof(dequeued_array)/sizeof(dequeued_array[0])); 
       /* There is no packet to send, and this link does not have Rx flag. Instead f doing
        * nothing, switch to the backup link (has Rx flag) if any. */
-      if(current_packet == NULL && !(current_link->link_options & LINK_OPTION_RX) && backup_link != NULL) {
+      if(current_packet == NULL && !(current_link->link_options & LINK_OPTION_RX) && backup_link != NULL) { 
+        printf("getting backup link\n");
         current_link = backup_link;
         current_packet = get_packet_and_neighbor_for_link(current_link, &current_neighbor);
-      }
+      } 
+      
       is_active_slot = current_packet != NULL || (current_link->link_options & LINK_OPTION_RX);
       if(is_active_slot) { 
 
 
         current_channel = tsch_calculate_channel(&tsch_current_asn, current_link->channel_offset);
-        if(current_channel+6>26)
+        if(current_channel+5>26)
         {
-          channelDummy=current_channel-6;
+          channelDummy=current_channel-5;
           NETSTACK_RADIO.set_value(RADIO_PARAM_CHANNELDummy, channelDummy);
                 
         }

@@ -427,7 +427,8 @@ eb_input(struct input_packet *current_input)
 /* Process pending input packet(s) */
 static void
 tsch_rx_process_pending()
-{
+{ 
+	printf("RX process pending\n");
   int16_t input_index;
   /* Loop on accessing (without removing) a pending input packet */
   while((input_index = ringbufindex_peek_get(&input_ringbuf)) != -1) {
@@ -462,7 +463,8 @@ tsch_rx_process_pending()
 /* Pass sent packets to upper layer */
 static void
 tsch_tx_process_pending(void)
-{
+{ 
+	printf("TX process pending\n");
   int16_t dequeued_index;
   /* Loop on accessing (without removing) a pending input packet */
   while((dequeued_index = ringbufindex_peek_get(&dequeued_ringbuf)) != -1) {
@@ -756,14 +758,14 @@ PT_THREAD(tsch_scan(struct pt *pt))
     
     if(is_packet_pending) {
       /* Read packet */
-      printf("Right channel match %i or %i\n", current_channel,scan_channeldummy);
+      printf("Right channel match %i or %i\n", current_channel,scan_channeldummy); 
       input_eb.len = NETSTACK_RADIO.read(input_eb.payload, TSCH_PACKET_MAX_LEN);
          /* Save packet timestamp */
       NETSTACK_RADIO.get_object(RADIO_PARAM_LAST_PACKET_TIMESTAMPContikiRadio, &t0, sizeof(rtimer_clock_t));
 
       /* Parse EB and attempt to associate */
       LOG_INFO("scan: received packet (%u bytes) on channel %u\n", input_eb.len, current_channel);
-
+      
       tsch_associate(&input_eb, t0);
       }
       
@@ -1036,10 +1038,11 @@ send_packet(mac_callback_t sent, void *ptr)
     LOG_ERR("! can't send packet due to framer error\n");
     ret = MAC_TX_ERR;
   } else {
-    struct tsch_packet *p;
+    struct tsch_packet *p; 
+    struct tsch_packet *p2; 
     /* Enqueue packet */
     p = tsch_queue_add_packet(addr, max_transmissions, sent, ptr); 
-    
+    p2 = tsch_queue_add_packet(addr, max_transmissions, sent, ptr);  
     if(p == NULL) {
       LOG_ERR("! can't send packet to ");
       LOG_ERR_LLADDR(addr);
@@ -1054,6 +1057,21 @@ send_packet(mac_callback_t sent, void *ptr)
              tsch_packet_seqno,
              tsch_queue_packet_count(addr), tsch_queue_global_packet_count(),
              p->header_len, queuebuf_datalen(p->qb));
+    } 
+    if(p2 == NULL) {
+      LOG_ERR("! can't send packet to ");
+      LOG_ERR_LLADDR(addr);
+      LOG_ERR_(" with seqno %u, queue %u %u\n",
+          tsch_packet_seqno, tsch_queue_packet_count(addr), tsch_queue_global_packet_count());
+      ret = MAC_TX_ERR;
+    } else {
+      p2->header_len = hdr_len;
+      LOG_INFO("send packet to ");
+      LOG_INFO_LLADDR(addr);
+      LOG_INFO_(" with seqno %u, queue %u %u, len %u %u\n",
+             tsch_packet_seqno,
+             tsch_queue_packet_count(addr), tsch_queue_global_packet_count(),
+             p2->header_len, queuebuf_datalen(p2->qb));
     }
   }
   if(ret != MAC_TX_DEFERRED) {

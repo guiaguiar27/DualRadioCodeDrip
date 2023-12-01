@@ -85,8 +85,8 @@ for i in range(1,max+1):
 
     # get the packet 
 
-    file_name = f"N{size}log{i}"  
-    path_to_file =   f"/Users/guilhermeaguiar/Desktop/DualRadioCodeDrip/Logs/{size}N/" + file_name + ".txt"
+    file_name = f"{size}Nlog{i}"  
+    path_to_file =   f"/Users/guilhermeaguiar/Desktop/DualRadioCodeDrip/Logs/{size}/" + file_name + ".txt"
     #print(path_to_file) 
     
     with open(path_to_file) as tf: 

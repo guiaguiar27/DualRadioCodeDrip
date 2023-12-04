@@ -246,8 +246,8 @@ tsch_release_lock(void)
 /* Channel hopping utility functions */
 
 /* Return channel from ASN and channel offset */
-uint8_t
-tsch_calculate_channel(struct tsch_asn_t *asn, uint8_t channel_offset)
+int
+tsch_calculate_channel(struct tsch_asn_t *asn, uint16_t channel_offset)
 {
   uint16_t index_of_0 = TSCH_ASN_MOD(*asn, tsch_hopping_sequence_length);
   uint16_t index_of_offset = (index_of_0 + channel_offset) % tsch_hopping_sequence_length.val;

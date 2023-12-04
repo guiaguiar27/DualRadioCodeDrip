@@ -1,8 +1,7 @@
-import re
-#import scipy.stats
-#import numpy as np
-from functools import reduce  
-import sys 
+# import re
+# import scipy.stats
+# import numpy as np
+# import sys 
 
 # to calculate confidence interval  
 def confident_interval_data(X, confidence = 0.95, sigma = -1):
@@ -58,7 +57,7 @@ def extract_value(words):
 
 
 def get_number(source):  
-    print(source)
+    #print(source)
     first = str(source[1]) 
     sub = first[3:] 
     return int(sub)
@@ -74,7 +73,12 @@ def extract_node(source):
 def add_list_nodes(listRef, value, index): 
      for i in range(len(listRef)):  
           if i == index -1: 
-               listRef[i] = value
+               listRef[i] = value   
+
+def extract_from_list(listRef, index): 
+    for i in range(len(listRef)): 
+        if i == index-1: 
+            return listRef[i] 
 
 def sum_list(listRef): 
     sum = 0 
@@ -83,39 +87,56 @@ def sum_list(listRef):
     return sum
 
 i = 1  
-max = 2
-size = 10   
+max = 10
 packet_size = 125 
+thr_list = []
+thr_list_size = max  
+sizes = [10,20,30,40,50]
+for size in  sizes: 
+    for i in range(1,max+1): 
+        my_list = [] 
+        list_size = size
+        my_list = [0] * list_size 
+        time_index = 0
+        # get the packet 
 
-for i in range(2,max+1):  
-    num_packet_recpt = 0 
-    my_list = [] 
-    list_size = size
-    my_list = [0] * list_size 
-
-    # get the packet 
-
-    file_name = f"{size}Nlog{i}"  
-    path_to_file =   f"/Users/guilhermeaguiar/Desktop/DualRadioCodeDrip/Logs/{size}/" + file_name + ".txt"
-    #print(path_to_file) 
-    
-    with open(path_to_file) as tf: 
-        for line in tf:  
-            words = line.split() 
-            if "rx_count:" in words:   
-                #extract_node(words)  
-                node = get_number(words) 
-                print(node)
-
-                if(len(extract_value(words)) > 4): 
-                    num_packet_recpt += 2 
-                elif(int(extract_value(words)) > num_packet_recpt): 
-                    num_packet_recpt = int(extract_value(words)) 
-                    print(num_packet_recpt) 
+        file_name = f"{size}Nlog{i}"  
+        path_to_file =   f"/Users/guilhermeaguiar/Desktop/DualRadioCodeDrip/Logs/{size}/" + file_name + ".txt"
+        #print(path_to_file) 
+        
+        with open(path_to_file) as tf: 
+            for line in tf:   
                 
-                add_list_nodes(my_list,num_packet_recpt,int(node))
-                print(my_list[:])  
-                print(sum_list(my_list))
-                
-        #print(f"Total num packets:{num_packet_recpt}")
+                num_packet_recpt = 0
+                words = line.split()  
+
+                if "rx_count:" in words:   
+                    #extract_node(words)  
+                    node = get_number(words) 
+                    if time_index == 0: 
+                        start_time = int(words[0]) 
+                        time_index +=1 
+                    final_time = int(words[0])
+
+                    if(len(extract_value(words))  > 4):  
+
+                        num_packet_recpt =  extract_from_list(my_list,int(node)) + 2   
+                        #print(num_packet_recpt)  
+                        
+                    elif(int(extract_value(words)) > num_packet_recpt): 
+                        num_packet_recpt = int(extract_value(words)) 
+                        #print(num_packet_recpt) 
+                    
+                    add_list_nodes(my_list,num_packet_recpt,int(node))
+                    #print(my_list[:])  
+                    #print(sum_list(my_list)) 
+
+        #print(final_time -start_time)
+        thr = (sum_list(my_list) * packet_size)/((final_time - start_time)/1000) 
+        #print(thr)
+        thr_list.append(thr)          
+
+    #print(thr_list[:]) 
+    print(average(thr_list))
+            #print(f"Total num packets:{num_packet_recpt}")
 

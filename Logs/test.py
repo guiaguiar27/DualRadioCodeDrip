@@ -75,7 +75,8 @@ def add_list_nodes(listRef, value, index):
 
 i = 1  
 max = 10
-size = 10 
+size = 10   
+packet_size = 125 
 
 for i in range(1,max+1):  
     num_packet_recpt = 0 

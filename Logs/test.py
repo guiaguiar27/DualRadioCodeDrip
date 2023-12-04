@@ -47,6 +47,10 @@ def next(a,source):
 def justTime(string): 
     return int(string)  
 
+
+def time_extraction(source):  
+   pass
+
 def extract_value(words): 
    for i,w in enumerate(words): 
             if w == "rx_count:": 
@@ -66,19 +70,24 @@ def extract_node(source):
                 #print(words[1]) 
                 return words[i-1] 
 
+# adciona todos os pacotes em uma lista para ficar mais facil de ser processado 
 def add_list_nodes(listRef, value, index): 
-     for i in len(listRef):  
+     for i in range(len(listRef)):  
           if i == index -1: 
                listRef[i] = value
-          
 
+def sum_list(listRef): 
+    sum = 0 
+    for i in listRef: 
+        sum += i 
+    return sum
 
 i = 1  
-max = 10
+max = 2
 size = 10   
 packet_size = 125 
 
-for i in range(1,max+1):  
+for i in range(2,max+1):  
     num_packet_recpt = 0 
     my_list = [] 
     list_size = size
@@ -94,14 +103,19 @@ for i in range(1,max+1):
         for line in tf:  
             words = line.split() 
             if "rx_count:" in words:   
-                extract_node(words)  
-                node = get_number(words)
+                #extract_node(words)  
+                node = get_number(words) 
                 print(node)
+
                 if(len(extract_value(words)) > 4): 
                     num_packet_recpt += 2 
                 elif(int(extract_value(words)) > num_packet_recpt): 
                     num_packet_recpt = int(extract_value(words)) 
-
-                    print(num_packet_recpt)
+                    print(num_packet_recpt) 
+                
+                add_list_nodes(my_list,num_packet_recpt,int(node))
+                print(my_list[:])  
+                print(sum_list(my_list))
+                
         #print(f"Total num packets:{num_packet_recpt}")
 

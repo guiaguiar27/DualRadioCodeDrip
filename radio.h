@@ -250,7 +250,7 @@ struct radio_driver {
   int (* read)(void *buf, unsigned short buf_len);
   
   /** Read a received packet into a buffer. */
-  int (* read_dual)(void *buf, unsigned short buf_len, void *buf2, unsigned short buf_len2, int flag);
+  int (* read_dual)(void *buf, unsigned short buf_len, void *buf2, unsigned short buf_len2, int *len1, int *len2);
 
   /** Perform a Clear-Channel Assessment (CCA) to find out if there is
       a packet in the air or not. */

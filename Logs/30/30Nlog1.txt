@@ -1,0 +1,3793 @@
+35	ID:24	Contiki-NG started. Node id is set to 24.
+35	ID:24	Link-layer address 0018.0018.0018.0018
+35	ID:24	MAC 00:18:00:18:00:18:00:18 scanning on channel 18 and 13 
+35	ID:24	[INFO: TSCH      ] starting as node
+35	ID:24	sicslowpan/TSCH
+35	ID:24	Tentative link-local IPv6 address fe80::218:18:18:18
+35	ID:24	Starting 'TSCH Schedule Node'
+35	ID:24	[INFO: TSCH Sched] add_slotframe 1 17
+35	ID:24	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+35	ID:24	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+73	ID:8	Contiki-NG started. Node id is set to 8.
+73	ID:8	Link-layer address 0008.0008.0008.0008
+73	ID:8	MAC 00:08:00:08:00:08:00:08 scanning on channel 16 and 12 
+73	ID:8	[INFO: TSCH      ] starting as node
+73	ID:8	sicslowpan/TSCH
+73	ID:8	Tentative link-local IPv6 address fe80::208:8:8:8
+73	ID:8	Starting 'TSCH Schedule Node'
+73	ID:8	[INFO: TSCH Sched] add_slotframe 1 17
+73	ID:8	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+73	ID:8	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+142	ID:28	Contiki-NG started. Node id is set to 28.
+142	ID:28	Link-layer address 001c.001c.001c.001c
+142	ID:28	MAC 00:1c:00:1c:00:1c:00:1c scanning on channel 16 and 22 
+142	ID:28	[INFO: TSCH      ] starting as node
+142	ID:28	sicslowpan/TSCH
+142	ID:28	Tentative link-local IPv6 address fe80::21c:1c:1c:1c
+142	ID:28	Starting 'TSCH Schedule Node'
+142	ID:28	[INFO: TSCH Sched] add_slotframe 1 17
+142	ID:28	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+142	ID:28	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+190	ID:11	Contiki-NG started. Node id is set to 11.
+190	ID:11	Link-layer address 000b.000b.000b.000b
+190	ID:11	MAC 00:0b:00:0b:00:0b:00:0b scanning on channel 25 and 17 
+190	ID:11	[INFO: TSCH      ] starting as node
+190	ID:11	sicslowpan/TSCH
+190	ID:11	Tentative link-local IPv6 address fe80::20b:b:b:b
+190	ID:11	Starting 'TSCH Schedule Node'
+190	ID:11	[INFO: TSCH Sched] add_slotframe 1 17
+190	ID:11	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+190	ID:11	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+236	ID:2	Contiki-NG started. Node id is set to 2.
+236	ID:2	Link-layer address 0002.0002.0002.0002
+236	ID:2	MAC 00:02:00:02:00:02:00:02 scanning on channel 23 and 15 
+236	ID:2	[INFO: TSCH      ] starting as node
+236	ID:2	sicslowpan/TSCH
+236	ID:2	Tentative link-local IPv6 address fe80::202:2:2:2
+236	ID:2	Starting 'TSCH Schedule Node'
+236	ID:2	[INFO: TSCH Sched] add_slotframe 1 17
+236	ID:2	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+236	ID:2	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+244	ID:30	Contiki-NG started. Node id is set to 30.
+244	ID:30	Link-layer address 001e.001e.001e.001e
+244	ID:30	MAC 00:1e:00:1e:00:1e:00:1e scanning on channel 12 and 19 
+244	ID:30	[INFO: TSCH      ] starting as node
+244	ID:30	sicslowpan/TSCH
+244	ID:30	Tentative link-local IPv6 address fe80::21e:1e:1e:1e
+244	ID:30	Starting 'TSCH Schedule Node'
+244	ID:30	[INFO: TSCH Sched] add_slotframe 1 17
+244	ID:30	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+244	ID:30	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+250	ID:6	Contiki-NG started. Node id is set to 6.
+250	ID:6	Link-layer address 0006.0006.0006.0006
+250	ID:6	MAC 00:06:00:06:00:06:00:06 scanning on channel 13 and 20 
+250	ID:6	[INFO: TSCH      ] starting as node
+250	ID:6	sicslowpan/TSCH
+250	ID:6	Tentative link-local IPv6 address fe80::206:6:6:6
+250	ID:6	Starting 'TSCH Schedule Node'
+250	ID:6	[INFO: TSCH Sched] add_slotframe 1 17
+250	ID:6	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+250	ID:6	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+326	ID:18	Contiki-NG started. Node id is set to 18.
+326	ID:18	Link-layer address 0012.0012.0012.0012
+326	ID:18	MAC 00:12:00:12:00:12:00:12 scanning on channel 25 and 11 
+326	ID:18	[INFO: TSCH      ] starting as node
+326	ID:18	sicslowpan/TSCH
+326	ID:18	Tentative link-local IPv6 address fe80::212:12:12:12
+326	ID:18	Starting 'TSCH Schedule Node'
+326	ID:18	[INFO: TSCH Sched] add_slotframe 1 17
+326	ID:18	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+326	ID:18	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+348	ID:4	Contiki-NG started. Node id is set to 4.
+348	ID:4	Link-layer address 0004.0004.0004.0004
+348	ID:4	MAC 00:04:00:04:00:04:00:04 scanning on channel 25 and 21 
+348	ID:4	[INFO: TSCH      ] starting as node
+348	ID:4	sicslowpan/TSCH
+348	ID:4	Tentative link-local IPv6 address fe80::204:4:4:4
+348	ID:4	Starting 'TSCH Schedule Node'
+348	ID:4	[INFO: TSCH Sched] add_slotframe 1 17
+348	ID:4	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+348	ID:4	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+382	ID:1	Contiki-NG started. Node id is set to 1.
+382	ID:1	Link-layer address 0001.0001.0001.0001
+382	ID:1	MAC 00:01:00:01:00:01:00:01 scanning on channel 11 and 25 
+382	ID:1	[INFO: TSCH      ] starting as node
+382	ID:1	sicslowpan/TSCH
+382	ID:1	Tentative link-local IPv6 address fe80::201:1:1:1
+382	ID:1	Starting 'TSCH Schedule Node'
+382	ID:1	[INFO: TSCH Sched] add_slotframe 1 17
+382	ID:1	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+382	ID:1	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+382	ID:1	[INFO: TSCH      ] starting as coordinator, PAN ID abcd, asn-0.0
+382	ID:1	[Slot operation] Current link - Options 7, timeslot 1, channel offset 1 
+385	ID:27	Contiki-NG started. Node id is set to 27.
+385	ID:27	Link-layer address 001b.001b.001b.001b
+385	ID:27	MAC 00:1b:00:1b:00:1b:00:1b scanning on channel 18 and 17 
+385	ID:27	[INFO: TSCH      ] starting as node
+385	ID:27	sicslowpan/TSCH
+385	ID:27	Tentative link-local IPv6 address fe80::21b:1b:1b:1b
+385	ID:27	Starting 'TSCH Schedule Node'
+385	ID:27	[INFO: TSCH Sched] add_slotframe 1 17
+385	ID:27	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+385	ID:27	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+402	ID:7	Contiki-NG started. Node id is set to 7.
+402	ID:7	Link-layer address 0007.0007.0007.0007
+402	ID:7	MAC 00:07:00:07:00:07:00:07 scanning on channel 13 and 20 
+402	ID:7	[INFO: TSCH      ] starting as node
+402	ID:7	sicslowpan/TSCH
+402	ID:7	Tentative link-local IPv6 address fe80::207:7:7:7
+402	ID:7	Starting 'TSCH Schedule Node'
+402	ID:7	[INFO: TSCH Sched] add_slotframe 1 17
+402	ID:7	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+402	ID:7	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+408	ID:1	[INFO: App       ] Send to fd00::201:1:1:1, seqnum 1
+408	ID:1	[INFO: App       ] Received from fd00::201:1:1:1, seqnum 1
+450	ID:14	Contiki-NG started. Node id is set to 14.
+450	ID:14	Link-layer address 000e.000e.000e.000e
+450	ID:14	MAC 00:0e:00:0e:00:0e:00:0e scanning on channel 19 and 23 
+450	ID:14	[INFO: TSCH      ] starting as node
+450	ID:14	sicslowpan/TSCH
+450	ID:14	Tentative link-local IPv6 address fe80::20e:e:e:e
+450	ID:14	Starting 'TSCH Schedule Node'
+450	ID:14	[INFO: TSCH Sched] add_slotframe 1 17
+450	ID:14	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+450	ID:14	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+462	ID:15	Contiki-NG started. Node id is set to 15.
+462	ID:15	Link-layer address 000f.000f.000f.000f
+462	ID:15	MAC 00:0f:00:0f:00:0f:00:0f scanning on channel 26 and 11 
+462	ID:15	[INFO: TSCH      ] starting as node
+462	ID:15	sicslowpan/TSCH
+462	ID:15	Tentative link-local IPv6 address fe80::20f:f:f:f
+462	ID:15	Starting 'TSCH Schedule Node'
+462	ID:15	[INFO: TSCH Sched] add_slotframe 1 17
+462	ID:15	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+462	ID:15	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+467	ID:25	Contiki-NG started. Node id is set to 25.
+467	ID:25	Link-layer address 0019.0019.0019.0019
+467	ID:25	MAC 00:19:00:19:00:19:00:19 scanning on channel 18 and 23 
+467	ID:25	[INFO: TSCH      ] starting as node
+467	ID:25	sicslowpan/TSCH
+467	ID:25	Tentative link-local IPv6 address fe80::219:19:19:19
+467	ID:25	Starting 'TSCH Schedule Node'
+467	ID:25	[INFO: TSCH Sched] add_slotframe 1 17
+467	ID:25	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+467	ID:25	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+472	ID:20	Contiki-NG started. Node id is set to 20.
+472	ID:20	Link-layer address 0014.0014.0014.0014
+472	ID:20	MAC 00:14:00:14:00:14:00:14 scanning on channel 19 and 23 
+472	ID:20	[INFO: TSCH      ] starting as node
+472	ID:20	sicslowpan/TSCH
+472	ID:20	Tentative link-local IPv6 address fe80::214:14:14:14
+472	ID:20	Starting 'TSCH Schedule Node'
+472	ID:20	[INFO: TSCH Sched] add_slotframe 1 17
+472	ID:20	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+472	ID:20	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+473	ID:16	Contiki-NG started. Node id is set to 16.
+473	ID:16	Link-layer address 0010.0010.0010.0010
+473	ID:16	MAC 00:10:00:10:00:10:00:10 scanning on channel 23 and 24 
+473	ID:16	[INFO: TSCH      ] starting as node
+473	ID:16	sicslowpan/TSCH
+473	ID:16	Tentative link-local IPv6 address fe80::210:10:10:10
+473	ID:16	Starting 'TSCH Schedule Node'
+473	ID:16	[INFO: TSCH Sched] add_slotframe 1 17
+473	ID:16	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+473	ID:16	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+482	ID:1	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+482	ID:1	[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+552	ID:1	current_channel = 17 and 22
+552	ID:1	Packet1: 0xc2fb0660  len:  35
+552	ID:1	 Packet2:  0xc2fb0660 len:  35
+552	ID:1	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+554	ID:1	[transmit_packet] Pck1: 0x23 - Pck2: 0x23 
+554	ID:1	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+554	ID:11	[Receiving_packet] Radio2: On
+555	ID:1	tx: 2 - 2
+555	ID:1	RX process pending
+555	ID:1	TX process pending
+555	ID:1	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 252, status 0, tx 2
+555	ID:1	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 252, status 0, tx 2
+555	ID:1	[INFO: TSCH-LOG  ] {asn-0.11 link-1-17-0-0 ch-17} bc-0-0 tx LL-0001->LL-NULL, len 35, seq 252, st 0 2
+555	ID:1	[INFO: TSCH-LOG  ] {asn-0.11 link-1-17-0-0 ch-17} bc-0-0 tx LL-0001->LL-NULL, len 35, seq 252, st 0 2
+555	ID:11	Right channel match 25 or 17
+555	ID:11	[Read single] Start
+555	ID:11	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 25
+555	ID:11	[INFO: TSCH      ] parse_eb: no schedule
+555	ID:11	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 0001.0001.0001.0001
+555	ID:11	[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.11, jp 1, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 0001.0001.0001.0001
+555	ID:11	[Slot operation] Current link - Options 7, timeslot 1, channel offset 1 
+555	ID:11	[Read single] Start
+556	ID:10	Contiki-NG started. Node id is set to 10.
+556	ID:10	Link-layer address 000a.000a.000a.000a
+556	ID:10	MAC 00:0a:00:0a:00:0a:00:0a scanning on channel 17 and 12 
+556	ID:10	[INFO: TSCH      ] starting as node
+556	ID:10	sicslowpan/TSCH
+556	ID:10	Tentative link-local IPv6 address fe80::20a:a:a:a
+556	ID:10	Starting 'TSCH Schedule Node'
+556	ID:10	[INFO: TSCH Sched] add_slotframe 1 17
+556	ID:10	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+556	ID:10	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+594	ID:12	Contiki-NG started. Node id is set to 12.
+594	ID:12	Link-layer address 000c.000c.000c.000c
+594	ID:12	MAC 00:0c:00:0c:00:0c:00:0c scanning on channel 21 and 18 
+594	ID:12	[INFO: TSCH      ] starting as node
+594	ID:12	sicslowpan/TSCH
+594	ID:12	Tentative link-local IPv6 address fe80::20c:c:c:c
+594	ID:12	Starting 'TSCH Schedule Node'
+594	ID:12	[INFO: TSCH Sched] add_slotframe 1 17
+594	ID:12	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+594	ID:12	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+637	ID:29	Contiki-NG started. Node id is set to 29.
+637	ID:29	Link-layer address 001d.001d.001d.001d
+637	ID:29	MAC 00:1d:00:1d:00:1d:00:1d scanning on channel 21 and 17 
+637	ID:29	[INFO: TSCH      ] starting as node
+637	ID:29	sicslowpan/TSCH
+637	ID:29	Tentative link-local IPv6 address fe80::21d:1d:1d:1d
+637	ID:29	Starting 'TSCH Schedule Node'
+637	ID:29	[INFO: TSCH Sched] add_slotframe 1 17
+637	ID:29	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+637	ID:29	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+663	ID:22	Contiki-NG started. Node id is set to 22.
+663	ID:22	Link-layer address 0016.0016.0016.0016
+663	ID:22	MAC 00:16:00:16:00:16:00:16 scanning on channel 15 and 19 
+663	ID:22	[INFO: TSCH      ] starting as node
+663	ID:22	sicslowpan/TSCH
+663	ID:22	Tentative link-local IPv6 address fe80::216:16:16:16
+663	ID:22	Starting 'TSCH Schedule Node'
+663	ID:22	[INFO: TSCH Sched] add_slotframe 1 17
+663	ID:22	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+663	ID:22	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+690	ID:26	Contiki-NG started. Node id is set to 26.
+690	ID:26	Link-layer address 001a.001a.001a.001a
+690	ID:26	MAC 00:1a:00:1a:00:1a:00:1a scanning on channel 15 and 20 
+690	ID:26	[INFO: TSCH      ] starting as node
+690	ID:26	sicslowpan/TSCH
+690	ID:26	Tentative link-local IPv6 address fe80::21a:1a:1a:1a
+690	ID:26	Starting 'TSCH Schedule Node'
+690	ID:26	[INFO: TSCH Sched] add_slotframe 1 17
+690	ID:26	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+690	ID:26	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+708	ID:9	Contiki-NG started. Node id is set to 9.
+708	ID:9	Link-layer address 0009.0009.0009.0009
+708	ID:9	MAC 00:09:00:09:00:09:00:09 scanning on channel 14 and 24 
+708	ID:9	[INFO: TSCH      ] starting as node
+708	ID:9	sicslowpan/TSCH
+708	ID:9	Tentative link-local IPv6 address fe80::209:9:9:9
+708	ID:9	Starting 'TSCH Schedule Node'
+708	ID:9	[INFO: TSCH Sched] add_slotframe 1 17
+708	ID:9	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+708	ID:9	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+715	ID:5	Contiki-NG started. Node id is set to 5.
+715	ID:5	Link-layer address 0005.0005.0005.0005
+715	ID:5	MAC 00:05:00:05:00:05:00:05 scanning on channel 11 and 15 
+715	ID:5	[INFO: TSCH      ] starting as node
+715	ID:5	sicslowpan/TSCH
+715	ID:5	Tentative link-local IPv6 address fe80::205:5:5:5
+715	ID:5	Starting 'TSCH Schedule Node'
+715	ID:5	[INFO: TSCH Sched] add_slotframe 1 17
+715	ID:5	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+715	ID:5	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+719	ID:19	Contiki-NG started. Node id is set to 19.
+719	ID:19	Link-layer address 0013.0013.0013.0013
+719	ID:19	MAC 00:13:00:13:00:13:00:13 scanning on channel 22 and 21 
+719	ID:19	[INFO: TSCH      ] starting as node
+719	ID:19	sicslowpan/TSCH
+719	ID:19	Tentative link-local IPv6 address fe80::213:13:13:13
+719	ID:19	Starting 'TSCH Schedule Node'
+719	ID:19	[INFO: TSCH Sched] add_slotframe 1 17
+719	ID:19	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+719	ID:19	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+809	ID:17	Contiki-NG started. Node id is set to 17.
+809	ID:17	Link-layer address 0011.0011.0011.0011
+809	ID:17	MAC 00:11:00:11:00:11:00:11 scanning on channel 16 and 12 
+809	ID:17	[INFO: TSCH      ] starting as node
+809	ID:17	sicslowpan/TSCH
+809	ID:17	Tentative link-local IPv6 address fe80::211:11:11:11
+809	ID:17	Starting 'TSCH Schedule Node'
+809	ID:17	[INFO: TSCH Sched] add_slotframe 1 17
+809	ID:17	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+809	ID:17	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+884	ID:13	Contiki-NG started. Node id is set to 13.
+884	ID:13	Link-layer address 000d.000d.000d.000d
+884	ID:13	MAC 00:0d:00:0d:00:0d:00:0d scanning on channel 24 and 14 
+884	ID:13	[INFO: TSCH      ] starting as node
+884	ID:13	sicslowpan/TSCH
+884	ID:13	Tentative link-local IPv6 address fe80::20d:d:d:d
+884	ID:13	Starting 'TSCH Schedule Node'
+884	ID:13	[INFO: TSCH Sched] add_slotframe 1 17
+884	ID:13	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+884	ID:13	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+899	ID:3	Contiki-NG started. Node id is set to 3.
+899	ID:3	Link-layer address 0003.0003.0003.0003
+899	ID:3	MAC 00:03:00:03:00:03:00:03 scanning on channel 19 and 14 
+899	ID:3	[INFO: TSCH      ] starting as node
+899	ID:3	sicslowpan/TSCH
+899	ID:3	Tentative link-local IPv6 address fe80::203:3:3:3
+899	ID:3	Starting 'TSCH Schedule Node'
+899	ID:3	[INFO: TSCH Sched] add_slotframe 1 17
+899	ID:3	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+899	ID:3	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+906	ID:21	Contiki-NG started. Node id is set to 21.
+906	ID:21	Link-layer address 0015.0015.0015.0015
+906	ID:21	MAC 00:15:00:15:00:15:00:15 scanning on channel 11 and 19 
+906	ID:21	[INFO: TSCH      ] starting as node
+906	ID:21	sicslowpan/TSCH
+906	ID:21	Tentative link-local IPv6 address fe80::215:15:15:15
+906	ID:21	Starting 'TSCH Schedule Node'
+906	ID:21	[INFO: TSCH Sched] add_slotframe 1 17
+906	ID:21	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+906	ID:21	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+945	ID:23	Contiki-NG started. Node id is set to 23.
+945	ID:23	Link-layer address 0017.0017.0017.0017
+945	ID:23	MAC 00:17:00:17:00:17:00:17 scanning on channel 14 and 19 
+945	ID:23	[INFO: TSCH      ] starting as node
+945	ID:23	sicslowpan/TSCH
+945	ID:23	Tentative link-local IPv6 address fe80::217:17:17:17
+945	ID:23	Starting 'TSCH Schedule Node'
+945	ID:23	[INFO: TSCH Sched] add_slotframe 1 17
+945	ID:23	[INFO: TSCH Sched] add_link 1 7 1 0 0 ffff.ffff.ffff.ffff
+945	ID:23	[INFO: TSCH Sched] add_link 1 7 1 1 1 ffff.ffff.ffff.ffff
+1036	ID:24	scanning on channel 22 and 15 
+1074	ID:8	scanning on channel 11 and 18 
+1143	ID:28	scanning on channel 23 and 11 
+1237	ID:2	scanning on channel 12 and 23 
+1245	ID:30	scanning on channel 16 and 25 
+1251	ID:6	scanning on channel 15 and 18 
+1327	ID:18	scanning on channel 12 and 25 
+1349	ID:4	scanning on channel 16 and 24 
+1386	ID:27	scanning on channel 20 and 15 
+1403	ID:7	scanning on channel 11 and 15 
+1451	ID:14	scanning on channel 13 and 22 
+1463	ID:15	scanning on channel 16 and 19 
+1468	ID:25	scanning on channel 16 and 13 
+1473	ID:20	scanning on channel 23 and 13 
+1557	ID:10	scanning on channel 15 and 12 
+1595	ID:12	scanning on channel 20 and 16 
+1638	ID:29	scanning on channel 24 and 20 
+1664	ID:22	scanning on channel 25 and 23 
+1691	ID:26	scanning on channel 23 and 17 
+1709	ID:9	scanning on channel 19 and 23 
+1716	ID:5	scanning on channel 14 and 25 
+1720	ID:19	scanning on channel 19 and 25 
+1810	ID:17	scanning on channel 21 and 17 
+1900	ID:3	scanning on channel 11 and 24 
+1907	ID:21	scanning on channel 18 and 11 
+1946	ID:23	scanning on channel 24 and 20 
+2037	ID:24	scanning on channel 13 and 19 
+2075	ID:8	scanning on channel 16 and 18 
+2144	ID:28	scanning on channel 14 and 25 
+2238	ID:2	scanning on channel 14 and 13 
+2246	ID:30	scanning on channel 25 and 11 
+2252	ID:6	scanning on channel 12 and 24 
+2328	ID:18	scanning on channel 13 and 24 
+2350	ID:4	scanning on channel 14 and 18 
+2452	ID:14	scanning on channel 17 and 19 
+2464	ID:15	scanning on channel 19 and 14 
+2469	ID:25	scanning on channel 18 and 17 
+2474	ID:20	scanning on channel 11 and 25 
+2475	ID:16	scanning on channel 12 and 25 
+2558	ID:10	scanning on channel 26 and 15 
+2639	ID:29	scanning on channel 19 and 13 
+2665	ID:22	scanning on channel 12 and 15 
+2692	ID:26	scanning on channel 25 and 16 
+2710	ID:9	scanning on channel 21 and 16 
+2721	ID:19	scanning on channel 24 and 12 
+2811	ID:17	scanning on channel 20 and 13 
+2886	ID:13	scanning on channel 15 and 22 
+2901	ID:3	scanning on channel 17 and 25 
+2908	ID:21	scanning on channel 16 and 11 
+2947	ID:23	scanning on channel 18 and 12 
+3038	ID:24	scanning on channel 24 and 11 
+3076	ID:8	scanning on channel 26 and 23 
+3239	ID:2	scanning on channel 16 and 17 
+3247	ID:30	scanning on channel 23 and 13 
+3253	ID:6	scanning on channel 24 and 19 
+3329	ID:18	scanning on channel 23 and 24 
+3351	ID:4	scanning on channel 22 and 23 
+3388	ID:27	scanning on channel 11 and 17 
+3405	ID:7	scanning on channel 21 and 26 
+3453	ID:14	scanning on channel 21 and 12 
+3465	ID:15	scanning on channel 11 and 22 
+3470	ID:25	scanning on channel 13 and 21 
+3475	ID:20	scanning on channel 22 and 15 
+3476	ID:16	scanning on channel 23 and 12 
+3559	ID:10	scanning on channel 21 and 20 
+3597	ID:12	scanning on channel 18 and 26 
+3640	ID:29	scanning on channel 17 and 16 
+3666	ID:22	scanning on channel 20 and 17 
+3693	ID:26	scanning on channel 17 and 16 
+3711	ID:9	scanning on channel 14 and 19 
+3718	ID:5	scanning on channel 21 and 12 
+3722	ID:19	scanning on channel 21 and 17 
+3812	ID:17	scanning on channel 18 and 17 
+3887	ID:13	scanning on channel 16 and 22 
+3902	ID:3	scanning on channel 16 and 12 
+3948	ID:23	scanning on channel 25 and 21 
+4039	ID:24	scanning on channel 20 and 13 
+4077	ID:8	scanning on channel 17 and 19 
+4146	ID:28	scanning on channel 12 and 16 
+4240	ID:2	scanning on channel 13 and 20 
+4248	ID:30	scanning on channel 17 and 13 
+4322	ID:1	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+4322	ID:1	[DBG : TSCH Queue] packet is added put_index 1, packet 0xc2fb2d74
+4322	ID:1	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 9, queue 2 2, len 14 94
+4322	ID:1	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 9, queue 2 2, len 14 94
+4330	ID:18	scanning on channel 25 and 11 
+4352	ID:4	scanning on channel 18 and 17 
+4389	ID:27	scanning on channel 21 and 12 
+4406	ID:7	scanning on channel 24 and 11 
+4454	ID:14	scanning on channel 14 and 12 
+4462	ID:1	current_channel = 19 and 24
+4462	ID:1	Packet1: 0xc2fb0660  len:  94
+4462	ID:1	 Packet2:  0xc2fb0660 len:  94
+4462	ID:1	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+4464	ID:1	[transmit_packet] Pck1: 0x5e - Pck2: 0x5e 
+4464	ID:1	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+4464	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+4464	ID:9	[Receiving_packet] Radio2: On
+4464	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+4464	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+4465	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+4466	ID:15	scanning on channel 13 and 23 
+4466	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+4467	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+4467	ID:1	tx: 2 - 2
+4467	ID:1	RX process pending
+4467	ID:1	TX process pending
+4467	ID:1	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 253, status 0, tx 2
+4467	ID:1	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 253, status 0, tx 2
+4467	ID:1	[INFO: TSCH-LOG  ] {asn-0.198 link-1-17-0-0 ch-19} bc-1-0 tx LL-0001->LL-NULL, len 94, seq 253, st 0 2
+4467	ID:1	[INFO: TSCH-LOG  ] {asn-0.198 link-1-17-0-0 ch-19} bc-1-0 tx LL-0001->LL-NULL, len 94, seq 253, st 0 2
+4467	ID:6	Right channel match 24 or 23
+4467	ID:6	[Read single] Start
+4467	ID:6	[INFO: TSCH      ] scan: received packet (94 bytes) on channel 24
+4467	ID:6	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+4467	ID:6	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0001.0001.0001.0001 to 0xabcd/ffff.0000.0000.0000
+4467	ID:6	[ERR : TSCH      ] ! failed to parse EB (len 94)
+4467	ID:6	[Read single] Start
+4467	ID:9	Right channel match 14 or 19
+4467	ID:9	[Read single] Start
+4467	ID:9	[INFO: TSCH      ] scan: received packet (94 bytes) on channel 14
+4467	ID:9	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+4467	ID:9	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0001.0001.0001.0001 to 0xabcd/ffff.0000.0000.0000
+4467	ID:9	[ERR : TSCH      ] ! failed to parse EB (len 94)
+4467	ID:9	[Read single] Start
+4467	ID:11	[radio_read_dual] starting
+4467	ID:11	Radio 1 - Radio 2
+4467	ID:11	no poll mode
+4467	ID:11	[read_dual] tmp: 94 - tmp1:94
+4467	ID:11	[tsch-slot-operation] Read packet - 94
+4467	ID:11	[tsch-slot-operation] Read second packet - 94
+4467	ID:11	current header len:  14
+4467	ID:11	second header len:  14
+4467	ID:11	First frame verification
+4467	ID:11	Second frame verification
+4467	ID:11	rx_count:  2 94 94
+4467	ID:11	RX process pending
+4467	ID:11	[INFO: TSCH      ] received from 0001.0001.0001.0001 with seqno 65535
+4467	ID:11	[WARN: RPL       ] just joined, no parent yet, setting timer for leaving
+4467	ID:11	[WARN: RPL       ] best parent is not fresh, schedule urgent probing to fe80::201:1:1:1
+4467	ID:11	TX process pending
+4467	ID:11	[INFO: TSCH-LOG  ] {asn-0.198 link-1-17-0-0 ch-19} bc-1-0 rx LL-0001->LL-NULL, len 94, seq 0, dr 0, edr 0
+4467	ID:11	[INFO: TSCH-LOG  ] {asn-0.198 link-1-17-0-0 ch-19} bc-1-0 rx LL-0001->LL-NULL, len 94, seq 0, dr 0, edr 0
+4467	ID:11	[Read single] Start
+4471	ID:25	scanning on channel 24 and 23 
+4476	ID:20	scanning on channel 26 and 19 
+4477	ID:16	scanning on channel 13 and 19 
+4560	ID:10	scanning on channel 14 and 25 
+4598	ID:12	scanning on channel 12 and 20 
+4641	ID:29	scanning on channel 18 and 21 
+4667	ID:22	scanning on channel 11 and 12 
+4694	ID:26	scanning on channel 25 and 23 
+4719	ID:5	scanning on channel 17 and 19 
+4723	ID:19	scanning on channel 18 and 12 
+4813	ID:17	scanning on channel 15 and 14 
+4888	ID:13	scanning on channel 15 and 22 
+4903	ID:3	scanning on channel 19 and 11 
+4910	ID:21	scanning on channel 20 and 26 
+4949	ID:23	scanning on channel 13 and 23 
+5040	ID:24	scanning on channel 14 and 25 
+5078	ID:8	scanning on channel 13 and 26 
+5147	ID:28	scanning on channel 26 and 17 
+5241	ID:2	scanning on channel 20 and 23 
+5249	ID:30	scanning on channel 26 and 17 
+5255	ID:6	scanning on channel 17 and 14 
+5331	ID:18	scanning on channel 24 and 22 
+5353	ID:4	scanning on channel 16 and 11 
+5390	ID:27	scanning on channel 20 and 17 
+5407	ID:7	scanning on channel 17 and 24 
+5455	ID:14	scanning on channel 22 and 20 
+5467	ID:15	scanning on channel 17 and 20 
+5472	ID:25	scanning on channel 22 and 12 
+5477	ID:20	scanning on channel 24 and 13 
+5478	ID:16	scanning on channel 25 and 21 
+5561	ID:10	scanning on channel 19 and 24 
+5642	ID:29	scanning on channel 16 and 13 
+5668	ID:22	scanning on channel 13 and 23 
+5695	ID:26	scanning on channel 21 and 24 
+5713	ID:9	scanning on channel 26 and 24 
+5720	ID:5	scanning on channel 19 and 13 
+5724	ID:19	scanning on channel 24 and 23 
+5814	ID:17	scanning on channel 12 and 20 
+5889	ID:13	scanning on channel 18 and 13 
+5904	ID:3	scanning on channel 12 and 13 
+5911	ID:21	scanning on channel 11 and 17 
+5950	ID:23	scanning on channel 25 and 15 
+6041	ID:24	scanning on channel 24 and 26 
+6079	ID:8	scanning on channel 15 and 19 
+6137	ID:11	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+6137	ID:11	[DBG : TSCH Queue] packet is added put_index 1, packet 0xc2fb2d74
+6137	ID:11	[INFO: TSCH      ] send packet to 0001.0001.0001.0001 with seqno 109, queue 2 2, len 21 100
+6137	ID:11	[INFO: TSCH      ] send packet to 0001.0001.0001.0001 with seqno 109, queue 2 2, len 21 100
+6148	ID:28	scanning on channel 11 and 18 
+6162	ID:11	current_channel = 23 and 18
+6162	ID:11	Packet1: 0xc2fb0660  len:  100
+6162	ID:11	 Packet2:  0xc2fb0660 len:  100
+6162	ID:11	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+6164	ID:11	[transmit_packet] Pck1: 0x64 - Pck2: 0x64 
+6164	ID:11	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+6164	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+6164	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+6164	ID:2	[Receiving_packet] Radio2: On
+6164	ID:28	[Receiving_packet] Radio2: On
+6165	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+6166	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+6167	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+6167	ID:1	[radio_read_dual] starting
+6167	ID:1	Radio 1 - Radio 2
+6167	ID:1	no poll mode
+6167	ID:1	[read_dual] tmp: 100 - tmp1:100
+6167	ID:1	[tsch-slot-operation] Read packet - 100
+6167	ID:1	[tsch-slot-operation] Read second packet - 100
+6167	ID:1	current header len:  21
+6167	ID:1	second header len:  21
+6167	ID:1	First frame verification
+6167	ID:1	Second frame verification
+6167	ID:1	rx_count:  2 100 100
+6167	ID:1	Acklen1 =  17 - Acklen2 = 17
+6167	ID:1	[DEBUG] Entrou 
+6167	ID:1	[DEBUG] Preparao ack
+6167	ID:1	[prepare_packet] data1:0xc2fae2c0 - data2: 0xc2fae360 
+6167	ID:1	[Read single] Start
+6167	ID:2	Right channel match 20 or 23
+6167	ID:2	[Read single] Start
+6167	ID:2	[INFO: TSCH      ] scan: received packet (100 bytes) on channel 20
+6167	ID:2	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+6167	ID:2	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+6167	ID:2	[ERR : TSCH      ] ! failed to parse EB (len 100)
+6167	ID:2	[Read single] Start
+6167	ID:28	Right channel match 11 or 18
+6167	ID:28	[Read single] Start
+6167	ID:28	[INFO: TSCH      ] scan: received packet (100 bytes) on channel 11
+6167	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+6167	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+6167	ID:28	[ERR : TSCH      ] ! failed to parse EB (len 100)
+6167	ID:28	[Read single] Start
+6168	ID:1	[DEBUG] Transmit ack
+6168	ID:1	[transmit_packet] Pck1: 0x11 - Pck2: 0x11 
+6168	ID:1	[Send_packet] Pckt1: 0xc2fae2c0 - Pckt2: 0xc2fae360
+6168	ID:2	[Receiving_packet] Radio2: On
+6168	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+6168	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+6168	ID:13	[Receiving_packet] Radio1: On
+6168	ID:1	RX process pending
+6168	ID:1	[INFO: TSCH      ] received from 000b.000b.000b.000b with seqno 109
+6168	ID:1	TX process pending
+6168	ID:1	[INFO: TSCH-LOG  ] {asn-0.242 link-1-17-0-0 ch-23} uc-1-0 rx LL-000b->LL-0001, len 100, seq 109, edr 0
+6168	ID:1	[INFO: TSCH-LOG  ] {asn-0.242 link-1-17-0-0 ch-23} uc-1-0 rx LL-000b->LL-0001, len 100, seq 109, edr 0
+6168	ID:2	Right channel match 20 or 23
+6168	ID:2	[Read single] Start
+6168	ID:2	[INFO: TSCH      ] scan: received packet (17 bytes) on channel 20
+6168	ID:2	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 2, FCF 02 2e
+6168	ID:2	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0x0/0000.0000.0000.0000 to 0xabcd/000b.000b.000b.000b
+6168	ID:2	[ERR : TSCH      ] ! failed to parse EB (len 17)
+6168	ID:2	[Read single] Start
+6168	ID:11	[Read single] Start
+6168	ID:11	tx: 2 - 2
+6168	ID:11	RX process pending
+6168	ID:11	TX process pending
+6168	ID:11	[INFO: TSCH      ] packet sent to 0001.0001.0001.0001, seqno 109, status 0, tx 2
+6168	ID:11	[INFO: TSCH      ] packet sent to 0001.0001.0001.0001, seqno 109, status 0, tx 2
+6168	ID:11	[INFO: TSCH-LOG  ] {asn-0.242 link-1-17-0-0 ch-23} uc-1-0 tx LL-000b->LL-0001, len 100, seq 109, st 0 2, dr 0
+6168	ID:11	[INFO: TSCH-LOG  ] {asn-0.242 link-1-17-0-0 ch-23} uc-1-0 tx LL-000b->LL-0001, len 100, seq 109, st 0 2, dr 0
+6168	ID:11	[Read single] Start
+6168	ID:11	[WARN: RPL       ] found parent: fe80::201:1:1:1, staying in DAG
+6168	ID:13	Right channel match 18 or 13
+6168	ID:13	[Read single] Start
+6168	ID:13	[INFO: TSCH      ] scan: received packet (17 bytes) on channel 18
+6168	ID:13	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 2, FCF 02 2e
+6168	ID:13	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0x0/0000.0000.0000.0000 to 0xabcd/000b.000b.000b.000b
+6168	ID:13	[ERR : TSCH      ] ! failed to parse EB (len 17)
+6168	ID:13	[Read single] Start
+6242	ID:2	scanning on channel 12 and 24 
+6250	ID:30	scanning on channel 11 and 14 
+6256	ID:6	scanning on channel 12 and 13 
+6332	ID:18	scanning on channel 23 and 13 
+6354	ID:4	scanning on channel 18 and 25 
+6391	ID:27	scanning on channel 24 and 23 
+6408	ID:7	scanning on channel 26 and 19 
+6456	ID:14	scanning on channel 13 and 19 
+6468	ID:15	scanning on channel 22 and 14 
+6473	ID:25	scanning on channel 25 and 12 
+6478	ID:20	scanning on channel 20 and 18 
+6479	ID:16	scanning on channel 18 and 21 
+6562	ID:10	scanning on channel 11 and 12 
+6600	ID:12	scanning on channel 25 and 23 
+6643	ID:29	scanning on channel 14 and 22 
+6669	ID:22	scanning on channel 17 and 19 
+6696	ID:26	scanning on channel 18 and 12 
+6714	ID:9	scanning on channel 15 and 14 
+6721	ID:5	scanning on channel 15 and 22 
+6725	ID:19	scanning on channel 19 and 11 
+6815	ID:17	scanning on channel 20 and 26 
+6890	ID:13	scanning on channel 13 and 23 
+6905	ID:3	scanning on channel 14 and 25 
+6912	ID:21	scanning on channel 13 and 26 
+6951	ID:23	scanning on channel 26 and 17 
+7042	ID:24	scanning on channel 20 and 23 
+7080	ID:8	scanning on channel 26 and 17 
+7149	ID:28	scanning on channel 17 and 14 
+7243	ID:2	scanning on channel 24 and 22 
+7251	ID:30	scanning on channel 16 and 11 
+7257	ID:6	scanning on channel 20 and 17 
+7333	ID:18	scanning on channel 17 and 24 
+7355	ID:4	scanning on channel 22 and 20 
+7392	ID:27	scanning on channel 17 and 20 
+7409	ID:7	scanning on channel 22 and 12 
+7457	ID:14	scanning on channel 24 and 13 
+7469	ID:15	scanning on channel 25 and 21 
+7474	ID:25	scanning on channel 19 and 24 
+7479	ID:20	scanning on channel 12 and 24 
+7480	ID:16	scanning on channel 16 and 13 
+7563	ID:10	scanning on channel 13 and 23 
+7601	ID:12	scanning on channel 21 and 24 
+7644	ID:29	scanning on channel 26 and 24 
+7670	ID:22	scanning on channel 19 and 13 
+7697	ID:26	scanning on channel 24 and 23 
+7715	ID:9	scanning on channel 12 and 20 
+7722	ID:5	scanning on channel 18 and 13 
+7726	ID:19	scanning on channel 12 and 13 
+7816	ID:17	scanning on channel 11 and 17 
+7891	ID:13	scanning on channel 25 and 15 
+7906	ID:3	scanning on channel 24 and 26 
+7913	ID:21	scanning on channel 15 and 19 
+7952	ID:23	scanning on channel 20 and 17 
+8043	ID:24	scanning on channel 11 and 24 
+8081	ID:8	scanning on channel 13 and 19 
+8150	ID:28	scanning on channel 11 and 21 
+8244	ID:2	scanning on channel 15 and 17 
+8252	ID:30	scanning on channel 13 and 17 
+8258	ID:6	scanning on channel 18 and 15 
+8334	ID:18	scanning on channel 21 and 22 
+8356	ID:4	scanning on channel 16 and 11 
+8410	ID:7	scanning on channel 15 and 12 
+8458	ID:14	scanning on channel 13 and 16 
+8470	ID:15	scanning on channel 19 and 22 
+8475	ID:25	scanning on channel 26 and 14 
+8480	ID:20	scanning on channel 21 and 18 
+8481	ID:16	scanning on channel 20 and 19 
+8564	ID:10	scanning on channel 24 and 13 
+8602	ID:12	scanning on channel 26 and 15 
+8671	ID:22	scanning on channel 12 and 15 
+8698	ID:26	scanning on channel 20 and 13 
+8716	ID:9	scanning on channel 11 and 18 
+8723	ID:5	scanning on channel 13 and 16 
+8727	ID:19	scanning on channel 26 and 17 
+8817	ID:17	scanning on channel 20 and 11 
+8892	ID:13	scanning on channel 24 and 12 
+8907	ID:3	scanning on channel 26 and 24 
+8914	ID:21	scanning on channel 23 and 13 
+8953	ID:23	scanning on channel 16 and 21 
+9044	ID:24	scanning on channel 13 and 18 
+9082	ID:8	scanning on channel 14 and 18 
+9151	ID:28	scanning on channel 16 and 19 
+9245	ID:2	scanning on channel 22 and 15 
+9253	ID:30	scanning on channel 24 and 13 
+9259	ID:6	scanning on channel 21 and 23 
+9335	ID:18	scanning on channel 11 and 12 
+9357	ID:4	scanning on channel 13 and 14 
+9394	ID:27	scanning on channel 15 and 13 
+9411	ID:7	scanning on channel 17 and 12 
+9459	ID:14	scanning on channel 24 and 21 
+9471	ID:15	scanning on channel 18 and 19 
+9476	ID:25	scanning on channel 11 and 19 
+9481	ID:20	scanning on channel 26 and 13 
+9482	ID:16	scanning on channel 18 and 15 
+9565	ID:10	scanning on channel 12 and 20 
+9603	ID:12	scanning on channel 19 and 23 
+9646	ID:29	scanning on channel 19 and 16 
+9672	ID:22	scanning on channel 11 and 14 
+9699	ID:26	scanning on channel 14 and 26 
+9717	ID:9	scanning on channel 24 and 21 
+9724	ID:5	scanning on channel 20 and 22 
+9728	ID:19	scanning on channel 12 and 13 
+9818	ID:17	scanning on channel 24 and 15 
+9908	ID:3	scanning on channel 17 and 13 
+9915	ID:21	scanning on channel 12 and 15 
+9954	ID:23	scanning on channel 23 and 20 
+10045	ID:24	scanning on channel 16 and 15 
+10083	ID:8	scanning on channel 18 and 13 
+10152	ID:28	scanning on channel 26 and 24 
+10246	ID:2	scanning on channel 18 and 25 
+10254	ID:30	scanning on channel 26 and 18 
+10336	ID:18	scanning on channel 16 and 26 
+10358	ID:4	scanning on channel 20 and 21 
+10395	ID:27	scanning on channel 23 and 15 
+10412	ID:7	scanning on channel 11 and 14 
+10460	ID:14	scanning on channel 23 and 20 
+10472	ID:15	scanning on channel 11 and 19 
+10477	ID:25	scanning on channel 16 and 26 
+10482	ID:20	scanning on channel 23 and 12 
+10483	ID:16	scanning on channel 11 and 26 
+10566	ID:10	scanning on channel 19 and 12 
+10604	ID:12	scanning on channel 12 and 24 
+10647	ID:29	scanning on channel 15 and 20 
+10673	ID:22	scanning on channel 19 and 26 
+10700	ID:26	scanning on channel 24 and 13 
+10718	ID:9	scanning on channel 18 and 20 
+10725	ID:5	scanning on channel 24 and 22 
+10729	ID:19	scanning on channel 14 and 13 
+10819	ID:17	scanning on channel 11 and 23 
+10894	ID:13	scanning on channel 15 and 25 
+10909	ID:3	scanning on channel 26 and 18 
+10916	ID:21	scanning on channel 21 and 14 
+10955	ID:23	scanning on channel 18 and 26 
+11046	ID:24	scanning on channel 21 and 14 
+11084	ID:8	scanning on channel 14 and 26 
+11153	ID:28	scanning on channel 25 and 22 
+11247	ID:2	scanning on channel 20 and 23 
+11255	ID:30	scanning on channel 24 and 12 
+11261	ID:6	scanning on channel 26 and 16 
+11337	ID:18	scanning on channel 25 and 16 
+11359	ID:4	scanning on channel 18 and 15 
+11396	ID:27	scanning on channel 24 and 13 
+11413	ID:7	scanning on channel 23 and 22 
+11461	ID:14	scanning on channel 26 and 24 
+11473	ID:15	scanning on channel 13 and 11 
+11483	ID:20	scanning on channel 25 and 18 
+11484	ID:16	scanning on channel 20 and 15 
+11567	ID:10	scanning on channel 17 and 24 
+11605	ID:12	scanning on channel 11 and 22 
+11648	ID:29	scanning on channel 18 and 22 
+11674	ID:22	scanning on channel 11 and 16 
+11701	ID:26	scanning on channel 18 and 26 
+11726	ID:5	scanning on channel 26 and 22 
+11730	ID:19	scanning on channel 20 and 16 
+11820	ID:17	scanning on channel 23 and 16 
+11868	ID:1	[DBG : TSCH Queue] packet is added put_index 2, packet 0xc2fb2d60
+11868	ID:1	[DBG : TSCH Queue] packet is added put_index 3, packet 0xc2fb2d88
+11868	ID:1	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 9, queue 2 3, len 14 94
+11868	ID:1	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 9, queue 2 3, len 14 94
+11895	ID:13	scanning on channel 25 and 11 
+11910	ID:3	scanning on channel 18 and 17 
+11942	ID:1	current_channel = 26 and 21
+11942	ID:1	Packet1: 0xc2fb0660  len:  94
+11942	ID:1	 Packet2:  0xc2fb07c0 len:  94
+11942	ID:1	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb07c0 
+11944	ID:1	[transmit_packet] Pck1: 0x5e - Pck2: 0x5e 
+11944	ID:1	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb07c0
+11944	ID:6	[Receiving_packet] Radio1: On
+11944	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+11944	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+11944	ID:25	[Receiving_packet] Radio2: On
+11944	ID:26	[Receiving_packet] Radio2: On
+11944	ID:24	[Receiving_packet] Radio1: On
+11945	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+11946	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+11947	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+11947	ID:1	tx: 1 - 1
+11947	ID:1	RX process pending
+11947	ID:1	TX process pending
+11947	ID:1	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 254, status 0, tx 1
+11947	ID:1	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 254, status 0, tx 1
+11947	ID:1	[INFO: TSCH-LOG  ] {asn-0.484 link-1-17-0-0 ch-26} bc-1-0 tx LL-0001->LL-NULL, len 94, seq 254, st 0 1
+11947	ID:1	[INFO: TSCH-LOG  ] {asn-0.484 link-1-17-0-0 ch-26} bc-1-0 tx LL-0001->LL-NULL, len 94, seq 254, st 0 1
+11947	ID:6	Right channel match 26 or 16
+11947	ID:6	[Read single] Start
+11947	ID:6	[INFO: TSCH      ] scan: received packet (94 bytes) on channel 26
+11947	ID:6	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+11947	ID:6	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0001.0001.0001.0001 to 0xabcd/ffff.0000.0000.0000
+11947	ID:6	[ERR : TSCH      ] ! failed to parse EB (len 94)
+11947	ID:6	[Read single] Start
+11947	ID:11	[radio_read_dual] starting
+11947	ID:11	Radio 1 - Radio 2
+11947	ID:11	no poll mode
+11947	ID:11	[read_dual] tmp: 94 - tmp1:94
+11947	ID:11	[tsch-slot-operation] Read packet - 94
+11947	ID:11	[tsch-slot-operation] Read second packet - 94
+11947	ID:11	current header len:  14
+11947	ID:11	second header len:  14
+11947	ID:11	First frame verification
+11947	ID:11	Second frame verification
+11947	ID:11	rx_count:  4 94 94
+11947	ID:11	RX process pending
+11947	ID:11	[INFO: TSCH      ] received from 0001.0001.0001.0001 with seqno 65535
+11947	ID:11	TX process pending
+11947	ID:11	[INFO: TSCH-LOG  ] {asn-0.484 link-1-17-0-0 ch-26} drift 0
+11947	ID:11	[INFO: TSCH-LOG  ] {asn-0.484 link-1-17-0-0 ch-26} bc-1-0 rx LL-0001->LL-NULL, len 94, seq 0, dr 0, edr 0
+11947	ID:11	[INFO: TSCH-LOG  ] {asn-0.484 link-1-17-0-0 ch-26} bc-1-0 rx LL-0001->LL-NULL, len 94, seq 0, dr 0, edr 0
+11947	ID:11	[Read single] Start
+11947	ID:25	Right channel match 16 or 12
+11947	ID:25	[Read single] Start
+11947	ID:25	[INFO: TSCH      ] scan: received packet (94 bytes) on channel 16
+11947	ID:25	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+11947	ID:25	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0001.0001.0001.0001 to 0xabcd/ffff.0000.0000.0000
+11947	ID:25	[ERR : TSCH      ] ! failed to parse EB (len 94)
+11947	ID:25	[Read single] Start
+11947	ID:26	Right channel match 18 or 26
+11947	ID:26	[Read single] Start
+11947	ID:26	[INFO: TSCH      ] scan: received packet (94 bytes) on channel 18
+11947	ID:26	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+11947	ID:26	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0001.0001.0001.0001 to 0xabcd/ffff.0000.0000.0000
+11947	ID:26	[ERR : TSCH      ] ! failed to parse EB (len 94)
+11947	ID:26	[Read single] Start
+11947	ID:24	Right channel match 21 or 14
+11947	ID:24	[Read single] Start
+11947	ID:24	[INFO: TSCH      ] scan: received packet (94 bytes) on channel 21
+11947	ID:24	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+11947	ID:24	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0001.0001.0001.0001 to 0xabcd/ffff.0000.0000.0000
+11947	ID:24	[ERR : TSCH      ] ! failed to parse EB (len 94)
+11947	ID:24	[Read single] Start
+11956	ID:23	scanning on channel 11 and 14 
+11975	ID:11	[DBG : TSCH Queue] packet is added put_index 2, packet 0xc2fb2d60
+11975	ID:11	[DBG : TSCH Queue] packet is added put_index 3, packet 0xc2fb2d88
+11975	ID:11	[INFO: TSCH      ] send packet to 0001.0001.0001.0001 with seqno 110, queue 2 3, len 21 83
+11975	ID:11	[INFO: TSCH      ] send packet to 0001.0001.0001.0001 with seqno 110, queue 2 3, len 21 83
+12047	ID:24	scanning on channel 25 and 11 
+12085	ID:8	scanning on channel 18 and 17 
+12112	ID:11	current_channel = 15 and 20
+12112	ID:11	Packet1: 0xc2fb0660  len:  83
+12112	ID:11	 Packet2:  0xc2fb07c0 len:  83
+12112	ID:11	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb07c0 
+12114	ID:11	[transmit_packet] Pck1: 0x53 - Pck2: 0x53 
+12114	ID:11	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb07c0
+12114	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+12114	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+12114	ID:16	[Receiving_packet] Radio1: On and Radio2: On 
+12114	ID:2	[Receiving_packet] Radio1: On
+12115	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+12116	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+12116	ID:1	[radio_read_dual] starting
+12116	ID:1	Radio 1 - Radio 2
+12116	ID:1	no poll mode
+12116	ID:1	[read_dual] tmp: 83 - tmp1:83
+12116	ID:1	[tsch-slot-operation] Read packet - 83
+12116	ID:1	[tsch-slot-operation] Read second packet - 83
+12116	ID:1	current header len:  21
+12116	ID:1	second header len:  21
+12116	ID:1	First frame verification
+12116	ID:1	Second frame verification
+12116	ID:1	rx_count:  4 83 83
+12116	ID:1	Acklen1 =  17 - Acklen2 = 17
+12116	ID:1	[DEBUG] Entrou 
+12116	ID:1	[DEBUG] Preparao ack
+12116	ID:1	[prepare_packet] data1:0xc2fae2c0 - data2: 0xc2fae360 
+12116	ID:1	[Read single] Start
+12116	ID:16	Right channel match 20 or 15
+12116	ID:16	[Read single] Start
+12116	ID:16	[INFO: TSCH      ] scan: received packet (83 bytes) on channel 20
+12116	ID:16	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+12116	ID:16	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+12116	ID:16	[ERR : TSCH      ] ! failed to parse EB (len 83)
+12116	ID:16	[Read single] Start
+12116	ID:2	Right channel match 20 or 23
+12116	ID:2	[Read single] Start
+12116	ID:2	[INFO: TSCH      ] scan: received packet (83 bytes) on channel 20
+12116	ID:2	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+12116	ID:2	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+12116	ID:2	[ERR : TSCH      ] ! failed to parse EB (len 83)
+12116	ID:2	[Read single] Start
+12117	ID:1	[DEBUG] Transmit ack
+12117	ID:1	[transmit_packet] Pck1: 0x11 - Pck2: 0x11 
+12117	ID:1	[Send_packet] Pckt1: 0xc2fae2c0 - Pckt2: 0xc2fae360
+12117	ID:4	[Receiving_packet] Radio2: On
+12117	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+12117	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+12117	ID:2	[Receiving_packet] Radio1: On
+12117	ID:9	[Receiving_packet] Radio2: On
+12118	ID:1	RX process pending
+12118	ID:1	[INFO: TSCH      ] received from 000b.000b.000b.000b with seqno 110
+12118	ID:1	TX process pending
+12118	ID:1	[INFO: TSCH-LOG  ] {asn-0.495 link-1-17-0-0 ch-15} uc-1-0 rx LL-000b->LL-0001, len 83, seq 110, edr 0
+12118	ID:1	[INFO: TSCH-LOG  ] {asn-0.495 link-1-17-0-0 ch-15} uc-1-0 rx LL-000b->LL-0001, len 83, seq 110, edr 0
+12118	ID:1	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+12118	ID:1	[DBG : TSCH Queue] packet is added put_index 1, packet 0xc2fb2d88
+12118	ID:1	[INFO: TSCH      ] send packet to 000b.000b.000b.000b with seqno 10, queue 2 3, len 21 41
+12118	ID:1	[INFO: TSCH      ] send packet to 000b.000b.000b.000b with seqno 10, queue 2 3, len 21 41
+12118	ID:4	Right channel match 18 or 15
+12118	ID:4	[Read single] Start
+12118	ID:4	[INFO: TSCH      ] scan: received packet (17 bytes) on channel 18
+12118	ID:4	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 2, FCF 02 2e
+12118	ID:4	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0x0/0000.0000.0000.0000 to 0xabcd/000b.000b.000b.000b
+12118	ID:4	[ERR : TSCH      ] ! failed to parse EB (len 17)
+12118	ID:4	[Read single] Start
+12118	ID:11	[Read single] Start
+12118	ID:11	tx: 1 - 1
+12118	ID:11	RX process pending
+12118	ID:11	TX process pending
+12118	ID:11	[INFO: TSCH      ] packet sent to 0001.0001.0001.0001, seqno 110, status 0, tx 1
+12118	ID:11	[INFO: TSCH      ] packet sent to 0001.0001.0001.0001, seqno 110, status 0, tx 1
+12118	ID:11	[INFO: TSCH-LOG  ] {asn-0.495 link-1-17-0-0 ch-15} uc-1-0 tx LL-000b->LL-0001, len 83, seq 110, st 0 1, dr 0
+12118	ID:11	[INFO: TSCH-LOG  ] {asn-0.495 link-1-17-0-0 ch-15} uc-1-0 tx LL-000b->LL-0001, len 83, seq 110, st 0 1, dr 0
+12118	ID:11	[Read single] Start
+12118	ID:2	Right channel match 20 or 23
+12118	ID:2	[Read single] Start
+12118	ID:2	[INFO: TSCH      ] scan: received packet (17 bytes) on channel 20
+12118	ID:2	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 2, FCF 02 2e
+12118	ID:2	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0x0/0000.0000.0000.0000 to 0xabcd/000b.000b.000b.000b
+12118	ID:2	[ERR : TSCH      ] ! failed to parse EB (len 17)
+12118	ID:2	[Read single] Start
+12118	ID:9	Right channel match 18 or 11
+12118	ID:9	[Read single] Start
+12118	ID:9	[INFO: TSCH      ] scan: received packet (17 bytes) on channel 18
+12118	ID:9	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 2, FCF 02 2e
+12118	ID:9	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0x0/0000.0000.0000.0000 to 0xabcd/000b.000b.000b.000b
+12118	ID:9	[ERR : TSCH      ] ! failed to parse EB (len 17)
+12118	ID:9	[Read single] Start
+12122	ID:1	current_channel = 22 and 17
+12122	ID:1	Packet1: 0xc2fb0660  len:  41
+12122	ID:1	 Packet2:  0xc2fb0660 len:  41
+12122	ID:1	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+12124	ID:1	[transmit_packet] Pck1: 0x29 - Pck2: 0x29 
+12124	ID:1	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+12124	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+12124	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+12124	ID:29	[Receiving_packet] Radio2: On
+12124	ID:3	[Receiving_packet] Radio2: On
+12124	ID:10	[Receiving_packet] Radio1: On
+12125	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+12125	ID:11	[radio_read_dual] starting
+12125	ID:11	Radio 1 - Radio 2
+12125	ID:11	no poll mode
+12125	ID:11	[read_dual] tmp: 41 - tmp1:41
+12125	ID:11	[tsch-slot-operation] Read packet - 41
+12125	ID:11	[tsch-slot-operation] Read second packet - 41
+12125	ID:11	current header len:  21
+12125	ID:11	second header len:  21
+12125	ID:11	First frame verification
+12125	ID:11	Second frame verification
+12125	ID:11	rx_count:  6 41 41
+12125	ID:11	Acklen1 =  17 - Acklen2 = 17
+12125	ID:11	[DEBUG] Entrou 
+12125	ID:11	[DEBUG] Preparao ack
+12125	ID:11	[prepare_packet] data1:0xc2fae2c0 - data2: 0xc2fae360 
+12125	ID:11	[Read single] Start
+12125	ID:29	Right channel match 18 or 22
+12125	ID:29	[Read single] Start
+12125	ID:29	[INFO: TSCH      ] scan: received packet (41 bytes) on channel 18
+12125	ID:29	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+12125	ID:29	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0001.0001.0001.0001 to 0xabcd/000b.000b.000b.000b
+12125	ID:29	[ERR : TSCH      ] ! failed to parse EB (len 41)
+12125	ID:29	[Read single] Start
+12125	ID:3	Right channel match 18 or 17
+12125	ID:3	[Read single] Start
+12125	ID:3	[INFO: TSCH      ] scan: received packet (41 bytes) on channel 18
+12125	ID:3	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+12125	ID:3	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0001.0001.0001.0001 to 0xabcd/000b.000b.000b.000b
+12125	ID:3	[ERR : TSCH      ] ! failed to parse EB (len 41)
+12125	ID:3	[Read single] Start
+12125	ID:10	Right channel match 17 or 24
+12125	ID:10	[Read single] Start
+12125	ID:10	[INFO: TSCH      ] scan: received packet (41 bytes) on channel 17
+12125	ID:10	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+12125	ID:10	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0001.0001.0001.0001 to 0xabcd/000b.000b.000b.000b
+12125	ID:10	[ERR : TSCH      ] ! failed to parse EB (len 41)
+12125	ID:10	[Read single] Start
+12126	ID:11	[DEBUG] Transmit ack
+12126	ID:11	[transmit_packet] Pck1: 0x11 - Pck2: 0x11 
+12126	ID:11	[Send_packet] Pckt1: 0xc2fae2c0 - Pckt2: 0xc2fae360
+12126	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+12126	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+12126	ID:28	[Receiving_packet] Radio2: On
+12126	ID:8	[Receiving_packet] Radio2: On
+12127	ID:11	RX process pending
+12127	ID:11	[INFO: TSCH      ] received from 0001.0001.0001.0001 with seqno 10
+12127	ID:11	TX process pending
+12127	ID:11	[INFO: TSCH-LOG  ] {asn-0.496 link-1-17-1-1 ch-22} uc-1-0 rx LL-0001->LL-000b, len 41, seq 10, dr 0, edr 0
+12127	ID:11	[INFO: TSCH-LOG  ] {asn-0.496 link-1-17-1-1 ch-22} uc-1-0 rx LL-0001->LL-000b, len 41, seq 10, dr 0, edr 0
+12127	ID:1	[Read single] Start
+12127	ID:1	tx: 2 - 2
+12127	ID:1	RX process pending
+12127	ID:1	TX process pending
+12127	ID:1	[INFO: TSCH      ] packet sent to 000b.000b.000b.000b, seqno 10, status 0, tx 2
+12127	ID:1	[INFO: TSCH      ] packet sent to 000b.000b.000b.000b, seqno 10, status 0, tx 2
+12127	ID:1	[INFO: TSCH-LOG  ] {asn-0.496 link-1-17-1-1 ch-22} uc-1-0 tx LL-0001->LL-000b, len 41, seq 10, st 0 2
+12127	ID:1	[INFO: TSCH-LOG  ] {asn-0.496 link-1-17-1-1 ch-22} uc-1-0 tx LL-0001->LL-000b, len 41, seq 10, st 0 2
+12127	ID:1	[Read single] Start
+12127	ID:28	Right channel match 25 or 22
+12127	ID:28	[Read single] Start
+12127	ID:28	[INFO: TSCH      ] scan: received packet (17 bytes) on channel 25
+12127	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 2, FCF 02 2e
+12127	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0x0/0000.0000.0000.0000 to 0xabcd/0001.0001.0001.0001
+12127	ID:28	[ERR : TSCH      ] ! failed to parse EB (len 17)
+12127	ID:28	[Read single] Start
+12127	ID:8	Right channel match 18 or 17
+12127	ID:8	[Read single] Start
+12127	ID:8	[INFO: TSCH      ] scan: received packet (17 bytes) on channel 18
+12127	ID:8	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 2, FCF 02 2e
+12127	ID:8	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0x0/0000.0000.0000.0000 to 0xabcd/0001.0001.0001.0001
+12127	ID:8	[ERR : TSCH      ] ! failed to parse EB (len 17)
+12127	ID:8	[Read single] Start
+12154	ID:28	scanning on channel 17 and 21 
+12248	ID:2	scanning on channel 12 and 24 
+12256	ID:30	scanning on channel 11 and 14 
+12262	ID:6	scanning on channel 12 and 13 
+12338	ID:18	scanning on channel 23 and 13 
+12414	ID:7	scanning on channel 26 and 19 
+12462	ID:14	scanning on channel 13 and 19 
+12474	ID:15	scanning on channel 22 and 14 
+12479	ID:25	scanning on channel 25 and 12 
+12484	ID:20	scanning on channel 20 and 18 
+12485	ID:16	scanning on channel 18 and 21 
+12568	ID:10	scanning on channel 11 and 12 
+12606	ID:12	scanning on channel 25 and 23 
+12649	ID:29	scanning on channel 14 and 22 
+12675	ID:22	scanning on channel 19 and 18 
+12702	ID:26	scanning on channel 12 and 15 
+12720	ID:9	scanning on channel 14 and 15 
+12727	ID:5	scanning on channel 22 and 19 
+12731	ID:19	scanning on channel 11 and 20 
+12821	ID:17	scanning on channel 26 and 13 
+12896	ID:13	scanning on channel 23 and 14 
+12911	ID:3	scanning on channel 25 and 13 
+12918	ID:21	scanning on channel 26 and 17 
+12957	ID:23	scanning on channel 20 and 23 
+13048	ID:24	scanning on channel 26 and 17 
+13086	ID:8	scanning on channel 17 and 14 
+13155	ID:28	scanning on channel 24 and 22 
+13249	ID:2	scanning on channel 16 and 11 
+13257	ID:30	scanning on channel 20 and 17 
+13263	ID:6	scanning on channel 17 and 24 
+13339	ID:18	scanning on channel 22 and 20 
+13361	ID:4	scanning on channel 17 and 20 
+13398	ID:27	scanning on channel 22 and 12 
+13415	ID:7	scanning on channel 24 and 13 
+13463	ID:14	scanning on channel 25 and 21 
+13475	ID:15	scanning on channel 19 and 24 
+13480	ID:25	scanning on channel 12 and 24 
+13485	ID:20	scanning on channel 16 and 13 
+13486	ID:16	scanning on channel 13 and 23 
+13569	ID:10	scanning on channel 21 and 24 
+13607	ID:12	scanning on channel 26 and 24 
+13650	ID:29	scanning on channel 19 and 13 
+13674	ID:11	[INFO: App       ] Send to fd00::201:1:1:1, seqnum 1
+13674	ID:11	[DBG : TSCH Queue] packet is added put_index 4, packet 0xc2fb2d60
+13674	ID:11	[DBG : TSCH Queue] packet is added put_index 5, packet 0xc2fb2d88
+13674	ID:11	[INFO: TSCH      ] send packet to 0001.0001.0001.0001 with seqno 111, queue 2 3, len 21 43
+13674	ID:11	[INFO: TSCH      ] send packet to 0001.0001.0001.0001 with seqno 111, queue 2 3, len 21 43
+13676	ID:22	scanning on channel 25 and 11 
+13703	ID:26	scanning on channel 18 and 17 
+13721	ID:9	scanning on channel 21 and 12 
+13728	ID:5	scanning on channel 24 and 11 
+13732	ID:19	scanning on channel 14 and 12 
+13812	ID:11	current_channel = 21 and 26
+13812	ID:11	Packet1: 0xc2fb0660  len:  43
+13812	ID:11	 Packet2:  0xc2fb07c0 len:  43
+13812	ID:11	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb07c0 
+13814	ID:11	[transmit_packet] Pck1: 0x2b - Pck2: 0x2b 
+13814	ID:11	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb07c0
+13814	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+13814	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+13814	ID:14	[Receiving_packet] Radio2: On
+13814	ID:24	[Receiving_packet] Radio1: On
+13815	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+13815	ID:1	[radio_read_dual] starting
+13815	ID:1	Radio 1 - Radio 2
+13815	ID:1	no poll mode
+13815	ID:1	[read_dual] tmp: 43 - tmp1:43
+13815	ID:1	[tsch-slot-operation] Read packet - 43
+13815	ID:1	[tsch-slot-operation] Read second packet - 43
+13815	ID:1	current header len:  21
+13815	ID:1	second header len:  21
+13815	ID:1	First frame verification
+13815	ID:1	Second frame verification
+13815	ID:1	rx_count:  6 43 43
+13815	ID:1	Acklen1 =  17 - Acklen2 = 17
+13815	ID:1	[DEBUG] Entrou 
+13815	ID:1	[DEBUG] Preparao ack
+13815	ID:1	[prepare_packet] data1:0xc2fae2c0 - data2: 0xc2fae360 
+13815	ID:1	[Read single] Start
+13815	ID:14	Right channel match 25 or 21
+13815	ID:14	[Read single] Start
+13815	ID:14	[INFO: TSCH      ] scan: received packet (43 bytes) on channel 25
+13815	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+13815	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+13815	ID:14	[ERR : TSCH      ] ! failed to parse EB (len 43)
+13815	ID:14	[Read single] Start
+13815	ID:24	Right channel match 26 or 17
+13815	ID:24	[Read single] Start
+13815	ID:24	[INFO: TSCH      ] scan: received packet (43 bytes) on channel 26
+13815	ID:24	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+13815	ID:24	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+13815	ID:24	[ERR : TSCH      ] ! failed to parse EB (len 43)
+13815	ID:24	[Read single] Start
+13816	ID:1	[DEBUG] Transmit ack
+13816	ID:1	[transmit_packet] Pck1: 0x11 - Pck2: 0x11 
+13816	ID:1	[Send_packet] Pckt1: 0xc2fae2c0 - Pckt2: 0xc2fae360
+13816	ID:9	[Receiving_packet] Radio1: On
+13816	ID:10	[Receiving_packet] Radio1: On
+13816	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+13816	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+13816	ID:17	[Receiving_packet] Radio1: On
+13816	ID:24	[Receiving_packet] Radio1: On
+13817	ID:1	RX process pending
+13817	ID:1	[INFO: TSCH      ] received from 000b.000b.000b.000b with seqno 111
+13817	ID:1	[INFO: App       ] Received from fd00::20b:b:b:b, seqnum 1
+13817	ID:1	TX process pending
+13817	ID:1	[INFO: TSCH-LOG  ] {asn-0.53f link-1-17-0-0 ch-21} uc-1-0 rx LL-000b->LL-0001, len 43, seq 111, edr 0
+13817	ID:1	[INFO: TSCH-LOG  ] {asn-0.53f link-1-17-0-0 ch-21} uc-1-0 rx LL-000b->LL-0001, len 43, seq 111, edr 0
+13817	ID:9	Right channel match 21 or 12
+13817	ID:9	[Read single] Start
+13817	ID:9	[INFO: TSCH      ] scan: received packet (17 bytes) on channel 21
+13817	ID:9	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 2, FCF 02 2e
+13817	ID:9	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0x0/0000.0000.0000.0000 to 0xabcd/000b.000b.000b.000b
+13817	ID:9	[ERR : TSCH      ] ! failed to parse EB (len 17)
+13817	ID:9	[Read single] Start
+13817	ID:10	Right channel match 21 or 24
+13817	ID:10	[Read single] Start
+13817	ID:10	[INFO: TSCH      ] scan: received packet (17 bytes) on channel 21
+13817	ID:10	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 2, FCF 02 2e
+13817	ID:10	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0x0/0000.0000.0000.0000 to 0xabcd/000b.000b.000b.000b
+13817	ID:10	[ERR : TSCH      ] ! failed to parse EB (len 17)
+13817	ID:10	[Read single] Start
+13817	ID:11	[Read single] Start
+13817	ID:11	tx: 1 - 1
+13817	ID:11	RX process pending
+13817	ID:11	TX process pending
+13817	ID:11	[INFO: TSCH      ] packet sent to 0001.0001.0001.0001, seqno 111, status 0, tx 1
+13817	ID:11	[INFO: TSCH      ] packet sent to 0001.0001.0001.0001, seqno 111, status 0, tx 1
+13817	ID:11	[INFO: TSCH-LOG  ] {asn-0.53f link-1-17-0-0 ch-21} uc-1-0 tx LL-000b->LL-0001, len 43, seq 111, st 0 1, dr 0
+13817	ID:11	[INFO: TSCH-LOG  ] {asn-0.53f link-1-17-0-0 ch-21} uc-1-0 tx LL-000b->LL-0001, len 43, seq 111, st 0 1, dr 0
+13817	ID:11	[Read single] Start
+13817	ID:17	Right channel match 26 or 13
+13817	ID:17	[Read single] Start
+13817	ID:17	[INFO: TSCH      ] scan: received packet (17 bytes) on channel 26
+13817	ID:17	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 2, FCF 02 2e
+13817	ID:17	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0x0/0000.0000.0000.0000 to 0xabcd/000b.000b.000b.000b
+13817	ID:17	[ERR : TSCH      ] ! failed to parse EB (len 17)
+13817	ID:17	[Read single] Start
+13817	ID:24	Right channel match 26 or 17
+13817	ID:24	[Read single] Start
+13817	ID:24	[INFO: TSCH      ] scan: received packet (17 bytes) on channel 26
+13817	ID:24	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 2, FCF 02 2e
+13817	ID:24	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0x0/0000.0000.0000.0000 to 0xabcd/000b.000b.000b.000b
+13817	ID:24	[ERR : TSCH      ] ! failed to parse EB (len 17)
+13817	ID:24	[Read single] Start
+13822	ID:17	scanning on channel 23 and 13 
+13897	ID:13	scanning on channel 18 and 25 
+13912	ID:3	scanning on channel 24 and 23 
+13958	ID:23	scanning on channel 13 and 19 
+14049	ID:24	scanning on channel 22 and 14 
+14087	ID:8	scanning on channel 25 and 12 
+14156	ID:28	scanning on channel 20 and 18 
+14250	ID:2	scanning on channel 18 and 21 
+14258	ID:30	scanning on channel 11 and 12 
+14264	ID:6	scanning on channel 25 and 23 
+14340	ID:18	scanning on channel 14 and 22 
+14399	ID:27	scanning on channel 18 and 12 
+14416	ID:7	scanning on channel 15 and 14 
+14464	ID:14	scanning on channel 15 and 22 
+14481	ID:25	scanning on channel 20 and 26 
+14486	ID:20	scanning on channel 13 and 23 
+14487	ID:16	scanning on channel 14 and 25 
+14570	ID:10	scanning on channel 13 and 26 
+14651	ID:29	scanning on channel 20 and 23 
+14677	ID:22	scanning on channel 26 and 17 
+14704	ID:26	scanning on channel 17 and 14 
+14722	ID:9	scanning on channel 24 and 22 
+14729	ID:5	scanning on channel 16 and 11 
+14733	ID:19	scanning on channel 20 and 17 
+14754	ID:11	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+14754	ID:11	[DBG : TSCH Queue] packet is added put_index 1, packet 0xc2fb2d88
+14754	ID:11	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 111, queue 2 3, len 14 94
+14754	ID:11	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 111, queue 2 3, len 14 94
+14823	ID:17	scanning on channel 25 and 11 
+14832	ID:11	current_channel = 15 and 20
+14832	ID:11	Packet1: 0xc2fb0660  len:  94
+14832	ID:11	 Packet2:  0xc2fb0660 len:  94
+14832	ID:11	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+14834	ID:11	[transmit_packet] Pck1: 0x5e - Pck2: 0x5e 
+14834	ID:11	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+14834	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+14834	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+14834	ID:14	[Receiving_packet] Radio1: On
+14834	ID:25	[Receiving_packet] Radio1: On
+14834	ID:28	[Receiving_packet] Radio1: On
+14835	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+14836	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+14837	ID:1	[Receiving_packet] Radio1: On and Radio2: On 
+14837	ID:11	tx: 2 - 2
+14837	ID:11	RX process pending
+14837	ID:11	TX process pending
+14837	ID:11	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 190, status 0, tx 2
+14837	ID:11	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 190, status 0, tx 2
+14837	ID:11	[INFO: TSCH-LOG  ] {asn-0.5a5 link-1-17-0-0 ch-15} bc-1-0 tx LL-000b->LL-NULL, len 94, seq 190, st 0 2
+14837	ID:11	[INFO: TSCH-LOG  ] {asn-0.5a5 link-1-17-0-0 ch-15} bc-1-0 tx LL-000b->LL-NULL, len 94, seq 190, st 0 2
+14837	ID:1	[radio_read_dual] starting
+14837	ID:1	Radio 1 - Radio 2
+14837	ID:1	no poll mode
+14837	ID:1	[read_dual] tmp: 94 - tmp1:94
+14837	ID:1	[tsch-slot-operation] Read packet - 94
+14837	ID:1	[tsch-slot-operation] Read second packet - 94
+14837	ID:1	current header len:  14
+14837	ID:1	second header len:  14
+14837	ID:1	First frame verification
+14837	ID:1	Second frame verification
+14837	ID:1	rx_count:  -267868156 94 94
+14837	ID:1	RX process pending
+14837	ID:1	[INFO: TSCH      ] received from 000b.000b.000b.000b with seqno 65535
+14837	ID:1	TX process pending
+14837	ID:1	[INFO: TSCH-LOG  ] {asn-fe.19b1a3a link-1-17-0-0 ch-0} bc-1-0 rx LL-000b->LL-NULL, len 94, seq 111, edr 0
+14837	ID:1	[INFO: TSCH-LOG  ] {asn-fe.19b1a3a link-1-17-0-0 ch-0} bc-1-0 rx LL-000b->LL-NULL, len 94, seq 111, edr 0
+14837	ID:1	[Read single] Start
+14837	ID:14	Right channel match 15 or 22
+14837	ID:14	[Read single] Start
+14837	ID:14	[INFO: TSCH      ] scan: received packet (94 bytes) on channel 15
+14837	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+14837	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/ffff.0000.0000.0000
+14837	ID:14	[ERR : TSCH      ] ! failed to parse EB (len 94)
+14837	ID:14	[Read single] Start
+14837	ID:25	Right channel match 20 or 26
+14837	ID:25	[Read single] Start
+14837	ID:25	[INFO: TSCH      ] scan: received packet (94 bytes) on channel 20
+14837	ID:25	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+14837	ID:25	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/ffff.0000.0000.0000
+14837	ID:25	[ERR : TSCH      ] ! failed to parse EB (len 94)
+14837	ID:25	[Read single] Start
+14837	ID:28	Right channel match 20 or 18
+14837	ID:28	[Read single] Start
+14837	ID:28	[INFO: TSCH      ] scan: received packet (94 bytes) on channel 20
+14837	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+14837	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/ffff.0000.0000.0000
+14837	ID:28	[ERR : TSCH      ] ! failed to parse EB (len 94)
+14837	ID:28	[Read single] Start
+14913	ID:3	scanning on channel 21 and 12 
+14920	ID:21	scanning on channel 24 and 11 
+14959	ID:23	scanning on channel 14 and 12 
+15050	ID:24	scanning on channel 13 and 23 
+15088	ID:8	scanning on channel 13 and 18 
+15157	ID:28	scanning on channel 25 and 24 
+15251	ID:2	scanning on channel 23 and 26 
+15259	ID:30	scanning on channel 19 and 13 
+15265	ID:6	scanning on channel 19 and 22 
+15363	ID:4	scanning on channel 12 and 20 
+15417	ID:7	scanning on channel 11 and 12 
+15465	ID:14	scanning on channel 25 and 23 
+15477	ID:15	scanning on channel 14 and 22 
+15482	ID:25	scanning on channel 17 and 19 
+15487	ID:20	scanning on channel 18 and 12 
+15488	ID:16	scanning on channel 15 and 14 
+15571	ID:10	scanning on channel 15 and 22 
+15609	ID:12	scanning on channel 19 and 11 
+15678	ID:22	scanning on channel 13 and 23 
+15705	ID:26	scanning on channel 14 and 25 
+15723	ID:9	scanning on channel 13 and 26 
+15730	ID:5	scanning on channel 26 and 17 
+15739	ID:28	[WARN: TSCH      ] ! not associated, drop outgoing packet
+15824	ID:17	scanning on channel 17 and 14 
+15899	ID:13	scanning on channel 24 and 22 
+15914	ID:3	scanning on channel 16 and 11 
+15921	ID:21	scanning on channel 20 and 17 
+15960	ID:23	scanning on channel 17 and 24 
+15997	ID:13	[WARN: TSCH      ] ! not associated, drop outgoing packet
+16051	ID:24	scanning on channel 20 and 17 
+16089	ID:8	scanning on channel 20 and 22 
+16158	ID:28	scanning on channel 12 and 24 
+16213	ID:14	[WARN: TSCH      ] ! not associated, drop outgoing packet
+16252	ID:2	scanning on channel 21 and 19 
+16260	ID:30	scanning on channel 24 and 12 
+16266	ID:6	scanning on channel 24 and 16 
+16342	ID:18	scanning on channel 13 and 23 
+16364	ID:4	scanning on channel 21 and 24 
+16401	ID:27	scanning on channel 26 and 24 
+16418	ID:7	scanning on channel 19 and 13 
+16431	ID:27	[WARN: TSCH      ] ! not associated, drop outgoing packet
+16466	ID:14	scanning on channel 23 and 12 
+16478	ID:15	scanning on channel 20 and 18 
+16483	ID:25	scanning on channel 13 and 12 
+16488	ID:20	scanning on channel 12 and 13 
+16489	ID:16	scanning on channel 11 and 17 
+16524	ID:29	[WARN: TSCH      ] ! not associated, drop outgoing packet
+16610	ID:12	scanning on channel 24 and 26 
+16653	ID:29	scanning on channel 15 and 19 
+16679	ID:22	scanning on channel 20 and 17 
+16706	ID:26	scanning on channel 11 and 24 
+16731	ID:5	scanning on channel 11 and 21 
+16735	ID:19	scanning on channel 15 and 17 
+16825	ID:17	scanning on channel 13 and 17 
+16900	ID:13	scanning on channel 18 and 15 
+16915	ID:3	scanning on channel 21 and 22 
+16922	ID:21	scanning on channel 16 and 11 
+17052	ID:24	scanning on channel 15 and 12 
+17090	ID:8	scanning on channel 13 and 16 
+17159	ID:28	scanning on channel 19 and 22 
+17253	ID:2	scanning on channel 14 and 21 
+17261	ID:30	scanning on channel 18 and 20 
+17267	ID:6	scanning on channel 19 and 24 
+17365	ID:4	scanning on channel 15 and 26 
+17402	ID:27	scanning on channel 18 and 12 
+17419	ID:7	scanning on channel 15 and 20 
+17467	ID:14	scanning on channel 13 and 11 
+17479	ID:15	scanning on channel 18 and 13 
+17484	ID:25	scanning on channel 16 and 26 
+17489	ID:20	scanning on channel 26 and 17 
+17490	ID:16	scanning on channel 20 and 11 
+17573	ID:10	scanning on channel 24 and 12 
+17611	ID:12	scanning on channel 26 and 24 
+17654	ID:29	scanning on channel 23 and 13 
+17655	ID:16	[WARN: TSCH      ] ! not associated, drop outgoing packet
+17680	ID:22	scanning on channel 21 and 13 
+17707	ID:26	scanning on channel 18 and 14 
+17725	ID:9	scanning on channel 18 and 16 
+17732	ID:5	scanning on channel 19 and 22 
+17901	ID:13	scanning on channel 23 and 11 
+17916	ID:3	scanning on channel 12 and 13 
+17923	ID:21	scanning on channel 14 and 15 
+17962	ID:23	scanning on channel 13 and 17 
+18053	ID:24	scanning on channel 12 and 24 
+18091	ID:8	scanning on channel 21 and 18 
+18254	ID:2	scanning on channel 19 and 26 
+18262	ID:30	scanning on channel 13 and 18 
+18268	ID:6	scanning on channel 15 and 12 
+18344	ID:18	scanning on channel 20 and 19 
+18366	ID:4	scanning on channel 19 and 23 
+18403	ID:27	scanning on channel 19 and 16 
+18420	ID:7	scanning on channel 11 and 14 
+18427	ID:12	[WARN: TSCH      ] ! not associated, drop outgoing packet
+18468	ID:14	scanning on channel 26 and 24 
+18480	ID:15	scanning on channel 21 and 20 
+18485	ID:25	scanning on channel 22 and 12 
+18490	ID:20	scanning on channel 13 and 24 
+18491	ID:16	scanning on channel 15 and 24 
+18574	ID:10	scanning on channel 25 and 17 
+18612	ID:12	scanning on channel 13 and 12 
+18655	ID:29	scanning on channel 12 and 15 
+18681	ID:22	scanning on channel 23 and 20 
+18708	ID:26	scanning on channel 16 and 15 
+18733	ID:5	scanning on channel 26 and 24 
+18737	ID:19	scanning on channel 18 and 25 
+18827	ID:17	scanning on channel 26 and 18 
+18902	ID:13	scanning on channel 21 and 23 
+18917	ID:3	scanning on channel 16 and 26 
+18924	ID:21	scanning on channel 20 and 21 
+18963	ID:23	scanning on channel 23 and 15 
+19054	ID:24	scanning on channel 11 and 14 
+19092	ID:8	scanning on channel 23 and 20 
+19161	ID:28	scanning on channel 11 and 19 
+19163	ID:3	[WARN: TSCH      ] ! not associated, drop outgoing packet
+19255	ID:2	scanning on channel 26 and 23 
+19263	ID:30	scanning on channel 12 and 11 
+19269	ID:6	scanning on channel 26 and 19 
+19345	ID:18	scanning on channel 12 and 24 
+19367	ID:4	scanning on channel 15 and 20 
+19421	ID:7	scanning on channel 24 and 13 
+19469	ID:14	scanning on channel 18 and 20 
+19481	ID:15	scanning on channel 24 and 22 
+19486	ID:25	scanning on channel 14 and 13 
+19491	ID:20	scanning on channel 11 and 23 
+19575	ID:10	scanning on channel 26 and 18 
+19613	ID:12	scanning on channel 21 and 14 
+19647	ID:19	[WARN: TSCH      ] ! not associated, drop outgoing packet
+19656	ID:29	scanning on channel 26 and 21 
+19682	ID:22	scanning on channel 14 and 26 
+19709	ID:26	scanning on channel 25 and 22 
+19727	ID:9	scanning on channel 20 and 23 
+19734	ID:5	scanning on channel 24 and 12 
+19738	ID:19	scanning on channel 26 and 16 
+19828	ID:17	scanning on channel 25 and 16 
+19878	ID:7	[WARN: TSCH      ] ! not associated, drop outgoing packet
+19903	ID:13	scanning on channel 15 and 24 
+19918	ID:3	scanning on channel 13 and 23 
+19925	ID:21	scanning on channel 22 and 26 
+19964	ID:23	scanning on channel 26 and 24 
+19987	ID:15	[WARN: TSCH      ] ! not associated, drop outgoing packet
+20084	ID:30	[WARN: TSCH      ] ! not associated, drop outgoing packet
+20093	ID:8	scanning on channel 25 and 18 
+20162	ID:28	scanning on channel 20 and 15 
+20256	ID:2	scanning on channel 17 and 24 
+20264	ID:30	scanning on channel 11 and 22 
+20270	ID:6	scanning on channel 18 and 22 
+20346	ID:18	scanning on channel 11 and 16 
+20368	ID:4	scanning on channel 18 and 26 
+20405	ID:27	scanning on channel 18 and 11 
+20422	ID:7	scanning on channel 26 and 22 
+20470	ID:14	scanning on channel 20 and 16 
+20482	ID:15	scanning on channel 23 and 16 
+20487	ID:25	scanning on channel 19 and 25 
+20492	ID:20	scanning on channel 15 and 26 
+20493	ID:16	scanning on channel 17 and 20 
+20614	ID:12	scanning on channel 26 and 19 
+20657	ID:29	scanning on channel 12 and 11 
+20683	ID:22	scanning on channel 11 and 25 
+20710	ID:26	scanning on channel 18 and 16 
+20728	ID:9	scanning on channel 12 and 11 
+20735	ID:5	scanning on channel 12 and 20 
+20739	ID:19	scanning on channel 24 and 20 
+20829	ID:17	scanning on channel 17 and 15 
+20904	ID:13	scanning on channel 18 and 19 
+20909	ID:21	[WARN: TSCH      ] ! not associated, drop outgoing packet
+20919	ID:3	scanning on channel 18 and 12 
+20926	ID:21	scanning on channel 26 and 13 
+20965	ID:23	scanning on channel 17 and 11 
+21056	ID:24	scanning on channel 16 and 23 
+21094	ID:8	scanning on channel 22 and 26 
+21257	ID:2	scanning on channel 24 and 11 
+21265	ID:30	scanning on channel 15 and 21 
+21271	ID:6	scanning on channel 19 and 15 
+21369	ID:4	scanning on channel 20 and 18 
+21406	ID:27	scanning on channel 16 and 12 
+21423	ID:7	scanning on channel 23 and 16 
+21471	ID:14	scanning on channel 15 and 12 
+21483	ID:15	scanning on channel 26 and 19 
+21488	ID:25	scanning on channel 15 and 19 
+21493	ID:20	scanning on channel 26 and 25 
+21494	ID:16	scanning on channel 23 and 26 
+21577	ID:10	scanning on channel 19 and 11 
+21615	ID:12	scanning on channel 19 and 22 
+21658	ID:29	scanning on channel 15 and 16 
+21684	ID:22	scanning on channel 12 and 21 
+21711	ID:26	scanning on channel 23 and 16 
+21729	ID:9	scanning on channel 11 and 26 
+21736	ID:5	scanning on channel 20 and 24 
+21740	ID:19	scanning on channel 15 and 11 
+21830	ID:17	scanning on channel 20 and 22 
+21905	ID:13	scanning on channel 11 and 18 
+21920	ID:3	scanning on channel 17 and 14 
+21927	ID:21	scanning on channel 24 and 25 
+21966	ID:23	scanning on channel 15 and 16 
+22057	ID:24	scanning on channel 24 and 22 
+22095	ID:8	scanning on channel 26 and 15 
+22164	ID:28	scanning on channel 17 and 24 
+22232	ID:11	[DBG : TSCH Queue] packet is added put_index 2, packet 0xc2fb2d60
+22232	ID:11	[DBG : TSCH Queue] packet is added put_index 3, packet 0xc2fb2d9c
+22232	ID:11	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 111, queue 2 4, len 14 94
+22232	ID:11	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 111, queue 2 4, len 14 94
+22258	ID:2	scanning on channel 25 and 11 
+22266	ID:30	scanning on channel 18 and 17 
+22272	ID:6	scanning on channel 21 and 12 
+22312	ID:11	current_channel = 17 and 22
+22312	ID:11	Packet1: 0xc2fb0660  len:  94
+22312	ID:11	 Packet2:  0xc2fb0870 len:  94
+22312	ID:11	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0870 
+22314	ID:11	[transmit_packet] Pck1: 0x5e - Pck2: 0x5e 
+22314	ID:11	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0870
+22314	ID:28	[Receiving_packet] Radio1: On
+22314	ID:24	[Receiving_packet] Radio2: On
+22317	ID:11	tx: 1 - 1
+22317	ID:11	RX process pending
+22317	ID:11	TX process pending
+22317	ID:11	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 191, status 0, tx 1
+22317	ID:11	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 191, status 0, tx 1
+22317	ID:11	[INFO: TSCH-LOG  ] {asn-0.891 link-1-17-0-0 ch-17} bc-1-0 tx LL-000b->LL-NULL, len 94, seq 191, st 0 1
+22317	ID:11	[INFO: TSCH-LOG  ] {asn-0.891 link-1-17-0-0 ch-17} bc-1-0 tx LL-000b->LL-NULL, len 94, seq 191, st 0 1
+22317	ID:28	Right channel match 17 or 24
+22317	ID:28	[Read single] Start
+22317	ID:28	[INFO: TSCH      ] scan: received packet (94 bytes) on channel 17
+22317	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+22317	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/ffff.0000.0000.0000
+22317	ID:28	[ERR : TSCH      ] ! failed to parse EB (len 94)
+22317	ID:28	[Read single] Start
+22317	ID:24	Right channel match 24 or 22
+22317	ID:24	[Read single] Start
+22317	ID:24	[INFO: TSCH      ] scan: received packet (94 bytes) on channel 24
+22317	ID:24	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+22317	ID:24	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/ffff.0000.0000.0000
+22317	ID:24	[ERR : TSCH      ] ! failed to parse EB (len 94)
+22317	ID:24	[Read single] Start
+22348	ID:18	scanning on channel 24 and 11 
+22370	ID:4	scanning on channel 14 and 12 
+22407	ID:27	scanning on channel 13 and 23 
+22424	ID:7	scanning on channel 13 and 18 
+22472	ID:14	scanning on channel 25 and 24 
+22484	ID:15	scanning on channel 23 and 26 
+22489	ID:25	scanning on channel 19 and 13 
+22494	ID:20	scanning on channel 19 and 22 
+22495	ID:16	scanning on channel 14 and 25 
+22578	ID:10	scanning on channel 12 and 20 
+22616	ID:12	scanning on channel 18 and 21 
+22659	ID:29	scanning on channel 11 and 12 
+22685	ID:22	scanning on channel 25 and 23 
+22712	ID:26	scanning on channel 14 and 22 
+22730	ID:9	scanning on channel 17 and 19 
+22737	ID:5	scanning on channel 18 and 12 
+22831	ID:17	scanning on channel 15 and 22 
+22906	ID:13	scanning on channel 19 and 11 
+22921	ID:3	scanning on channel 20 and 26 
+22928	ID:21	scanning on channel 13 and 23 
+22967	ID:23	scanning on channel 14 and 25 
+23058	ID:24	scanning on channel 13 and 26 
+23165	ID:28	scanning on channel 20 and 23 
+23259	ID:2	scanning on channel 26 and 17 
+23267	ID:30	scanning on channel 17 and 14 
+23273	ID:6	scanning on channel 24 and 22 
+23349	ID:18	scanning on channel 16 and 11 
+23371	ID:4	scanning on channel 20 and 17 
+23408	ID:27	scanning on channel 17 and 24 
+23425	ID:7	scanning on channel 22 and 20 
+23473	ID:14	scanning on channel 17 and 20 
+23485	ID:15	scanning on channel 22 and 12 
+23490	ID:25	scanning on channel 24 and 13 
+23495	ID:20	scanning on channel 25 and 21 
+23496	ID:16	scanning on channel 19 and 24 
+23617	ID:12	scanning on channel 16 and 13 
+23660	ID:29	scanning on channel 13 and 23 
+23686	ID:22	scanning on channel 21 and 24 
+23713	ID:26	scanning on channel 26 and 24 
+23731	ID:9	scanning on channel 19 and 13 
+23738	ID:5	scanning on channel 24 and 23 
+23742	ID:19	scanning on channel 12 and 20 
+23832	ID:17	scanning on channel 18 and 13 
+23907	ID:13	scanning on channel 12 and 13 
+23922	ID:3	scanning on channel 11 and 17 
+23929	ID:21	scanning on channel 25 and 15 
+23968	ID:23	scanning on channel 24 and 26 
+24059	ID:24	scanning on channel 15 and 19 
+24097	ID:8	scanning on channel 20 and 17 
+24166	ID:28	scanning on channel 11 and 24 
+24260	ID:2	scanning on channel 13 and 19 
+24268	ID:30	scanning on channel 11 and 21 
+24274	ID:6	scanning on channel 15 and 17 
+24350	ID:18	scanning on channel 13 and 17 
+24372	ID:4	scanning on channel 18 and 15 
+24409	ID:27	scanning on channel 21 and 22 
+24426	ID:7	scanning on channel 11 and 17 
+24474	ID:14	scanning on channel 12 and 15 
+24486	ID:15	scanning on channel 12 and 13 
+24491	ID:25	scanning on channel 13 and 16 
+24496	ID:20	scanning on channel 19 and 22 
+24497	ID:16	scanning on channel 26 and 14 
+24580	ID:10	scanning on channel 21 and 18 
+24618	ID:12	scanning on channel 20 and 19 
+24628	ID:11	[DBG : TSCH Queue] packet is added put_index 6, packet 0xc2fb2d60
+24628	ID:11	[DBG : TSCH Queue] packet is added put_index 7, packet 0xc2fb2d9c
+24628	ID:11	[INFO: TSCH      ] send packet to 0001.0001.0001.0001 with seqno 112, queue 2 4, len 21 21
+24628	ID:11	[INFO: TSCH      ] send packet to 0001.0001.0001.0001 with seqno 112, queue 2 4, len 21 21
+24628	ID:11	[INFO: TSCH      ] sending KA to 0001.0001.0001.0001
+24661	ID:29	scanning on channel 25 and 11 
+24687	ID:22	scanning on channel 18 and 17 
+24692	ID:11	current_channel = 21 and 26
+24692	ID:11	Packet1: 0xc2fb0660  len:  21
+24692	ID:11	 Packet2:  0xc2fb0870 len:  21
+24692	ID:11	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0870 
+24694	ID:11	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+24694	ID:11	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0870
+24694	ID:16	[Receiving_packet] Radio1: On
+24694	ID:16	Right channel match 26 or 14
+24694	ID:16	[Read single] Start
+24694	ID:16	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 26
+24694	ID:16	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+24694	ID:16	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+24694	ID:16	[ERR : TSCH      ] ! failed to parse EB (len 21)
+24694	ID:16	[Read single] Start
+24696	ID:11	[Read single] Start
+24696	ID:11	tx: 1 - 1
+24696	ID:11	RX process pending
+24696	ID:11	TX process pending
+24696	ID:11	[INFO: TSCH-LOG  ] {asn-0.97f link-1-17-0-0 ch-21} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 1
+24696	ID:11	[INFO: TSCH-LOG  ] {asn-0.97f link-1-17-0-0 ch-21} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 1
+24714	ID:26	scanning on channel 12 and 24 
+24732	ID:9	scanning on channel 11 and 14 
+24739	ID:5	scanning on channel 12 and 13 
+24743	ID:19	scanning on channel 23 and 13 
+24908	ID:13	scanning on channel 24 and 23 
+24923	ID:3	scanning on channel 26 and 19 
+24930	ID:21	scanning on channel 13 and 19 
+24969	ID:23	scanning on channel 22 and 14 
+25032	ID:11	current_channel = 17 and 22
+25032	ID:11	Packet1: 0xc2fb0660  len:  21
+25032	ID:11	 Packet2:  0xc2fb0870 len:  21
+25032	ID:11	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0870 
+25034	ID:11	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+25034	ID:11	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0870
+25034	ID:6	[Receiving_packet] Radio2: On
+25034	ID:8	[Receiving_packet] Radio2: On
+25034	ID:6	Right channel match 15 or 17
+25034	ID:6	[Read single] Start
+25034	ID:6	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 15
+25034	ID:6	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+25034	ID:6	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+25034	ID:6	[ERR : TSCH      ] ! failed to parse EB (len 21)
+25034	ID:6	[Read single] Start
+25034	ID:8	Right channel match 20 or 17
+25034	ID:8	[Read single] Start
+25034	ID:8	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 20
+25034	ID:8	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+25034	ID:8	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+25034	ID:8	[ERR : TSCH      ] ! failed to parse EB (len 21)
+25034	ID:8	[Read single] Start
+25036	ID:11	[Read single] Start
+25036	ID:11	tx: 2 - 2
+25036	ID:11	RX process pending
+25036	ID:11	TX process pending
+25036	ID:11	[INFO: TSCH-LOG  ] {asn-0.9a1 link-1-17-0-0 ch-17} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 2
+25036	ID:11	[INFO: TSCH-LOG  ] {asn-0.9a1 link-1-17-0-0 ch-17} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 2
+25060	ID:24	scanning on channel 12 and 20 
+25098	ID:8	scanning on channel 18 and 21 
+25261	ID:2	scanning on channel 25 and 23 
+25269	ID:30	scanning on channel 14 and 22 
+25275	ID:6	scanning on channel 17 and 19 
+25351	ID:18	scanning on channel 18 and 12 
+25373	ID:4	scanning on channel 15 and 14 
+25410	ID:27	scanning on channel 15 and 22 
+25427	ID:7	scanning on channel 19 and 11 
+25475	ID:14	scanning on channel 20 and 26 
+25487	ID:15	scanning on channel 13 and 23 
+25492	ID:25	scanning on channel 14 and 25 
+25497	ID:20	scanning on channel 13 and 26 
+25542	ID:11	current_channel = 26 and 21
+25542	ID:11	Packet1: 0xc2fb0660  len:  21
+25542	ID:11	 Packet2:  0xc2fb0870 len:  21
+25542	ID:11	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0870 
+25544	ID:11	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+25544	ID:11	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0870
+25544	ID:14	[Receiving_packet] Radio2: On
+25544	ID:16	[Receiving_packet] Radio1: On
+25544	ID:8	[Receiving_packet] Radio2: On
+25544	ID:14	Right channel match 20 or 26
+25544	ID:14	[Read single] Start
+25544	ID:14	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 20
+25544	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+25544	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+25544	ID:14	[ERR : TSCH      ] ! failed to parse EB (len 21)
+25544	ID:14	[Read single] Start
+25544	ID:16	Right channel match 26 or 17
+25544	ID:16	[Read single] Start
+25544	ID:16	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 26
+25544	ID:16	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+25544	ID:16	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+25544	ID:16	[ERR : TSCH      ] ! failed to parse EB (len 21)
+25544	ID:16	[Read single] Start
+25544	ID:8	Right channel match 18 or 21
+25544	ID:8	[Read single] Start
+25544	ID:8	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 18
+25544	ID:8	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+25544	ID:8	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+25544	ID:8	[ERR : TSCH      ] ! failed to parse EB (len 21)
+25544	ID:8	[Read single] Start
+25546	ID:11	[Read single] Start
+25546	ID:11	tx: 3 - 3
+25546	ID:11	RX process pending
+25546	ID:11	TX process pending
+25546	ID:11	[INFO: TSCH-LOG  ] {asn-0.9d4 link-1-17-0-0 ch-26} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 3
+25546	ID:11	[INFO: TSCH-LOG  ] {asn-0.9d4 link-1-17-0-0 ch-26} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 3
+25552	ID:11	current_channel = 25 and 20
+25552	ID:11	Packet1: 0xc2fb0660  len:  21
+25552	ID:11	 Packet2:  0xc2fb0870 len:  21
+25552	ID:11	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0870 
+25554	ID:11	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+25554	ID:11	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0870
+25554	ID:2	[Receiving_packet] Radio1: On
+25554	ID:25	[Receiving_packet] Radio2: On
+25554	ID:14	[Receiving_packet] Radio1: On
+25554	ID:24	[Receiving_packet] Radio2: On
+25554	ID:2	Right channel match 25 or 23
+25554	ID:2	[Read single] Start
+25554	ID:2	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 25
+25554	ID:2	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+25554	ID:2	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+25554	ID:2	[ERR : TSCH      ] ! failed to parse EB (len 21)
+25554	ID:2	[Read single] Start
+25554	ID:25	Right channel match 14 or 25
+25554	ID:25	[Read single] Start
+25554	ID:25	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 14
+25554	ID:25	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+25554	ID:25	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+25554	ID:25	[ERR : TSCH      ] ! failed to parse EB (len 21)
+25554	ID:25	[Read single] Start
+25554	ID:1	[Read single] Start
+25554	ID:1	[INFO: TSCH      ] received from 000b.000b.000b.000b with seqno 112
+25554	ID:1	[WARN: 6LoWPAN   ] empty packet
+25554	ID:14	Right channel match 20 or 26
+25554	ID:14	[Read single] Start
+25554	ID:14	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 20
+25554	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+25554	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+25554	ID:14	[ERR : TSCH      ] ! failed to parse EB (len 21)
+25554	ID:14	[Read single] Start
+25554	ID:24	Right channel match 12 or 20
+25554	ID:24	[Read single] Start
+25554	ID:24	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 12
+25554	ID:24	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+25554	ID:24	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+25554	ID:24	[ERR : TSCH      ] ! failed to parse EB (len 21)
+25554	ID:24	[Read single] Start
+25556	ID:11	[Read single] Start
+25556	ID:11	tx: 4 - 4
+25556	ID:11	RX process pending
+25556	ID:11	TX process pending
+25556	ID:11	[INFO: TSCH-LOG  ] {asn-0.9d5 link-1-17-1-1 ch-25} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 4
+25556	ID:11	[INFO: TSCH-LOG  ] {asn-0.9d5 link-1-17-1-1 ch-25} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 4
+25581	ID:10	scanning on channel 26 and 17 
+25619	ID:12	scanning on channel 17 and 14 
+25662	ID:29	scanning on channel 24 and 22 
+25688	ID:22	scanning on channel 16 and 11 
+25715	ID:26	scanning on channel 20 and 17 
+25733	ID:9	scanning on channel 17 and 24 
+25740	ID:5	scanning on channel 22 and 20 
+25744	ID:19	scanning on channel 17 and 20 
+25834	ID:17	scanning on channel 22 and 12 
+25924	ID:3	scanning on channel 25 and 21 
+25931	ID:21	scanning on channel 19 and 24 
+25970	ID:23	scanning on channel 12 and 24 
+26061	ID:24	scanning on channel 16 and 13 
+26099	ID:8	scanning on channel 13 and 23 
+26168	ID:28	scanning on channel 21 and 24 
+26179	ID:6	[WARN: TSCH      ] ! not associated, drop outgoing packet
+26262	ID:2	scanning on channel 24 and 19 
+26270	ID:30	scanning on channel 13 and 24 
+26276	ID:6	scanning on channel 23 and 12 
+26352	ID:18	scanning on channel 20 and 18 
+26374	ID:4	scanning on channel 13 and 12 
+26411	ID:27	scanning on channel 12 and 13 
+26428	ID:7	scanning on channel 11 and 17 
+26476	ID:14	scanning on channel 25 and 15 
+26488	ID:15	scanning on channel 24 and 26 
+26493	ID:25	scanning on channel 15 and 19 
+26498	ID:20	scanning on channel 20 and 17 
+26499	ID:16	scanning on channel 11 and 24 
+26505	ID:20	[WARN: TSCH      ] ! not associated, drop outgoing packet
+26582	ID:10	scanning on channel 19 and 11 
+26620	ID:12	scanning on channel 21 and 15 
+26663	ID:29	scanning on channel 17 and 13 
+26689	ID:22	scanning on channel 17 and 18 
+26716	ID:26	scanning on channel 15 and 21 
+26734	ID:9	scanning on channel 22 and 16 
+26741	ID:5	scanning on channel 11 and 17 
+26745	ID:19	scanning on channel 12 and 15 
+26820	ID:1	[DBG : TSCH Queue] packet is added put_index 4, packet 0xc2fb2d60
+26820	ID:1	[DBG : TSCH Queue] packet is added put_index 5, packet 0xc2fb2d9c
+26820	ID:1	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 10, queue 2 4, len 14 94
+26820	ID:1	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 10, queue 2 4, len 14 94
+26835	ID:17	scanning on channel 25 and 11 
+26910	ID:13	scanning on channel 18 and 17 
+26925	ID:3	scanning on channel 21 and 12 
+26932	ID:21	scanning on channel 24 and 11 
+26971	ID:23	scanning on channel 14 and 12 
+27062	ID:24	scanning on channel 13 and 23 
+27169	ID:28	scanning on channel 25 and 24 
+27263	ID:2	scanning on channel 23 and 26 
+27271	ID:30	scanning on channel 19 and 13 
+27277	ID:6	scanning on channel 19 and 22 
+27353	ID:18	scanning on channel 14 and 25 
+27375	ID:4	scanning on channel 12 and 20 
+27412	ID:27	scanning on channel 18 and 21 
+27489	ID:15	scanning on channel 14 and 22 
+27494	ID:25	scanning on channel 17 and 19 
+27499	ID:20	scanning on channel 18 and 12 
+27500	ID:16	scanning on channel 15 and 14 
+27556	ID:8	[WARN: TSCH      ] ! not associated, drop outgoing packet
+27582	ID:11	current_channel = 16 and 21
+27582	ID:11	Packet1: 0xc2fb0660  len:  21
+27582	ID:11	 Packet2:  0xc2fb0870 len:  21
+27582	ID:11	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0870 
+27583	ID:10	scanning on channel 22 and 19 
+27584	ID:11	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+27584	ID:11	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0870
+27586	ID:11	[Read single] Start
+27586	ID:11	tx: 5 - 5
+27586	ID:11	RX process pending
+27586	ID:11	TX process pending
+27586	ID:11	[INFO: TSCH-LOG  ] {asn-0.aa0 link-1-17-0-0 ch-16} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 5
+27586	ID:11	[INFO: TSCH-LOG  ] {asn-0.aa0 link-1-17-0-0 ch-16} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 5
+27599	ID:26	[WARN: TSCH      ] ! not associated, drop outgoing packet
+27621	ID:12	scanning on channel 26 and 13 
+27664	ID:29	scanning on channel 23 and 14 
+27690	ID:22	scanning on channel 25 and 13 
+27717	ID:26	scanning on channel 26 and 17 
+27735	ID:9	scanning on channel 20 and 23 
+27739	ID:23	[WARN: TSCH      ] ! not associated, drop outgoing packet
+27742	ID:5	scanning on channel 17 and 14 
+27746	ID:19	scanning on channel 24 and 22 
+27836	ID:17	scanning on channel 16 and 11 
+27911	ID:13	scanning on channel 20 and 17 
+27926	ID:3	scanning on channel 17 and 24 
+27933	ID:21	scanning on channel 22 and 20 
+27972	ID:23	scanning on channel 17 and 20 
+28063	ID:24	scanning on channel 22 and 12 
+28101	ID:8	scanning on channel 24 and 13 
+28264	ID:2	scanning on channel 19 and 24 
+28272	ID:30	scanning on channel 12 and 24 
+28278	ID:6	scanning on channel 16 and 13 
+28354	ID:18	scanning on channel 13 and 23 
+28376	ID:4	scanning on channel 21 and 24 
+28413	ID:27	scanning on channel 26 and 24 
+28430	ID:7	scanning on channel 19 and 13 
+28478	ID:14	scanning on channel 24 and 23 
+28490	ID:15	scanning on channel 12 and 20 
+28495	ID:25	scanning on channel 18 and 13 
+28500	ID:20	scanning on channel 12 and 13 
+28501	ID:16	scanning on channel 11 and 17 
+28584	ID:10	scanning on channel 25 and 15 
+28602	ID:11	current_channel = 25 and 20
+28602	ID:11	Packet1: 0xc2fb0660  len:  21
+28602	ID:11	 Packet2:  0xc2fb0870 len:  21
+28602	ID:11	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0870 
+28604	ID:11	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+28604	ID:11	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0870
+28604	ID:28	[Receiving_packet] Radio1: On
+28604	ID:15	[Receiving_packet] Radio2: On
+28604	ID:28	Right channel match 25 or 21
+28604	ID:28	[Read single] Start
+28604	ID:28	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 25
+28604	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+28604	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+28604	ID:28	[ERR : TSCH      ] ! failed to parse EB (len 21)
+28604	ID:28	[Read single] Start
+28604	ID:1	[Read single] Start
+28604	ID:1	Duplicate packet 
+28604	ID:1	[WARN: TSCH      ] ! drop dup ll from 000b.000b.000b.000b seqno 112
+28604	ID:15	Right channel match 12 or 20
+28604	ID:15	[Read single] Start
+28604	ID:15	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 12
+28604	ID:15	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+28604	ID:15	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+28604	ID:15	[ERR : TSCH      ] ! failed to parse EB (len 21)
+28604	ID:15	[Read single] Start
+28606	ID:11	[Read single] Start
+28606	ID:11	tx: 6 - 6
+28606	ID:11	RX process pending
+28606	ID:11	TX process pending
+28606	ID:11	[INFO: TSCH-LOG  ] {asn-0.b06 link-1-17-0-0 ch-25} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 6
+28606	ID:11	[INFO: TSCH-LOG  ] {asn-0.b06 link-1-17-0-0 ch-25} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 6
+28622	ID:12	scanning on channel 24 and 26 
+28665	ID:29	scanning on channel 15 and 19 
+28691	ID:22	scanning on channel 20 and 17 
+28718	ID:26	scanning on channel 11 and 24 
+28736	ID:9	scanning on channel 13 and 19 
+28743	ID:5	scanning on channel 11 and 21 
+28747	ID:19	scanning on channel 15 and 17 
+28837	ID:17	scanning on channel 13 and 17 
+28912	ID:13	scanning on channel 18 and 15 
+28927	ID:3	scanning on channel 21 and 22 
+28934	ID:21	scanning on channel 16 and 11 
+28952	ID:11	current_channel = 12 and 17
+28952	ID:11	Packet1: 0xc2fb0660  len:  21
+28952	ID:11	 Packet2:  0xc2fb0870 len:  21
+28952	ID:11	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0870 
+28954	ID:11	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+28954	ID:11	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0870
+28954	ID:15	[Receiving_packet] Radio1: On
+28954	ID:24	[Receiving_packet] Radio2: On
+28954	ID:16	[Receiving_packet] Radio2: On
+28954	ID:15	Right channel match 12 or 20
+28954	ID:15	[Read single] Start
+28954	ID:15	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 12
+28954	ID:15	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+28954	ID:15	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+28954	ID:15	[ERR : TSCH      ] ! failed to parse EB (len 21)
+28954	ID:15	[Read single] Start
+28954	ID:24	Right channel match 22 or 12
+28954	ID:24	[Read single] Start
+28954	ID:24	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 22
+28954	ID:24	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+28954	ID:24	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/000b.000b.000b.000b to 0xabcd/0001.0001.0001.0001
+28954	ID:24	[ERR : TSCH      ] ! failed to parse EB (len 21)
+28954	ID:24	[Read single] Start
+28954	ID:16	Right channel match 11 or 17
+28954	ID:16	[Read single] Start
+28954	ID:16	[INFO: TSCH      ] scan: received packet (0 bytes) on channel 11
+28954	ID:16	[ERR : TSCH Pkt  ] ! parse_eb: failed to parse frame
+28954	ID:16	[ERR : TSCH      ] ! failed to parse EB (len 0)
+28954	ID:16	[Read single] Start
+28956	ID:11	[Read single] Start
+28956	ID:11	tx: 7 - 7
+28956	ID:11	RX process pending
+28956	ID:11	TX process pending
+28956	ID:11	[INFO: TSCH-LOG  ] {asn-0.b29 link-1-17-1-1 ch-12} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 7
+28956	ID:11	[INFO: TSCH-LOG  ] {asn-0.b29 link-1-17-1-1 ch-12} uc-1-0 tx LL-000b->LL-0001, len 21, seq 112, st 2 7
+28973	ID:23	scanning on channel 12 and 15 
+28977	ID:11	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2db0
+28977	ID:11	[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+29064	ID:24	scanning on channel 11 and 18 
+29102	ID:8	scanning on channel 17 and 21 
+29112	ID:11	current_channel = 11 and 16
+29112	ID:11	Packet1: 0xc2fb0920  len:  35
+29112	ID:11	 Packet2:  0xc2fb0920 len:  35
+29112	ID:11	[prepare_packet] data1:0xc2fb0920 - data2: 0xc2fb0920 
+29114	ID:11	[transmit_packet] Pck1: 0x23 - Pck2: 0x23 
+29114	ID:11	[Send_packet] Pckt1: 0xc2fb0920 - Pckt2: 0xc2fb0920
+29114	ID:16	[Receiving_packet] Radio1: On
+29114	ID:24	[Receiving_packet] Radio1: On
+29114	ID:6	[Receiving_packet] Radio1: On
+29115	ID:11	tx: 2 - 2
+29115	ID:11	RX process pending
+29115	ID:11	TX process pending
+29115	ID:11	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 192, status 0, tx 2
+29115	ID:11	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 192, status 0, tx 2
+29115	ID:11	[INFO: TSCH-LOG  ] {asn-0.b39 link-1-17-0-0 ch-11} bc-0-0 tx LL-000b->LL-NULL, len 35, seq 192, st 0 2
+29115	ID:11	[INFO: TSCH-LOG  ] {asn-0.b39 link-1-17-0-0 ch-11} bc-0-0 tx LL-000b->LL-NULL, len 35, seq 192, st 0 2
+29115	ID:16	Right channel match 11 or 17
+29115	ID:16	[Read single] Start
+29115	ID:16	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 11
+29115	ID:16	[INFO: TSCH      ] parse_eb: no schedule
+29115	ID:16	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 000b.000b.000b.000b
+29115	ID:16	[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.b39, jp 5, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 000b.000b.000b.000b
+29115	ID:16	[Slot operation] Current link - Options 7, timeslot 1, channel offset 1 
+29115	ID:16	[Read single] Start
+29115	ID:24	Right channel match 11 or 18
+29115	ID:24	[Read single] Start
+29115	ID:24	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 11
+29115	ID:24	[INFO: TSCH      ] parse_eb: no schedule
+29115	ID:24	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 000b.000b.000b.000b
+29115	ID:24	[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.b39, jp 5, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 000b.000b.000b.000b
+29115	ID:24	[Slot operation] Current link - Options 7, timeslot 1, channel offset 1 
+29115	ID:24	[Read single] Start
+29115	ID:6	Right channel match 16 or 13
+29115	ID:6	[Read single] Start
+29115	ID:6	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 16
+29115	ID:6	[INFO: TSCH      ] parse_eb: no schedule
+29115	ID:6	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 000b.000b.000b.000b
+29115	ID:6	[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.b39, jp 5, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 000b.000b.000b.000b
+29115	ID:6	[Slot operation] Current link - Options 7, timeslot 1, channel offset 1 
+29115	ID:6	[Read single] Start
+29171	ID:28	scanning on channel 13 and 23 
+29265	ID:2	scanning on channel 18 and 25 
+29273	ID:30	scanning on channel 24 and 23 
+29355	ID:18	scanning on channel 26 and 19 
+29377	ID:4	scanning on channel 13 and 19 
+29414	ID:27	scanning on channel 22 and 14 
+29431	ID:7	scanning on channel 25 and 12 
+29479	ID:14	scanning on channel 20 and 18 
+29491	ID:15	scanning on channel 18 and 21 
+29496	ID:25	scanning on channel 11 and 12 
+29501	ID:20	scanning on channel 25 and 23 
+29507	ID:5	[WARN: TSCH      ] ! not associated, drop outgoing packet
+29585	ID:10	scanning on channel 22 and 17 
+29612	ID:24	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+29612	ID:24	[DBG : TSCH Queue] packet is added put_index 1, packet 0xc2fb2d74
+29612	ID:24	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 73, queue 2 2, len 14 24
+29612	ID:24	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 73, queue 2 2, len 14 24
+29622	ID:24	current_channel = 24 and 19
+29622	ID:24	Packet1: 0xc2fb0660  len:  24
+29622	ID:24	 Packet2:  0xc2fb0660 len:  24
+29622	ID:24	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+29623	ID:12	scanning on channel 11 and 18 
+29624	ID:24	[transmit_packet] Pck1: 0x18 - Pck2: 0x18 
+29624	ID:24	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+29624	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+29624	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+29624	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+29624	ID:11	[Receiving_packet] Radio1: On and Radio2: On 
+29624	ID:16	[Receiving_packet] Radio1: On and Radio2: On 
+29624	ID:16	[Receiving_packet] Radio1: On and Radio2: On 
+29624	ID:26	[Receiving_packet] Radio2: On
+29624	ID:30	[Receiving_packet] Radio1: On
+29624	ID:4	[Receiving_packet] Radio2: On
+29624	ID:9	[Receiving_packet] Radio2: On
+29624	ID:29	[Receiving_packet] Radio2: On
+29624	ID:24	tx: 2 - 2
+29624	ID:24	RX process pending
+29624	ID:24	TX process pending
+29624	ID:24	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 88, status 0, tx 2
+29624	ID:24	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 88, status 0, tx 2
+29624	ID:24	[INFO: TSCH-LOG  ] {asn-0.b6c link-1-17-0-0 ch-24} bc-1-0 tx LL-0018->LL-NULL, len 24, seq 88, st 0 2
+29624	ID:24	[INFO: TSCH-LOG  ] {asn-0.b6c link-1-17-0-0 ch-24} bc-1-0 tx LL-0018->LL-NULL, len 24, seq 88, st 0 2
+29624	ID:6	[radio_read_dual] starting
+29624	ID:6	Radio 1 - Radio 2
+29624	ID:6	no poll mode
+29624	ID:6	[read_dual] tmp: 24 - tmp1:24
+29624	ID:6	[tsch-slot-operation] Read packet - 24
+29624	ID:6	[tsch-slot-operation] Read second packet - 24
+29624	ID:6	current header len:  14
+29624	ID:6	second header len:  14
+29624	ID:6	First frame verification
+29624	ID:6	Second frame verification
+29624	ID:6	rx_count:  2 24 24
+29624	ID:6	RX process pending
+29624	ID:6	[INFO: TSCH      ] received from 0018.0018.0018.0018 with seqno 65535
+29624	ID:6	[WARN: RPL       ] dis_input: not in an instance yet, discard
+29624	ID:6	TX process pending
+29624	ID:6	[INFO: TSCH-LOG  ] {asn-0.b6c link-1-17-0-0 ch-24} bc-1-0 rx LL-0018->LL-NULL, len 24, seq 0, edr 0
+29624	ID:6	[INFO: TSCH-LOG  ] {asn-0.b6c link-1-17-0-0 ch-24} bc-1-0 rx LL-0018->LL-NULL, len 24, seq 0, edr 0
+29624	ID:6	[Read single] Start
+29624	ID:11	[radio_read_dual] starting
+29624	ID:11	Radio 1 - Radio 2
+29624	ID:11	no poll mode
+29624	ID:11	[read_dual] tmp: 24 - tmp1:24
+29624	ID:11	[tsch-slot-operation] Read packet - 24
+29624	ID:11	[tsch-slot-operation] Read second packet - 24
+29624	ID:11	current header len:  14
+29624	ID:11	second header len:  14
+29624	ID:11	First frame verification
+29624	ID:11	Second frame verification
+29624	ID:11	rx_count:  8 24 24
+29624	ID:11	RX process pending
+29624	ID:11	[INFO: TSCH      ] received from 0018.0018.0018.0018 with seqno 65535
+29624	ID:11	TX process pending
+29624	ID:11	[INFO: TSCH-LOG  ] {asn-64.9b1a3a link-1-17-0-0 ch-0} bc-1-0 rx LL-0018->LL-NULL, len 24, seq 10, edr 0
+29624	ID:11	[INFO: TSCH-LOG  ] {asn-64.9b1a3a link-1-17-0-0 ch-0} bc-1-0 rx LL-0018->LL-NULL, len 24, seq 10, edr 0
+29624	ID:11	[INFO: TSCH-LOG  ] {asn-64.9b1a3a link-1-17-0-0 ch-0} ! leaving the network, last sync 10163451
+29624	ID:11	[Read single] Start
+29624	ID:11	[WARN: TSCH      ] leaving the network, stats: tx 24, rx 8, sync 10164794
+29624	ID:11	RX process pending
+29624	ID:11	TX process pending
+29624	ID:11	[WARN: TSCH Queue] ! flushing packet
+29624	ID:11	[INFO: TSCH      ] KA sent to 0000.0000.0000.0000, st 4-7
+29624	ID:11	[WARN: TSCH Queue] ! flushing packet
+29624	ID:11	[INFO: TSCH      ] KA sent to 0000.0000.0000.0000, st 4-7
+29624	ID:16	[radio_read_dual] starting
+29624	ID:16	Radio 1 - Radio 2
+29624	ID:16	no poll mode
+29624	ID:16	[read_dual] tmp: 24 - tmp1:24
+29624	ID:16	[tsch-slot-operation] Read packet - 24
+29624	ID:16	[tsch-slot-operation] Read second packet - 24
+29624	ID:16	current header len:  14
+29624	ID:16	second header len:  14
+29624	ID:16	First frame verification
+29624	ID:16	Second frame verification
+29624	ID:16	rx_count:  2 24 24
+29624	ID:16	RX process pending
+29624	ID:16	[INFO: TSCH      ] received from 0018.0018.0018.0018 with seqno 65535
+29624	ID:16	[WARN: RPL       ] dis_input: not in an instance yet, discard
+29624	ID:16	TX process pending
+29624	ID:16	[INFO: TSCH-LOG  ] {asn-0.b6c link-1-17-0-0 ch-24} bc-1-0 rx LL-0018->LL-NULL, len 24, seq 0, edr 0
+29624	ID:16	[INFO: TSCH-LOG  ] {asn-0.b6c link-1-17-0-0 ch-24} bc-1-0 rx LL-0018->LL-NULL, len 24, seq 0, edr 0
+29624	ID:16	[Read single] Start
+29624	ID:26	Right channel match 11 or 24
+29624	ID:26	[Read single] Start
+29624	ID:26	[INFO: TSCH      ] scan: received packet (24 bytes) on channel 11
+29624	ID:26	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+29624	ID:26	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/ffff.0000.0000.0000
+29624	ID:26	[ERR : TSCH      ] ! failed to parse EB (len 24)
+29624	ID:26	[Read single] Start
+29624	ID:30	Right channel match 24 or 23
+29624	ID:30	[Read single] Start
+29624	ID:30	[INFO: TSCH      ] scan: received packet (24 bytes) on channel 24
+29624	ID:30	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+29624	ID:30	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/ffff.0000.0000.0000
+29624	ID:30	[ERR : TSCH      ] ! failed to parse EB (len 24)
+29624	ID:30	[Read single] Start
+29624	ID:4	Right channel match 13 or 19
+29624	ID:4	[Read single] Start
+29624	ID:4	[INFO: TSCH      ] scan: received packet (24 bytes) on channel 13
+29624	ID:4	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+29624	ID:4	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/ffff.0000.0000.0000
+29624	ID:4	[ERR : TSCH      ] ! failed to parse EB (len 24)
+29624	ID:4	[Read single] Start
+29624	ID:9	Right channel match 13 or 19
+29624	ID:9	[Read single] Start
+29624	ID:9	[INFO: TSCH      ] scan: received packet (24 bytes) on channel 13
+29624	ID:9	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+29624	ID:9	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/ffff.0000.0000.0000
+29624	ID:9	[ERR : TSCH      ] ! failed to parse EB (len 24)
+29624	ID:9	[Read single] Start
+29624	ID:29	Right channel match 15 or 19
+29624	ID:29	[Read single] Start
+29624	ID:29	[INFO: TSCH      ] scan: received packet (24 bytes) on channel 15
+29624	ID:29	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+29624	ID:29	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/ffff.0000.0000.0000
+29624	ID:29	[ERR : TSCH      ] ! failed to parse EB (len 24)
+29624	ID:29	[Read single] Start
+29666	ID:29	scanning on channel 12 and 24 
+29692	ID:22	scanning on channel 11 and 14 
+29719	ID:26	scanning on channel 12 and 13 
+29737	ID:9	scanning on channel 23 and 13 
+29744	ID:5	scanning on channel 18 and 25 
+29748	ID:19	scanning on channel 24 and 23 
+29838	ID:17	scanning on channel 26 and 19 
+29913	ID:13	scanning on channel 13 and 19 
+29928	ID:3	scanning on channel 22 and 14 
+29935	ID:21	scanning on channel 25 and 12 
+29974	ID:23	scanning on channel 20 and 18 
+30103	ID:8	scanning on channel 18 and 21 
+30172	ID:28	scanning on channel 11 and 12 
+30266	ID:2	scanning on channel 25 and 23 
+30274	ID:30	scanning on channel 14 and 22 
+30356	ID:18	scanning on channel 17 and 19 
+30378	ID:4	scanning on channel 18 and 12 
+30415	ID:27	scanning on channel 15 and 14 
+30432	ID:7	scanning on channel 15 and 22 
+30480	ID:14	scanning on channel 19 and 11 
+30492	ID:15	scanning on channel 20 and 26 
+30497	ID:25	scanning on channel 13 and 23 
+30502	ID:20	scanning on channel 14 and 25 
+30586	ID:10	scanning on channel 13 and 26 
+30624	ID:12	scanning on channel 26 and 17 
+30625	ID:11	scanning on channel 20 and 23 
+30667	ID:29	scanning on channel 26 and 17 
+30693	ID:22	scanning on channel 17 and 14 
+30720	ID:26	scanning on channel 24 and 22 
+30738	ID:9	scanning on channel 16 and 11 
+30745	ID:5	scanning on channel 20 and 17 
+30749	ID:19	scanning on channel 17 and 24 
+30839	ID:17	scanning on channel 22 and 20 
+30914	ID:13	scanning on channel 17 and 20 
+30936	ID:21	scanning on channel 24 and 13 
+30975	ID:23	scanning on channel 25 and 21 
+31104	ID:8	scanning on channel 19 and 24 
+31173	ID:28	scanning on channel 12 and 24 
+31267	ID:2	scanning on channel 16 and 13 
+31275	ID:30	scanning on channel 13 and 23 
+31357	ID:18	scanning on channel 21 and 24 
+31379	ID:4	scanning on channel 26 and 24 
+31416	ID:27	scanning on channel 19 and 13 
+31433	ID:7	scanning on channel 24 and 23 
+31481	ID:14	scanning on channel 12 and 20 
+31493	ID:15	scanning on channel 18 and 13 
+31498	ID:25	scanning on channel 12 and 13 
+31503	ID:20	scanning on channel 11 and 17 
+31587	ID:10	scanning on channel 25 and 15 
+31625	ID:12	scanning on channel 24 and 26 
+31626	ID:11	scanning on channel 15 and 19 
+31668	ID:29	scanning on channel 20 and 17 
+31694	ID:22	scanning on channel 11 and 24 
+31721	ID:26	scanning on channel 13 and 19 
+31739	ID:9	scanning on channel 11 and 21 
+31746	ID:5	scanning on channel 15 and 17 
+31750	ID:19	scanning on channel 13 and 17 
+31840	ID:17	scanning on channel 18 and 15 
+31915	ID:13	scanning on channel 21 and 22 
+31930	ID:3	scanning on channel 16 and 11 
+31937	ID:21	scanning on channel 17 and 12 
+31976	ID:23	scanning on channel 15 and 12 
+32105	ID:8	scanning on channel 13 and 16 
+32174	ID:28	scanning on channel 19 and 22 
+32268	ID:2	scanning on channel 26 and 14 
+32276	ID:30	scanning on channel 21 and 18 
+32358	ID:18	scanning on channel 20 and 19 
+32380	ID:4	scanning on channel 24 and 13 
+32417	ID:27	scanning on channel 26 and 15 
+32434	ID:7	scanning on channel 26 and 18 
+32482	ID:1	[DBG : TSCH Queue] packet is added put_index 1, packet 0xc2fb2db0
+32482	ID:1	[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+32482	ID:14	scanning on channel 25 and 11 
+32499	ID:25	scanning on channel 21 and 12 
+32504	ID:20	scanning on channel 24 and 11 
+32588	ID:10	scanning on channel 14 and 12 
+32626	ID:12	scanning on channel 13 and 23 
+32627	ID:11	scanning on channel 13 and 18 
+32669	ID:29	scanning on channel 25 and 24 
+32695	ID:22	scanning on channel 23 and 26 
+32722	ID:26	scanning on channel 19 and 13 
+32740	ID:9	scanning on channel 19 and 22 
+32747	ID:5	scanning on channel 14 and 25 
+32751	ID:19	scanning on channel 12 and 20 
+32916	ID:13	scanning on channel 11 and 12 
+32931	ID:3	scanning on channel 25 and 23 
+32938	ID:21	scanning on channel 14 and 22 
+32977	ID:23	scanning on channel 17 and 19 
+33106	ID:8	scanning on channel 18 and 12 
+33175	ID:28	scanning on channel 15 and 14 
+33246	ID:4	[WARN: TSCH      ] ! not associated, drop outgoing packet
+33269	ID:2	scanning on channel 22 and 19 
+33277	ID:30	scanning on channel 11 and 20 
+33359	ID:18	scanning on channel 26 and 13 
+33381	ID:4	scanning on channel 23 and 14 
+33418	ID:27	scanning on channel 25 and 13 
+33483	ID:14	scanning on channel 20 and 23 
+33495	ID:15	scanning on channel 26 and 17 
+33500	ID:25	scanning on channel 17 and 14 
+33572	ID:22	[WARN: TSCH      ] ! not associated, drop outgoing packet
+33589	ID:10	scanning on channel 11 and 20 
+33627	ID:12	scanning on channel 17 and 24 
+33628	ID:11	scanning on channel 22 and 20 
+33670	ID:29	scanning on channel 17 and 20 
+33696	ID:22	scanning on channel 22 and 12 
+33723	ID:26	scanning on channel 24 and 13 
+33741	ID:9	scanning on channel 25 and 21 
+33748	ID:5	scanning on channel 19 and 24 
+33842	ID:17	scanning on channel 16 and 13 
+33917	ID:13	scanning on channel 13 and 23 
+33932	ID:3	scanning on channel 21 and 24 
+33939	ID:21	scanning on channel 26 and 24 
+33978	ID:23	scanning on channel 19 and 13 
+34107	ID:8	scanning on channel 24 and 23 
+34176	ID:28	scanning on channel 12 and 20 
+34270	ID:2	scanning on channel 18 and 13 
+34278	ID:30	scanning on channel 12 and 13 
+34343	ID:28	[WARN: TSCH      ] ! not associated, drop outgoing packet
+34360	ID:18	scanning on channel 17 and 25 
+34382	ID:4	scanning on channel 15 and 24 
+34419	ID:27	scanning on channel 24 and 26 
+34436	ID:7	scanning on channel 15 and 19 
+34496	ID:15	scanning on channel 11 and 24 
+34501	ID:25	scanning on channel 13 and 19 
+34506	ID:20	scanning on channel 11 and 21 
+34590	ID:10	scanning on channel 15 and 17 
+34628	ID:12	scanning on channel 13 and 17 
+34629	ID:11	scanning on channel 18 and 15 
+34671	ID:29	scanning on channel 21 and 22 
+34697	ID:22	scanning on channel 16 and 11 
+34724	ID:26	scanning on channel 17 and 12 
+34742	ID:9	scanning on channel 15 and 12 
+34749	ID:5	scanning on channel 13 and 16 
+34753	ID:19	scanning on channel 19 and 22 
+34843	ID:17	scanning on channel 26 and 14 
+34918	ID:13	scanning on channel 21 and 18 
+34933	ID:3	scanning on channel 20 and 19 
+34940	ID:21	scanning on channel 24 and 13 
+34979	ID:23	scanning on channel 26 and 15 
+35108	ID:8	scanning on channel 26 and 18 
+35271	ID:2	scanning on channel 20 and 13 
+35279	ID:30	scanning on channel 11 and 18 
+35361	ID:18	scanning on channel 13 and 16 
+35383	ID:4	scanning on channel 26 and 17 
+35420	ID:27	scanning on channel 20 and 11 
+35437	ID:7	scanning on channel 24 and 12 
+35485	ID:14	scanning on channel 26 and 24 
+35497	ID:15	scanning on channel 23 and 13 
+35502	ID:25	scanning on channel 16 and 21 
+35507	ID:20	scanning on channel 13 and 18 
+35591	ID:10	scanning on channel 14 and 18 
+35629	ID:12	scanning on channel 16 and 19 
+35630	ID:11	scanning on channel 22 and 15 
+35672	ID:29	scanning on channel 24 and 13 
+35698	ID:22	scanning on channel 21 and 23 
+35725	ID:26	scanning on channel 11 and 12 
+35743	ID:9	scanning on channel 13 and 14 
+35750	ID:5	scanning on channel 15 and 13 
+35754	ID:19	scanning on channel 17 and 12 
+35844	ID:17	scanning on channel 24 and 21 
+35919	ID:13	scanning on channel 18 and 19 
+35934	ID:3	scanning on channel 11 and 19 
+35941	ID:21	scanning on channel 26 and 13 
+35980	ID:23	scanning on channel 18 and 15 
+36109	ID:8	scanning on channel 12 and 20 
+36178	ID:28	scanning on channel 19 and 23 
+36272	ID:2	scanning on channel 19 and 16 
+36362	ID:18	scanning on channel 14 and 26 
+36384	ID:4	scanning on channel 24 and 21 
+36438	ID:7	scanning on channel 12 and 13 
+36486	ID:14	scanning on channel 24 and 15 
+36498	ID:15	scanning on channel 24 and 25 
+36503	ID:25	scanning on channel 17 and 13 
+36508	ID:20	scanning on channel 12 and 15 
+36592	ID:10	scanning on channel 23 and 20 
+36631	ID:11	scanning on channel 18 and 13 
+36673	ID:29	scanning on channel 26 and 24 
+36699	ID:22	scanning on channel 18 and 25 
+36726	ID:26	scanning on channel 26 and 18 
+36744	ID:9	scanning on channel 21 and 23 
+36751	ID:5	scanning on channel 16 and 26 
+36755	ID:19	scanning on channel 20 and 21 
+36845	ID:17	scanning on channel 23 and 15 
+36876	ID:18	[WARN: TSCH      ] ! not associated, drop outgoing packet
+36920	ID:13	scanning on channel 14 and 23 
+36935	ID:3	scanning on channel 20 and 11 
+36942	ID:21	scanning on channel 19 and 16 
+36981	ID:23	scanning on channel 26 and 23 
+37106	ID:16	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+37106	ID:16	[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+37110	ID:8	scanning on channel 25 and 11 
+37112	ID:16	current_channel = 12 and 17
+37112	ID:16	Packet1: 0xc2fb0660  len:  35
+37112	ID:16	 Packet2:  0xc2fb0660 len:  35
+37112	ID:16	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+37114	ID:16	[transmit_packet] Pck1: 0x23 - Pck2: 0x23 
+37114	ID:16	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+37114	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+37114	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+37114	ID:7	[Receiving_packet] Radio1: On
+37114	ID:20	[Receiving_packet] Radio1: On
+37114	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+37114	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+37114	ID:25	[Receiving_packet] Radio1: On
+37115	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+37115	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+37115	ID:16	tx: 2 - 2
+37115	ID:16	RX process pending
+37115	ID:16	TX process pending
+37115	ID:16	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 138, status 0, tx 2
+37115	ID:16	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 138, status 0, tx 2
+37115	ID:16	[INFO: TSCH-LOG  ] {asn-0.e59 link-1-17-1-1 ch-12} bc-0-0 tx LL-0010->LL-NULL, len 35, seq 138, st 0 2
+37115	ID:16	[INFO: TSCH-LOG  ] {asn-0.e59 link-1-17-1-1 ch-12} bc-0-0 tx LL-0010->LL-NULL, len 35, seq 138, st 0 2
+37115	ID:6	[radio_read_dual] starting
+37115	ID:6	Radio 1 - Radio 2
+37115	ID:6	no poll mode
+37115	ID:6	[read_dual] tmp: 35 - tmp1:35
+37115	ID:6	[tsch-slot-operation] Read packet - 35
+37115	ID:6	[tsch-slot-operation] Read second packet - 35
+37115	ID:6	current header len:  14
+37115	ID:6	second header len:  14
+37115	ID:6	First frame verification
+37115	ID:6	Second frame verification
+37115	ID:6	rx_count:  4 35 35
+37115	ID:6	RX process pending
+37115	ID:6	TX process pending
+37115	ID:6	[INFO: TSCH-LOG  ] {asn-0.e59 link-1-17-1-1 ch-12} bc-0-0 rx LL-0010->LL-NULL, len 35, seq 0, edr 0
+37115	ID:6	[INFO: TSCH-LOG  ] {asn-0.e59 link-1-17-1-1 ch-12} bc-0-0 rx LL-0010->LL-NULL, len 35, seq 0, edr 0
+37115	ID:6	[Read single] Start
+37115	ID:7	Right channel match 12 or 13
+37115	ID:7	[Read single] Start
+37115	ID:7	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 12
+37115	ID:7	[INFO: TSCH      ] parse_eb: no schedule
+37115	ID:7	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 0010.0010.0010.0010
+37115	ID:7	[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.e59, jp 6, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 0010.0010.0010.0010
+37115	ID:7	[Slot operation] Current link - Options 7, timeslot 0, channel offset 0 
+37115	ID:7	[Read single] Start
+37115	ID:20	Right channel match 12 or 15
+37115	ID:20	[Read single] Start
+37115	ID:20	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 12
+37115	ID:20	[INFO: TSCH      ] parse_eb: no schedule
+37115	ID:20	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 0010.0010.0010.0010
+37115	ID:20	[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.e59, jp 6, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 0010.0010.0010.0010
+37115	ID:20	[Slot operation] Current link - Options 7, timeslot 0, channel offset 0 
+37115	ID:20	[Read single] Start
+37115	ID:24	[radio_read_dual] starting
+37115	ID:24	Radio 1 - Radio 2
+37115	ID:24	no poll mode
+37115	ID:24	[read_dual] tmp: 35 - tmp1:35
+37115	ID:24	[tsch-slot-operation] Read packet - 35
+37115	ID:24	[tsch-slot-operation] Read second packet - 35
+37115	ID:24	current header len:  14
+37115	ID:24	second header len:  14
+37115	ID:24	First frame verification
+37115	ID:24	Second frame verification
+37115	ID:24	rx_count:  2 35 35
+37115	ID:24	RX process pending
+37115	ID:24	TX process pending
+37115	ID:24	[INFO: TSCH-LOG  ] {asn-0.e59 link-1-17-1-1 ch-12} bc-0-0 rx LL-0010->LL-NULL, len 35, seq 0, edr 0
+37115	ID:24	[INFO: TSCH-LOG  ] {asn-0.e59 link-1-17-1-1 ch-12} bc-0-0 rx LL-0010->LL-NULL, len 35, seq 0, edr 0
+37115	ID:24	[Read single] Start
+37115	ID:25	Right channel match 17 or 13
+37115	ID:25	[Read single] Start
+37115	ID:25	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 17
+37115	ID:25	[INFO: TSCH      ] parse_eb: no schedule
+37115	ID:25	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 0010.0010.0010.0010
+37115	ID:25	[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.e59, jp 6, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 0010.0010.0010.0010
+37115	ID:25	[Slot operation] Current link - Options 7, timeslot 0, channel offset 0 
+37115	ID:25	[Read single] Start
+37178	ID:25	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+37178	ID:25	[DBG : TSCH Queue] packet is added put_index 1, packet 0xc2fb2d74
+37178	ID:25	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 120, queue 2 2, len 14 24
+37178	ID:25	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 120, queue 2 2, len 14 24
+37179	ID:28	scanning on channel 11 and 18 
+37272	ID:25	current_channel = 11 and 16
+37272	ID:25	Packet1: 0xc2fb0660  len:  24
+37272	ID:25	 Packet2:  0xc2fb0660 len:  24
+37272	ID:25	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+37273	ID:2	scanning on channel 21 and 12 
+37274	ID:25	[transmit_packet] Pck1: 0x18 - Pck2: 0x18 
+37274	ID:25	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+37274	ID:3	[Receiving_packet] Radio2: On
+37274	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+37274	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+37274	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+37274	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+37274	ID:8	[Receiving_packet] Radio2: On
+37274	ID:16	[Receiving_packet] Radio1: On and Radio2: On 
+37274	ID:16	[Receiving_packet] Radio1: On and Radio2: On 
+37274	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+37274	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+37274	ID:28	[Receiving_packet] Radio1: On
+37274	ID:25	tx: 2 - 2
+37274	ID:25	RX process pending
+37274	ID:25	TX process pending
+37274	ID:25	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 41, status 0, tx 2
+37274	ID:25	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 41, status 0, tx 2
+37274	ID:25	[INFO: TSCH-LOG  ] {asn-0.e69 link-1-17-0-0 ch-11} bc-1-0 tx LL-0019->LL-NULL, len 24, seq 41, st 0 2
+37274	ID:25	[INFO: TSCH-LOG  ] {asn-0.e69 link-1-17-0-0 ch-11} bc-1-0 tx LL-0019->LL-NULL, len 24, seq 41, st 0 2
+37274	ID:3	Right channel match 20 or 11
+37274	ID:3	[Read single] Start
+37274	ID:3	[INFO: TSCH      ] scan: received packet (24 bytes) on channel 20
+37274	ID:3	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+37274	ID:3	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0019.0019.0019.0019 to 0xabcd/ffff.0000.0000.0000
+37274	ID:3	[ERR : TSCH      ] ! failed to parse EB (len 24)
+37274	ID:3	[Read single] Start
+37274	ID:6	[radio_read_dual] starting
+37274	ID:6	Radio 1 - Radio 2
+37274	ID:6	no poll mode
+37274	ID:6	[read_dual] tmp: 24 - tmp1:24
+37274	ID:6	[tsch-slot-operation] Read packet - 24
+37274	ID:6	[tsch-slot-operation] Read second packet - 24
+37274	ID:6	current header len:  14
+37274	ID:6	second header len:  14
+37274	ID:6	First frame verification
+37274	ID:6	Second frame verification
+37274	ID:6	rx_count:  6 24 24
+37274	ID:6	RX process pending
+37274	ID:6	[INFO: TSCH      ] received from 0019.0019.0019.0019 with seqno 65535
+37274	ID:6	[WARN: RPL       ] dis_input: not in an instance yet, discard
+37274	ID:6	TX process pending
+37274	ID:6	[INFO: TSCH-LOG  ] {asn-0.e69 link-1-17-0-0 ch-11} bc-1-0 rx LL-0019->LL-NULL, len 24, seq 0, edr 0
+37274	ID:6	[INFO: TSCH-LOG  ] {asn-0.e69 link-1-17-0-0 ch-11} bc-1-0 rx LL-0019->LL-NULL, len 24, seq 0, edr 0
+37274	ID:6	[Read single] Start
+37274	ID:7	[radio_read_dual] starting
+37274	ID:7	Radio 1 - Radio 2
+37274	ID:7	no poll mode
+37274	ID:7	[read_dual] tmp: 24 - tmp1:24
+37274	ID:7	[tsch-slot-operation] Read packet - 24
+37274	ID:7	[tsch-slot-operation] Read second packet - 24
+37274	ID:7	current header len:  14
+37274	ID:7	second header len:  14
+37274	ID:7	First frame verification
+37274	ID:7	Second frame verification
+37274	ID:7	rx_count:  2 24 24
+37274	ID:7	RX process pending
+37274	ID:7	[INFO: TSCH      ] received from 0019.0019.0019.0019 with seqno 65535
+37274	ID:7	[WARN: RPL       ] dis_input: not in an instance yet, discard
+37274	ID:7	TX process pending
+37274	ID:7	[INFO: TSCH-LOG  ] {asn-0.e69 link-1-17-0-0 ch-11} bc-1-0 rx LL-0019->LL-NULL, len 24, seq 0, edr 0
+37274	ID:7	[INFO: TSCH-LOG  ] {asn-0.e69 link-1-17-0-0 ch-11} bc-1-0 rx LL-0019->LL-NULL, len 24, seq 0, edr 0
+37274	ID:7	[Read single] Start
+37274	ID:8	Right channel match 25 or 11
+37274	ID:8	[Read single] Start
+37274	ID:8	[INFO: TSCH      ] scan: received packet (24 bytes) on channel 25
+37274	ID:8	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+37274	ID:8	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0019.0019.0019.0019 to 0xabcd/ffff.0000.0000.0000
+37274	ID:8	[ERR : TSCH      ] ! failed to parse EB (len 24)
+37274	ID:8	[Read single] Start
+37274	ID:16	[radio_read_dual] starting
+37274	ID:16	Radio 1 - Radio 2
+37274	ID:16	no poll mode
+37274	ID:16	[read_dual] tmp: 24 - tmp1:24
+37274	ID:16	[tsch-slot-operation] Read packet - 24
+37274	ID:16	[tsch-slot-operation] Read second packet - 24
+37274	ID:16	current header len:  14
+37274	ID:16	second header len:  14
+37274	ID:16	First frame verification
+37274	ID:16	Second frame verification
+37274	ID:16	rx_count:  4 24 24
+37274	ID:16	RX process pending
+37274	ID:16	[INFO: TSCH      ] received from 0019.0019.0019.0019 with seqno 65535
+37274	ID:16	[WARN: RPL       ] dis_input: not in an instance yet, discard
+37274	ID:16	TX process pending
+37274	ID:16	[INFO: TSCH-LOG  ] {asn-0.e69 link-1-17-0-0 ch-11} bc-1-0 rx LL-0019->LL-NULL, len 24, seq 0, edr 0
+37274	ID:16	[INFO: TSCH-LOG  ] {asn-0.e69 link-1-17-0-0 ch-11} bc-1-0 rx LL-0019->LL-NULL, len 24, seq 0, edr 0
+37274	ID:16	[Read single] Start
+37274	ID:24	[radio_read_dual] starting
+37274	ID:24	Radio 1 - Radio 2
+37274	ID:24	no poll mode
+37274	ID:24	[read_dual] tmp: 24 - tmp1:24
+37274	ID:24	[tsch-slot-operation] Read packet - 24
+37274	ID:24	[tsch-slot-operation] Read second packet - 24
+37274	ID:24	current header len:  14
+37274	ID:24	second header len:  14
+37274	ID:24	First frame verification
+37274	ID:24	Second frame verification
+37274	ID:24	rx_count:  4 24 24
+37274	ID:24	RX process pending
+37274	ID:24	[INFO: TSCH      ] received from 0019.0019.0019.0019 with seqno 65535
+37274	ID:24	[WARN: RPL       ] dis_input: not in an instance yet, discard
+37274	ID:24	TX process pending
+37274	ID:24	[INFO: TSCH-LOG  ] {asn-0.e69 link-1-17-0-0 ch-11} bc-1-0 rx LL-0019->LL-NULL, len 24, seq 0, edr 0
+37274	ID:24	[INFO: TSCH-LOG  ] {asn-0.e69 link-1-17-0-0 ch-11} bc-1-0 rx LL-0019->LL-NULL, len 24, seq 0, edr 0
+37274	ID:24	[Read single] Start
+37274	ID:28	Right channel match 11 or 18
+37274	ID:28	[Read single] Start
+37274	ID:28	[INFO: TSCH      ] scan: received packet (24 bytes) on channel 11
+37274	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 41 e9
+37274	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0019.0019.0019.0019 to 0xabcd/ffff.0000.0000.0000
+37274	ID:28	[ERR : TSCH      ] ! failed to parse EB (len 24)
+37274	ID:28	[Read single] Start
+37281	ID:30	scanning on channel 24 and 11 
+37385	ID:4	scanning on channel 13 and 23 
+37422	ID:27	scanning on channel 13 and 18 
+37487	ID:14	scanning on channel 25 and 24 
+37499	ID:15	scanning on channel 23 and 26 
+37593	ID:10	scanning on channel 19 and 13 
+37631	ID:12	scanning on channel 19 and 22 
+37632	ID:11	scanning on channel 14 and 25 
+37674	ID:29	scanning on channel 12 and 20 
+37727	ID:26	scanning on channel 11 and 12 
+37745	ID:9	scanning on channel 25 and 23 
+37752	ID:5	scanning on channel 14 and 22 
+37756	ID:19	scanning on channel 17 and 19 
+37814	ID:15	[WARN: TSCH      ] ! not associated, drop outgoing packet
+37846	ID:17	scanning on channel 12 and 15 
+37936	ID:3	scanning on channel 22 and 19 
+37943	ID:21	scanning on channel 11 and 20 
+38111	ID:8	scanning on channel 23 and 14 
+38180	ID:28	scanning on channel 25 and 13 
+38274	ID:2	scanning on channel 26 and 17 
+38282	ID:30	scanning on channel 20 and 23 
+38364	ID:18	scanning on channel 26 and 17 
+38386	ID:4	scanning on channel 17 and 14 
+38423	ID:27	scanning on channel 24 and 22 
+38488	ID:14	scanning on channel 16 and 11 
+38500	ID:15	scanning on channel 20 and 17 
+38594	ID:10	scanning on channel 17 and 24 
+38632	ID:12	scanning on channel 22 and 20 
+38633	ID:11	scanning on channel 17 and 20 
+38675	ID:29	scanning on channel 22 and 12 
+38701	ID:22	scanning on channel 24 and 13 
+38728	ID:26	scanning on channel 25 and 21 
+38746	ID:9	scanning on channel 19 and 24 
+38753	ID:5	scanning on channel 12 and 24 
+38757	ID:19	scanning on channel 16 and 13 
+38847	ID:17	scanning on channel 13 and 23 
+38922	ID:13	scanning on channel 21 and 24 
+38937	ID:3	scanning on channel 26 and 24 
+38944	ID:21	scanning on channel 19 and 13 
+38983	ID:23	scanning on channel 24 and 23 
+39112	ID:8	scanning on channel 12 and 20 
+39181	ID:28	scanning on channel 18 and 13 
+39275	ID:2	scanning on channel 12 and 13 
+39283	ID:30	scanning on channel 11 and 17 
+39365	ID:18	scanning on channel 25 and 15 
+39387	ID:4	scanning on channel 24 and 26 
+39424	ID:27	scanning on channel 15 and 19 
+39489	ID:14	scanning on channel 20 and 17 
+39501	ID:15	scanning on channel 11 and 24 
+39595	ID:10	scanning on channel 13 and 19 
+39633	ID:12	scanning on channel 11 and 21 
+39634	ID:11	scanning on channel 15 and 17 
+39676	ID:29	scanning on channel 13 and 17 
+39702	ID:22	scanning on channel 18 and 15 
+39724	ID:10	[WARN: TSCH      ] ! not associated, drop outgoing packet
+39729	ID:26	scanning on channel 22 and 16 
+39747	ID:9	scanning on channel 11 and 17 
+39758	ID:19	scanning on channel 12 and 13 
+39923	ID:13	scanning on channel 19 and 22 
+39945	ID:21	scanning on channel 21 and 18 
+39984	ID:23	scanning on channel 20 and 19 
+40060	ID:13	[WARN: TSCH      ] ! not associated, drop outgoing packet
+40113	ID:8	scanning on channel 13 and 26 
+40182	ID:28	scanning on channel 15 and 26 
+40276	ID:2	scanning on channel 18 and 12 
+40284	ID:30	scanning on channel 15 and 20 
+40366	ID:18	scanning on channel 13 and 11 
+40388	ID:4	scanning on channel 18 and 13 
+40425	ID:27	scanning on channel 16 and 26 
+40490	ID:14	scanning on channel 26 and 17 
+40502	ID:15	scanning on channel 20 and 11 
+40596	ID:10	scanning on channel 24 and 12 
+40634	ID:12	scanning on channel 26 and 24 
+40635	ID:11	scanning on channel 23 and 13 
+40677	ID:16	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+40677	ID:16	[DBG : TSCH Queue] packet is added put_index 1, packet 0xc2fb2d74
+40677	ID:16	[INFO: TSCH      ] send packet to 000b.000b.000b.000b with seqno 169, queue 2 2, len 21 21
+40677	ID:16	[INFO: TSCH      ] send packet to 000b.000b.000b.000b with seqno 169, queue 2 2, len 21 21
+40677	ID:16	[INFO: TSCH      ] sending KA to 000b.000b.000b.000b
+40677	ID:29	scanning on channel 25 and 11 
+40682	ID:16	current_channel = 21 and 26
+40682	ID:16	Packet1: 0xc2fb0660  len:  21
+40682	ID:16	 Packet2:  0xc2fb0660 len:  21
+40682	ID:16	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+40684	ID:16	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+40684	ID:16	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+40684	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+40684	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+40684	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+40684	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+40684	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+40684	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+40684	ID:21	[Receiving_packet] Radio1: On
+40684	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+40684	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+40684	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+40684	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+40684	ID:3	[Receiving_packet] Radio1: On
+40684	ID:8	[Receiving_packet] Radio2: On
+40684	ID:12	[Receiving_packet] Radio1: On
+40684	ID:14	[Receiving_packet] Radio1: On
+40684	ID:28	[Receiving_packet] Radio2: On
+40684	ID:6	[radio_read_dual] starting
+40684	ID:6	Radio 1 - Radio 2
+40684	ID:6	no poll mode
+40684	ID:6	[read_dual] tmp: 21 - tmp1:21
+40684	ID:6	[tsch-slot-operation] Read packet - 21
+40684	ID:6	[tsch-slot-operation] Read second packet - 21
+40684	ID:6	current header len:  21
+40684	ID:6	second header len:  21
+40684	ID:6	First frame verification
+40684	ID:6	Second frame verification
+40684	ID:6	rx_count:  8 21 21
+40684	ID:6	RX process pending
+40684	ID:6	TX process pending
+40684	ID:6	[INFO: TSCH-LOG  ] {asn-0.10001000 link-1-17-1-1 ch-0} ! leaving the network, last sync 268436679
+40684	ID:6	[Read single] Start
+40684	ID:6	[WARN: TSCH      ] leaving the network, stats: tx 21, rx 8, sync 268439552
+40684	ID:6	RX process pending
+40684	ID:6	TX process pending
+40684	ID:6	[INFO: TSCH Queue] update time source: 000b.000b.000b.000b -> (NULL LL addr)
+40684	ID:7	[radio_read_dual] starting
+40684	ID:7	Radio 1 - Radio 2
+40684	ID:7	no poll mode
+40684	ID:7	[read_dual] tmp: 21 - tmp1:21
+40684	ID:7	[tsch-slot-operation] Read packet - 21
+40684	ID:7	[tsch-slot-operation] Read second packet - 21
+40684	ID:7	current header len:  21
+40684	ID:7	second header len:  21
+40684	ID:7	First frame verification
+40684	ID:7	Second frame verification
+40684	ID:7	rx_count:  4 21 21
+40684	ID:7	RX process pending
+40684	ID:7	TX process pending
+40684	ID:7	[Read single] Start
+40684	ID:20	[radio_read_dual] starting
+40684	ID:20	Radio 1 - Radio 2
+40684	ID:20	no poll mode
+40684	ID:20	[read_dual] tmp: 21 - tmp1:21
+40684	ID:20	[tsch-slot-operation] Read packet - 21
+40684	ID:20	[tsch-slot-operation] Read second packet - 21
+40684	ID:20	current header len:  21
+40684	ID:20	second header len:  21
+40684	ID:20	First frame verification
+40684	ID:20	Second frame verification
+40684	ID:20	rx_count:  2 21 21
+40684	ID:20	RX process pending
+40684	ID:20	TX process pending
+40684	ID:20	[Read single] Start
+40684	ID:21	Right channel match 21 or 18
+40684	ID:21	[Read single] Start
+40684	ID:21	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 21
+40684	ID:21	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+40684	ID:21	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0010.0010.0010.0010 to 0xabcd/000b.000b.000b.000b
+40684	ID:21	[ERR : TSCH      ] ! failed to parse EB (len 21)
+40684	ID:21	[Read single] Start
+40684	ID:24	[radio_read_dual] starting
+40684	ID:24	Radio 1 - Radio 2
+40684	ID:24	no poll mode
+40684	ID:24	[read_dual] tmp: 21 - tmp1:21
+40684	ID:24	[tsch-slot-operation] Read packet - 21
+40684	ID:24	[tsch-slot-operation] Read second packet - 21
+40684	ID:24	current header len:  21
+40684	ID:24	second header len:  21
+40684	ID:24	First frame verification
+40684	ID:24	Second frame verification
+40684	ID:24	rx_count:  6 21 21
+40684	ID:24	RX process pending
+40684	ID:24	TX process pending
+40684	ID:24	[Read single] Start
+40684	ID:25	[radio_read_dual] starting
+40684	ID:25	Radio 1 - Radio 2
+40684	ID:25	no poll mode
+40684	ID:25	[read_dual] tmp: 21 - tmp1:21
+40684	ID:25	[tsch-slot-operation] Read packet - 21
+40684	ID:25	[tsch-slot-operation] Read second packet - 21
+40684	ID:25	current header len:  21
+40684	ID:25	second header len:  21
+40684	ID:25	First frame verification
+40684	ID:25	Second frame verification
+40684	ID:25	rx_count:  2 21 21
+40684	ID:25	RX process pending
+40684	ID:25	TX process pending
+40684	ID:25	[Read single] Start
+40684	ID:3	Right channel match 26 or 14
+40684	ID:3	[Read single] Start
+40684	ID:3	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 26
+40684	ID:3	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+40684	ID:3	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0010.0010.0010.0010 to 0xabcd/000b.000b.000b.000b
+40684	ID:3	[ERR : TSCH      ] ! failed to parse EB (len 21)
+40684	ID:3	[Read single] Start
+40684	ID:8	Right channel match 13 or 26
+40684	ID:8	[Read single] Start
+40684	ID:8	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 13
+40684	ID:8	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+40684	ID:8	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0010.0010.0010.0010 to 0xabcd/000b.000b.000b.000b
+40684	ID:8	[ERR : TSCH      ] ! failed to parse EB (len 21)
+40684	ID:8	[Read single] Start
+40684	ID:12	Right channel match 26 or 24
+40684	ID:12	[Read single] Start
+40684	ID:12	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 26
+40684	ID:12	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+40684	ID:12	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0010.0010.0010.0010 to 0xabcd/000b.000b.000b.000b
+40684	ID:12	[ERR : TSCH      ] ! failed to parse EB (len 21)
+40684	ID:12	[Read single] Start
+40684	ID:14	Right channel match 26 or 17
+40684	ID:14	[Read single] Start
+40684	ID:14	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 26
+40684	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+40684	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0010.0010.0010.0010 to 0xabcd/000b.000b.000b.000b
+40684	ID:14	[ERR : TSCH      ] ! failed to parse EB (len 21)
+40684	ID:14	[Read single] Start
+40684	ID:28	Right channel match 15 or 26
+40684	ID:28	[Read single] Start
+40684	ID:28	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 15
+40684	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+40684	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0010.0010.0010.0010 to 0xabcd/000b.000b.000b.000b
+40684	ID:28	[ERR : TSCH      ] ! failed to parse EB (len 21)
+40684	ID:28	[Read single] Start
+40686	ID:16	[Read single] Start
+40686	ID:16	tx: 2 - 2
+40686	ID:16	RX process pending
+40686	ID:16	TX process pending
+40686	ID:16	[INFO: TSCH-LOG  ] {asn-0.fbe link-1-17-1-1 ch-21} uc-1-0 tx LL-0010->LL-000b, len 21, seq 169, st 2 2
+40686	ID:16	[INFO: TSCH-LOG  ] {asn-0.fbe link-1-17-1-1 ch-21} uc-1-0 tx LL-0010->LL-000b, len 21, seq 169, st 2 2
+40703	ID:22	scanning on channel 17 and 21 
+40730	ID:26	scanning on channel 12 and 24 
+40759	ID:19	scanning on channel 23 and 13 
+40849	ID:17	scanning on channel 18 and 25 
+40852	ID:16	current_channel = 16 and 21
+40852	ID:16	Packet1: 0xc2fb0660  len:  21
+40852	ID:16	 Packet2:  0xc2fb0660 len:  21
+40852	ID:16	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+40854	ID:16	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+40854	ID:16	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+40854	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+40854	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+40854	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+40854	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+40854	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+40854	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+40854	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+40854	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+40854	ID:6	[Receiving_packet] Radio1: On
+40854	ID:21	[Receiving_packet] Radio1: On
+40854	ID:22	[Receiving_packet] Radio2: On
+40854	ID:7	[radio_read_dual] starting
+40854	ID:7	Radio 1 - Radio 2
+40854	ID:7	no poll mode
+40854	ID:7	[read_dual] tmp: 21 - tmp1:21
+40854	ID:7	[tsch-slot-operation] Read packet - 21
+40854	ID:7	[tsch-slot-operation] Read second packet - 21
+40854	ID:7	current header len:  21
+40854	ID:7	second header len:  21
+40854	ID:7	First frame verification
+40854	ID:7	Second frame verification
+40854	ID:7	rx_count:  6 21 21
+40854	ID:7	RX process pending
+40854	ID:7	TX process pending
+40854	ID:7	[Read single] Start
+40854	ID:20	[radio_read_dual] starting
+40854	ID:20	Radio 1 - Radio 2
+40854	ID:20	no poll mode
+40854	ID:20	[read_dual] tmp: 21 - tmp1:21
+40854	ID:20	[tsch-slot-operation] Read packet - 21
+40854	ID:20	[tsch-slot-operation] Read second packet - 21
+40854	ID:20	current header len:  21
+40854	ID:20	second header len:  21
+40854	ID:20	First frame verification
+40854	ID:20	Second frame verification
+40854	ID:20	rx_count:  4 21 21
+40854	ID:20	RX process pending
+40854	ID:20	TX process pending
+40854	ID:20	[Read single] Start
+40854	ID:24	[radio_read_dual] starting
+40854	ID:24	Radio 1 - Radio 2
+40854	ID:24	no poll mode
+40854	ID:24	[read_dual] tmp: 21 - tmp1:21
+40854	ID:24	[tsch-slot-operation] Read packet - 21
+40854	ID:24	[tsch-slot-operation] Read second packet - 21
+40854	ID:24	current header len:  21
+40854	ID:24	second header len:  21
+40854	ID:24	First frame verification
+40854	ID:24	Second frame verification
+40854	ID:24	rx_count:  8 21 21
+40854	ID:24	RX process pending
+40854	ID:24	TX process pending
+40854	ID:24	[Read single] Start
+40854	ID:25	[radio_read_dual] starting
+40854	ID:25	Radio 1 - Radio 2
+40854	ID:25	no poll mode
+40854	ID:25	[read_dual] tmp: 21 - tmp1:21
+40854	ID:25	[tsch-slot-operation] Read packet - 21
+40854	ID:25	[tsch-slot-operation] Read second packet - 21
+40854	ID:25	current header len:  21
+40854	ID:25	second header len:  21
+40854	ID:25	First frame verification
+40854	ID:25	Second frame verification
+40854	ID:25	rx_count:  4 21 21
+40854	ID:25	RX process pending
+40854	ID:25	TX process pending
+40854	ID:25	[Read single] Start
+40854	ID:6	Right channel match 16 or 13
+40854	ID:6	[Read single] Start
+40854	ID:6	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 16
+40854	ID:6	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+40854	ID:6	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0010.0010.0010.0010 to 0xabcd/000b.000b.000b.000b
+40854	ID:6	[ERR : TSCH      ] ! failed to parse EB (len 21)
+40854	ID:6	[Read single] Start
+40854	ID:21	Right channel match 21 or 18
+40854	ID:21	[Read single] Start
+40854	ID:21	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 21
+40854	ID:21	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+40854	ID:21	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0010.0010.0010.0010 to 0xabcd/000b.000b.000b.000b
+40854	ID:21	[ERR : TSCH      ] ! failed to parse EB (len 21)
+40854	ID:21	[Read single] Start
+40854	ID:22	Right channel match 17 or 21
+40854	ID:22	[Read single] Start
+40854	ID:22	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 17
+40854	ID:22	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+40854	ID:22	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0010.0010.0010.0010 to 0xabcd/000b.000b.000b.000b
+40854	ID:22	[ERR : TSCH      ] ! failed to parse EB (len 21)
+40854	ID:22	[Read single] Start
+40856	ID:16	[Read single] Start
+40856	ID:16	tx: 4 - 4
+40856	ID:16	RX process pending
+40856	ID:16	TX process pending
+40856	ID:16	[INFO: TSCH-LOG  ] {asn-0.fcf link-1-17-1-1 ch-16} uc-1-0 tx LL-0010->LL-000b, len 21, seq 169, st 2 4
+40856	ID:16	[INFO: TSCH-LOG  ] {asn-0.fcf link-1-17-1-1 ch-16} uc-1-0 tx LL-0010->LL-000b, len 21, seq 169, st 2 4
+40924	ID:13	scanning on channel 23 and 26 
+40939	ID:3	scanning on channel 19 and 13 
+40946	ID:21	scanning on channel 19 and 22 
+40985	ID:23	scanning on channel 14 and 25 
+41022	ID:16	current_channel = 17 and 22
+41022	ID:16	Packet1: 0xc2fb0660  len:  21
+41022	ID:16	 Packet2:  0xc2fb0660 len:  21
+41022	ID:16	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+41024	ID:16	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+41024	ID:16	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+41024	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+41024	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+41024	ID:14	[Receiving_packet] Radio2: On
+41024	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+41024	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+41024	ID:22	[Receiving_packet] Radio1: On
+41024	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+41024	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+41024	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+41024	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+41024	ID:21	[Receiving_packet] Radio2: On
+41024	ID:7	[radio_read_dual] starting
+41024	ID:7	Radio 1 - Radio 2
+41024	ID:7	no poll mode
+41024	ID:7	[read_dual] tmp: 21 - tmp1:21
+41024	ID:7	[tsch-slot-operation] Read packet - 21
+41024	ID:7	[tsch-slot-operation] Read second packet - 21
+41024	ID:7	current header len:  21
+41024	ID:7	second header len:  21
+41024	ID:7	First frame verification
+41024	ID:7	Second frame verification
+41024	ID:7	rx_count:  8 21 21
+41024	ID:7	RX process pending
+41024	ID:7	TX process pending
+41024	ID:7	[Read single] Start
+41024	ID:14	Right channel match 26 or 17
+41024	ID:14	[Read single] Start
+41024	ID:14	[INFO: TSCH      ] scan: received packet (0 bytes) on channel 26
+41024	ID:14	[ERR : TSCH Pkt  ] ! parse_eb: failed to parse frame
+41024	ID:14	[ERR : TSCH      ] ! failed to parse EB (len 0)
+41024	ID:14	[Read single] Start
+41024	ID:20	[radio_read_dual] starting
+41024	ID:20	Radio 1 - Radio 2
+41024	ID:20	no poll mode
+41024	ID:20	[read_dual] tmp: 21 - tmp1:21
+41024	ID:20	[tsch-slot-operation] Read packet - 21
+41024	ID:20	[tsch-slot-operation] Read second packet - 21
+41024	ID:20	current header len:  21
+41024	ID:20	second header len:  21
+41024	ID:20	First frame verification
+41024	ID:20	Second frame verification
+41024	ID:20	rx_count:  6 21 21
+41024	ID:20	RX process pending
+41024	ID:20	TX process pending
+41024	ID:20	[Read single] Start
+41024	ID:22	Right channel match 17 or 21
+41024	ID:22	[Read single] Start
+41024	ID:22	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 17
+41024	ID:22	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+41024	ID:22	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0010.0010.0010.0010 to 0xabcd/000b.000b.000b.000b
+41024	ID:22	[ERR : TSCH      ] ! failed to parse EB (len 21)
+41024	ID:22	[Read single] Start
+41024	ID:24	[radio_read_dual] starting
+41024	ID:24	Radio 1 - Radio 2
+41024	ID:24	no poll mode
+41024	ID:24	[read_dual] tmp: 21 - tmp1:21
+41024	ID:24	[tsch-slot-operation] Read packet - 21
+41024	ID:24	[tsch-slot-operation] Read second packet - 21
+41024	ID:24	current header len:  21
+41024	ID:24	second header len:  21
+41024	ID:24	First frame verification
+41024	ID:24	Second frame verification
+41024	ID:24	rx_count:  10 21 21
+41024	ID:24	RX process pending
+41024	ID:24	TX process pending
+41024	ID:24	[Read single] Start
+41024	ID:25	[radio_read_dual] starting
+41024	ID:25	Radio 1 - Radio 2
+41024	ID:25	no poll mode
+41024	ID:25	[read_dual] tmp: 21 - tmp1:21
+41024	ID:25	[tsch-slot-operation] Read packet - 21
+41024	ID:25	[tsch-slot-operation] Read second packet - 21
+41024	ID:25	current header len:  21
+41024	ID:25	second header len:  21
+41024	ID:25	First frame verification
+41024	ID:25	Second frame verification
+41024	ID:25	rx_count:  6 21 21
+41024	ID:25	RX process pending
+41024	ID:25	TX process pending
+41024	ID:25	[Read single] Start
+41024	ID:21	Right channel match 19 or 22
+41024	ID:21	[Read single] Start
+41024	ID:21	[INFO: TSCH      ] scan: received packet (0 bytes) on channel 19
+41024	ID:21	[ERR : TSCH Pkt  ] ! parse_eb: failed to parse frame
+41024	ID:21	[ERR : TSCH      ] ! failed to parse EB (len 0)
+41024	ID:21	[Read single] Start
+41026	ID:16	[Read single] Start
+41026	ID:16	tx: 6 - 6
+41026	ID:16	RX process pending
+41026	ID:16	TX process pending
+41026	ID:16	[INFO: TSCH-LOG  ] {asn-0.fe0 link-1-17-1-1 ch-17} uc-1-0 tx LL-0010->LL-000b, len 21, seq 169, st 2 6
+41026	ID:16	[INFO: TSCH-LOG  ] {asn-0.fe0 link-1-17-1-1 ch-17} uc-1-0 tx LL-0010->LL-000b, len 21, seq 169, st 2 6
+41029	ID:17	[WARN: TSCH      ] ! not associated, drop outgoing packet
+41079	ID:24	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+41079	ID:24	[DBG : TSCH Queue] packet is added put_index 1, packet 0xc2fb2d88
+41079	ID:24	[INFO: TSCH      ] send packet to 000b.000b.000b.000b with seqno 74, queue 2 3, len 21 21
+41079	ID:24	[INFO: TSCH      ] send packet to 000b.000b.000b.000b with seqno 74, queue 2 3, len 21 21
+41079	ID:24	[INFO: TSCH      ] sending KA to 000b.000b.000b.000b
+41114	ID:8	scanning on channel 25 and 11 
+41119	ID:16	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d88
+41119	ID:16	[DBG : TSCH Queue] packet is added put_index 1, packet 0xc2fb2d9c
+41119	ID:16	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 169, queue 2 4, len 14 24
+41119	ID:16	[INFO: TSCH      ] send packet to ffff.ffff.ffff.ffff with seqno 169, queue 2 4, len 14 24
+41182	ID:24	current_channel = 16 and 21
+41182	ID:24	Packet1: 0xc2fb0660  len:  21
+41182	ID:24	 Packet2:  0xc2fb0660 len:  21
+41182	ID:24	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+41182	ID:16	current_channel = 16 and 21
+41182	ID:16	Packet1: 0xc2fb07c0  len:  24
+41182	ID:16	 Packet2:  0xc2fb07c0 len:  24
+41182	ID:16	[prepare_packet] data1:0xc2fb07c0 - data2: 0xc2fb07c0 
+41183	ID:28	scanning on channel 11 and 18 
+41184	ID:24	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+41184	ID:24	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+41184	ID:16	[transmit_packet] Pck1: 0x18 - Pck2: 0x18 
+41184	ID:16	[Send_packet] Pckt1: 0xc2fb07c0 - Pckt2: 0xc2fb07c0
+41184	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+41184	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+41184	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+41184	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+41184	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+41184	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+41184	ID:6	[Receiving_packet] Radio1: On
+41184	ID:22	[Receiving_packet] Radio2: On
+41184	ID:16	tx: 2 - 2
+41184	ID:16	RX process pending
+41184	ID:16	TX process pending
+41184	ID:16	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 139, status 0, tx 2
+41184	ID:16	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 139, status 0, tx 2
+41184	ID:16	[INFO: TSCH-LOG  ] {asn-0.ff0 link-1-17-0-0 ch-16} bc-1-0 tx LL-0010->LL-NULL, len 24, seq 139, st 0 2
+41184	ID:16	[INFO: TSCH-LOG  ] {asn-0.ff0 link-1-17-0-0 ch-16} bc-1-0 tx LL-0010->LL-NULL, len 24, seq 139, st 0 2
+41186	ID:24	[Read single] Start
+41186	ID:24	tx: 2 - 2
+41186	ID:24	RX process pending
+41186	ID:24	TX process pending
+41186	ID:24	[INFO: TSCH-LOG  ] {asn-0.ff0 link-1-17-0-0 ch-16} uc-1-0 tx LL-0018->LL-000b, len 21, seq 74, st 2 2
+41186	ID:24	[INFO: TSCH-LOG  ] {asn-0.ff0 link-1-17-0-0 ch-16} uc-1-0 tx LL-0018->LL-000b, len 21, seq 74, st 2 2
+41277	ID:2	scanning on channel 21 and 12 
+41279	ID:9	[WARN: TSCH      ] ! not associated, drop outgoing packet
+41285	ID:30	scanning on channel 11 and 14 
+41352	ID:24	current_channel = 17 and 22
+41352	ID:24	Packet1: 0xc2fb0660  len:  21
+41352	ID:24	 Packet2:  0xc2fb0660 len:  21
+41352	ID:24	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+41354	ID:24	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+41354	ID:24	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+41354	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+41354	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+41354	ID:9	[Receiving_packet] Radio2: On
+41354	ID:14	[Receiving_packet] Radio2: On
+41354	ID:16	[Receiving_packet] Radio1: On and Radio2: On 
+41354	ID:16	[Receiving_packet] Radio1: On and Radio2: On 
+41354	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+41354	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+41354	ID:22	[Receiving_packet] Radio1: On
+41354	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+41354	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+41354	ID:7	[radio_read_dual] starting
+41354	ID:7	Radio 1 - Radio 2
+41354	ID:7	no poll mode
+41354	ID:7	[read_dual] tmp: 21 - tmp1:21
+41354	ID:7	[tsch-slot-operation] Read packet - 21
+41354	ID:7	[tsch-slot-operation] Read second packet - 21
+41354	ID:7	current header len:  21
+41354	ID:7	second header len:  21
+41354	ID:7	First frame verification
+41354	ID:7	Second frame verification
+41354	ID:7	rx_count:  10 21 21
+41354	ID:7	RX process pending
+41354	ID:7	TX process pending
+41354	ID:7	[Read single] Start
+41354	ID:9	Right channel match 11 or 14
+41354	ID:9	[Read single] Start
+41354	ID:9	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 11
+41354	ID:9	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+41354	ID:9	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/000b.000b.000b.000b
+41354	ID:9	[ERR : TSCH      ] ! failed to parse EB (len 21)
+41354	ID:9	[Read single] Start
+41354	ID:14	Right channel match 26 or 17
+41354	ID:14	[Read single] Start
+41354	ID:14	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 26
+41354	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+41354	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/000b.000b.000b.000b
+41354	ID:14	[ERR : TSCH      ] ! failed to parse EB (len 21)
+41354	ID:14	[Read single] Start
+41354	ID:16	[radio_read_dual] starting
+41354	ID:16	Radio 1 - Radio 2
+41354	ID:16	no poll mode
+41354	ID:16	[read_dual] tmp: 21 - tmp1:21
+41354	ID:16	[tsch-slot-operation] Read packet - 21
+41354	ID:16	[tsch-slot-operation] Read second packet - 21
+41354	ID:16	current header len:  21
+41354	ID:16	second header len:  21
+41354	ID:16	First frame verification
+41354	ID:16	Second frame verification
+41354	ID:16	rx_count:  6 21 21
+41354	ID:16	RX process pending
+41354	ID:16	TX process pending
+41354	ID:16	[Read single] Start
+41354	ID:20	[radio_read_dual] starting
+41354	ID:20	Radio 1 - Radio 2
+41354	ID:20	no poll mode
+41354	ID:20	[read_dual] tmp: 21 - tmp1:21
+41354	ID:20	[tsch-slot-operation] Read packet - 21
+41354	ID:20	[tsch-slot-operation] Read second packet - 21
+41354	ID:20	current header len:  21
+41354	ID:20	second header len:  21
+41354	ID:20	First frame verification
+41354	ID:20	Second frame verification
+41354	ID:20	rx_count:  8 21 21
+41354	ID:20	RX process pending
+41354	ID:20	TX process pending
+41354	ID:20	[Read single] Start
+41354	ID:22	Right channel match 17 or 21
+41354	ID:22	[Read single] Start
+41354	ID:22	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 17
+41354	ID:22	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+41354	ID:22	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/000b.000b.000b.000b
+41354	ID:22	[ERR : TSCH      ] ! failed to parse EB (len 21)
+41354	ID:22	[Read single] Start
+41354	ID:25	[radio_read_dual] starting
+41354	ID:25	Radio 1 - Radio 2
+41354	ID:25	no poll mode
+41354	ID:25	[read_dual] tmp: 21 - tmp1:21
+41354	ID:25	[tsch-slot-operation] Read packet - 21
+41354	ID:25	[tsch-slot-operation] Read second packet - 21
+41354	ID:25	current header len:  21
+41354	ID:25	second header len:  21
+41354	ID:25	First frame verification
+41354	ID:25	Second frame verification
+41354	ID:25	rx_count:  8 21 21
+41354	ID:25	RX process pending
+41354	ID:25	TX process pending
+41354	ID:25	[Read single] Start
+41356	ID:24	[Read single] Start
+41356	ID:24	tx: 4 - 4
+41356	ID:24	RX process pending
+41356	ID:24	TX process pending
+41356	ID:24	[INFO: TSCH-LOG  ] {asn-0.1001 link-1-17-0-0 ch-17} uc-1-0 tx LL-0018->LL-000b, len 21, seq 74, st 2 4
+41356	ID:24	[INFO: TSCH-LOG  ] {asn-0.1001 link-1-17-0-0 ch-17} uc-1-0 tx LL-0018->LL-000b, len 21, seq 74, st 2 4
+41389	ID:4	scanning on channel 13 and 18 
+41426	ID:27	scanning on channel 25 and 24 
+41491	ID:14	scanning on channel 23 and 26 
+41503	ID:15	scanning on channel 19 and 13 
+41532	ID:24	current_channel = 26 and 21
+41532	ID:24	Packet1: 0xc2fb0660  len:  21
+41532	ID:24	 Packet2:  0xc2fb0660 len:  21
+41532	ID:24	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+41532	ID:16	current_channel = 26 and 21
+41532	ID:16	Packet1: 0xc2fb0660  len:  21
+41532	ID:16	 Packet2:  0xc2fb0660 len:  21
+41532	ID:16	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+41534	ID:24	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+41534	ID:24	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+41534	ID:16	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+41534	ID:16	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+41534	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+41534	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+41534	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+41534	ID:14	[Receiving_packet] Radio2: On
+41534	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+41534	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+41534	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+41534	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+41534	ID:2	[Receiving_packet] Radio1: On
+41534	ID:22	[Receiving_packet] Radio2: On
+41536	ID:16	[Read single] Start
+41536	ID:16	tx: 8 - 8
+41536	ID:16	RX process pending
+41536	ID:16	TX process pending
+41536	ID:16	[INFO: TSCH      ] packet sent to 000b.000b.000b.000b, seqno 169, status 2, tx 8
+41536	ID:16	[INFO: TSCH      ] KA sent to 000b.000b.000b.000b, st 2-8
+41536	ID:16	[WARN: TSCH      ] not able to re-synchronize, received no EB from other neighbors
+41536	ID:16	[INFO: TSCH      ] packet sent to 000b.000b.000b.000b, seqno 169, status 2, tx 8
+41536	ID:16	[INFO: TSCH      ] KA sent to 000b.000b.000b.000b, st 2-8
+41536	ID:16	[WARN: TSCH      ] not able to re-synchronize, received no EB from other neighbors
+41536	ID:16	[INFO: TSCH-LOG  ] {asn-0.1013 link-1-17-1-1 ch-26} uc-1-0 tx LL-0010->LL-000b, len 21, seq 169, st 2 8
+41536	ID:16	[INFO: TSCH-LOG  ] {asn-0.1013 link-1-17-1-1 ch-26} uc-1-0 tx LL-0010->LL-000b, len 21, seq 169, st 2 8
+41536	ID:16	[WARN: TSCH      ] leaving the network, stats: tx 12, rx 6, sync 0
+41536	ID:16	RX process pending
+41536	ID:16	TX process pending
+41536	ID:16	[INFO: TSCH Queue] update time source: 000b.000b.000b.000b -> (NULL LL addr)
+41536	ID:24	[Read single] Start
+41536	ID:24	tx: 6 - 6
+41536	ID:24	RX process pending
+41536	ID:24	TX process pending
+41536	ID:24	[INFO: TSCH-LOG  ] {asn-0.1013 link-1-17-1-1 ch-26} uc-1-0 tx LL-0018->LL-000b, len 21, seq 74, st 2 6
+41536	ID:24	[INFO: TSCH-LOG  ] {asn-0.1013 link-1-17-1-1 ch-26} uc-1-0 tx LL-0018->LL-000b, len 21, seq 74, st 2 6
+41597	ID:10	scanning on channel 25 and 12 
+41635	ID:12	scanning on channel 20 and 18 
+41636	ID:11	scanning on channel 18 and 21 
+41678	ID:29	scanning on channel 11 and 12 
+41685	ID:6	scanning on channel 25 and 23 
+41704	ID:22	scanning on channel 14 and 22 
+41731	ID:26	scanning on channel 17 and 19 
+41749	ID:9	scanning on channel 18 and 12 
+41756	ID:5	scanning on channel 15 and 14 
+41760	ID:19	scanning on channel 15 and 22 
+41850	ID:17	scanning on channel 19 and 11 
+41925	ID:13	scanning on channel 20 and 26 
+41940	ID:3	scanning on channel 13 and 23 
+41947	ID:21	scanning on channel 14 and 25 
+41986	ID:23	scanning on channel 13 and 26 
+42115	ID:8	scanning on channel 26 and 17 
+42184	ID:28	scanning on channel 20 and 23 
+42278	ID:2	scanning on channel 26 and 17 
+42286	ID:30	scanning on channel 17 and 14 
+42368	ID:18	scanning on channel 24 and 22 
+42390	ID:4	scanning on channel 16 and 11 
+42427	ID:27	scanning on channel 20 and 17 
+42492	ID:14	scanning on channel 17 and 24 
+42504	ID:15	scanning on channel 22 and 20 
+42537	ID:16	scanning on channel 17 and 20 
+42598	ID:10	scanning on channel 22 and 12 
+42636	ID:12	scanning on channel 24 and 13 
+42637	ID:11	scanning on channel 25 and 21 
+42679	ID:29	scanning on channel 19 and 24 
+42686	ID:6	scanning on channel 12 and 24 
+42705	ID:22	scanning on channel 16 and 13 
+42732	ID:26	scanning on channel 13 and 23 
+42750	ID:9	scanning on channel 21 and 24 
+42757	ID:5	scanning on channel 26 and 24 
+42761	ID:19	scanning on channel 19 and 13 
+42851	ID:17	scanning on channel 24 and 23 
+42882	ID:24	current_channel = 12 and 17
+42882	ID:24	Packet1: 0xc2fb0660  len:  21
+42882	ID:24	 Packet2:  0xc2fb0660 len:  21
+42882	ID:24	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+42884	ID:24	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+42884	ID:24	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+42884	ID:6	[Receiving_packet] Radio1: On
+42884	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+42884	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+42884	ID:10	[Receiving_packet] Radio2: On
+42884	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+42884	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+42884	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+42884	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+42884	ID:2	[Receiving_packet] Radio2: On
+42884	ID:8	[Receiving_packet] Radio2: On
+42884	ID:14	[Receiving_packet] Radio1: On
+42884	ID:16	[Receiving_packet] Radio1: On
+42884	ID:30	[Receiving_packet] Radio1: On
+42884	ID:6	Right channel match 12 or 24
+42884	ID:6	[Read single] Start
+42884	ID:6	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 12
+42884	ID:6	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42884	ID:6	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/000b.000b.000b.000b
+42884	ID:6	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42884	ID:6	[Read single] Start
+42884	ID:7	[radio_read_dual] starting
+42884	ID:7	Radio 1 - Radio 2
+42884	ID:7	no poll mode
+42884	ID:7	[read_dual] tmp: 21 - tmp1:21
+42884	ID:7	[tsch-slot-operation] Read packet - 21
+42884	ID:7	[tsch-slot-operation] Read second packet - 21
+42884	ID:7	current header len:  21
+42884	ID:7	second header len:  21
+42884	ID:7	First frame verification
+42884	ID:7	Second frame verification
+42884	ID:7	rx_count:  12 21 21
+42884	ID:7	RX process pending
+42884	ID:7	TX process pending
+42884	ID:7	[Read single] Start
+42884	ID:10	Right channel match 22 or 12
+42884	ID:10	[Read single] Start
+42884	ID:10	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 22
+42884	ID:10	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42884	ID:10	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/000b.000b.000b.000b
+42884	ID:10	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42884	ID:10	[Read single] Start
+42884	ID:20	[radio_read_dual] starting
+42884	ID:20	Radio 1 - Radio 2
+42884	ID:20	no poll mode
+42884	ID:20	[read_dual] tmp: 21 - tmp1:21
+42884	ID:20	[tsch-slot-operation] Read packet - 21
+42884	ID:20	[tsch-slot-operation] Read second packet - 21
+42884	ID:20	current header len:  21
+42884	ID:20	second header len:  21
+42884	ID:20	First frame verification
+42884	ID:20	Second frame verification
+42884	ID:20	rx_count:  10 21 21
+42884	ID:20	RX process pending
+42884	ID:20	TX process pending
+42884	ID:20	[Read single] Start
+42884	ID:25	[radio_read_dual] starting
+42884	ID:25	Radio 1 - Radio 2
+42884	ID:25	no poll mode
+42884	ID:25	[read_dual] tmp: 21 - tmp1:21
+42884	ID:25	[tsch-slot-operation] Read packet - 21
+42884	ID:25	[tsch-slot-operation] Read second packet - 21
+42884	ID:25	current header len:  21
+42884	ID:25	second header len:  21
+42884	ID:25	First frame verification
+42884	ID:25	Second frame verification
+42884	ID:25	rx_count:  10 21 21
+42884	ID:25	RX process pending
+42884	ID:25	TX process pending
+42884	ID:25	[Read single] Start
+42884	ID:2	Right channel match 26 or 17
+42884	ID:2	[Read single] Start
+42884	ID:2	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 26
+42884	ID:2	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42884	ID:2	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/000b.000b.000b.000b
+42884	ID:2	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42884	ID:2	[Read single] Start
+42884	ID:8	Right channel match 26 or 17
+42884	ID:8	[Read single] Start
+42884	ID:8	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 26
+42884	ID:8	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42884	ID:8	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/000b.000b.000b.000b
+42884	ID:8	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42884	ID:8	[Read single] Start
+42884	ID:14	Right channel match 17 or 24
+42884	ID:14	[Read single] Start
+42884	ID:14	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 17
+42884	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42884	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/000b.000b.000b.000b
+42884	ID:14	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42884	ID:14	[Read single] Start
+42884	ID:16	Right channel match 17 or 20
+42884	ID:16	[Read single] Start
+42884	ID:16	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 17
+42884	ID:16	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42884	ID:16	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/000b.000b.000b.000b
+42884	ID:16	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42884	ID:16	[Read single] Start
+42884	ID:30	Right channel match 17 or 14
+42884	ID:30	[Read single] Start
+42884	ID:30	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 17
+42884	ID:30	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42884	ID:30	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/000b.000b.000b.000b
+42884	ID:30	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42884	ID:30	[Read single] Start
+42886	ID:24	[Read single] Start
+42886	ID:24	tx: 8 - 8
+42886	ID:24	RX process pending
+42886	ID:24	TX process pending
+42886	ID:24	[INFO: TSCH      ] packet sent to 000b.000b.000b.000b, seqno 74, status 2, tx 8
+42886	ID:24	[INFO: TSCH      ] KA sent to 000b.000b.000b.000b, st 2-8
+42886	ID:24	[WARN: TSCH      ] re-synchronizing on 0010.0010.0010.0010
+42886	ID:24	[INFO: TSCH Queue] update time source: 000b.000b.000b.000b -> 0010.0010.0010.0010
+42886	ID:24	[INFO: TSCH      ] packet sent to 000b.000b.000b.000b, seqno 74, status 2, tx 8
+42886	ID:24	[INFO: TSCH      ] KA sent to 000b.000b.000b.000b, st 2-8
+42886	ID:24	[WARN: TSCH      ] re-synchronizing on 0010.0010.0010.0010
+42886	ID:24	[INFO: TSCH-LOG  ] {asn-0.109a link-1-17-0-0 ch-12} uc-1-0 tx LL-0018->LL-000b, len 21, seq 74, st 2 8
+42886	ID:24	[INFO: TSCH-LOG  ] {asn-0.109a link-1-17-0-0 ch-12} uc-1-0 tx LL-0018->LL-000b, len 21, seq 74, st 2 8
+42886	ID:24	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+42886	ID:24	[DBG : TSCH Queue] packet is added put_index 1, packet 0xc2fb2d9c
+42886	ID:24	[INFO: TSCH      ] send packet to 0010.0010.0010.0010 with seqno 75, queue 2 4, len 21 21
+42892	ID:24	[INFO: TSCH      ] send packet to 0010.0010.0010.001current_channel = 24 and 19
+42892	ID:24	Packet1: 0xc2fb0660  len:  21
+42892	ID:24	 Packet2:  0xc2fb0660 len:  21
+42892	ID:24	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+42894	ID:24	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+42894	ID:24	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+42894	ID:5	[Receiving_packet] Radio2: On
+42894	ID:6	[Receiving_packet] Radio2: On
+42894	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+42894	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+42894	ID:9	[Receiving_packet] Radio2: On
+42894	ID:14	[Receiving_packet] Radio2: On
+42894	ID:17	[Receiving_packet] Radio1: On
+42894	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+42894	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+42894	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+42894	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+42894	ID:29	[Receiving_packet] Radio1: On and Radio2: On 
+42894	ID:19	[Receiving_packet] Radio1: On
+42894	ID:5	Right channel match 26 or 24
+42894	ID:5	[Read single] Start
+42894	ID:5	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 26
+42894	ID:5	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42894	ID:5	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/0010.0010.0010.0010
+42894	ID:5	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42894	ID:5	[Read single] Start
+42894	ID:6	Right channel match 12 or 24
+42894	ID:6	[Read single] Start
+42894	ID:6	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 12
+42894	ID:6	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42894	ID:6	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/0010.0010.0010.0010
+42894	ID:6	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42894	ID:6	[Read single] Start
+42894	ID:7	[radio_read_dual] starting
+42894	ID:7	Radio 1 - Radio 2
+42894	ID:7	no poll mode
+42894	ID:7	[read_dual] tmp: 21 - tmp1:21
+42894	ID:7	[tsch-slot-operation] Read packet - 21
+42894	ID:7	[tsch-slot-operation] Read second packet - 21
+42894	ID:7	current header len:  21
+42894	ID:7	second header len:  21
+42894	ID:7	First frame verification
+42894	ID:7	Second frame verification
+42894	ID:7	rx_count:  14 21 21
+42894	ID:7	RX process pending
+42894	ID:7	TX process pending
+42894	ID:7	[Read single] Start
+42894	ID:9	Right channel match 21 or 24
+42894	ID:9	[Read single] Start
+42894	ID:9	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 21
+42894	ID:9	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42894	ID:9	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/0010.0010.0010.0010
+42894	ID:9	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42894	ID:9	[Read single] Start
+42894	ID:14	Right channel match 17 or 24
+42894	ID:14	[Read single] Start
+42894	ID:14	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 17
+42894	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42894	ID:14	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/0010.0010.0010.0010
+42894	ID:14	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42894	ID:14	[Read single] Start
+42894	ID:17	Right channel match 24 or 23
+42894	ID:17	[Read single] Start
+42894	ID:17	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 24
+42894	ID:17	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42894	ID:17	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/0010.0010.0010.0010
+42894	ID:17	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42894	ID:17	[Read single] Start
+42894	ID:20	[radio_read_dual] starting
+42894	ID:20	Radio 1 - Radio 2
+42894	ID:20	no poll mode
+42894	ID:20	[read_dual] tmp: 21 - tmp1:21
+42894	ID:20	[tsch-slot-operation] Read packet - 21
+42894	ID:20	[tsch-slot-operation] Read second packet - 21
+42894	ID:20	current header len:  21
+42894	ID:20	second header len:  21
+42894	ID:20	First frame verification
+42894	ID:20	Second frame verification
+42894	ID:20	rx_count:  12 21 21
+42894	ID:20	RX process pending
+42894	ID:20	TX process pending
+42894	ID:20	[Read single] Start
+42894	ID:25	[radio_read_dual] starting
+42894	ID:25	Radio 1 - Radio 2
+42894	ID:25	no poll mode
+42894	ID:25	[read_dual] tmp: 21 - tmp1:21
+42894	ID:25	[tsch-slot-operation] Read packet - 21
+42894	ID:25	[tsch-slot-operation] Read second packet - 21
+42894	ID:25	current header len:  21
+42894	ID:25	second header len:  21
+42894	ID:25	First frame verification
+42894	ID:25	Second frame verification
+42894	ID:25	rx_count:  12 21 21
+42894	ID:25	RX process pending
+42894	ID:25	TX process pending
+42894	ID:25	[Read single] Start
+42894	ID:29	Right channel match 19 or 24
+42894	ID:29	[Read single] Start
+42894	ID:29	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 19
+42894	ID:29	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42894	ID:29	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/0010.0010.0010.0010
+42894	ID:29	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42894	ID:29	[Read single] Start
+42894	ID:19	Right channel match 19 or 13
+42894	ID:19	[Read single] Start
+42894	ID:19	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 19
+42894	ID:19	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+42894	ID:19	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/0010.0010.0010.0010
+42894	ID:19	[ERR : TSCH      ] ! failed to parse EB (len 21)
+42894	ID:19	[Read single] Start
+42896	ID:24	[Read single] Start
+42896	ID:24	tx: 2 - 2
+42896	ID:24	RX process pending
+42896	ID:24	TX process pending
+42896	ID:24	[INFO: TSCH-LOG  ] {asn-0.109b link-1-17-1-1 ch-24} uc-1-0 tx LL-0018->LL-0010, len 21, seq 75, st 2 2
+42896	ID:24	[INFO: TSCH-LOG  ] {asn-0.109b link-1-17-1-1 ch-24} uc-1-0 tx LL-0018->LL-0010, len 21, seq 75, st 2 2
+42926	ID:13	scanning on channel 11 and 18 
+42941	ID:3	scanning on channel 17 and 21 
+42948	ID:21	scanning on channel 12 and 24 
+42987	ID:23	scanning on channel 11 and 14 
+43116	ID:8	scanning on channel 12 and 13 
+43129	ID:25	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+43129	ID:25	[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+43185	ID:28	scanning on channel 25 and 11 
+43222	ID:25	current_channel = 24 and 19
+43222	ID:25	Packet1: 0xc2fb0660  len:  35
+43222	ID:25	 Packet2:  0xc2fb0660 len:  35
+43222	ID:25	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+43224	ID:25	[transmit_packet] Pck1: 0x23 - Pck2: 0x23 
+43224	ID:25	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+43224	ID:6	[Receiving_packet] Radio2: On
+43224	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+43224	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+43224	ID:9	[Receiving_packet] Radio2: On
+43224	ID:14	[Receiving_packet] Radio2: On
+43224	ID:17	[Receiving_packet] Radio1: On
+43224	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+43224	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+43224	ID:29	[Receiving_packet] Radio1: On and Radio2: On 
+43224	ID:19	[Receiving_packet] Radio1: On
+43225	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+43225	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+43225	ID:25	tx: 2 - 2
+43225	ID:25	RX process pending
+43225	ID:25	TX process pending
+43225	ID:25	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 42, status 0, tx 2
+43225	ID:25	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 42, status 0, tx 2
+43225	ID:25	[INFO: TSCH-LOG  ] {asn-0.10bc link-1-17-0-0 ch-24} bc-0-0 tx LL-0019->LL-NULL, len 35, seq 42, st 0 2
+43225	ID:25	[INFO: TSCH-LOG  ] {asn-0.10bc link-1-17-0-0 ch-24} bc-0-0 tx LL-0019->LL-NULL, len 35, seq 42, st 0 2
+43225	ID:6	Right channel match 12 or 24
+43225	ID:6	[Read single] Start
+43225	ID:6	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 12
+43225	ID:6	[INFO: TSCH      ] parse_eb: no schedule
+43225	ID:6	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 0019.0019.0019.0019
+43225	ID:6	[INFO: TSCH      ] association done (2), sec 0, PAN ID abcd, asn-0.10bc, jp 7, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 0019.0019.0019.0019
+43225	ID:6	[Slot operation] Current link - Options 7, timeslot 1, channel offset 1 
+43225	ID:6	[Read single] Start
+43225	ID:7	[radio_read_dual] starting
+43225	ID:7	Radio 1 - Radio 2
+43225	ID:7	no poll mode
+43225	ID:7	[read_dual] tmp: 35 - tmp1:35
+43225	ID:7	[tsch-slot-operation] Read packet - 35
+43225	ID:7	[tsch-slot-operation] Read second packet - 35
+43225	ID:7	current header len:  14
+43225	ID:7	second header len:  14
+43225	ID:7	First frame verification
+43225	ID:7	Second frame verification
+43225	ID:7	rx_count:  16 35 35
+43225	ID:7	RX process pending
+43225	ID:7	TX process pending
+43225	ID:7	[INFO: TSCH-LOG  ] {asn-0.10bc link-1-17-0-0 ch-24} bc-0-0 rx LL-0019->LL-NULL, len 35, seq 75, edr 0
+43225	ID:7	[INFO: TSCH-LOG  ] {asn-0.10bc link-1-17-0-0 ch-24} bc-0-0 rx LL-0019->LL-NULL, len 35, seq 75, edr 0
+43225	ID:7	[Read single] Start
+43225	ID:9	Right channel match 21 or 24
+43225	ID:9	[Read single] Start
+43225	ID:9	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 21
+43225	ID:9	[INFO: TSCH      ] parse_eb: no schedule
+43225	ID:9	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 0019.0019.0019.0019
+43225	ID:9	[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.10bc, jp 7, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 0019.0019.0019.0019
+43225	ID:9	[Slot operation] Current link - Options 7, timeslot 1, channel offset 1 
+43225	ID:9	[Read single] Start
+43225	ID:14	Right channel match 17 or 24
+43225	ID:14	[Read single] Start
+43225	ID:14	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 17
+43225	ID:14	[INFO: TSCH      ] parse_eb: no schedule
+43225	ID:14	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 0019.0019.0019.0019
+43225	ID:14	[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.10bc, jp 7, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 0019.0019.0019.0019
+43225	ID:14	[Slot operation] Current link - Options 7, timeslot 1, channel offset 1 
+43225	ID:14	[Read single] Start
+43225	ID:17	Right channel match 24 or 23
+43225	ID:17	[Read single] Start
+43225	ID:17	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 24
+43225	ID:17	[INFO: TSCH      ] parse_eb: no schedule
+43225	ID:17	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 0019.0019.0019.0019
+43225	ID:17	[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.10bc, jp 7, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 0019.0019.0019.0019
+43225	ID:17	[Slot operation] Current link - Options 7, timeslot 1, channel offset 1 
+43225	ID:17	[Read single] Start
+43225	ID:24	[radio_read_dual] starting
+43225	ID:24	Radio 1 - Radio 2
+43225	ID:24	no poll mode
+43225	ID:24	[read_dual] tmp: 35 - tmp1:35
+43225	ID:24	[tsch-slot-operation] Read packet - 35
+43225	ID:24	[tsch-slot-operation] Read second packet - 35
+43225	ID:24	current header len:  14
+43225	ID:24	second header len:  14
+43225	ID:24	First frame verification
+43225	ID:24	Second frame verification
+43225	ID:24	rx_count:  12 35 35
+43225	ID:24	RX process pending
+43225	ID:24	TX process pending
+43225	ID:24	[INFO: TSCH-LOG  ] {asn-0.10bc link-1-17-0-0 ch-24} bc-0-0 rx LL-0019->LL-NULL, len 35, seq 169, edr 0
+43225	ID:24	[INFO: TSCH-LOG  ] {asn-0.10bc link-1-17-0-0 ch-24} bc-0-0 rx LL-0019->LL-NULL, len 35, seq 169, edr 0
+43225	ID:24	[Read single] Start
+43225	ID:29	Right channel match 19 or 24
+43225	ID:29	[Read single] Start
+43225	ID:29	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 19
+43225	ID:29	[INFO: TSCH      ] parse_eb: no schedule
+43225	ID:29	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 0019.0019.0019.0019
+43225	ID:29	[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.10bc, jp 7, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 0019.0019.0019.0019
+43225	ID:29	[Slot operation] Current link - Options 7, timeslot 1, channel offset 1 
+43225	ID:29	[Read single] Start
+43225	ID:19	Right channel match 19 or 13
+43225	ID:19	[Read single] Start
+43225	ID:19	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 19
+43225	ID:19	[INFO: TSCH      ] parse_eb: no schedule
+43225	ID:19	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 0019.0019.0019.0019
+43225	ID:19	[INFO: TSCH      ] association done (1), sec 0, PAN ID abcd, asn-0.10bc, jp 7, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 0019.0019.0019.0019
+43225	ID:19	[Slot operation] Current link - Options 7, timeslot 1, channel offset 1 
+43225	ID:19	[Read single] Start
+43232	ID:24	current_channel = 20 and 25
+43232	ID:24	Packet1: 0xc2fb0660  len:  21
+43232	ID:24	 Packet2:  0xc2fb0660 len:  21
+43232	ID:24	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+43234	ID:24	[transmit_packet] Pck1: 0x15 - Pck2: 0x15 
+43234	ID:24	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+43234	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:7	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:9	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:9	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:14	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:14	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:15	[Receiving_packet] Radio2: On
+43234	ID:16	[Receiving_packet] Radio2: On
+43234	ID:17	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:17	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:19	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:19	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:20	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:29	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:29	[Receiving_packet] Radio1: On and Radio2: On 
+43234	ID:11	[Receiving_packet] Radio1: On
+43234	ID:28	[Receiving_packet] Radio1: On
+43234	ID:1	[Read single] Start
+43234	ID:1	[INFO: TSCH      ] received from 0018.0018.0018.0018 with seqno 75
+43234	ID:1	[WARN: 6LoWPAN   ] empty packet
+43234	ID:6	[radio_read_dual] starting
+43234	ID:6	Radio 1 - Radio 2
+43234	ID:6	no poll mode
+43234	ID:6	[read_dual] tmp: 21 - tmp1:21
+43234	ID:6	[tsch-slot-operation] Read packet - 21
+43234	ID:6	[tsch-slot-operation] Read second packet - 21
+43234	ID:6	current header len:  21
+43234	ID:6	second header len:  21
+43234	ID:6	First frame verification
+43234	ID:6	Second frame verification
+43234	ID:6	rx_count:  2 21 21
+43234	ID:6	RX process pending
+43234	ID:6	TX process pending
+43234	ID:6	[INFO: TSCH-LOG  ] {asn-0.18001800 link-1-17-1-1 ch-0} ! leaving the network, last sync 402655044
+43234	ID:6	[Read single] Start
+43234	ID:6	[WARN: TSCH      ] leaving the network, stats: tx 21, rx 2, sync 402659328
+43234	ID:6	RX process pending
+43234	ID:6	TX process pending
+43234	ID:6	[INFO: TSCH Queue] update time source: 0019.0019.0019.0019 -> (NULL LL addr)
+43234	ID:7	[radio_read_dual] starting
+43234	ID:7	Radio 1 - Radio 2
+43234	ID:7	no poll mode
+43234	ID:7	[read_dual] tmp: 21 - tmp1:21
+43234	ID:7	[tsch-slot-operation] Read packet - 21
+43234	ID:7	[tsch-slot-operation] Read second packet - 21
+43234	ID:7	current header len:  21
+43234	ID:7	second header len:  21
+43234	ID:7	First frame verification
+43234	ID:7	Second frame verification
+43234	ID:7	rx_count:  18 21 21
+43234	ID:7	RX process pending
+43234	ID:7	TX process pending
+43234	ID:7	[Read single] Start
+43234	ID:9	[radio_read_dual] starting
+43234	ID:9	Radio 1 - Radio 2
+43234	ID:9	no poll mode
+43234	ID:9	[read_dual] tmp: 21 - tmp1:21
+43234	ID:9	[tsch-slot-operation] Read packet - 21
+43234	ID:9	[tsch-slot-operation] Read second packet - 21
+43234	ID:9	current header len:  21
+43234	ID:9	second header len:  21
+43234	ID:9	First frame verification
+43234	ID:9	Second frame verification
+43234	ID:9	rx_count:  2 21 21
+43234	ID:9	RX process pending
+43234	ID:9	TX process pending
+43234	ID:9	[Read single] Start
+43234	ID:14	[radio_read_dual] starting
+43234	ID:14	Radio 1 - Radio 2
+43234	ID:14	no poll mode
+43234	ID:14	[read_dual] tmp: 21 - tmp1:21
+43234	ID:14	[tsch-slot-operation] Read packet - 21
+43234	ID:14	[tsch-slot-operation] Read second packet - 21
+43234	ID:14	current header len:  21
+43234	ID:14	second header len:  21
+43234	ID:14	First frame verification
+43234	ID:14	Second frame verification
+43234	ID:14	rx_count:  2 21 21
+43234	ID:14	RX process pending
+43234	ID:14	TX process pending
+43234	ID:14	[Read single] Start
+43234	ID:15	Right channel match 22 or 20
+43234	ID:15	[Read single] Start
+43234	ID:15	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 22
+43234	ID:15	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+43234	ID:15	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/0010.0010.0010.0010
+43234	ID:15	[ERR : TSCH      ] ! failed to parse EB (len 21)
+43234	ID:15	[Read single] Start
+43234	ID:16	Right channel match 17 or 20
+43234	ID:16	[Read single] Start
+43234	ID:16	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 17
+43234	ID:16	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+43234	ID:16	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/0010.0010.0010.0010
+43234	ID:16	[ERR : TSCH      ] ! failed to parse EB (len 21)
+43234	ID:16	[Read single] Start
+43234	ID:17	[radio_read_dual] starting
+43234	ID:17	Radio 1 - Radio 2
+43234	ID:17	no poll mode
+43234	ID:17	[read_dual] tmp: 21 - tmp1:21
+43234	ID:17	[tsch-slot-operation] Read packet - 21
+43234	ID:17	[tsch-slot-operation] Read second packet - 21
+43234	ID:17	current header len:  21
+43234	ID:17	second header len:  21
+43234	ID:17	First frame verification
+43234	ID:17	Second frame verification
+43234	ID:17	rx_count:  2 21 21
+43234	ID:17	RX process pending
+43234	ID:17	TX process pending
+43234	ID:17	[Read single] Start
+43234	ID:19	[radio_read_dual] starting
+43234	ID:19	Radio 1 - Radio 2
+43234	ID:19	no poll mode
+43234	ID:19	[read_dual] tmp: 21 - tmp1:21
+43234	ID:19	[tsch-slot-operation] Read packet - 21
+43234	ID:19	[tsch-slot-operation] Read second packet - 21
+43234	ID:19	current header len:  21
+43234	ID:19	second header len:  21
+43234	ID:19	First frame verification
+43234	ID:19	Second frame verification
+43234	ID:19	rx_count:  2 21 21
+43234	ID:19	RX process pending
+43234	ID:19	TX process pending
+43234	ID:19	[Read single] Start
+43234	ID:20	[radio_read_dual] starting
+43234	ID:20	Radio 1 - Radio 2
+43234	ID:20	no poll mode
+43234	ID:20	[read_dual] tmp: 21 - tmp1:21
+43234	ID:20	[tsch-slot-operation] Read packet - 21
+43234	ID:20	[tsch-slot-operation] Read second packet - 21
+43234	ID:20	current header len:  21
+43234	ID:20	second header len:  21
+43234	ID:20	First frame verification
+43234	ID:20	Second frame verification
+43234	ID:20	rx_count:  14 21 21
+43234	ID:20	RX process pending
+43234	ID:20	TX process pending
+43234	ID:20	[Read single] Start
+43234	ID:25	[radio_read_dual] starting
+43234	ID:25	Radio 1 - Radio 2
+43234	ID:25	no poll mode
+43234	ID:25	[read_dual] tmp: 21 - tmp1:21
+43234	ID:25	[tsch-slot-operation] Read packet - 21
+43234	ID:25	[tsch-slot-operation] Read second packet - 21
+43234	ID:25	current header len:  21
+43234	ID:25	second header len:  21
+43234	ID:25	First frame verification
+43234	ID:25	Second frame verification
+43234	ID:25	rx_count:  14 21 21
+43234	ID:25	RX process pending
+43234	ID:25	TX process pending
+43234	ID:25	[Read single] Start
+43234	ID:29	[radio_read_dual] starting
+43234	ID:29	Radio 1 - Radio 2
+43234	ID:29	no poll mode
+43234	ID:29	[read_dual] tmp: 21 - tmp1:21
+43234	ID:29	[tsch-slot-operation] Read packet - 21
+43234	ID:29	[tsch-slot-operation] Read second packet - 21
+43234	ID:29	current header len:  21
+43234	ID:29	second header len:  21
+43234	ID:29	First frame verification
+43234	ID:29	Second frame verification
+43234	ID:29	rx_count:  2 21 21
+43234	ID:29	RX process pending
+43234	ID:29	TX process pending
+43234	ID:29	[Read single] Start
+43234	ID:11	Right channel match 25 or 21
+43234	ID:11	[Read single] Start
+43234	ID:11	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 25
+43234	ID:11	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+43234	ID:11	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/0010.0010.0010.0010
+43234	ID:11	[ERR : TSCH      ] ! failed to parse EB (len 21)
+43234	ID:11	[Read single] Start
+43234	ID:28	Right channel match 25 or 11
+43234	ID:28	[Read single] Start
+43234	ID:28	[INFO: TSCH      ] scan: received packet (21 bytes) on channel 25
+43234	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame is not a valid TSCH beacon. Frame version 2, type 1, FCF 21 ec
+43234	ID:28	[INFO: TSCH Pkt  ] ! parse_eb: frame was from 0xabcd/0018.0018.0018.0018 to 0xabcd/0010.0010.0010.0010
+43234	ID:28	[ERR : TSCH      ] ! failed to parse EB (len 21)
+43234	ID:28	[Read single] Start
+43236	ID:24	[Read single] Start
+43236	ID:24	tx: 4 - 4
+43236	ID:24	RX process pending
+43236	ID:24	TX process pending
+43236	ID:24	[INFO: TSCH-LOG  ] {asn-0.10bd link-1-17-1-1 ch-20} uc-1-0 tx LL-0018->LL-0010, len 21, seq 75, st 2 4
+43236	ID:24	[INFO: TSCH-LOG  ] {asn-0.10bd link-1-17-1-1 ch-20} uc-1-0 tx LL-0018->LL-0010, len 21, seq 75, st 2 4
+43279	ID:2	scanning on channel 23 and 13 
+43287	ID:30	scanning on channel 18 and 25 
+43369	ID:18	scanning on channel 19 and 13 
+43391	ID:4	scanning on channel 19 and 22 
+43428	ID:27	scanning on channel 14 and 25 
+43432	ID:9	[DBG : TSCH Queue] packet is added put_index 0, packet 0xc2fb2d60
+43432	ID:9	[INFO: TSCH      ] TSCH: enqueue EB packet 35 16
+43505	ID:15	scanning on channel 25 and 11 
+43507	ID:27	[WARN: TSCH      ] ! not associated, drop outgoing packet
+43562	ID:9	current_channel = 20 and 25
+43562	ID:9	Packet1: 0xc2fb0660  len:  35
+43562	ID:9	 Packet2:  0xc2fb0660 len:  35
+43562	ID:9	[prepare_packet] data1:0xc2fb0660 - data2: 0xc2fb0660 
+43564	ID:9	[transmit_packet] Pck1: 0x23 - Pck2: 0x23 
+43564	ID:9	[Send_packet] Pckt1: 0xc2fb0660 - Pckt2: 0xc2fb0660
+43564	ID:6	[Receiving_packet] Radio1: On and Radio2: On 
+43564	ID:17	[Receiving_packet] Radio1: On and Radio2: On 
+43564	ID:17	[Receiving_packet] Radio1: On and Radio2: On 
+43564	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+43564	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+43564	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+43564	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+43564	ID:29	[Receiving_packet] Radio1: On and Radio2: On 
+43564	ID:29	[Receiving_packet] Radio1: On and Radio2: On 
+43565	ID:17	[Receiving_packet] Radio1: On and Radio2: On 
+43565	ID:24	[Receiving_packet] Radio1: On and Radio2: On 
+43565	ID:25	[Receiving_packet] Radio1: On and Radio2: On 
+43565	ID:29	[Receiving_packet] Radio1: On and Radio2: On 
+43565	ID:9	tx: 2 - 2
+43565	ID:9	RX process pending
+43565	ID:9	TX process pending
+43565	ID:9	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 90, status 0, tx 2
+43565	ID:9	[INFO: TSCH      ] packet sent to 0000.0000.0000.0000, seqno 90, status 0, tx 2
+43565	ID:9	[INFO: TSCH-LOG  ] {asn-0.10de link-1-17-0-0 ch-20} bc-0-0 tx LL-0009->LL-NULL, len 35, seq 90, st 0 2
+43565	ID:9	[INFO: TSCH-LOG  ] {asn-0.10de link-1-17-0-0 ch-20} bc-0-0 tx LL-0009->LL-NULL, len 35, seq 90, st 0 2
+43565	ID:1	[Read single] Start
+43565	ID:6	Right channel match 12 or 24
+43565	ID:6	[Read single] Start
+43565	ID:6	[INFO: TSCH      ] scan: received packet (35 bytes) on channel 12
+43565	ID:6	[INFO: TSCH      ] parse_eb: no schedule
+43565	ID:6	[INFO: TSCH Queue] update time source: (NULL LL addr) -> 0009.0009.0009.0009
+43565	ID:6	[INFO: TSCH      ] association done (3), sec 0, PAN ID abcd, asn-0.10de, jp 8, timeslot id 0, hopping id 0, slotframe len 0 with 0 links, from 0009.0009.0009.0009
+43565	ID:6	[Slot operation] Current link - Options 7, timeslot 1, channel offset 1 
+43565	ID:6	[Read single] Start
+43565	ID:17	[radio_read_dual] starting
+43565	ID:17	Radio 1 - Radio 2
+43565	ID:17	no poll mode
+43565	ID:17	[read_dual] tmp: 35 - tmp1:35
+43565	ID:17	[tsch-slot-operation] Read packet - 35
+43565	ID:17	[tsch-slot-operation] Read second packet - 35
+43565	ID:17	current header len:  14
+43565	ID:17	second header len:  14
+43565	ID:17	First frame verification
+43565	ID:17	Second frame verification
+43565	ID:17	rx_count:  4 35 35
+43565	ID:17	RX process pending
+43565	ID:17	TX process pending
+43565	ID:17	[INFO: TSCH-LOG  ] {asn-0.10de link-1-17-0-0 ch-20} bc-0-0 rx LL-0009->LL-NULL, len 35, seq 75, edr 0
+43565	ID:17	[INFO: TSCH-LOG  ] {asn-0.10de link-1-17-0-0 ch-20} bc-0-0 rx LL-0009->LL-NULL, len 35, seq 75, edr 0
+43565	ID:17	[Read single] Start
+43565	ID:24	[radio_read_dual] starting
+43565	ID:24	Radio 1 - Radio 2
+43565	ID:24	no poll mode
+43565	ID:24	[read_dual] tmp: 35 - tmp1:35
+43565	ID:24	[tsch-slot-operation] Read packet - 35
+43565	ID:24	[tsch-slot-operation] Read second packet - 35
+43565	ID:24	current header len:  14
+43565	ID:24	second header len:  14
+43565	ID:24	First frame verification
+43565	ID:24	Second frame verification
+43565	ID:24	rx_count:  469829378 35 35
+43565	ID:24	RX process pending
+43565	ID:24	TX process pending
+43565	ID:24	[INFO: TSCH-LOG  ] {asn-de.1a068811 link-1-17-0-0 ch-0} bc-0-0 rx LL-0009->LL-NULL, len 35, seq 169, edr 0
+43565	ID:24	[INFO: TSCH-LOG  ] {asn-de.1a068811 link-1-17-0-0 ch-0} bc-0-0 rx LL-0009->LL-NULL, len 35, seq 169, edr 0
+43565	ID:24	[INFO: TSCH-LOG  ] {asn-de.1a068811 link-1-17-0-0 ch-0} ! leaving the network, last sync 436632792
+43565	ID:24	[Read single] Start
+43565	ID:24	[WARN: TSCH      ] leaving the network, stats: tx 35, rx 469829378, sync 436635665
+43565	ID:24	RX process pending
+43565	ID:24	TX process pending
+43565	ID:24	[WARN: TSCH Queue] ! flushing packet
+43565	ID:24	[INFO: TSCH      ] KA sent to 0000.0000.0000.0000, st 4-4
+43565	ID:24	[WARN: TSCH Queue] ! flushing packet
+43565	ID:24	[INFO: TSCH      ] KA sent to 0000.0000.0000.0000, st 4-0
+43565	ID:25	[radio_read_dual] starting
+43565	ID:25	Radio 1 - Radio 2
+43565	ID:25	no poll mode
+43565	ID:25	[read_dual] tmp: 35 - tmp1:35
+43565	ID:25	[tsch-slot-operation] Read packet - 35
+43565	ID:25	[tsch-slot-operation] Read second packet - 35
+43565	ID:25	current header len:  14
+43565	ID:25	second header len:  14
+43565	ID:25	First frame verification
+43565	ID:25	Second frame verification
+43565	ID:25	rx_count:  16 35 35
+43565	ID:25	RX process pending
+43565	ID:25	TX process pending
+43565	ID:25	[INFO: TSCH-LOG  ] {asn-0.10de link-1-17-0-0 ch-20} bc-0-0 rx LL-0009->LL-NULL, len 35, seq 75, edr 0
+43565	ID:25	[INFO: TSCH-LOG  ] {asn-0.10de link-1-17-0-0 ch-20} bc-0-0 rx LL-0009->LL-NULL, len 35, seq 75, edr 0
+43565	ID:25	[Read single] Start
+43565	ID:29	[radio_read_dual] starting
+43565	ID:29	Radio 1 - Radio 2
+43565	ID:29	no poll mode
+43565	ID:29	[read_dual] tmp: 35 - tmp1:35
+43565	ID:29	[tsch-slot-operation] Read packet - 35
+43565	ID:29	[tsch-slot-operation] Read second packet - 35
+43565	ID:29	current header len:  14
+43565	ID:29	second header len:  14
+43565	ID:29	First frame verification
+43565	ID:29	Second frame verification
+43565	ID:29	rx_count:  4 35 35
+43565	ID:29	RX process pending
+43565	ID:29	TX process pending
+43565	ID:29	[INFO: TSCH-LOG  ] {asn-0.10de link-1-17-0-0 ch-20} bc-0-0 rx LL-0009->LL-NULL, len 35, seq 75, edr 0
+43565	ID:29	[INFO: TSCH-LOG  ] {asn-0.10de link-1-17-0-0 ch-20} bc-0-0 rx LL-0009->LL-NULL, len 35, seq 75, edr 0
+43565	ID:29	[Read single] Start
+43599	ID:10	scanning on channel 24 and 11 
+43637	ID:12	scanning on channel 14 and 12 
+43638	ID:11	scanning on channel 13 and 23 
+43706	ID:22	scanning on channel 13 and 18 
+43733	ID:26	scanning on channel 25 and 24 
+43758	ID:5	scanning on channel 23 and 26 
+43927	ID:13	scanning on channel 19 and 13 
+43942	ID:3	scanning on channel 19 and 22 
+43949	ID:21	scanning on channel 14 and 25 
+43988	ID:23	scanning on channel 12 and 20 
+44117	ID:8	scanning on channel 18 and 21 
+44186	ID:28	scanning on channel 11 and 12 

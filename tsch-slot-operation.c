@@ -169,7 +169,7 @@ static rtimer_clock_t volatile current_slot_start;
 static volatile int tsch_in_slot_operation = 0;
 
 /* If we are inside a slot, this tells the current channel */
-static uint8_t current_channel; 
+static uint16_t current_channel; 
 static int channelDummy=0;
 /* Info about the link, packet and neighbor of
  * the current (or next) slot */
@@ -256,11 +256,11 @@ tsch_release_lock(void)
 /* Channel hopping utility functions */
 
 /* Return channel from ASN and channel offset */
-uint8_t
-tsch_calculate_channel(struct tsch_asn_t *asn, uint8_t channel_offset)
+int
+tsch_calculate_channel(struct tsch_asn_t *asn, uint16_t channel_offset)
 {
-  uint16_t index_of_0 = TSCH_ASN_MOD(*asn, tsch_hopping_sequence_length);
-  uint16_t index_of_offset = (index_of_0 + channel_offset) % tsch_hopping_sequence_length.val;
+  int index_of_0 = TSCH_ASN_MOD(*asn, tsch_hopping_sequence_length);
+  int index_of_offset = (index_of_0 + channel_offset) % tsch_hopping_sequence_length.val;
   return tsch_hopping_sequence[index_of_offset];
 }
 

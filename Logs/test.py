@@ -62,7 +62,7 @@ def justTime(string):
     return int(string)  
 
 
-def time_extraction(source):  
+def time_extraction(source):
    pass
 
 def extract_value(words): 
@@ -195,5 +195,3 @@ for size in  sizes:
     #print(average(pdr_list)) 
     #print(conf(thr_list)) 
     print(conf(pdr_list))
-
-

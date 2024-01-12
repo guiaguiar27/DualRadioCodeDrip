@@ -84,7 +84,7 @@ initialize_tsch_schedule(void)
 tsch_schedule_add_link(sf_common,
       LINK_OPTION_RX | LINK_OPTION_TX | LINK_OPTION_SHARED,
       LINK_TYPE_ADVERTISING, &tsch_broadcast_address,
-      slot_offset+1, channel_offset+1);
+      slot_offset, channel_offset+1);
 
   //for (i = 0; i < TSCH_SCHEDULE_MAX_LINKS - 1; ++i) { 
   // for (i = 0 ; i < 2 ; i++){

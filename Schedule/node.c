@@ -75,8 +75,11 @@ initialize_tsch_schedule(void)
   uint16_t channel_offset;
 
   /* A "catch-all" cell at (0, 0) */
-  slot_offset = 0;
-  channel_offset = 0;
+  slot_offset = node_id + 1;  // without priority
+  channel_offset = 0; 
+  
+
+
   tsch_schedule_add_link(sf_common,
       LINK_OPTION_RX | LINK_OPTION_TX | LINK_OPTION_SHARED,
       LINK_TYPE_ADVERTISING, &tsch_broadcast_address,
@@ -85,39 +88,39 @@ tsch_schedule_add_link(sf_common,
       LINK_OPTION_RX | LINK_OPTION_TX | LINK_OPTION_SHARED,
       LINK_TYPE_ADVERTISING, &tsch_broadcast_address,
       slot_offset, channel_offset+1);
+ tsch_schedule_print();
+  for (i = 0; i < TSCH_SCHEDULE_MAX_LINKS - 1; ++i) { 
+  for (i = 0 ; i < 2 ; i++){
+    uint8_t link_options;
+    linkaddr_t addr;
+    uint16_t remote_id = i + 1;
 
-  //for (i = 0; i < TSCH_SCHEDULE_MAX_LINKS - 1; ++i) { 
-  // for (i = 0 ; i < 2 ; i++){
-  //   uint8_t link_options;
-  //   linkaddr_t addr;
-  //   uint16_t remote_id = i + 1;
+    for(j = 0; j < sizeof(addr); j += 2) {
+      addr.u8[j + 1] = remote_id & 0xff;
+      addr.u8[j + 0] = remote_id >> 8;
+    } 
 
-  //   for(j = 0; j < sizeof(addr); j += 2) {
-  //     addr.u8[j + 1] = remote_id & 0xff;
-  //     addr.u8[j + 0] = remote_id >> 8;
-  //   }
+    /* Add a unicast cell for each potential neighbor (in Cooja) */
+    /* Use the same aslot offset; the right link will be dynamically selected at runtime based on queue sizes */
+    slot_offset = APP_UNICAST_TIMESLOT/i + 1; // a bit of random
+    channel_offset = i+1;
+    /* Warning: LINK_OPTION_SHARED cannot be configured, as with this schedule
+     * backoff windows will not be reset correctly! */ 
+    link_options = LINK_OPTION_RX;
 
-  //   /* Add a unicast cell for each potential neighbor (in Cooja) */
-  //   /* Use the same aslot offset; the right link will be dynamically selected at runtime based on queue sizes */
-  //   slot_offset = APP_UNICAST_TIMESLOT;
-  //   channel_offset = i;
-  //   /* Warning: LINK_OPTION_SHARED cannot be configured, as with this schedule
-  //    * backoff windows will not be reset correctly! */ 
-  //   link_options = LINK_OPTION_RX;
+    tsch_schedule_add_link(sf_common,
+        link_options,
+        LINK_TYPE_NORMAL, &addr,
+        slot_offset, channel_offset);
 
-  //   tsch_schedule_add_link(sf_common,
-  //       link_options,
-  //       LINK_TYPE_NORMAL, &addr,
-  //       slot_offset, channel_offset);
+    link_options =LINK_OPTION_TX;
 
-  //   link_options =LINK_OPTION_TX;
-
-  //   tsch_schedule_add_link(sf_common,
-  //       link_options,
-  //       LINK_TYPE_NORMAL, &addr,
-  //       slot_offset, channel_offset); 
-  //   tsch_schedule_print();
-  // }
+    tsch_schedule_add_link(sf_common,
+        link_options,
+        LINK_TYPE_NORMAL, &addr,
+        slot_offset, channel_offset+1); 
+   
+  }
 }
 
 static void

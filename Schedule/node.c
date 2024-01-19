@@ -69,7 +69,7 @@ AUTOSTART_PROCESSES(&node_process);
 static void
 initialize_tsch_schedule(void)
 {
-  //int i, j;
+  int i, j;
   struct tsch_slotframe *sf_common = tsch_schedule_add_slotframe(APP_SLOTFRAME_HANDLE, APP_SLOTFRAME_SIZE);
   uint16_t slot_offset;
   uint16_t channel_offset;
@@ -79,26 +79,28 @@ initialize_tsch_schedule(void)
   channel_offset = 0; 
   
 
-
+  // link definition for broadcast
   tsch_schedule_add_link(sf_common,
       LINK_OPTION_RX | LINK_OPTION_TX | LINK_OPTION_SHARED,
       LINK_TYPE_ADVERTISING, &tsch_broadcast_address,
       slot_offset, channel_offset);
-tsch_schedule_add_link(sf_common,
+  tsch_schedule_add_link(sf_common,
       LINK_OPTION_RX | LINK_OPTION_TX | LINK_OPTION_SHARED,
       LINK_TYPE_ADVERTISING, &tsch_broadcast_address,
       slot_offset, channel_offset+1);
- tsch_schedule_print();
-  for (i = 0; i < TSCH_SCHEDULE_MAX_LINKS - 1; ++i) { 
+ 
+  tsch_schedule_print();
+  
+  
   for (i = 0 ; i < 2 ; i++){
-    uint8_t link_options;
-    linkaddr_t addr;
-    uint16_t remote_id = i + 1;
+      uint8_t link_options;
+      linkaddr_t addr;
+      uint16_t remote_id = i + 1;
 
-    for(j = 0; j < sizeof(addr); j += 2) {
-      addr.u8[j + 1] = remote_id & 0xff;
-      addr.u8[j + 0] = remote_id >> 8;
-    } 
+      for(j = 0; j < sizeof(addr); j += 2) {
+        addr.u8[j + 1] = remote_id & 0xff;
+        addr.u8[j + 0] = remote_id >> 8;
+      } 
 
     /* Add a unicast cell for each potential neighbor (in Cooja) */
     /* Use the same aslot offset; the right link will be dynamically selected at runtime based on queue sizes */
@@ -113,7 +115,7 @@ tsch_schedule_add_link(sf_common,
         LINK_TYPE_NORMAL, &addr,
         slot_offset, channel_offset);
 
-    link_options =LINK_OPTION_TX;
+    link_options = LINK_OPTION_TX;
 
     tsch_schedule_add_link(sf_common,
         link_options,

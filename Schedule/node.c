@@ -40,7 +40,7 @@
 #include "lib/random.h"
 #include "sys/node-id.h" 
 #include "net/mac/tsch/tsch-schedule.h" 
-#include "net/routing/routing/h"
+#include "net/routing/routing.h"
 
 #include "sys/log.h"
 #define LOG_MODULE "App"
@@ -89,7 +89,7 @@ initialize_tsch_schedule(void)
       LINK_TYPE_ADVERTISING, &tsch_broadcast_address,
       slot_offset, channel_offset+1);
  
-  tsch_schedule_print();
+  //tsch_schedule_print();
   
   
   for (i = 0 ; i < 2 ; i++){

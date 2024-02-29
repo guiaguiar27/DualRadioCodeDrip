@@ -75,8 +75,8 @@ initialize_tsch_schedule(void)
   uint16_t channel_offset;
 
   /* A "catch-all" cell at (0, 0) */
-  slot_offset = node_id + 1;  // without priority
-  channel_offset = 0; 
+  slot_offset = node_id;  // without priority
+  channel_offset = node_id + 1; 
   
 
   // link definition for broadcast
@@ -106,8 +106,7 @@ initialize_tsch_schedule(void)
     /* Use the same aslot offset; the right link will be dynamically selected at runtime based on queue sizes */
     slot_offset = APP_UNICAST_TIMESLOT/i + 1; // a bit of random
     channel_offset = i+1;
-    /* Warning: LINK_OPTION_SHARED cannot be configured, as with this schedule
-     * backoff windows will not be reset correctly! */ 
+     
     link_options = LINK_OPTION_RX;
 
     tsch_schedule_add_link(sf_common,

@@ -45,9 +45,6 @@ uint8_t PossNeighbor[MAX_NOS];
 
 /* Log configuration */
 #include "sys/log.h"  // don't know about this include
-#define LOG_MODULE "TSCH Sched"
-#define LOG_LEVEL LOG_LEVEL_MAC 
-#define DBUG 1
 
 #if NBR_TSCH 
   int NBRlist[MAX_NEIGHBORS]; 

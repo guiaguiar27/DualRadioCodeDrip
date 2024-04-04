@@ -30,7 +30,6 @@ uint32_t Packets_received[MAX_NOS];
 uint8_t PossNeighbor[MAX_NOS];  
 
 /* Log configuration */
-#include "sys/log.h"  // don't know about this include
 #define LOG_MODULE "TSCH Sched"
 #define LOG_LEVEL LOG_LEVEL_MAC 
 #define DBUG 1

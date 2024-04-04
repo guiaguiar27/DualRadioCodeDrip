@@ -56,6 +56,8 @@
 /* Size of the application-specific schedule; a number relatively prime to the hopseq length */
 #define APP_SLOTFRAME_SIZE 17
 
+
+#define NBR_TSCH 1
 #if WITH_SECURITY
 
 /* Enable security */

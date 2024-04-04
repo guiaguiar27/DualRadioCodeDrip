@@ -4,7 +4,42 @@
  * more easy to reuse and to just activate and deactivate 
  * The purpose it's to works as Orchestra or others scheduler completly modular 
  * 
-**/
+**/ 
+ 
+#include "variban.h"
+#include <string.h> 
+#include <stdio.h> 
+#include <stdlib.h>
+#include "conf.h"  
+#define peso 1 
+#define no_raiz 1     
+
+#define Channel 16
+#define Timeslot 8
+static uint16_t unicast_slotframe_handle = 2;
+
+#define endereco "/home/user/contiki-ng/os/arvore.txt"  
+#define endereco_T_CH  "/home/user/contiki-ng/os/TCH.txt"
+
+
+//uint16_t Rpackets = 0 ; 
+uint8_t flag_schedule = 0 ;   
+uint32_t Packets_sent[MAX_NOS]; 
+uint32_t STpacks = 0 ;  
+uint32_t Packets_received[MAX_NOS]; 
+uint8_t PossNeighbor[MAX_NOS];  
+
+/* Log configuration */
+#include "sys/log.h"  // don't know about this include
+#define LOG_MODULE "TSCH Sched"
+#define LOG_LEVEL LOG_LEVEL_MAC 
+#define DBUG 1
+
+#if NBR_TSCH 
+  int NBRlist[MAX_NEIGHBORS]; 
+#endif  
+
+
 /*---------------------------------------------------------------------------*/
 void executa(int  num_aresta, int  num_no,  int **aloca_canal, int tempo, int (*mapa_graf_conf)[num_aresta][2], int *pacote_entregue, int raiz, int (*pacotes)[num_no]){
     int i;

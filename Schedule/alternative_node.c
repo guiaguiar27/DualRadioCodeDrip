@@ -36,10 +36,14 @@
 
 #include "contiki.h"
 #include "net/ipv6/simple-udp.h"
-#include "net/mac/tsch/tsch.h"
+#include "net/mac/tsch/tsch.h" 
+#include "net/mac/tsch/tsch-schedule.h" 
+#include "net/routing/routing.h"
 #include "lib/random.h"
 #include "sys/node-id.h" 
 #include "sys/energest.h"     
+#include "net/mac/tsch/tsch-schedule.h" 
+#include "net/routing/routing.h" 
 
 
 #include "sys/log.h"
@@ -78,10 +82,17 @@ static void init_broad(void){
   uint16_t slot_offset = 0;
   uint16_t channel_offset = 0; 
   
+  LOG_PRINT("Activating 1st link for broadcast\n");
   tsch_schedule_add_link(sf_common,
       LINK_OPTION_TX | LINK_OPTION_RX | LINK_OPTION_SHARED,
       LINK_TYPE_ADVERTISING, &tsch_broadcast_address,
-      slot_offset, channel_offset,0);
+      slot_offset, channel_offset); 
+   
+  LOG_PRINT("Activating 2nd link for broadcast\n");
+  tsch_schedule_add_link(sf_common,
+      LINK_OPTION_TX | LINK_OPTION_RX | LINK_OPTION_SHARED,
+      LINK_TYPE_ADVERTISING, &tsch_broadcast_address,
+      slot_offset, channel_offset+1); 
     
 } 
 #endif  
@@ -104,6 +115,10 @@ int initialize_tsch_schedule(void){
     // APP_SLOTFRAME_SIZE
       uint16_t slot_offset = 0 ;
       uint16_t channel_offset = 0 ;  
+     
+     // adaptation for the second radio
+      uint16_t slot_offset_2 = 0 ;
+      uint16_t channel_offset_2 = 0 ;  
      
       linkaddr_t addr;  
 
@@ -130,15 +145,24 @@ int initialize_tsch_schedule(void){
           } 
       // random parameters     
       slot_offset =  random_rand() % APP_UNICAST_TIMESLOT;
-      channel_offset = random_rand() % APP_CHANNEL_OFSETT ;
-      /* Warning: LINK_OPTION_SHARED cannot be configured, as with this schedule
-      * backoff windows will not be reset correctly! */
-      tsch_schedule_add_link(sf_common,
+      channel_offset = random_rand() % APP_CHANNEL_OFSETT ; 
+
+      slot_offset_2 =  random_rand() % APP_UNICAST_TIMESLOT;
+      channel_offset_2 = random_rand() % APP_CHANNEL_OFSETT ;
+
+      // need to create validation to check if the channels are different 
+
+      
+    tsch_schedule_add_link(sf_common,
               LINK_OPTION_TX,
               LINK_TYPE_NORMAL, &addr,
-              slot_offset, channel_offset,0);
+              slot_offset, channel_offset);
       
-     
+     tsch_schedule_add_link(sf_common,
+              LINK_OPTION_TX,
+              LINK_TYPE_NORMAL, &addr,
+              slot_offset_2, channel_offset_2);
+      
     return remote_id;
 } 
      

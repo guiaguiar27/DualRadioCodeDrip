@@ -36,10 +36,6 @@ uint8_t PossNeighbor[MAX_NOS];
 
 #define NBR_TSCH 1  
 
-#if NBR_TSCH 
-  int NBRlist[MAX_NEIGHBORS]; 
-#endif  
-
 
 /*---------------------------------------------------------------------------*/
 void executa(int  num_aresta, int  num_no,  int **aloca_canal, int tempo, int (*mapa_graf_conf)[num_aresta][2], int *pacote_entregue, int raiz, int (*pacotes)[num_no]){
@@ -559,14 +555,14 @@ int verify_link_by_id(uint8_t id){
 }
 /*------------------------------------------------------------------------------------------------------------*/
 
-#if NBR_TSCH 
+//#if NBR_TSCH 
   // inicia  
 int func_test(int i){ 
   printf("teste"); 
   return 0; 
 }
 
-int sort_node_to_create_link(int n){  
+int get_random_node(int n){  
   for(int i = 0 ; i < MAX_NEIGHBORS ; i++){  
 
     if(n > NBRlist[i] && NBRlist[i] != 0){ 
@@ -615,7 +611,7 @@ int sort_node_to_create_link(int n){
     
     else return 0 ;  
   } 
- #endif  
+ //#endif  
  /*------------------------------------------------------------------------------------------------------------*/
 
 

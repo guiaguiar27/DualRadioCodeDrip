@@ -125,7 +125,7 @@ int initialize_tsch_schedule(void){
 
       
       #if NBR_TSCH 
-        remote_id = sort_node_to_create_link(node_id);  
+        remote_id = get_random_node(node_id);  
       #else  
         remote_id = random_rand() % node_id ;                         
       #endif  

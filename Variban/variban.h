@@ -47,9 +47,9 @@ uint8_t PossNeighbor[MAX_NOS];
 /* Log configuration */
 #include "sys/log.h"  // don't know about this include
 
-#if NBR_TSCH 
+//#if NBR_TSCH 
   int NBRlist[MAX_NEIGHBORS]; 
-#endif  
+//#endif  
 
 
 void executa(int  num_aresta, int  num_no,  int **aloca_canal, int tempo, int (*mapa_graf_conf)[num_aresta][2], int *pacote_entregue, int raiz, int (*pacotes)[num_no]); 
@@ -97,12 +97,12 @@ int verify_link_by_id(uint8_t id);
 
  int verify_in_topology(int sender, int receiver); 
 
-#if NBR_TSCH 
-  int sort_node_to_create_link(int n); 
+//#if NBR_TSCH 
+  int  get_random_node(int n); 
   void list_init_nbr(void);
   void tsch_print_neighbors(int nbr); 
   void show_nbr();
   int change_slotframe();
- #endif   
+//#endif   
 
 /*---------------------------------------------------------------------------*/

@@ -23,18 +23,19 @@
 #include "net/link-stats.h"
 #include <string.h> 
 #include <stdio.h> 
-#include <stdlib.h>
+#include <stdlib.h> 
+
 #include "conf.h"  
 #define peso 1 
 #define no_raiz 1     
 
 #define Channel 16
 #define Timeslot 8
-static uint16_t unicast_slotframe_handle = 2;
 
 #define endereco "/home/user/contiki-ng/os/arvore.txt"  
 #define endereco_T_CH  "/home/user/contiki-ng/os/TCH.txt"
 
+#define NBR_TSCH 1 
 
 //uint16_t Rpackets = 0 ; 
 uint8_t flag_schedule = 0 ;   

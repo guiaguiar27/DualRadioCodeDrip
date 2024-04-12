@@ -4,13 +4,13 @@
  * more easy to reuse and to just activate and deactivate 
  * The purpose it's to works as Orchestra or others scheduler completly modular 
  * 
-**/ 
+**/  
+
+
  
 #include "variban.h"
-#include <string.h> 
-#include <stdio.h> 
-#include <stdlib.h>
-#include "conf.h"  
+#include "conf.h" 
+  
 #define peso 1 
 #define no_raiz 1     
 
@@ -33,6 +33,8 @@ uint8_t PossNeighbor[MAX_NOS];
 #define LOG_MODULE "TSCH Sched"
 #define LOG_LEVEL LOG_LEVEL_MAC 
 #define DBUG 1
+
+#define NBR_TSCH 1  
 
 #if NBR_TSCH 
   int NBRlist[MAX_NEIGHBORS]; 
@@ -559,7 +561,10 @@ int verify_link_by_id(uint8_t id){
 
 #if NBR_TSCH 
   // inicia  
-
+int func_test(int i){ 
+  printf("teste"); 
+  return 0; 
+}
 
 int sort_node_to_create_link(int n){  
   for(int i = 0 ; i < MAX_NEIGHBORS ; i++){  

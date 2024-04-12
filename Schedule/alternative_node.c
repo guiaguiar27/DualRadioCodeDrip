@@ -76,7 +76,7 @@ to_seconds(uint64_t time)
   return (unsigned long)(time / ENERGEST_SECOND);
 }
 
-#if NBR_TSCH 
+//#if NBR_TSCH 
 static void init_broad(void){  
 
   struct tsch_slotframe *sf_common = tsch_schedule_add_slotframe(BROADCAST_SLOTFRAME_HANDLE,APP_SLOTFRAME_SIZE );
@@ -96,7 +96,7 @@ static void init_broad(void){
       slot_offset, channel_offset+1); 
     
 } 
-#endif  
+//#endif  
 
 int initialize_tsch_schedule(void){
     
@@ -124,11 +124,11 @@ int initialize_tsch_schedule(void){
       linkaddr_t addr;  
 
       
-      #if NBR_TSCH 
-        remote_id = get_random_node(node_id);  
-      #else  
-        remote_id = random_rand() % node_id ;                         
-      #endif  
+      // #if NBR_TSCH 
+      remote_id = get_random_node(node_id);  
+      //#else  
+      //  remote_id = random_rand() % node_id ;                         
+      //#endif  
       if(remote_id == 0){ 
         LOG_INFO("There are no neighbors\n"); 
         return 0 ;
@@ -197,9 +197,9 @@ PROCESS_THREAD(node_process, ev, data)
   
   PROCESS_BEGIN();  
     
-    #if NBR_TSCH 
+    //#if NBR_TSCH 
       init_broad(); 
-    #endif  
+    //#endif  
 
     tsch_set_coordinator(linkaddr_cmp(&coordinator_addr, &linkaddr_node_addr));
     /* Initialization; `rx_packet` is the function for packet reception */
@@ -217,7 +217,7 @@ PROCESS_THREAD(node_process, ev, data)
     /* Main loop */
     while(1) {
       
-      #if NBR_TSCH  
+      //#if NBR_TSCH  
         show_nbr();   
         // adapatação sem contar com o tempo 
         LOG_INFO("Verify: %d \n", verify);    
@@ -237,7 +237,7 @@ PROCESS_THREAD(node_process, ev, data)
         tsch_schedule_print(); 
         SCHEDULE_static();         
       }  
-      #endif 
+      //#endif 
 
        energest_flush();
 

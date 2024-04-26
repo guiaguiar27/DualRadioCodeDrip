@@ -57,8 +57,11 @@
 #include "net/mac/tsch/tsch-log.h"
 #include "net/mac/framer/frame802154.h"
 #include "sys/process.h"
-#include "sys/rtimer.h"
-#include <string.h> 
+#include "sys/rtimer.h" 
+
+#inclde "Variban/variban.h"
+#include <string.h>  
+
 
 // extra includes for variban
 #define peso 1 
@@ -194,7 +197,9 @@ tsch_schedule_add_link(struct tsch_slotframe *slotframe,
                        uint8_t link_options, enum link_type link_type, const linkaddr_t *address,
                        uint16_t timeslot, uint16_t channel_offset)
 {
-  struct tsch_link *l = NULL;
+  struct tsch_link *l = NULL; 
+
+  uint16_t node_neighbor, node;
   if(slotframe != NULL) {
     /* We currently support only one link per timeslot in a given slotframe. */
 
@@ -219,7 +224,6 @@ tsch_schedule_add_link(struct tsch_slotframe *slotframe,
         LOG_ERR("! add_link memb_alloc failed\n");
         tsch_release_lock();
       } else {
-        static int current_link_handle = 0;
         struct tsch_neighbor *n;
         /* Add the link to the slotframe */
         list_add(slotframe->links_list, l);

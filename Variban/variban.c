@@ -496,7 +496,7 @@ void find_neighbor_to_Rx(uint8_t node, int handle){
                 tsch_schedule_add_link(sf,
                   LINK_OPTION_RX,
                   LINK_TYPE_NORMAL, &addr,
-                  0, 0,0);  
+                  0, 0);  
                 
               }
 

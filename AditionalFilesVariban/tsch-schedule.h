@@ -113,7 +113,10 @@ struct tsch_link {
   /* Type of link. NORMAL = 0. ADVERTISING = 1, and indicates
      the link may be used to send an Enhanced beacon. */
   enum link_type link_type; 
-  uint16_t aux_options;
+  uint16_t aux_options; 
+  int value;  
+
+  uint8_t link_options;   
   /* Any other data for upper layers */
   void *data;
 };
@@ -169,6 +172,6 @@ struct tsch_link * tsch_schedule_get_next_active_link(struct tsch_asn_t *asn, ui
 /* Access to slotframe list */
 struct tsch_slotframe *tsch_schedule_slotframe_head(void);
 struct tsch_slotframe *tsch_schedule_slotframe_next(struct tsch_slotframe *sf);
-
+int count_lines();
 #endif /* __TSCH_SCHEDULE_H__ */
 /** @} */

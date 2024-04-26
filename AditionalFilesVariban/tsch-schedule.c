@@ -338,7 +338,7 @@ tsch_schedule_remove_link_by_timeslot(struct tsch_slotframe *slotframe,
                                       uint16_t timeslot, uint16_t channel_offset)
 {
   int ret = 0;
-  if(!tsch_is_locked()) {
+  if(!tsch_is_locked()){
     if(slotframe != NULL) {
       struct tsch_link *l = list_head(slotframe->links_list);
       /* Loop over all items and remove all matching links */
@@ -526,4 +526,17 @@ tsch_schedule_print(void)
   }
 }
 /*---------------------------------------------------------------------------*/
+int count_lines() 
+{ 
+    FILE *fp; 
+    int count = 0;    
+    char c;  
+    fp = fopen(endereco, "r"); 
+    if (fp == NULL) return 0; 
+    for (c = getc(fp); c != EOF; c = getc(fp)) 
+        if (c == '\n') 
+            count = count + 1; 
+    fclose(fp); 
+    return count; 
+}  
 /** @} */

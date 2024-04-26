@@ -122,20 +122,7 @@ void tsch_write_in_file(int n_origin, int n_destin){
   fprintf(file, "%d %d\n",n_origin,n_destin);
   fclose(file);
 } 
-/*---------------------------------------------------------------------------*/
-int count_lines() 
-{ 
-    FILE *fp; 
-    int count = 0;    
-    char c;  
-    fp = fopen(endereco, "r"); 
-    if (fp == NULL) return 0; 
-    for (c = getc(fp); c != EOF; c = getc(fp)) 
-        if (c == '\n') 
-            count = count + 1; 
-    fclose(fp); 
-    return count; 
-}      
+/*---------------------------------------------------------------------------*/    
 void count_sent_packs(){ 
     uint32_t node = linkaddr_node_addr.u8[LINKADDR_SIZE -1] 
               + (linkaddr_node_addr.u8[LINKADDR_SIZE -2 ] << 8);  

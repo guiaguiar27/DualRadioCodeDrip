@@ -111,17 +111,6 @@ int tsch_num_nos(){
   int i = MAX_NOS; 
   return i; 
 }  
-/*---------------------------------------------------------------------------*/
-void tsch_write_in_file(int n_origin, int n_destin){ 
-  FILE *file; 
-  file = fopen(endereco, "a");
-  if(file == NULL){
-        printf("The file was not opened\n");
-        return ; 
-  } 
-  fprintf(file, "%d %d\n",n_origin,n_destin);
-  fclose(file);
-} 
 /*---------------------------------------------------------------------------*/    
 void count_sent_packs(){ 
     uint32_t node = linkaddr_node_addr.u8[LINKADDR_SIZE -1] 

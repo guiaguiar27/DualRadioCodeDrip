@@ -538,5 +538,16 @@ int count_lines()
             count = count + 1; 
     fclose(fp); 
     return count; 
-}  
+}   
+
+void tsch_write_in_file(int n_origin, int n_destin){ 
+  FILE *file; 
+  file = fopen(endereco, "a");
+  if(file == NULL){
+        printf("The file was not opened\n");
+        return ; 
+  } 
+  fprintf(file, "%d %d\n",n_origin,n_destin);
+  fclose(file);
+} 
 /** @} */

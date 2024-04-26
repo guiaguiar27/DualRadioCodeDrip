@@ -22,12 +22,6 @@ static uint16_t unicast_slotframe_handle = 2;
 #define endereco_T_CH  "/home/user/contiki-ng/os/TCH.txt"
 
 
-//uint16_t Rpackets = 0 ; 
-uint8_t flag_schedule = 0 ;   
-uint32_t Packets_sent[MAX_NOS]; 
-uint32_t STpacks = 0 ;  
-uint32_t Packets_received[MAX_NOS]; 
-uint8_t PossNeighbor[MAX_NOS];  
 
 /* Log configuration */
 #define LOG_MODULE "TSCH Sched"

@@ -161,7 +161,7 @@ struct tsch_link *tsch_schedule_get_link_by_timeslot(struct tsch_slotframe *slot
 /* Removes a link. Return 1 if success, 0 if failure */
 int tsch_schedule_remove_link(struct tsch_slotframe *slotframe, struct tsch_link *l);
 /* Removes a link from slotframe and timeslot. Return a 1 if success, 0 if failure */
-int tsch_schedule_remove_link_by_timeslot(struct tsch_slotframe *slotframe, uint16_t timeslot);
+int tsch_schedule_remove_link_by_timeslot(struct tsch_slotframe *slotframe, uint16_t timeslot, uint16_t channel_offset);
 
 /* Returns the next active link after a given ASN, and a backup link (for the same ASN, with Rx flag) */
 struct tsch_link * tsch_schedule_get_next_active_link(struct tsch_asn_t *asn, uint16_t *time_offset,

@@ -66,7 +66,6 @@
 
 #define Channel 16
 #define Timeslot 8
-static uint16_t unicast_slotframe_handle = 2;
 
 #define endereco "/home/user/contiki-ng/os/arvore.txt"  
 #define endereco_T_CH  "/home/user/contiki-ng/os/TCH.txt"
@@ -210,7 +209,8 @@ tsch_schedule_add_link(struct tsch_slotframe *slotframe,
 
     /* Start with removing the link currently installed at this timeslot (needed
      * to keep neighbor state in sync with link options etc.) */
-    tsch_schedule_remove_link_by_timeslot(slotframe, timeslot);
+    
+    tsch_schedule_remove_link_by_timeslot(slotframe, timeslot, channel_offset);
     if(!tsch_get_lock()) {
       LOG_ERR("! add_link memb_alloc couldn't take lock\n");
     } else {
@@ -334,10 +334,26 @@ tsch_schedule_remove_link(struct tsch_slotframe *slotframe, struct tsch_link *l)
 /*---------------------------------------------------------------------------*/
 /* Removes a link from slotframe and timeslot. Return a 1 if success, 0 if failure */
 int
-tsch_schedule_remove_link_by_timeslot(struct tsch_slotframe *slotframe, uint16_t timeslot)
+tsch_schedule_remove_link_by_timeslot(struct tsch_slotframe *slotframe,
+                                      uint16_t timeslot, uint16_t channel_offset)
 {
-  return slotframe != NULL &&
-         tsch_schedule_remove_link(slotframe, tsch_schedule_get_link_by_timeslot(slotframe, timeslot));
+  int ret = 0;
+  if(!tsch_is_locked()) {
+    if(slotframe != NULL) {
+      struct tsch_link *l = list_head(slotframe->links_list);
+      /* Loop over all items and remove all matching links */
+      while(l != NULL) {
+        struct tsch_link *next = list_item_next(l);
+        if(l->timeslot == timeslot && l->channel_offset == channel_offset) {
+          if(tsch_schedule_remove_link(slotframe, l)) {
+            ret = 1;
+          }
+        }
+        l = next;
+      }
+    }
+  }
+  return ret;
 }
 /*---------------------------------------------------------------------------*/
 /* Looks within a slotframe for a link with a given timeslot */

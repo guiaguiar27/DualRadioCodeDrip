@@ -249,7 +249,7 @@ tsch_schedule_add_link(struct tsch_slotframe *slotframe,
         /* Release the lock before we update the neighbor (will take the lock) */
         tsch_release_lock();
 
-        if(l->link_option & LINK_OPTION_RX){
+        if(l->link_options & LINK_OPTION_RX){
             l->aux_options = 1; 
             l->handle = -2; 
             node_neighbor = l->addr.u8[LINKADDR_SIZE - 1] + (l->addr.u8[LINKADDR_SIZE - 2]<<8);  

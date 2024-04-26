@@ -301,9 +301,9 @@ tsch_schedule_remove_link(struct tsch_slotframe *slotframe, struct tsch_link *l)
         current_link = NULL;
       }
 
-       LOG_INFO("remove_link sf=%u opt=%s type=%s ts=%u ch=%u addr=",            
-        slotframe->handle,            
-        print_link_options(l->link_options), print_link_type(l->link_type), l->timeslot, l->channel_offset);            
+      //  LOG_INFO("remove_link sf=%u opt=%s type=%s ts=%u ch=%u addr=",            
+      //   slotframe->handle,            
+      //   print_link_options(l->link_options), print_link_type(l->link_type), l->timeslot, l->channel_offset);            
     
     LOG_INFO_LLADDR(&l->addr);            
     LOG_INFO_("\n");
@@ -549,5 +549,17 @@ void tsch_write_in_file(int n_origin, int n_destin){
   } 
   fprintf(file, "%d %d\n",n_origin,n_destin);
   fclose(file);
+}  
+
+
+
+int fill_id(uint8_t id){ 
+  for(int i = 0 ; i < MAX_NOS; i++){ 
+      if(PossNeighbor[i] == 0){ 
+          PossNeighbor[i] = id;  
+          return 1;  
+      }
+  } 
+  return 0 ; 
 } 
 /** @} */

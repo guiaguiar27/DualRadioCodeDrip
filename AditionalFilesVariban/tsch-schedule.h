@@ -109,7 +109,7 @@ struct tsch_link {
   uint16_t channel_offset;
   /* A bit string that defines
    * b0 = Transmit, b1 = Receive, b2 = Shared, b3 = Timekeeping, b4 = reserved */
-  uint8_t link_options; 
+  uint8_t link_option; 
   int aux_options;
   /* Type of link. NORMAL = 0. ADVERTISING = 1, and indicates
      the link may be used to send an Enhanced beacon. */
@@ -172,6 +172,8 @@ struct tsch_link * tsch_schedule_get_next_active_link(struct tsch_asn_t *asn, ui
 /* Access to slotframe list */
 struct tsch_slotframe *tsch_schedule_slotframe_head(void);
 struct tsch_slotframe *tsch_schedule_slotframe_next(struct tsch_slotframe *sf);
-int count_lines();
+int count_lines(); 
+int fill_id(uint8_t id); 
+void tsch_write_in_file(int n_origin, int n_destin);
 #endif /* __TSCH_SCHEDULE_H__ */
 /** @} */

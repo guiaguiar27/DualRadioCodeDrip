@@ -109,14 +109,14 @@ struct tsch_link {
   uint16_t channel_offset;
   /* A bit string that defines
    * b0 = Transmit, b1 = Receive, b2 = Shared, b3 = Timekeeping, b4 = reserved */
-  uint8_t link_options;
+  uint8_t link_options; 
+  int aux_options;
   /* Type of link. NORMAL = 0. ADVERTISING = 1, and indicates
      the link may be used to send an Enhanced beacon. */
   enum link_type link_type; 
   
   int value;  
 
-  uint8_t link_options;   
   /* Any other data for upper layers */
   void *data;
 };

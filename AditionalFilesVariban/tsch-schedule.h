@@ -113,7 +113,7 @@ struct tsch_link {
   /* Type of link. NORMAL = 0. ADVERTISING = 1, and indicates
      the link may be used to send an Enhanced beacon. */
   enum link_type link_type; 
-  uintt16_t aux_options;
+  uint16_t aux_options;
   /* Any other data for upper layers */
   void *data;
 };
@@ -156,8 +156,8 @@ struct tsch_link *tsch_schedule_add_link(struct tsch_slotframe *slotframe,
                                          uint16_t timeslot, uint16_t channel_offset);
 /* Looks for a link from a handle */
 struct tsch_link *tsch_schedule_get_link_by_handle(uint16_t handle);
-/* Looks within a slotframe for a link with a given timeslot */
-struct tsch_link *tsch_schedule_get_link_by_timeslot(struct tsch_slotframe *slotframe, uint16_t timeslot);
+/* Looks within a slotframe for a link with a given timeslot */ 
+struct tsch_link *tsch_schedule_get_link_by_timeslot(struct tsch_slotframe *slotframe,uint16_t timeslot, uint16_t channel_offset);
 /* Removes a link. Return 1 if success, 0 if failure */
 int tsch_schedule_remove_link(struct tsch_slotframe *slotframe, struct tsch_link *l);
 /* Removes a link from slotframe and timeslot. Return a 1 if success, 0 if failure */

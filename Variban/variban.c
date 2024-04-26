@@ -9,7 +9,6 @@
 
  
 #include "variban.h"
-#include "conf.h" 
   
 #define peso 1 
 #define no_raiz 1     
@@ -333,7 +332,9 @@ int SCHEDULE_static(){
     
       
     struct tsch_link *l =   NULL; 
-    struct tsch_link *l_aux = NULL;  
+    struct tsch_link *l_aux = NULL;   
+
+    memb_init(&link_memb);
     l_aux = memb_alloc(&link_memb);  
     l = memb_alloc(&link_memb); 
     for(x = 0 ; x < Channel; x++){ 

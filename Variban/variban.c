@@ -29,6 +29,7 @@ static uint16_t unicast_slotframe_handle = 2;
 
 #define NBR_TSCH 1  
 
+MEMB(link_memb, struct tsch_link, TSCH_SCHEDULE_MAX_LINKS);
 
 /*---------------------------------------------------------------------------*/
 void executa(int  num_aresta, int  num_no,  int **aloca_canal, int tempo, int (*mapa_graf_conf)[num_aresta][2], int *pacote_entregue, int raiz, int (*pacotes)[num_no]){

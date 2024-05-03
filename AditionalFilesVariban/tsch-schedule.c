@@ -529,7 +529,8 @@ tsch_schedule_print(void)
     LOG_PRINT("----- end slotframe list -----\n");
   }
 }
-/*---------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
+// variban's functions
 int count_lines() 
 { 
     FILE *fp; 
@@ -554,6 +555,7 @@ void tsch_write_in_file(int n_origin, int n_destin){
   fprintf(file, "%d %d\n",n_origin,n_destin);
   fclose(file);
 }  
+
 
 
 

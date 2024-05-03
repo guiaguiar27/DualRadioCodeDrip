@@ -57,20 +57,21 @@
 #include "net/mac/tsch/tsch-log.h"
 #include "net/mac/framer/frame802154.h"
 #include "sys/process.h"
-#include "sys/rtimer.h" 
+#include "sys/rtimer.h"
 
-#inclde "Variban/variban.h"
-#include <string.h>  
+
+#include "Variban/variban.h"
+#include <string.h>
 
 
 // extra includes for variban
-#define peso 1 
-#define no_raiz 1     
+#define peso 1
+#define no_raiz 1
 
 #define Channel 16
 #define Timeslot 8
 
-#define endereco "/home/user/contiki-ng/os/arvore.txt"  
+#define endereco "/home/user/contiki-ng/os/arvore.txt"
 #define endereco_T_CH  "/home/user/contiki-ng/os/TCH.txt"
 
 
@@ -197,7 +198,7 @@ tsch_schedule_add_link(struct tsch_slotframe *slotframe,
                        uint8_t link_options, enum link_type link_type, const linkaddr_t *address,
                        uint16_t timeslot, uint16_t channel_offset)
 {
-  struct tsch_link *l = NULL; 
+  struct tsch_link *l = NULL;
 
   uint16_t node_neighbor, node;
   if(slotframe != NULL) {
@@ -214,7 +215,7 @@ tsch_schedule_add_link(struct tsch_slotframe *slotframe,
 
     /* Start with removing the link currently installed at this timeslot (needed
      * to keep neighbor state in sync with link options etc.) */
-    
+
     tsch_schedule_remove_link_by_timeslot(slotframe, timeslot, channel_offset);
     if(!tsch_get_lock()) {
       LOG_ERR("! add_link memb_alloc couldn't take lock\n");
@@ -229,18 +230,18 @@ tsch_schedule_add_link(struct tsch_slotframe *slotframe,
         list_add(slotframe->links_list, l);
         /* Initialize link */
 
-        // modified 
-        l->handle = count_lines(); 
+        // modified
+        l->handle = count_lines();
         LOG_PRINT("Handle : %u\n ", l->handle);
-        
+
         l->link_options = link_options;
         l->link_type = link_type;
         l->slotframe_handle = slotframe->handle;
         l->timeslot = timeslot;
         l->channel_offset = channel_offset;
-        l->data = NULL; 
-        l->value = 0;  
-        
+        l->data = NULL;
+        l->value = 0;
+
         if(address == NULL) {
           address = &linkaddr_null;
         }
@@ -254,25 +255,25 @@ tsch_schedule_add_link(struct tsch_slotframe *slotframe,
         tsch_release_lock();
 
         if(l->link_options & LINK_OPTION_RX){
-            l->aux_options = 1; 
-            l->handle = -2; 
-            node_neighbor = l->addr.u8[LINKADDR_SIZE - 1] + (l->addr.u8[LINKADDR_SIZE - 2]<<8);  
-            fill_id(node_neighbor); 
+            l->aux_options = 1;
+            l->handle = -2;
+            node_neighbor = l->addr.u8[LINKADDR_SIZE - 1] + (l->addr.u8[LINKADDR_SIZE - 2]<<8);
+            fill_id(node_neighbor);
 
-        } 
+        }
 
-        if(l->link_options & LINK_OPTION_TX) { 
-            l->aux_options = 2; 
+        if(l->link_options & LINK_OPTION_TX) {
+            l->aux_options = 2;
             n = tsch_queue_add_nbr(&l->addr);
-            
+
             /* We have a tx link to this neighbor, update counters */
             if(n != NULL) {
                 n->tx_links_count++;
             if(!(l->link_options & LINK_OPTION_SHARED)) {
                 n->dedicated_tx_links_count++;
-                node = linkaddr_node_addr.u8[LINKADDR_SIZE -1] 
-                    + (linkaddr_node_addr.u8[LINKADDR_SIZE -2] << 8);   
-                node_neighbor = l->addr.u8[LINKADDR_SIZE -1] 
+                node = linkaddr_node_addr.u8[LINKADDR_SIZE -1]
+                    + (linkaddr_node_addr.u8[LINKADDR_SIZE -2] << 8);
+                node_neighbor = l->addr.u8[LINKADDR_SIZE -1]
                     + (l->addr.u8[LINKADDR_SIZE -2] << 8);
 
                     tsch_write_in_file(node, node_neighbor);
@@ -305,11 +306,11 @@ tsch_schedule_remove_link(struct tsch_slotframe *slotframe, struct tsch_link *l)
         current_link = NULL;
       }
 
-      //  LOG_INFO("remove_link sf=%u opt=%s type=%s ts=%u ch=%u addr=",            
-      //   slotframe->handle,            
-      //   print_link_options(l->link_options), print_link_type(l->link_type), l->timeslot, l->channel_offset);            
-    
-    LOG_INFO_LLADDR(&l->addr);            
+      //  LOG_INFO("remove_link sf=%u opt=%s type=%s ts=%u ch=%u addr=",
+      //   slotframe->handle,
+      //   print_link_options(l->link_options), print_link_type(l->link_type), l->timeslot, l->channel_offset);
+
+    LOG_INFO_LLADDR(&l->addr);
     LOG_INFO_("\n");
     list_remove(slotframe->links_list, l);
     memb_free(&link_memb, l);
@@ -531,41 +532,41 @@ tsch_schedule_print(void)
 }
 /*--------------------------------------------------------------------------*/
 // variban's functions
-int count_lines() 
-{ 
-    FILE *fp; 
-    int count = 0;    
-    char c;  
-    fp = fopen(endereco, "r"); 
-    if (fp == NULL) return 0; 
-    for (c = getc(fp); c != EOF; c = getc(fp)) 
-        if (c == '\n') 
-            count = count + 1; 
-    fclose(fp); 
-    return count; 
-}   
+int count_lines()
+{
+    FILE *fp;
+    int count = 0;
+    char c;
+    fp = fopen(endereco, "r");
+    if (fp == NULL) return 0;
+    for (c = getc(fp); c != EOF; c = getc(fp))
+        if (c == '\n')
+            count = count + 1;
+    fclose(fp);
+    return count;
+}
 
-void tsch_write_in_file(int n_origin, int n_destin){ 
-  FILE *file; 
+void tsch_write_in_file(int n_origin, int n_destin){
+  FILE *file;
   file = fopen(endereco, "a");
   if(file == NULL){
         printf("The file was not opened\n");
-        return ; 
-  } 
+        return ;
+  }
   fprintf(file, "%d %d\n",n_origin,n_destin);
   fclose(file);
-}  
+}
 
 
 
 
-int fill_id(uint8_t id){ 
-  for(int i = 0 ; i < MAX_NOS; i++){ 
-      if(PossNeighbor[i] == 0){ 
-          PossNeighbor[i] = id;  
-          return 1;  
+int fill_id(uint8_t id){
+  for(int i = 0 ; i < MAX_NOS; i++){
+      if(PossNeighbor[i] == 0){
+          PossNeighbor[i] = id;
+          return 1;
       }
-  } 
-  return 0 ; 
-} 
+  }
+  return 0 ;
+}
 /** @} */

@@ -10,11 +10,6 @@
 
 #include "variban.h"
 
-#define peso 1
-#define no_raiz 1
-
-#define Channel 16
-#define Timeslot 8
 static uint16_t unicast_slotframe_handle = 2;
 
 #define endereco "/home/user/contiki-ng/os/arvore.txt"

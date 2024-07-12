@@ -50,3 +50,28 @@ int find_y_for_x(const char *filename, int x) {
 
 // - cria dois canais de broadcast 
 // - faz rapida descoberta de vizinhos via time source 
+
+#include "net/ipv6/uip-ds6-nbr.h"
+#include "net/ipv6/uip-ds6.h"
+
+static void broadcast_recv(struct broadcast_conn *c, const linkaddr_t *from) {
+  printf("Broadcast message received from %d.%d\n",
+         from->u8[0], from->u8[1]);
+}
+
+// Estrutura de broadcast
+static const struct broadcast_callbacks broadcast_callbacks = {broadcast_recv};
+static struct broadcast_conn broadcast;
+
+// Função para listar vizinhos
+void list_neighbors() {
+  uip_ds6_nbr_t *nbr;
+  printf("List of neighbors:\n");
+  for (nbr = nbr_table_head(ds6_neighbors);
+       nbr != NULL;
+       nbr = nbr_table_next(ds6_neighbors, nbr)) {
+    printf("Neighbor IP: ");
+    uip_debug_ipaddr_print(&nbr->ipaddr);
+    printf("\n");
+  }
+}

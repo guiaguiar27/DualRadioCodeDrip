@@ -545,6 +545,7 @@ int get_random_node(int n){
   void list_init_nbr(void){
       for(int i = 0 ; i < MAX_NEIGHBORS;i++) NBRlist[i] = 0;
   }
+  
   // preenche
   // implementei ontem
   void tsch_print_neighbors(int nbr){

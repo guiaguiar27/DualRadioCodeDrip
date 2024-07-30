@@ -28,7 +28,8 @@ def confident_interval_data(X, confidence = 0.95, sigma = -1):
         return s
     n = len(X) # numero de elementos na amostra
     Xs = np.mean(X) # media amostral
-    s = S(X) # desvio padrao amostral
+    s = S(X) # desvio padrao amostral 
+   
     zalpha = abs(scipy.stats.norm.ppf((1 - confidence)/2))
     if(sigma != -1): # se a variancia eh conhecida
         IC1 = Xs - zalpha*sigma/np.sqrt(n)
@@ -38,7 +39,8 @@ def confident_interval_data(X, confidence = 0.95, sigma = -1):
             # Usa a distribuicao normal
             IC1 = Xs - zalpha*s/np.sqrt(n)
             IC2 = Xs + zalpha*s/np.sqrt(n)
-        else: # se o tamanho da amostra eh menor do que 50
+        else: # se o tamanho da amostra eh menor do que 50 
+            
             # Usa a distribuicao t de Student
             talpha = scipy.stats.t.ppf((1 + confidence) / 2., n-1)
             IC1 = Xs - talpha*s/np.sqrt(n)
@@ -137,7 +139,7 @@ for size in  sizes:
         time_index = 0
         # get the packet 
 
-        file_name = f"{size}Nlog{i}"  
+        file_name = f"{i}"  
         path_to_file =   f"{size}{flag}/" + file_name + ".txt" 
         #print(path_to_file)
 
@@ -191,7 +193,7 @@ for size in  sizes:
     #print(thr_list[:]) 
     #print(confident_interval_data(thr_list,0.95)) 
     #print(thr_list[:])
-    print(average(thr_list))
+    #print(average(thr_list))
     #print(average(pdr_list)) 
     #print(conf(thr_list)) 
-    #print(conf(pdr_list))
+    print(conf(pdr_list))

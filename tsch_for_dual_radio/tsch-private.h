@@ -76,7 +76,6 @@ enum tsch_timeslot_timing_elements {
   tsch_ts_max_tx,
   tsch_ts_timeslot_length,
   tsch_ts_elements_count, /* Not a timing element */
-};
 
 /***** External Variables *****/
 

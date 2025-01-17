@@ -86,7 +86,7 @@ static void new_time_source_function(const struct tsch_neighbor *old, const stru
   if (new_addr) {
     tsch_schedule_add_link(sf_unicast, LINK_OPTION_SHARED | LINK_OPTION_TX,
                            LINK_TYPE_NORMAL, &tsch_broadcast_address,
-                           get_node_timeslot(new_addr), 0, 0);
+                           get_node_timeslot(new_addr), 0);
   }
 }
 
@@ -106,7 +106,7 @@ static void neighbor_updated_function(const linkaddr_t *addr, uint8_t is_added) 
   if (is_added) {
     tsch_schedule_add_link(sf_unicast, LINK_OPTION_SHARED | LINK_OPTION_TX,
                            LINK_TYPE_NORMAL, &tsch_broadcast_address,
-                           get_node_timeslot(addr), 0, 0);
+                           get_node_timeslot(addr), 0);
   } else {
     tsch_schedule_remove_link_by_offsets(sf_unicast, get_node_timeslot(addr), 0);
   }

@@ -1,4 +1,25 @@
 
+#include "contiki.h"
+#include "orchestra.h"
+#include "net/packetbuf.h"
+#include "net/ipv6/uip-icmp6.h"
+#include "net/routing/routing.h"
+#if ROUTING_CONF_RPL_LITE
+#include "net/routing/rpl-lite/rpl.h"
+#elif ROUTING_CONF_RPL_CLASSIC
+#include "net/routing/rpl-classic/rpl.h"
+#endif
+#include "stdlib.h"
+
+
+#include "net/ipv6/uip-debug.h"
+
+
+/* The current RPL preferred parent's link-layer address */
+linkaddr_t orchestra_parent_linkaddr;
+/* Set to one only after getting an ACK for a DAO sent to our preferred parent */
+int orchestra_parent_knows_us = 0;
+
 /*---------------------------------------------------------------------------*/
 static uint16_t
 get_node_timeslot(const linkaddr_t *addr)
@@ -105,9 +126,9 @@ init(uint16_t sf_handle)
   tsch_schedule_add_link(sf_unicast,
       LINK_OPTION_RX,
       LINK_TYPE_NORMAL, &tsch_broadcast_address,
-      rx_timeslot, get_node_channel_offset(local_addr), 1); 
-      
-      
+      rx_timeslot, get_node_channel_offset(local_addr), 1);
+
+
 struct orchestra_rule* create_orchestra_rule() {
   struct orchestra_rule* rule = malloc(sizeof(struct orchestra_rule));
   if (!rule) {

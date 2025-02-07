@@ -108,6 +108,16 @@ new_time_source(const struct tsch_neighbor *old, const struct tsch_neighbor *new
 {
 
 }
+
+static void
+child_added(const linkaddr_t *linkaddr)
+{
+}
+/*---------------------------------------------------------------------------*/
+static void
+child_removed(const linkaddr_t *linkaddr)
+{
+}
 /*---------------------------------------------------------------------------*/
 static void
 init(uint16_t sf_handle)
@@ -134,11 +144,11 @@ struct orchestra_rule* create_orchestra_rule() {
     fprintf(stderr, "Error: Failed to allocate memory for orchestra_rule.\n");
     return NULL;
   }
-  rule->init = init_function;
-  rule->new_time_source = new_time_source_function;
-  rule->select_packet = select_packet_function;
-  rule->child_added = child_added_function;
-  rule->child_removed = child_removed_function;
+  rule->init = init;
+  rule->new_time_source = new_time_source;
+  rule->select_packet = select_packet;
+  rule->child_added = child_added;
+  rule->child_removed = child_removed;
   printf("Sucess in the allocation\n");
   return rule;
 }

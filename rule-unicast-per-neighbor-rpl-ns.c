@@ -49,41 +49,41 @@ get_node_timeslot(const linkaddr_t *addr)
 //   }
 // }
 /*---------------------------------------------------------------------------*/
-static void
-add_uc_link(const linkaddr_t *linkaddr)
-{
-  if(linkaddr != NULL) {
-    uint16_t timeslot = get_node_timeslot(linkaddr);
+// static void
+// add_uc_link(const linkaddr_t *linkaddr)
+// {
+//   if(linkaddr != NULL) {
+//     uint16_t timeslot = get_node_timeslot(linkaddr);
 
-    /* Add a Tx link to the neighbor; do not replace any existing links
-     * at that cell. The channel offset here does not matter:
-     * select_packet() always sets the right channel offset per packet. */
-    tsch_schedule_add_link(sf_unicast,
-        LINK_OPTION_SHARED | LINK_OPTION_TX,
-        LINK_TYPE_NORMAL, &tsch_broadcast_address,
-        timeslot, 0, 0);
-  }
-}
+//     /* Add a Tx link to the neighbor; do not replace any existing links
+//      * at that cell. The channel offset here does not matter:
+//      * select_packet() always sets the right channel offset per packet. */
+//     tsch_schedule_add_link(sf_unicast,
+//         LINK_OPTION_SHARED | LINK_OPTION_TX,
+//         LINK_TYPE_NORMAL, &tsch_broadcast_address,
+//         timeslot, 0, 0);
+//   }
+// }
+// /*---------------------------------------------------------------------------*/
+// static void
+// remove_uc_link(const linkaddr_t *linkaddr)
+// {
+//   if(linkaddr != NULL) {
+//     uint16_t timeslot = get_node_timeslot(linkaddr);
+//     tsch_schedule_remove_link_by_offsets(sf_unicast, timeslot, 0);
+//     tsch_queue_free_packets_to(linkaddr);
+//   }
+// }
 /*---------------------------------------------------------------------------*/
-static void
-remove_uc_link(const linkaddr_t *linkaddr)
-{
-  if(linkaddr != NULL) {
-    uint16_t timeslot = get_node_timeslot(linkaddr);
-    tsch_schedule_remove_link_by_offsets(sf_unicast, timeslot, 0);
-    tsch_queue_free_packets_to(linkaddr);
-  }
-}
-/*---------------------------------------------------------------------------*/
-static void
-neighbor_updated(const linkaddr_t *linkaddr, uint8_t is_added)
-{
-  if(is_added) {
-    add_uc_link(linkaddr);
-  } else {
-    remove_uc_link(linkaddr);
-  }
-}
+// static void
+// neighbor_updated(const linkaddr_t *linkaddr, uint8_t is_added)
+// {
+//   if(is_added) {
+//     add_uc_link(linkaddr);
+//   } else {
+//     remove_uc_link(linkaddr);
+//   }
+// }
 /*---------------------------------------------------------------------------*/
 static int
 select_packet(uint16_t *slotframe, uint16_t *timeslot, uint16_t *channel_offset)

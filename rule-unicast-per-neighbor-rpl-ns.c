@@ -14,6 +14,13 @@
 
 #include "net/ipv6/uip-debug.h"
 
+#include "net/ipv6/uip-ds6-route.h"
+#include "net/packetbuf.h"
+
+static uint16_t slotframe_handle = 0;
+static uint16_t channel_offset = 0;
+static struct tsch_slotframe *sf_unicast;
+
 
 /* The current RPL preferred parent's link-layer address */
 linkaddr_t orchestra_parent_linkaddr;
@@ -31,16 +38,16 @@ get_node_timeslot(const linkaddr_t *addr)
   }
 }
 /*---------------------------------------------------------------------------*/
-static uint16_t
-get_node_channel_offset(const linkaddr_t *addr)
-{
-  if(addr != NULL && ORCHESTRA_UNICAST_MAX_CHANNEL_OFFSET >= ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET) {
-    return ORCHESTRA_LINKADDR_HASH(addr) % (ORCHESTRA_UNICAST_MAX_CHANNEL_OFFSET - ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET + 1)
-        + ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET;
-  } else {
-    return 0xffff;
-  }
-}
+// static uint16_t
+// get_node_channel_offset(const linkaddr_t *addr)
+// {
+//   if(addr != NULL && ORCHESTRA_UNICAST_MAX_CHANNEL_OFFSET >= ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET) {
+//     return ORCHESTRA_LINKADDR_HASH(addr) % (ORCHESTRA_UNICAST_MAX_CHANNEL_OFFSET - ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET + 1)
+//         + ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET;
+//   } else {
+//     return 0xffff;
+//   }
+// }
 /*---------------------------------------------------------------------------*/
 static void
 add_uc_link(const linkaddr_t *linkaddr)
@@ -81,54 +88,46 @@ neighbor_updated(const linkaddr_t *linkaddr, uint8_t is_added)
 static int
 select_packet(uint16_t *slotframe, uint16_t *timeslot, uint16_t *channel_offset)
 {
-  /* Select data packets we have a unicast link to */
-  const linkaddr_t *dest = packetbuf_addr(PACKETBUF_ADDR_RECEIVER);
-  if(packetbuf_attr(PACKETBUF_ATTR_FRAME_TYPE) == FRAME802154_DATAFRAME
-     && !orchestra_is_root_schedule_active(dest)
-     && !linkaddr_cmp(dest, &linkaddr_null)) {
-    if(slotframe != NULL) {
-      *slotframe = slotframe_handle;
-    }
-    if(timeslot != NULL) {
-      *timeslot = get_node_timeslot(dest);
-    }
-    /* set per-packet channel offset */
-    if(channel_offset != NULL) {
-      *channel_offset = get_node_channel_offset(dest);
-    }
-    return 1;
-  }
-  return 0;
+    /* Select data packets we have a unicast link to */
+     const linkaddr_t *dest = packetbuf_addr(PACKETBUF_ADDR_RECEIVER);
+     if(packetbuf_attr(PACKETBUF_ATTR_FRAME_TYPE) == FRAME802154_DATAFRAME
+        && !linkaddr_cmp(dest, &linkaddr_null)) {
+       if(slotframe != NULL) {
+         *slotframe = slotframe_handle;
+       }
+       if(timeslot != NULL) {
+         *timeslot = get_node_timeslot(dest);
+       }
+       return 1;
+     }
+     return 0;
 }
 /*---------------------------------------------------------------------------*/
 static void
 new_time_source(const struct tsch_neighbor *old, const struct tsch_neighbor *new)
 {
-  if(new != old) {
-    const linkaddr_t *old_addr = tsch_queue_get_nbr_address(old);
-    const linkaddr_t *new_addr = tsch_queue_get_nbr_address(new);
-    remove_uc_link(old_addr);
-    add_uc_link(new_addr);
-  }
+
 }
 /*---------------------------------------------------------------------------*/
 static void
 init(uint16_t sf_handle)
 {
-  uint16_t rx_timeslot;
-  linkaddr_t *local_addr = &linkaddr_node_addr;
+    printf("Entrou na funcao!\n");
 
-  slotframe_handle = sf_handle;
-  /* Slotframe for unicast transmissions */
-  sf_unicast = tsch_schedule_add_slotframe(slotframe_handle, ORCHESTRA_UNICAST_PERIOD);
-  rx_timeslot = get_node_timeslot(local_addr);
-  /* Add a Rx link at our own timeslot. */
-  tsch_schedule_add_link(sf_unicast,
-      LINK_OPTION_RX,
-      LINK_TYPE_NORMAL, &tsch_broadcast_address,
-      rx_timeslot, get_node_channel_offset(local_addr), 1);
+    uint16_t rx_timeslot;
+    linkaddr_t *local_addr = &linkaddr_node_addr;
 
+    slotframe_handle = sf_handle;
+    /* Slotframe for unicast transmissions */
+    sf_unicast = tsch_schedule_add_slotframe(slotframe_handle, ORCHESTRA_UNICAST_PERIOD);
+    rx_timeslot = get_node_timeslot(local_addr);
+    /* Add a Rx link at our own timeslot. */
+    tsch_schedule_add_link(sf_unicast,
+        LINK_OPTION_RX,
+        LINK_TYPE_NORMAL, &tsch_broadcast_address,
+        rx_timeslot, sf_handle);
 
+}
 struct orchestra_rule* create_orchestra_rule() {
   struct orchestra_rule* rule = malloc(sizeof(struct orchestra_rule));
   if (!rule) {

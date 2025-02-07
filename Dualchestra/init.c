@@ -48,21 +48,25 @@ static struct tsch_slotframe *sf_unicast = NULL;
 
 /*---------------------------------------------------------------------------*/
 /* Helper Functions */
-static uint16_t get_node_timeslot(const linkaddr_t *addr) {
-  if (addr != NULL && ORCHESTRA_UNICAST_PERIOD > 0) {
-    return ORCHESTRA_LINKADDR_HASH(addr) % ORCHESTRA_UNICAST_PERIOD;
-  }
-  return 0xffff;
-}
 
-static uint16_t get_node_channel_offset(const linkaddr_t *addr) {
-  if (addr != NULL && ORCHESTRA_UNICAST_MAX_CHANNEL_OFFSET >= ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET) {
-    return ORCHESTRA_LINKADDR_HASH(addr) %
-           (ORCHESTRA_UNICAST_MAX_CHANNEL_OFFSET - ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET + 1)
-           + ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET;
-  }
-  return 0xffff;
-}
+// pode puxar direto da funcao local
+
+
+// static uint16_t get_node_timeslot(const linkaddr_t *addr) {
+//   if (addr != NULL && ORCHESTRA_UNICAST_PERIOD > 0) {
+//     return ORCHESTRA_LINKADDR_HASH(addr) % ORCHESTRA_UNICAST_PERIOD;
+//   }
+//   return 0xffff;
+// }
+
+// static uint16_t get_node_channel_offset(const linkaddr_t *addr) {
+//   if (addr != NULL && ORCHESTRA_UNICAST_MAX_CHANNEL_OFFSET >= ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET) {
+//     return ORCHESTRA_LINKADDR_HASH(addr) %
+//            (ORCHESTRA_UNICAST_MAX_CHANNEL_OFFSET - ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET + 1)
+//            + ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET;
+//   }
+//   return 0xffff;
+// }
 
 /*---------------------------------------------------------------------------*/
 /* Rule Functions */
@@ -73,7 +77,7 @@ static void init_function(uint16_t handle) {
     uint16_t rx_timeslot = get_node_timeslot(&linkaddr_node_addr);
     tsch_schedule_add_link(sf_unicast, LINK_OPTION_RX, LINK_TYPE_NORMAL,
                            &tsch_broadcast_address, rx_timeslot,
-                           get_node_channel_offset(&linkaddr_node_addr), 1);
+                           get_node_channel_offset(&linkaddr_node_addr));
   }
 }
 
@@ -81,7 +85,7 @@ static void new_time_source_function(const struct tsch_neighbor *old, const stru
   const linkaddr_t *old_addr = tsch_queue_get_nbr_address(old);
   const linkaddr_t *new_addr = tsch_queue_get_nbr_address(new);
   if (old_addr) {
-    tsch_schedule_remove_link_by_offsets(sf_unicast, get_node_timeslot(old_addr), 0);
+    tsch_schedule_remove_link_by_offsets(sf_unicast, get_node_timeslot(old_addr));
   }
   if (new_addr) {
     tsch_schedule_add_link(sf_unicast, LINK_OPTION_SHARED | LINK_OPTION_TX,

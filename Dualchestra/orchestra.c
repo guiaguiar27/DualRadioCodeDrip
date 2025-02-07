@@ -124,16 +124,3 @@ struct orchestra_rule* create_orchestra_rule() {
 //     fprintf(stderr, "Error: Cannot register more orchestra rules.\n");
 //   }
 // }
-
-void orchestra_init() {
-  struct orchestra_rule* rule = create_orchestra_rule();
-  if (rule == NULL) {
-    return ;
-  }
-
-  //register_orchestra_rule(rule);
-  rule->init(0);
-
-  free(rule);
-
-}

@@ -1,4 +1,5 @@
 
+#include "Dualchestra/orchestra-conf.h"
 #include "contiki.h"
 #include "orchestra.h"
 #include "net/packetbuf.h"
@@ -122,20 +123,21 @@ static void
 init(uint16_t sf_handle)
 {
     printf("Entrou na funcao!\n");
-
+    int i;
     uint16_t rx_timeslot;
     linkaddr_t *local_addr = &linkaddr_node_addr;
-
+    int channel_ofsset = sf_handle;
     slotframe_handle = sf_handle;
     /* Slotframe for unicast transmissions */
     sf_unicast = tsch_schedule_add_slotframe(slotframe_handle, ORCHESTRA_UNICAST_PERIOD);
     rx_timeslot = get_node_timeslot(local_addr);
     /* Add a Rx link at our own timeslot. */
+    for(i = 0; i < ORCHESTRA_UNICAST_PERIOD; i++){
     tsch_schedule_add_link(sf_unicast,
-        LINK_OPTION_RX,
+        LINK_OPTION_SHARED | LINK_OPTION_TX | (i = rx_timeslot ? LINK_OPTION_RX : 0),
         LINK_TYPE_NORMAL, &tsch_broadcast_address,
-        rx_timeslot, sf_handle);
-
+        i, channel_offset);
+    }
 }
 struct orchestra_rule* create_orchestra_rule() {
   struct orchestra_rule* rule = malloc(sizeof(struct orchestra_rule));

@@ -84,7 +84,7 @@ get_node_timeslot(const linkaddr_t *addr)
 //   }
 // }
 /*---------------------------------------------------------------------------*/
-static int
+ int
 select_packet_function(uint16_t *slotframe, uint16_t *timeslot, uint16_t *channel_offset)
 {
     /* Select data packets we have a unicast link to */

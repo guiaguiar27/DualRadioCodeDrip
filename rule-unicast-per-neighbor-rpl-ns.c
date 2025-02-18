@@ -18,7 +18,6 @@
 #include "net/packetbuf.h"
 
 static uint16_t slotframe_handle = 0;
-static uint16_t channel_offset = 0;
 static struct tsch_slotframe *sf_unicast;
 
 
@@ -86,7 +85,7 @@ get_node_timeslot(const linkaddr_t *addr)
 // }
 /*---------------------------------------------------------------------------*/
 static int
-select_packet(uint16_t *slotframe, uint16_t *timeslot, uint16_t *channel_offset)
+select_packet_function(uint16_t *slotframe, uint16_t *timeslot, uint16_t *channel_offset)
 {
     /* Select data packets we have a unicast link to */
      const linkaddr_t *dest = packetbuf_addr(PACKETBUF_ADDR_RECEIVER);
@@ -146,7 +145,7 @@ struct orchestra_rule* create_orchestra_rule() {
   }
   rule->init = init;
   rule->new_time_source = new_time_source;
-  rule->select_packet = select_packet;
+  rule->select_packet = select_packet_function;
   rule->child_added = child_added;
   rule->child_removed = child_removed;
   printf("Sucess in the allocation\n");

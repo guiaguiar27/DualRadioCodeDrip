@@ -14,6 +14,10 @@
 #include "net/ipv6/uip-ds6-route.h"
 #include "net/packetbuf.h"
 
+#define ORCHESTRA_UNICAST_MAX_CHANNEL_OFFSET  10
+#define ORCHESTRA_UNICAST_MIN_CHANNEL_OFFSET  5
+
+
 static uint16_t slotframe_handle = 0;
 static struct tsch_slotframe *sf_unicast;
 
@@ -79,14 +83,16 @@ init(uint16_t sf_handle)
 
   linkaddr_t *local_addr = &linkaddr_node_addr;
   slotframe_handle = sf_handle;
-  sf_unicast = tsch_schedule_add_slotframe(slotframe_handle, ORCHESTRA_UNICAST_PERIOD);
+  sf_unicast = tsch_schedule_add_slotframe(slotframe_handle, ORCHESTRA_UNICAST_PERIOD)
   rx_timeslot = get_node_timeslot(local_addr);
 
   for(i = 0; i < ORCHESTRA_UNICAST_PERIOD; i+=2){
     if(i == rx_timeslot){
+      // rx links
       tsch_schedule_add_link(sf_unicast, LINK_OPTION_SHARED | LINK_OPTION_TX | LINK_OPTION_RX, LINK_TYPE_NORMAL, &tsch_broadcast_address, i, get_node_channel_offset(local_addr, 1));
       tsch_schedule_add_link(sf_unicast, LINK_OPTION_SHARED | LINK_OPTION_TX | LINK_OPTION_RX, LINK_TYPE_NORMAL, &tsch_broadcast_address, i+1, get_node_channel_offset(local_addr, 2));
-    } else {
+    } else { 
+      // tx links
       tsch_schedule_add_link(sf_unicast, LINK_OPTION_SHARED | LINK_OPTION_TX, LINK_TYPE_NORMAL, &tsch_broadcast_address, i, get_node_channel_offset(local_addr, 1));
       tsch_schedule_add_link(sf_unicast, LINK_OPTION_SHARED | LINK_OPTION_TX, LINK_TYPE_NORMAL, &tsch_broadcast_address, i+1, get_node_channel_offset(local_addr, 2));
     }
@@ -107,4 +113,5 @@ struct orchestra_rule* create_orchestra_rule() {
   rule->child_removed = NULL;
   printf("Success in the allocation\n");
   return rule;
+
 }

@@ -1155,7 +1155,7 @@ PT_THREAD(tsch_slot_operation(struct rtimer *t, void *ptr))
       if(is_active_slot) { 
 
 
-        current_channel = tsch_calculate_channel(&tsch_current_asn, current_link->channel_offset);
+nk->channel_offset);
         if(current_channel+5>26)
         {
           channelDummy=current_channel-5;

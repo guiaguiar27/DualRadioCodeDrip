@@ -1,127 +1,71 @@
-/*
- * Copyright (c) 2020, Institute of Electronics and Computer Science (EDI)
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- * 1. Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- * 2. Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
- * 3. Neither the name of the Institute nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
- *    without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE INSTITUTE AND CONTRIBUTORS ``AS IS'' AND
- * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED.  IN NO EVENT SHALL THE INSTITUTE OR CONTRIBUTORS BE LIABLE
- * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
- * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
- * SUCH DAMAGE.
- *
- */
-/**
- * \file
- *         An example that demonstrates a simple custom scheduler for TSCH.
- *
- * \author Atis Elsts <atis.elsts@edi.lv>
- */
-
 #include "contiki.h"
 #include "net/ipv6/simple-udp.h"
 #include "net/mac/tsch/tsch.h"
 #include "lib/random.h"
-#include "sys/node-id.h" 
-#include "net/mac/tsch/tsch-schedule.h" 
+#include "sys/node-id.h"
 #include "net/routing/routing.h"
+#include "net/mac/tsch/tsch-schedule.h"
+
+//#include "os/services/orchestra/orchestra.h"
+#include "os/services/orchestra/orchestra.c"
+
+#include "net/ipv6/uip-ds6-nbr.h"
+#include "net/ipv6/uip-ds6.h"
+#include "net/ipv6/uip-debug.h"
+
+
+
+
+// this is the embbeding that im using to run the orchestra 
 
 #include "sys/log.h"
 #define LOG_MODULE "App"
 #define LOG_LEVEL LOG_LEVEL_INFO
 
+#define APP_UNICAST_TIMESLOT 4
+#define APP_CHANNEL_OFSETT 8
+
 #define UDP_PORT	8765
 #define SEND_INTERVAL		  (60 * CLOCK_SECOND)
 
+
 PROCESS(node_process, "TSCH Schedule Node");
 AUTOSTART_PROCESSES(&node_process);
+int count_link = 0;
 
-/*
- * Note! This is not an example how to design a *good* schedule for TSCH,
- * nor this is the right place for complete beginners in TSCH.
- * We recommend using the default Orchestra schedule for a start.
- *
- * The intention of this file is instead to serve a starting point for those interested in building
- * their own schedules for TSCH that are different from Orchestra and 6TiSCH minimal.
- */
-
-/* Put all cells on the same slotframe */
 #define APP_SLOTFRAME_HANDLE 1
-/* Put all unicast cells on the same timeslot (for demonstration purposes only) */
-#define APP_UNICAST_TIMESLOT 1
+#define FIRST_SLOTFRAME_HANDLE 2
+#define SECOND_SLOTFRAME_HANDLE 3
+
+
+
 
 static void
 initialize_tsch_schedule(void)
 {
-  int i, j;
-  struct tsch_slotframe *sf_common = tsch_schedule_add_slotframe(APP_SLOTFRAME_HANDLE, APP_SLOTFRAME_SIZE);
+  //int i, j;
+  struct tsch_slotframe *sf_common = tsch_schedule_add_slotframe(APP_SLOTFRAME_HANDLE, 8);
   uint16_t slot_offset;
   uint16_t channel_offset;
 
   /* A "catch-all" cell at (0, 0) */
-  slot_offset = node_id;  // without priority
-  channel_offset = node_id + 1; 
-  
 
-  // link definition for broadcast
+  slot_offset = 0;
+  channel_offset = random_rand() % APP_CHANNEL_OFSETT;
+  // broadcast
   tsch_schedule_add_link(sf_common,
       LINK_OPTION_RX | LINK_OPTION_TX | LINK_OPTION_SHARED,
       LINK_TYPE_ADVERTISING, &tsch_broadcast_address,
       slot_offset, channel_offset);
-  tsch_schedule_add_link(sf_common,
+      struct tsch_slotframe *sf_common1 = tsch_schedule_add_slotframe(2, 8);
+
+   tsch_schedule_add_link(sf_common1,
       LINK_OPTION_RX | LINK_OPTION_TX | LINK_OPTION_SHARED,
       LINK_TYPE_ADVERTISING, &tsch_broadcast_address,
       slot_offset, channel_offset+1);
- 
-  //tsch_schedule_print();
-  
-  
-  for (i = 0 ; i < 2 ; i++){
-      uint8_t link_options;
-      linkaddr_t addr;
-      uint16_t remote_id = i + 1;
+init(APP_SLOTFRAME_HANDLE);
+ tsch_schedule_print();
 
-      for(j = 0; j < sizeof(addr); j += 2) {
-        addr.u8[j + 1] = remote_id & 0xff;
-        addr.u8[j + 0] = remote_id >> 8;
-      } 
-
-    /* Add a unicast cell for each potential neighbor (in Cooja) */
-    /* Use the same aslot offset; the right link will be dynamically selected at runtime based on queue sizes */
-    slot_offset = APP_UNICAST_TIMESLOT/i + 1; // a bit of random
-    channel_offset = i+1;
-     
-    link_options = LINK_OPTION_RX;
-
-    tsch_schedule_add_link(sf_common,
-        link_options,
-        LINK_TYPE_NORMAL, &addr,
-        slot_offset, channel_offset);
-
-    link_options = LINK_OPTION_TX;
-
-    tsch_schedule_add_link(sf_common,
-        link_options,
-        LINK_TYPE_NORMAL, &addr,
-        slot_offset, channel_offset+1); 
-   
-  }
 }
 
 static void
@@ -153,17 +97,22 @@ PROCESS_THREAD(node_process, ev, data)
 
   PROCESS_BEGIN();
 
-  initialize_tsch_schedule();
+  if(node_id == 1) {  /* Running on the root? */
+    NETSTACK_ROUTING.root_start();
+    printf("This is the coordinator\n");
+    tsch_set_coordinator(1);
+  }
 
-  /* Initialization; `rx_packet` is the function for packet reception */
+  initialize_tsch_schedule();
+  printf("count: %d\n",count_link++);
+  //find_y_for_x();
+
+
+
   simple_udp_register(&udp_conn, UDP_PORT, NULL, UDP_PORT, rx_packet);
   etimer_set(&periodic_timer, random_rand() % SEND_INTERVAL);
 
-  if(node_id == 1) {  /* Running on the root? */
-    NETSTACK_ROUTING.root_start();
-  }
-
-  /* Main loop */
+    /* Main loop */
   while(1) {
     PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&periodic_timer));
     if(NETSTACK_ROUTING.node_is_reachable()
@@ -174,6 +123,10 @@ PROCESS_THREAD(node_process, ev, data)
       LOG_INFO_6ADDR(&dst);
       LOG_INFO_(", seqnum %" PRIu32 "\n", seqnum);
       simple_udp_sendto(&udp_conn, &seqnum, sizeof(seqnum), &dst);
+
+    //  broadcast_send(&broadcast);
+
+      //list_neighbors();
     }
     etimer_set(&periodic_timer, SEND_INTERVAL);
   }
